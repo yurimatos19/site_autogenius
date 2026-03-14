@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /extract.py
+Disallow: /print_lines.py
+
+Sitemap: https://useautogenius.com/sitemap.xml
