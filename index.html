@@ -330,6 +330,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 /* Pricing scroll on non-desktop */
 @media(max-width:1100px){
   .s7-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:12px;
+    margin-left:-24px;margin-right:-24px;padding-left:24px;padding-right:24px;
     scrollbar-width:thin;scrollbar-color:rgba(59,130,246,.2) transparent}
   .s7-scroll::-webkit-scrollbar{height:3px}
   .s7-scroll::-webkit-scrollbar-thumb{background:rgba(59,130,246,.25);border-radius:99px}
@@ -438,7 +439,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
     <div id="spotlight" style="position:absolute;inset:0;pointer-events:none;z-index:2;transition:opacity .5s;opacity:0;background:radial-gradient(600px circle at 50% 40%,rgba(37,99,235,.1),transparent 65%)"></div>
 
     <div style="max-width:820px;margin:0 auto;width:100%;text-align:center;position:relative;z-index:10">
-      <span class="sec-label reveal">0.0 · AutoGenius AI · Recife, Brasil</span>
+      <span class="sec-label reveal">AutoGenius AI · Recife, Brasil</span>
 
       <div class="reveal" style="display:inline-flex;align-items:center;gap:7px;padding:6px 14px;border-radius:9999px;border:1px solid rgba(37,99,235,.18);background:rgba(13,24,41,.7);backdrop-filter:blur(8px);margin-bottom:28px">
         <div style="width:5px;height:5px;background:#10B981;border-radius:50%;animation:pulse 2s infinite"></div>
@@ -779,9 +780,9 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
           <button id="btn-low" onclick="setCluster('low')" style="background:var(--b5);color:white;border:none;border-radius:9999px;padding:7px 20px;font-size:.75rem;font-weight:700;font-family:'Space Mono',monospace;cursor:pointer;transition:all .2s">CLUSTER LOW</button>
           <button id="btn-high" onclick="setCluster('high')" style="background:transparent;color:var(--t2);border:none;border-radius:9999px;padding:7px 20px;font-size:.75rem;font-weight:700;font-family:'Space Mono',monospace;cursor:pointer;transition:all .2s">CLUSTER HIGH</button>
         </div>
-        <div style="color:var(--t3);font-size:.7rem;margin-top:8px;font-family:'Space Mono',monospace" id="cluster-desc">Low: até 60k contatos/mês · ideal para PMEs e profissionais liberais</div>
+        <div style="color:var(--t2);font-size:.78rem;margin-top:8px;font-family:'Space Mono',monospace" id="cluster-desc">Low: até 60k contatos/mês · ideal para PMEs e profissionais liberais</div>
       <div id="cluster-types" style="margin-top:14px;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center">
-        <span style="font-size:.72rem;color:var(--t3)">Ideal para:</span>
+        <span style="font-size:.72rem;color:var(--t2)">Ideal para:</span>
         <span id="cluster-tags" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center"></span>
       </div>
       </div>
@@ -908,7 +909,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
           <i class="fab fa-whatsapp" style="font-size:1.25rem"></i>Falar com a AutoGenius agora
         </a>
       </div>
-      <div class="reveal" style="margin-top:18px;display:flex;align-items:center;justify-content:center;gap:12px;color:var(--t3);font-size:11px;flex-wrap:wrap">
+      <div class="reveal" style="margin-top:18px;display:flex;align-items:center;justify-content:center;gap:12px;color:var(--t2);font-size:11px;flex-wrap:wrap">
         <span style="display:flex;align-items:center;gap:5px"><i class="fas fa-lock" style="color:#22c55e;font-size:9px"></i>Garantia de 7 dias</span>
         <span>·</span><span>Sem fidelidade</span><span>·</span><span>Deploy em 7 dias</span>
       </div>
@@ -1582,6 +1583,7 @@ function setCluster(c){
 function go(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const el=document.getElementById('page-'+page);if(el){el.classList.add('active');window.scrollTo(0,0);}if(page==='faq')buildFAQ();try{localStorage.setItem('ag-page',page);}catch(e){}}
 function scrollTo2(id){setTimeout(()=>{const el=document.getElementById(id);if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-100,behavior:'smooth'});},80);}
 try{go(localStorage.getItem('ag-page')||'home');}catch(e){go('home');}
+setCluster('low');
 
 /* ── Scroll progress ── */
 window.addEventListener('scroll',()=>{const d=document.documentElement;document.getElementById('spbar').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';},{passive:true});
