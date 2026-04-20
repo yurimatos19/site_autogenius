@@ -213,7 +213,7 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
 .card-grad-border{background:var(--card);border-radius:14px;
   backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
   box-shadow:0 0 0 1px transparent,0 8px 30px rgba(0,0,0,.4);
-  position:relative;overflow:hidden}
+  position:relative;overflow:visible}
 .card-grad-border::before{content:'';position:absolute;inset:-1px;border-radius:15px;
   background:linear-gradient(135deg,var(--b5),var(--cy),var(--b5));
   background-size:300% 300%;z-index:-1;animation:gborder 4s linear infinite}
@@ -789,7 +789,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 
       <!-- Plans grid -->
       <div class="s7-scroll">
-      <div class="s7-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:start;margin-bottom:20px">
+      <div class="s7-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:start;margin-bottom:20px;padding-top:14px">
 
         <!-- Essencial -->
         <div class="card reveal" style="padding:20px">
