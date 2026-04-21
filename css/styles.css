@@ -144,13 +144,36 @@
 
         /* Site-wide overrides (mobile + labels) */
         .sec-label {
-            color: rgba(29, 78, 216, 0.92) !important;
+            color: rgba(37, 99, 235, 0.98) !important;
         }
 
         @media (max-width: 640px) {
             .fpanel {
                 grid-template-columns: 1fr !important;
                 gap: 22px !important;
+            }
+        }
+
+        /* Feature tabs (mobile): keep tab behavior, avoid overlap */
+        @media (max-width: 640px) {
+            .feature-tabs {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 8px !important;
+                margin-bottom: 26px !important;
+            }
+
+            .feature-tabs .ftab {
+                width: 100%;
+                justify-content: center;
+                padding: 10px 12px;
+                touch-action: manipulation;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .feature-tabs {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -219,6 +242,37 @@
         .plan-featured-cta {
             background: linear-gradient(90deg, var(--b5), var(--cy));
             color: #fff;
+        }
+
+        /* Follow-up sequence card: fix mobile readability */
+        @media (max-width: 640px) {
+            .followup-seq {
+                padding: 18px !important;
+            }
+
+            /* make everything inside readable on dark glass */
+            .followup-seq * {
+                color: rgba(241, 245, 249, 0.92) !important;
+            }
+
+            /* header label */
+            .followup-seq>div:first-child {
+                color: rgba(147, 197, 253, 0.98) !important;
+                font-size: 11px !important;
+                margin-bottom: 12px !important;
+                letter-spacing: 0.1em !important;
+            }
+
+            /* step titles and copy */
+            .followup-seq>div:nth-child(2) div[style*="font-size:.8rem"] {
+                font-size: 0.92rem !important;
+                line-height: 1.25 !important;
+            }
+
+            .followup-seq>div:nth-child(2) div[style*="font-size:.75rem"] {
+                font-size: 0.86rem !important;
+                line-height: 1.45 !important;
+            }
         }
 
 
