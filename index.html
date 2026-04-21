@@ -228,7 +228,7 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
 .sdiv{height:1px;background:linear-gradient(90deg,transparent,rgba(37,99,235,.15),rgba(6,182,212,.1),transparent)}
 
 /* ━━━━ Section label ━━━━━━━━━━━━━━━━━━ */
-.sec-label{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--t3);letter-spacing:.06em;margin-bottom:10px;display:block}
+.sec-label{font-family:'Space Mono',monospace;font-size:.65rem;color:rgba(59,130,246,.9);letter-spacing:.06em;margin-bottom:10px;display:block}
 
 /* ━━━━ WA Chat bubbles ━━━━━━━━━━━━━━━━━ */
 .wa-msg{display:flex;margin-bottom:4px}
@@ -326,7 +326,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 /* ━━━━ Responsive ━━━━━━━━━━━━━━━━━━━━━━ */
 @media(min-width:1024px){#navlinks{display:flex!important}#nav-wa{display:inline-flex!important}#burger{display:none!important}.bar-extra{display:inline!important}}
 @media(max-width:1023px){.s4-grid{grid-template-columns:1fr!important}.s5-grid{grid-template-columns:1fr!important}}
-@media(max-width:640px){.s5-grid{grid-template-columns:1fr!important}.hero-btns{flex-direction:column!important}}
+@media(max-width:640px){.s5-grid{grid-template-columns:1fr!important}.hero-btns{flex-direction:column!important}.fpanel.active{grid-template-columns:1fr!important;gap:24px!important}}
 /* Pricing scroll on non-desktop */
 @media(max-width:1100px){
   .s7-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:12px;
@@ -789,7 +789,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 
       <!-- Plans grid -->
       <div class="s7-scroll">
-      <div class="s7-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:start;margin-bottom:20px">
+      <div class="s7-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:start;margin-bottom:20px;padding-top:14px">
 
         <!-- Essencial -->
         <div class="card reveal" style="padding:20px">
@@ -822,20 +822,22 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
         </div>
 
         <!-- Performance (Featured) -->
-        <div class="card-grad-border reveal" style="padding:20px;position:relative;transition-delay:.1s">
-          <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--b5),var(--cy));color:white;font-size:8.5px;font-weight:700;padding:3px 12px;border-radius:9999px;white-space:nowrap;font-family:'Space Mono',monospace">★ MAIS ESCOLHIDO</div>
-          <div style="color:var(--b3);font-size:8.5px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;margin-bottom:10px;margin-top:10px;font-family:'Space Mono',monospace">Performance</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:var(--t1);letter-spacing:-.02em"><span class="p-month">R$1.490</span><span style="font-size:.65rem;font-weight:400;color:var(--t3)">/mês</span></div>
-          <div style="color:var(--t3);font-size:9px;margin-bottom:13px">+ <span class="p-setup">R$2.500</span> implantação</div>
-          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;font-size:.74rem;color:var(--t2)">
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b3);font-size:7.5px;flex-shrink:0"></i><span class="p-contacts">15k contatos/mês</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b3);font-size:7.5px;flex-shrink:0"></i><span class="p-agendas">5 agendas</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b3);font-size:7.5px;flex-shrink:0"></i>Follow-up automático</div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b3);font-size:7.5px;flex-shrink:0"></i>Campanhas recorrentes</div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b3);font-size:7.5px;flex-shrink:0"></i>NPS/CSAT automático</div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b3);font-size:7.5px;flex-shrink:0"></i>7 integrações + webhooks</div>
+        <div style="position:relative;padding-top:16px">
+          <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--b5),var(--cy));color:white;font-size:8.5px;font-weight:700;padding:3px 12px;border-radius:9999px;white-space:nowrap;font-family:'Space Mono',monospace;z-index:10">★ MAIS ESCOLHIDO</div>
+          <div class="card-grad-border reveal" style="padding:20px;position:relative;transition-delay:.1s">
+            <div style="color:rgba(255,255,255,.8);font-size:8.5px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;margin-bottom:10px;font-family:'Space Mono',monospace">Performance</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:white;letter-spacing:-.02em"><span class="p-month">R$1.490</span><span style="font-size:.65rem;font-weight:400;color:rgba(255,255,255,.7)">/mês</span></div>
+            <div style="color:rgba(255,255,255,.7);font-size:9px;margin-bottom:13px">+ <span class="p-setup">R$2.500</span> implantação</div>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;font-size:.74rem;color:rgba(255,255,255,.9)">
+              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:white;font-size:7.5px;flex-shrink:0"></i><span class="p-contacts">15k contatos/mês</span></div>
+              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:white;font-size:7.5px;flex-shrink:0"></i><span class="p-agendas">5 agendas</span></div>
+              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:white;font-size:7.5px;flex-shrink:0"></i>Follow-up automático</div>
+              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:white;font-size:7.5px;flex-shrink:0"></i>Campanhas recorrentes</div>
+              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:white;font-size:7.5px;flex-shrink:0"></i>NPS/CSAT automático</div>
+              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:white;font-size:7.5px;flex-shrink:0"></i>7 integrações + webhooks</div>
+            </div>
+            <a href="https://wa.me/5581991471765?text=Plano%20Performance" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);color:white;font-size:11px;font-weight:700;text-decoration:none">Quero este plano</a>
           </div>
-          <a href="https://wa.me/5581991471765?text=Plano%20Performance" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;background:linear-gradient(90deg,var(--b5),var(--cy));color:white;font-size:11px;font-weight:700;text-decoration:none">Quero este plano</a>
         </div>
 
         <!-- Premium -->
