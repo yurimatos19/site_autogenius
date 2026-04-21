@@ -180,13 +180,14 @@
         /* Featured pricing card (Performance) */
         .plan-featured {
             overflow: visible;
+            padding-top: 26px; /* espaço para o badge ficar dentro do wrapper */
         }
 
         .plan-featured-badge {
             position: absolute;
-            top: -11px;
+            top: 13px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             background: linear-gradient(90deg, var(--b5), var(--cy));
             color: #fff;
             font-size: 8.5px;
@@ -201,7 +202,7 @@
 
         .plan-featured-card {
             /* mantém overflow:hidden do gradiente sem cortar o badge (badge fica no wrapper) */
-            padding-top: 26px;
+            padding-top: 20px;
         }
 
         .plan-featured-kicker {
