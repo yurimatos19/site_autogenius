@@ -1847,28 +1847,7 @@ if(window.matchMedia('(pointer:fine) and (min-width:1024px)').matches){let _card
 
 /* ── WA Demo ── */
 const conv=[{f:'client',t:'Oi, quanto custa uma consulta?'},{f:'agent',t:'Olá! A consulta custa R$150. Qual é o seu nome?'},{f:'client',t:'João'},{f:'agent',t:'Perfeito, João! Temos quinta 14h ou sexta 10h.'},{f:'client',t:'Quinta'},{f:'agent',t:'Agendado ✓ Confirmação enviada em instantes.'}];
-let _demoTimer=null,_demoRunning=false;
-function stopDemo(){if(_demoTimer){clearTimeout(_demoTimer);_demoTimer=null;}_demoRunning=false;}
-function runDemo(){
-  const c=document.getElementById('wademo');
-  const home=document.getElementById('page-home');
-  if(!c||!home||document.hidden||!home.classList.contains('active'))return;
-  stopDemo();
-  _demoRunning=true;
-  c.textContent='';
-  let s=0;
-  function next(){
-    if(!_demoRunning||document.hidden||!home.classList.contains('active'))return;
-    if(s>=conv.length){
-      if(!window.matchMedia('(max-width:767px)').matches)_demoTimer=setTimeout(runDemo,5000);
-      return;
-    }
-    const m=conv[s++],row=document.createElement('div'),span=document.createElement('span');
-    row.className='wa-msg wa-msg--'+m.f;span.textContent=m.t;row.appendChild(span);c.appendChild(row);c.scrollTop=c.scrollHeight;
-    _demoTimer=setTimeout(next,m.f==='agent'?1400:850);
-  }
-  _demoTimer=setTimeout(next,350);
-}
+function runDemo(){const c=document.getElementById('wademo');if(!c)return;c.textContent='';let s=0;function next(){if(s>=conv.length){if(!window.matchMedia('(max-width:767px)').matches)setTimeout(runDemo,5000);return;}const m=conv[s++],row=document.createElement('div'),span=document.createElement('span');row.className='wa-msg wa-msg--'+m.f;span.textContent=m.t;row.appendChild(span);c.appendChild(row);c.scrollTop=c.scrollHeight;setTimeout(next,m.f==='agent'?1400:850);}setTimeout(next,350);}
 runDemo();
 document.addEventListener('visibilitychange',()=>{if(document.hidden){stopDemo();if(isPlaying)toggleAudio();}else{if(document.getElementById('page-home')?.classList.contains('active'))runDemo();}}, {passive:true});
 
