@@ -1711,14 +1711,9 @@ function startMusic(){
 }
 
 function toggleAudio(){
-  if(!audioCtx||!masterGain){startMusic();return;}
-  const t=audioCtx.currentTime;
+  const a=_ensureAudio();
   if(isPlaying){
-    clearInterval(_schedTimer);_schedTimer=null;
-    masterGain.gain.cancelScheduledValues(t);
-    masterGain.gain.setValueAtTime(masterGain.gain.value,t);
-    masterGain.gain.linearRampToValueAtTime(0,t+1.2);
-    setTimeout(()=>{try{audioCtx.suspend();}catch(e){}},1300);
+    a.pause();
     document.getElementById('audio-bars').classList.remove('playing');
     document.getElementById('audio-label').textContent='Som ambiente';
     isPlaying=false;
