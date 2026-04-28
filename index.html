@@ -103,8 +103,8 @@
   --gr:      #25D366;
   --t1:      #F1F5F9;
   --t2:      #94A3B8;
-  --t3:      #475569;
-  --t4:      #2d3f57;
+  --t3:      #7b8da5;
+  --t4:      #4b6280;
   --bord:    rgba(255,255,255,.065);
   --bord-a:  rgba(59,130,246,.38);
   --grad:    linear-gradient(135deg,#1d4ed8,#2563EB,#06b6d4);
@@ -116,6 +116,11 @@
 html{color-scheme:dark}
 body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
   min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+section{content-visibility:auto;contain-intrinsic-size:1px 820px}
+
+/* Evita render custoso fora da viewport em páginas internas */
+.page{contain:layout style paint}
 
 /* ━━━━ Fixed cinematic background ━━━━━━━ */
 #bg-cinema{position:fixed;inset:0;z-index:-1;overflow:hidden}
@@ -407,6 +412,13 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 
   /* 12. Scroll progress bar — não necessário no mobile */
   #spbar{display:none!important}
+
+  /* 13. Marquee e sombras fortes — simplificar pintura */
+  .marquee-track{animation:none!important;transform:none!important}
+  .btn-wa,.btn-blue,.wa-fb{box-shadow:none!important;animation:none!important}
+
+  /* 14. Tipografia mais legível no mobile */
+  p,li,span{letter-spacing:0!important}
 }
   </style>
 </head>
@@ -464,7 +476,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
         <span class="nav-link" onclick="go('contato')">Contato</span>
       </div>
       <div style="display:flex;gap:10px;align-items:center">
-        <a id="nav-wa" href="https://wa.me/5581991471765?text=Ol%C3%A1!" target="_blank" class="btn-wa" style="padding:9px 18px;font-size:.8rem;display:none">
+        <a id="nav-wa" href="https://wa.me/5581991471765?text=Ol%C3%A1!" target="_blank" rel="noopener noreferrer" class="btn-wa" style="padding:9px 18px;font-size:.8rem;display:none">
           <i class="fab fa-whatsapp"></i>WhatsApp
         </a>
         <button id="burger" onclick="document.getElementById('mmenu').classList.toggle('open')"
@@ -489,7 +501,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
     <span onclick="go('consultoria');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Consultoria</span>
     <span onclick="go('faq');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Dúvidas</span>
     <span onclick="go('contato');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Contato</span>
-    <a href="https://wa.me/5581991471765" target="_blank" class="btn-wa" style="justify-content:center;margin-top:16px">
+    <a href="https://wa.me/5581991471765" target="_blank" rel="noopener noreferrer" class="btn-wa" style="justify-content:center;margin-top:16px">
       <i class="fab fa-whatsapp" style="font-size:1.2rem"></i>Falar no WhatsApp
     </a>
   </nav>
@@ -528,7 +540,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
       </p>
 
       <div class="hero-btns reveal" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:60px">
-        <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20automatizar%20meu%20atendimento%20com%20IA." target="_blank" class="btn-wa" style="font-size:1rem;padding:15px 32px">
+        <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20automatizar%20meu%20atendimento%20com%20IA." target="_blank" rel="noopener noreferrer" class="btn-wa" style="font-size:1rem;padding:15px 32px">
           <i class="fab fa-whatsapp" style="font-size:1.2rem"></i>Falar agora no WhatsApp
         </a>
         <button class="btn-ghost" onclick="scrollTo2('s4')">
@@ -873,7 +885,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i>1 dashboard KPIs</div>
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i>2 integrações</div>
           </div>
-          <a href="https://wa.me/5581991471765?text=Plano%20Essencial" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'">Quero este plano</a>
+          <a href="https://wa.me/5581991471765?text=Plano%20Essencial" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'">Quero este plano</a>
         </div>
 
         <!-- Avançado -->
@@ -888,7 +900,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i>BI funil por etapa</div>
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i>4 integrações</div>
           </div>
-          <a href="https://wa.me/5581991471765?text=Plano%20Avan%C3%A7ado" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'">Quero este plano</a>
+          <a href="https://wa.me/5581991471765?text=Plano%20Avan%C3%A7ado" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'">Quero este plano</a>
         </div>
 
         <!-- Performance (Featured) -->
@@ -908,7 +920,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
               <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check plan-featured-check" style="font-size:7.5px;flex-shrink:0"></i>NPS/CSAT automático</div>
               <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check plan-featured-check" style="font-size:7.5px;flex-shrink:0"></i>7 integrações + webhooks</div>
             </div>
-            <a href="https://wa.me/5581991471765?text=Plano%20Performance" target="_blank" class="plan-featured-cta" style="display:block;text-align:center;padding:8px;border-radius:7px;font-size:11px;font-weight:700;text-decoration:none">Quero este plano</a>
+            <a href="https://wa.me/5581991471765?text=Plano%20Performance" target="_blank" rel="noopener noreferrer" class="plan-featured-cta" style="display:block;text-align:center;padding:8px;border-radius:7px;font-size:11px;font-weight:700;text-decoration:none">Quero este plano</a>
           </div>
         </div>
 
@@ -924,7 +936,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i>Workflows ilimitados</div>
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i>RBAC (papéis/perfis)</div>
           </div>
-          <a href="https://wa.me/5581991471765?text=Plano%20Premium" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'">Quero este plano</a>
+          <a href="https://wa.me/5581991471765?text=Plano%20Premium" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'">Quero este plano</a>
         </div>
 
         <!-- Elite -->
@@ -939,7 +951,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--vt);font-size:7.5px;flex-shrink:0"></i>Multi-unidade</div>
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--vt);font-size:7.5px;flex-shrink:0"></i>Controles de segurança</div>
           </div>
-          <a href="https://wa.me/5581991471765?text=Plano%20Elite" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid rgba(124,58,237,.3);color:var(--vt);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(124,58,237,.6)';this.style.color='#a78bfa'" onmouseout="this.style.borderColor='rgba(124,58,237,.3)';this.style.color='#7C3AED'">Quero este plano</a>
+          <a href="https://wa.me/5581991471765?text=Plano%20Elite" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid rgba(124,58,237,.3);color:var(--vt);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(124,58,237,.6)';this.style.color='#a78bfa'" onmouseout="this.style.borderColor='rgba(124,58,237,.3)';this.style.color='#7C3AED'">Quero este plano</a>
         </div>
       </div>
       </div><!-- /s7-scroll -->
@@ -953,7 +965,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
         </div>
         <div style="text-align:right;flex-shrink:0">
           <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;color:var(--t1);margin-bottom:6px">A combinar</div>
-          <a href="https://wa.me/5581991471765?text=Quero%20uma%20proposta%20Enterprise" target="_blank" style="display:inline-flex;align-items:center;gap:7px;padding:9px 20px;border-radius:8px;background:linear-gradient(90deg,rgba(6,182,212,.15),rgba(6,182,212,.08));border:1px solid rgba(6,182,212,.25);color:var(--cy);font-size:.8rem;font-weight:700;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:all .2s" onmouseover="this.style.background='rgba(6,182,212,.2)'" onmouseout="this.style.background='linear-gradient(90deg,rgba(6,182,212,.15),rgba(6,182,212,.08))'">
+          <a href="https://wa.me/5581991471765?text=Quero%20uma%20proposta%20Enterprise" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:7px;padding:9px 20px;border-radius:8px;background:linear-gradient(90deg,rgba(6,182,212,.15),rgba(6,182,212,.08));border:1px solid rgba(6,182,212,.25);color:var(--cy);font-size:.8rem;font-weight:700;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:all .2s" onmouseover="this.style.background='rgba(6,182,212,.2)'" onmouseout="this.style.background='linear-gradient(90deg,rgba(6,182,212,.15),rgba(6,182,212,.08))'">
             Solicitar proposta →
           </a>
         </div>
@@ -990,15 +1002,15 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
           <div style="display:flex;flex-direction:column;gap:14px">
             <div style="display:flex;gap:12px;align-items:flex-start">
               <div style="width:6px;height:6px;border-radius:50%;background:rgba(6,182,212,.5);margin-top:7px;flex-shrink:0"></div>
-              <span style="font-size:.83rem;color:var(--t2);line-height:1.65">O dado existe no sistema — mas a decisão espera alguém que ainda não terminou a planilha</span>
+              <span style="font-size:.83rem;color:#cbd5e1;line-height:1.65">O dado existe no sistema — mas a decisão espera alguém que ainda não terminou a planilha</span>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start">
               <div style="width:6px;height:6px;border-radius:50%;background:rgba(6,182,212,.5);margin-top:7px;flex-shrink:0"></div>
-              <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Se uma pessoa-chave sai ou se ausenta, o processo volta ao modo manual em 24 horas</span>
+              <span style="font-size:.83rem;color:#cbd5e1;line-height:1.65">Se uma pessoa-chave sai ou se ausenta, o processo volta ao modo manual em 24 horas</span>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start">
               <div style="width:6px;height:6px;border-radius:50%;background:rgba(6,182,212,.5);margin-top:7px;flex-shrink:0"></div>
-              <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Correções são feitas em silêncio, sem registro de quem alterou o quê e quando</span>
+              <span style="font-size:.83rem;color:#cbd5e1;line-height:1.65">Correções são feitas em silêncio, sem registro de quem alterou o quê e quando</span>
             </div>
           </div>
         </div>
@@ -1008,15 +1020,15 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
           <div style="display:flex;flex-direction:column;gap:14px">
             <div style="display:flex;gap:12px;align-items:flex-start">
               <div style="width:6px;height:6px;border-radius:50%;background:rgba(37,99,235,.6);margin-top:7px;flex-shrink:0"></div>
-              <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Entramos na sua operação e trabalhamos <strong style="color:var(--t1)">diretamente com cada equipe</strong> — não só com a gestão</span>
+              <span style="font-size:.83rem;color:#cbd5e1;line-height:1.65">Entramos na sua operação e trabalhamos <strong style="color:var(--t1)">diretamente com cada equipe</strong> — não só com a gestão</span>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start">
               <div style="width:6px;height:6px;border-radius:50%;background:rgba(37,99,235,.6);margin-top:7px;flex-shrink:0"></div>
-              <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Analisamos os problemas <strong style="color:var(--t1)">de dentro</strong>, documentamos tudo e construímos a solução com quem vai usar</span>
+              <span style="font-size:.83rem;color:#cbd5e1;line-height:1.65">Analisamos os problemas <strong style="color:var(--t1)">de dentro</strong>, documentamos tudo e construímos a solução com quem vai usar</span>
             </div>
             <div style="display:flex;gap:12px;align-items:flex-start">
               <div style="width:6px;height:6px;border-radius:50%;background:rgba(37,99,235,.6);margin-top:7px;flex-shrink:0"></div>
-              <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Saímos quando a sua equipe opera sozinha — <strong style="color:var(--t1)">sem depender de nós</strong></span>
+              <span style="font-size:.83rem;color:#cbd5e1;line-height:1.65">Saímos quando a sua equipe opera sozinha — <strong style="color:var(--t1)">sem depender de nós</strong></span>
             </div>
           </div>
         </div>
@@ -1058,7 +1070,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
           <div style="font-size:.82rem;color:var(--t3)">Sem proposta antecipada. Sem pitch. Só conversa — e depois o que fizer sentido para os dois lados.</div>
         </div>
         <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-          <a href="https://wa.me/5581991471765?text=Quero%20entender%20como%20funciona%20a%20consultoria%20AutoGenius" target="_blank" class="btn-wa" style="font-size:.85rem;padding:11px 24px;white-space:nowrap"><i class="fab fa-whatsapp"></i>Conversar sobre minha operação</a>
+          <a href="https://wa.me/5581991471765?text=Quero%20entender%20como%20funciona%20a%20consultoria%20AutoGenius" target="_blank" rel="noopener noreferrer" class="btn-wa" style="font-size:.85rem;padding:11px 24px;white-space:nowrap"><i class="fab fa-whatsapp"></i>Conversar sobre minha operação</a>
           <a href="#" onclick="go('consultoria');return false;" style="font-size:.82rem;font-weight:600;color:var(--cy);text-decoration:none;white-space:nowrap;font-family:'Space Grotesk',sans-serif" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Ver metodologia →</a>
         </div>
       </div>
@@ -1079,7 +1091,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
         Cada dia sem automação é dinheiro deixado na mesa.<br>A conversa é gratuita. A decisão é sua.
       </p>
       <div class="reveal">
-        <a href="https://wa.me/5581991471765?text=Estou%20pronto%20para%20comecar." target="_blank" class="btn-wa" style="font-size:1.05rem;padding:16px 42px;display:inline-flex;justify-content:center">
+        <a href="https://wa.me/5581991471765?text=Estou%20pronto%20para%20comecar." target="_blank" rel="noopener noreferrer" class="btn-wa" style="font-size:1.05rem;padding:16px 42px;display:inline-flex;justify-content:center">
           <i class="fab fa-whatsapp" style="font-size:1.25rem"></i>Falar com a AutoGenius agora
         </a>
       </div>
@@ -1109,7 +1121,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
     <span class="sec-label">Contato</span>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;margin-bottom:6px;letter-spacing:-.025em">Entre em <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">contato</span></h1>
     <p style="color:var(--t2);margin-bottom:24px;font-size:.9rem">Prefere uma resposta rápida? Fale direto no WhatsApp.</p>
-    <a href="https://wa.me/5581991471765?text=Ol%C3%A1!" target="_blank" class="btn-wa" style="width:100%;justify-content:center;margin-bottom:24px">
+    <a href="https://wa.me/5581991471765?text=Ol%C3%A1!" target="_blank" rel="noopener noreferrer" class="btn-wa" style="width:100%;justify-content:center;margin-bottom:24px">
       <i class="fab fa-whatsapp" style="font-size:1.1rem"></i>Falar no WhatsApp agora
     </a>
     <div style="text-align:center;color:var(--t3);font-size:10.5px;margin-bottom:20px;letter-spacing:.04em">— ou preencha o formulário —</div>
@@ -1166,8 +1178,8 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
             Empreendedor e especialista em automação inteligente com IA. Criou a AutoGenius AI para democratizar o acesso a agentes de IA robustos, com plataforma própria, governança e resultados mensuráveis. Palestrante e consultor em IA para negócios no Nordeste.
           </p>
           <div style="display:flex;gap:12px;margin-top:12px">
-            <a href="https://www.linkedin.com/in/yuri-matos2002/" target="_blank" style="color:var(--t2);font-size:1rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/useautogenius/" target="_blank" style="color:var(--t2);font-size:1rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#ec4899'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/yuri-matos2002/" target="_blank" rel="noopener noreferrer" style="color:var(--t2);font-size:1rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/useautogenius/" target="_blank" rel="noopener noreferrer" style="color:var(--t2);font-size:1rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#ec4899'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
@@ -1289,7 +1301,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 
     <!-- CTA -->
     <div style="text-align:center">
-      <a href="https://wa.me/5581991471765?text=Quero%20conhecer%20a%20AutoGenius%20AI" target="_blank" class="btn-wa" style="font-size:.95rem;padding:14px 36px;display:inline-flex">
+      <a href="https://wa.me/5581991471765?text=Quero%20conhecer%20a%20AutoGenius%20AI" target="_blank" rel="noopener noreferrer" class="btn-wa" style="font-size:.95rem;padding:14px 36px;display:inline-flex">
         <i class="fab fa-whatsapp" style="font-size:1.1rem"></i>Falar com a equipe agora
       </a>
     </div>
@@ -1366,7 +1378,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
     <div class="card" style="padding:28px;text-align:center;border-color:rgba(37,99,235,.2)">
       <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--t1);margin-bottom:8px">Interesse em contratar uma palestra?</div>
       <p style="color:var(--t2);font-size:.85rem;margin-bottom:20px">Enviamos proposta completa com valores e formatos disponíveis para o seu evento.</p>
-      <a href="https://wa.me/5581991471765?text=Quero%20contratar%20uma%20palestra%20da%20AutoGenius%20AI" target="_blank" class="btn-wa" style="display:inline-flex;font-size:.88rem;padding:12px 28px">
+      <a href="https://wa.me/5581991471765?text=Quero%20contratar%20uma%20palestra%20da%20AutoGenius%20AI" target="_blank" rel="noopener noreferrer" class="btn-wa" style="display:inline-flex;font-size:.88rem;padding:12px 28px">
         <i class="fab fa-whatsapp"></i>Contratar palestra
       </a>
     </div>
@@ -1377,22 +1389,22 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 <div class="page" id="page-consultoria">
   <section style="padding:64px 24px 80px;max-width:860px;margin:0 auto">
 
-    <span class="sec-label" style="color:var(--cy);border-color:rgba(6,182,212,.25);background:rgba(6,182,212,.06)">Consultoria de Tecnologia</span>
+    <span class="sec-label" style="color:#67e8f9;background:rgba(6,182,212,.12);padding:6px 12px;border-radius:9999px;border:1px solid rgba(103,232,249,.35);display:inline-block">Consultoria de Tecnologia</span>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin:18px 0 24px">
       A maioria das implantações falha.<br>
       <span style="background:linear-gradient(135deg,#06B6D4,#3B82F6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Não por tecnologia — por comportamento.</span>
     </h1>
-    <p style="color:var(--t2);font-size:1.05rem;line-height:1.85;max-width:640px;margin-bottom:12px">
+    <p style="color:#cbd5e1;font-size:1.05rem;line-height:1.85;max-width:640px;margin-bottom:12px">
       O sistema foi entregue, a equipe não sabia usar, não confiava no processo e voltou para o WhatsApp e a planilha em duas semanas. Isso acontece em toda empresa que contrata tecnologia como se fosse produto.
     </p>
-    <p style="color:var(--t1);font-size:1.05rem;line-height:1.85;max-width:640px;margin-bottom:40px;font-weight:500">
+    <p style="color:#e2e8f0;font-size:1.05rem;line-height:1.85;max-width:640px;margin-bottom:40px;font-weight:600">
       Nossa consultoria funciona diferente: a gente entra na operação, trabalha diretamente com cada equipe, analisa os problemas de dentro, documenta tudo — e implementa junto com quem vai usar, até funcionar.
     </p>
 
     <!-- O que acontece na prática -->
     <div style="margin-bottom:48px">
       <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--t1);margin-bottom:6px;letter-spacing:-.02em">O que acontece na prática</div>
-      <div style="font-size:.83rem;color:var(--t3);margin-bottom:20px">Do primeiro contato até a equipe operar sozinha</div>
+      <div style="font-size:.83rem;color:#94a3b8;margin-bottom:20px">Do primeiro contato até a equipe operar sozinha</div>
       <div style="display:grid;gap:2px">
 
         <div style="display:grid;grid-template-columns:80px 1fr;gap:0;border-radius:12px 12px 2px 2px;overflow:hidden;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.14)">
@@ -1402,7 +1414,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
           </div>
           <div style="padding:24px">
             <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Entramos e vemos de perto</div>
-            <div style="font-size:.82rem;color:var(--t2);line-height:1.75">Visitamos a operação. Conversamos com quem trabalha no processo — não só com a liderança. Vemos o que realmente acontece: onde o papel ainda manda, onde alguém anota no caderno antes de lançar no sistema, onde uma pessoa só sabe fazer aquilo. Isso não aparece em reunião de apresentação.</div>
+            <div style="font-size:.82rem;color:#cbd5e1;line-height:1.75">Visitamos a operação. Conversamos com quem trabalha no processo — não só com a liderança. Vemos o que realmente acontece: onde o papel ainda manda, onde alguém anota no caderno antes de lançar no sistema, onde uma pessoa só sabe fazer aquilo. Isso não aparece em reunião de apresentação.</div>
           </div>
         </div>
 
@@ -1413,7 +1425,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
           </div>
           <div style="padding:24px">
             <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Analisamos e documentamos tudo</div>
-            <div style="font-size:.82rem;color:var(--t2);line-height:1.75">Mapeamos cada problema: o retrabalho que gera custo invisível, o risco de pessoa-chave que paralisa o processo quando alguém falta, os números que chegam sem rastreabilidade. Documentamos processos, falhas e oportunidades. Esse material fica com você — independente de qualquer coisa.</div>
+            <div style="font-size:.82rem;color:#cbd5e1;line-height:1.75">Mapeamos cada problema: o retrabalho que gera custo invisível, o risco de pessoa-chave que paralisa o processo quando alguém falta, os números que chegam sem rastreabilidade. Documentamos processos, falhas e oportunidades. Esse material fica com você — independente de qualquer coisa.</div>
           </div>
         </div>
 
@@ -1424,7 +1436,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
           </div>
           <div style="padding:24px">
             <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Construímos o plano com quem vai executar</div>
-            <div style="font-size:.82rem;color:var(--t2);line-height:1.75">Definimos as frentes de transformação em ordem de impacto real. Cada frente tem uma entrega concreta e uma pessoa que para de fazer algo que não deveria estar fazendo. Nada é imposto — cada mudança é validada com quem vai usar antes de ser finalizada.</div>
+            <div style="font-size:.82rem;color:#cbd5e1;line-height:1.75">Definimos as frentes de transformação em ordem de impacto real. Cada frente tem uma entrega concreta e uma pessoa que para de fazer algo que não deveria estar fazendo. Nada é imposto — cada mudança é validada com quem vai usar antes de ser finalizada.</div>
           </div>
         </div>
 
@@ -1435,7 +1447,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
           </div>
           <div style="padding:24px">
             <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Implementamos ao lado da equipe</div>
-            <div style="font-size:.82rem;color:var(--t2);line-height:1.75">O treinamento acontece onde o trabalho acontece — no almoxarifado, na oficina, no escritório. A equipe aprende fazendo com o processo real rodando, não em apresentação de slide. Identificamos resistências antes que virem bloqueios. Estamos disponíveis direto com cada líder de área durante toda a implantação.</div>
+            <div style="font-size:.82rem;color:#cbd5e1;line-height:1.75">O treinamento acontece onde o trabalho acontece — no almoxarifado, na oficina, no escritório. A equipe aprende fazendo com o processo real rodando, não em apresentação de slide. Identificamos resistências antes que virem bloqueios. Estamos disponíveis direto com cada líder de área durante toda a implantação.</div>
           </div>
         </div>
 
@@ -1445,7 +1457,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
           </div>
           <div style="padding:24px">
             <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Transferimos — e saímos quando funciona</div>
-            <div style="font-size:.82rem;color:var(--t2);line-height:1.75">O objetivo nunca foi criar dependência. Ao final, a sua equipe opera e evolui o que foi construído sem precisar de nós. Tudo que foi entregue — painéis, automações, documentação, bases — fica com você. Sempre.</div>
+            <div style="font-size:.82rem;color:#cbd5e1;line-height:1.75">O objetivo nunca foi criar dependência. Ao final, a sua equipe opera e evolui o que foi construído sem precisar de nós. Tudo que foi entregue — painéis, automações, documentação, bases — fica com você. Sempre.</div>
           </div>
         </div>
 
@@ -1461,7 +1473,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
         </div>
         <div>
           <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:6px">Não pedimos confiança às cegas</div>
-          <div style="font-size:.82rem;color:var(--t2);line-height:1.75">No final do mês 3, fazemos uma reunião de resultado com a diretoria. Se os entregáveis acordados nos pilotos não foram cumpridos por responsabilidade nossa, você encerra o contrato sem multa ou penalidade. O que já foi entregue — painéis, bases, documentação — permanece integralmente com você. Pedimos 3 meses para provar que a parceria funciona.</div>
+          <div style="font-size:.82rem;color:#cbd5e1;line-height:1.75">No final do mês 3, fazemos uma reunião de resultado com a diretoria. Se os entregáveis acordados nos pilotos não foram cumpridos por responsabilidade nossa, você encerra o contrato sem multa ou penalidade. O que já foi entregue — painéis, bases, documentação — permanece integralmente com você. Pedimos 3 meses para provar que a parceria funciona.</div>
         </div>
       </div>
     </div>
@@ -1472,19 +1484,19 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
       <div style="display:grid;gap:8px">
         <div style="display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)">
           <i class="fas fa-circle-dot" style="color:var(--cy);font-size:.55rem;margin-top:6px;flex-shrink:0"></i>
-          <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Você tem SAP, ERP ou algum sistema implantado — mas a decisão ainda passa por alguém que compila manualmente antes de te avisar</span>
+          <span style="font-size:.83rem;color:#cbd5e1;line-height:1.65">Você tem SAP, ERP ou algum sistema implantado — mas a decisão ainda passa por alguém que compila manualmente antes de te avisar</span>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)">
           <i class="fas fa-circle-dot" style="color:var(--b3);font-size:.55rem;margin-top:6px;flex-shrink:0"></i>
-          <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Existe uma pessoa-chave no seu time que, se sair ou faltar, o processo volta ao modo manual em 24 horas</span>
+          <span style="font-size:.83rem;color:#cbd5e1;line-height:1.65">Existe uma pessoa-chave no seu time que, se sair ou faltar, o processo volta ao modo manual em 24 horas</span>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)">
           <i class="fas fa-circle-dot" style="color:var(--vt);font-size:.55rem;margin-top:6px;flex-shrink:0"></i>
-          <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Você já tentou implantar tecnologia antes — mas a equipe não usou, o processo não mudou e você ficou pagando por algo que ninguém adotou</span>
+          <span style="font-size:.83rem;color:#cbd5e1;line-height:1.65">Você já tentou implantar tecnologia antes — mas a equipe não usou, o processo não mudou e você ficou pagando por algo que ninguém adotou</span>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)">
           <i class="fas fa-circle-dot" style="color:var(--gr);font-size:.55rem;margin-top:6px;flex-shrink:0"></i>
-          <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Sua operação tem múltiplas áreas, e cada uma vive num silo — sem visibilidade cruzada para a gestão tomar decisão em tempo real</span>
+          <span style="font-size:.83rem;color:#cbd5e1;line-height:1.65">Sua operação tem múltiplas áreas, e cada uma vive num silo — sem visibilidade cruzada para a gestão tomar decisão em tempo real</span>
         </div>
       </div>
     </div>
@@ -1497,8 +1509,8 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
       <div style="position:relative;padding:36px;text-align:center">
         <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--cy);letter-spacing:.15em;font-weight:600;margin-bottom:14px">COMEÇA COM UMA CONVERSA</div>
         <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;color:var(--t1);margin-bottom:10px;letter-spacing:-.03em">Primeiro a gente entende.<br>Depois, se fizer sentido, a gente propõe.</div>
-        <p style="color:var(--t2);font-size:.85rem;margin-bottom:26px;line-height:1.75;max-width:460px;margin-left:auto;margin-right:auto">Sem proposta antecipada. Sem pitch de vendas. A primeira conversa é só para entender o que está acontecendo na sua operação — e ver se faz sentido trabalhar juntos.</p>
-        <a href="https://wa.me/5581991471765?text=Quero%20entender%20como%20funciona%20a%20consultoria%20da%20AutoGenius" target="_blank" class="btn-wa" style="display:inline-flex;font-size:.9rem;padding:14px 32px">
+        <p style="color:#cbd5e1;font-size:.85rem;margin-bottom:26px;line-height:1.75;max-width:460px;margin-left:auto;margin-right:auto">Sem proposta antecipada. Sem pitch de vendas. A primeira conversa é só para entender o que está acontecendo na sua operação — e ver se faz sentido trabalhar juntos.</p>
+        <a href="https://wa.me/5581991471765?text=Quero%20entender%20como%20funciona%20a%20consultoria%20da%20AutoGenius" target="_blank" rel="noopener noreferrer" class="btn-wa" style="display:inline-flex;font-size:.9rem;padding:14px 32px">
           <i class="fab fa-whatsapp"></i>Quero entender minha operação
         </a>
         <div style="margin-top:14px;font-size:.75rem;color:var(--t3)">Primeira conversa gratuita · Sem compromisso</div>
@@ -1531,9 +1543,9 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
     <div>
       <div style="color:var(--t1);font-weight:600;font-size:11.5px;margin-bottom:12px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Social</div>
       <div style="display:flex;gap:14px;margin-bottom:12px">
-        <a href="https://www.instagram.com/useautogenius/" target="_blank" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#ec4899'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/yuri-matos2002/" target="_blank" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-linkedin"></i></a>
-        <a href="https://wa.me/5581991471765" target="_blank" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/useautogenius/" target="_blank" rel="noopener noreferrer" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#ec4899'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/yuri-matos2002/" target="_blank" rel="noopener noreferrer" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/5581991471765" target="_blank" rel="noopener noreferrer" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-whatsapp"></i></a>
       </div>
       <a href="mailto:contato@useautogenius.com" style="color:var(--t2);font-size:11px;text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .2s" onmouseover="this.style.color='#06b6d4'" onmouseout="this.style.color='#94A3B8'"><i class="fas fa-envelope"></i>contato@useautogenius.com</a>
     </div>
@@ -1547,7 +1559,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 <!-- WA Float -->
 <div class="wa-float">
   <div class="wa-tt">Fale agora — resposta em minutos</div>
-  <a href="https://wa.me/5581991471765?text=Ol%C3%A1!" target="_blank" class="wa-fb" aria-label="WhatsApp">
+  <a href="https://wa.me/5581991471765?text=Ol%C3%A1!" target="_blank" rel="noopener noreferrer" class="wa-fb" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 </div>
@@ -1836,11 +1848,11 @@ const hero=document.getElementById('home'),spotlight=document.getElementById('sp
 if(hero&&spotlight){hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect();spotlight.style.background='radial-gradient(600px circle at '+(e.clientX-r.left)+'px '+(e.clientY-r.top)+'px,rgba(37,99,235,.11),transparent 65%)';spotlight.style.opacity='1';});hero.addEventListener('mouseleave',()=>{spotlight.style.opacity='0';});}
 
 /* ── Card shimmer ── */
-document.addEventListener('mousemove',e=>{document.querySelectorAll('.card').forEach(c=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});},{passive:true});
+if(window.matchMedia('(pointer:fine) and (min-width:1024px)').matches){let _cardRAF=false,_mx=0,_my=0;document.addEventListener('mousemove',e=>{_mx=e.clientX;_my=e.clientY;if(_cardRAF)return;_cardRAF=true;requestAnimationFrame(()=>{document.querySelectorAll('.card').forEach(c=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(_mx-r.left)+'px');c.style.setProperty('--my',(_my-r.top)+'px');});_cardRAF=false;});},{passive:true});}
 
 /* ── WA Demo ── */
 const conv=[{f:'client',t:'Oi, quanto custa uma consulta?'},{f:'agent',t:'Olá! A consulta custa R$150. Qual é o seu nome?'},{f:'client',t:'João'},{f:'agent',t:'Perfeito, João! Temos quinta 14h ou sexta 10h.'},{f:'client',t:'Quinta'},{f:'agent',t:'Agendado ✓ Confirmação enviada em instantes.'}];
-function runDemo(){const c=document.getElementById('wademo');if(!c)return;c.textContent='';let s=0;function next(){if(s>=conv.length){setTimeout(runDemo,4000);return;}const m=conv[s++],row=document.createElement('div'),span=document.createElement('span');row.className='wa-msg wa-msg--'+m.f;span.textContent=m.t;row.appendChild(span);c.appendChild(row);c.scrollTop=c.scrollHeight;setTimeout(next,m.f==='agent'?1600:950);}setTimeout(next,500);}
+function runDemo(){const c=document.getElementById('wademo');if(!c)return;c.textContent='';let s=0;function next(){if(s>=conv.length){if(!window.matchMedia('(max-width:767px)').matches)setTimeout(runDemo,5000);return;}const m=conv[s++],row=document.createElement('div'),span=document.createElement('span');row.className='wa-msg wa-msg--'+m.f;span.textContent=m.t;row.appendChild(span);c.appendChild(row);c.scrollTop=c.scrollHeight;setTimeout(next,m.f==='agent'?1400:850);}setTimeout(next,350);}
 runDemo();
 
 /* ── FAQ builder (DOM-only, no innerHTML) ── */
