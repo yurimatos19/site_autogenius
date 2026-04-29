@@ -1,57 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://useautogenius.com/</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://useautogenius.com/#consultoria</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://useautogenius.com/#treinamentos</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://useautogenius.com/#tecnologia</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://useautogenius.com/#cases</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://useautogenius.com/#sobre</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://useautogenius.com/#contato</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://useautogenius.com/#faq</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://useautogenius.com/"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://useautogenius.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es"    href="https://useautogenius.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://useautogenius.com/"/>
   </url>
   <url>
     <loc>https://useautogenius.com/llms.txt</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
 </urlset>
