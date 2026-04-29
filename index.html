@@ -179,7 +179,7 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
 /* ━━━━ Announcement bar ━━━━━━━━━━━━━━━━ */
 #topbar{display:flex;background:rgba(13,24,41,.95);border-bottom:1px solid var(--bord);
   padding:10px 20px;align-items:center;justify-content:center;gap:12px;
-  font-size:12.5px;font-weight:600;position:relative;z-index:101;text-decoration:none;cursor:pointer}
+  font-size:12.5px;font-weight:600;position:fixed;top:0;left:0;width:100%;z-index:102;text-decoration:none;cursor:pointer;box-sizing:border-box}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
 /* ━━━━ Nav ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -433,6 +433,10 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 
   /* 12. Scroll progress bar — não necessário no mobile */
   #spbar{display:none!important}
+
+  /* 13. Header — topbar some no mobile, nav sobe pra top:0 */
+  #topbar{display:none!important}
+  #nav{top:0!important}
 }
   </style>
 </head>
@@ -468,7 +472,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 <div id="spbar"></div>
 
 <!-- ── Announcement bar ─────────────────────── -->
-<a href="https://wa.me/5581991471765?text=Ol%C3%A1!" target="_blank" rel="noopener" id="topbar">
+<a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AutoGenius%20e%20quero%20saber%20como%20funciona." target="_blank" rel="noopener" id="topbar">
   <div style="width:6px;height:6px;background:#10B981;border-radius:50%;animation:pulse 2s infinite;flex-shrink:0"></div>
   <span data-i18n="topbar_ai" style="color:var(--t1)">Agentes de IA 24/7</span>
   <span style="color:var(--t3)">·</span>
@@ -495,7 +499,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
         <span class="nav-link" data-i18n="nav_contact" onclick="go('contato')">Contato</span>
       </div>
       <div style="display:flex;gap:8px;align-items:center">
-        <a id="nav-wa" href="https://wa.me/5581991471765?text=Ol%C3%A1!" target="_blank" class="btn-wa" style="padding:9px 18px;font-size:.8rem;display:none">
+        <a id="nav-wa" href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AutoGenius%20e%20quero%20saber%20como%20funciona." target="_blank" class="btn-wa" style="padding:9px 18px;font-size:.8rem;display:none">
           <i class="fab fa-whatsapp"></i>WhatsApp
         </a>
         <!-- Language selector -->
@@ -534,7 +538,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
     <span data-i18n="nav_cons" onclick="go('consultoria');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Consultoria</span>
     <span data-i18n="nav_faq" onclick="go('faq');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Dúvidas</span>
     <span data-i18n="nav_contact" onclick="go('contato');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Contato</span>
-    <a href="https://wa.me/5581991471765" target="_blank" class="btn-wa" style="justify-content:center;margin-top:16px">
+    <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AutoGenius%20e%20quero%20saber%20como%20funciona." target="_blank" class="btn-wa" style="justify-content:center;margin-top:16px">
       <i class="fab fa-whatsapp" style="font-size:1.2rem"></i><span data-i18n="nav_wa">Falar no WhatsApp</span>
     </a>
     <!-- Language selector inside mobile menu -->
@@ -581,7 +585,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
       </p>
 
       <div class="hero-btns reveal" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:60px">
-        <a data-i18n="hero_cta" href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20automatizar%20meu%20atendimento%20com%20IA." target="_blank" class="btn-wa" style="font-size:1rem;padding:15px 32px">
+        <a data-i18n="hero_cta" href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20um%20agente%20de%20IA%20no%20meu%20WhatsApp.%20Como%20come%C3%A7o%3F" target="_blank" class="btn-wa" style="font-size:1rem;padding:15px 32px">
           <i class="fab fa-whatsapp" style="font-size:1.2rem"></i>Falar agora no WhatsApp
         </a>
         <button data-i18n="hero_cta2" class="btn-ghost" onclick="scrollTo2('s4')">
@@ -926,7 +930,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_1dash">1 dashboard KPIs</span></div>
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_2int">2 integrações</span></div>
           </div>
-          <a href="https://wa.me/5581991471765?text=Plano%20Essencial" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'" data-i18n="plan_cta">Quero este plano</a>
+          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20G%C3%AAnio%20Essencial.%20Pode%20me%20dar%20mais%20detalhes%3F" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'" data-i18n="plan_cta">Quero este plano</a>
         </div>
 
         <!-- Avançado -->
@@ -941,7 +945,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_bi">BI funil por etapa</span></div>
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_4int">4 integrações</span></div>
           </div>
-          <a href="https://wa.me/5581991471765?text=Plano%20Avan%C3%A7ado" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'" data-i18n="plan_cta">Quero este plano</a>
+          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20G%C3%AAnio%20Avan%C3%A7ado.%20Pode%20me%20dar%20mais%20detalhes%3F" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'" data-i18n="plan_cta">Quero este plano</a>
         </div>
 
         <!-- Performance (Featured) -->
@@ -961,7 +965,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
               <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check plan-featured-check" style="font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_nps">NPS/CSAT automático</span></div>
               <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check plan-featured-check" style="font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_7int">7 integrações + webhooks</span></div>
             </div>
-            <a href="https://wa.me/5581991471765?text=Plano%20Performance" target="_blank" class="plan-featured-cta" data-i18n="plan_cta" style="display:block;text-align:center;padding:8px;border-radius:7px;font-size:11px;font-weight:700;text-decoration:none">Quero este plano</a>
+            <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20G%C3%AAnio%20Performance.%20Como%20funciona%3F" target="_blank" class="plan-featured-cta" data-i18n="plan_cta" style="display:block;text-align:center;padding:8px;border-radius:7px;font-size:11px;font-weight:700;text-decoration:none">Quero este plano</a>
           </div>
         </div>
 
@@ -977,7 +981,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_workflows">Workflows ilimitados</span></div>
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_rbac">RBAC (papéis/perfis)</span></div>
           </div>
-          <a href="https://wa.me/5581991471765?text=Plano%20Premium" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'" data-i18n="plan_cta">Quero este plano</a>
+          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20G%C3%AAnio%20Premium.%20Pode%20me%20ajudar%3F" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'" data-i18n="plan_cta">Quero este plano</a>
         </div>
 
         <!-- Elite -->
@@ -992,7 +996,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--vt);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_multi">Multi-unidade</span></div>
             <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--vt);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_security">Controles de segurança</span></div>
           </div>
-          <a href="https://wa.me/5581991471765?text=Plano%20Elite" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid rgba(124,58,237,.3);color:var(--vt);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(124,58,237,.6)';this.style.color='#a78bfa'" onmouseout="this.style.borderColor='rgba(124,58,237,.3)';this.style.color='#7C3AED'" data-i18n="plan_cta">Quero este plano</a>
+          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Plano%20G%C3%AAnio%20Elite%20e%20o%20que%20est%C3%A1%20incluso." target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid rgba(124,58,237,.3);color:var(--vt);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(124,58,237,.6)';this.style.color='#a78bfa'" onmouseout="this.style.borderColor='rgba(124,58,237,.3)';this.style.color='#7C3AED'" data-i18n="plan_cta">Quero este plano</a>
         </div>
       </div>
       </div><!-- /s7-scroll -->
@@ -1132,7 +1136,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
         Cada dia sem automação é dinheiro deixado na mesa.<br>A conversa é gratuita. A decisão é sua.
       </p>
       <div class="reveal">
-        <a href="https://wa.me/5581991471765?text=Estou%20pronto%20para%20comecar." target="_blank" class="btn-wa" style="font-size:1.05rem;padding:16px 42px;display:inline-flex;justify-content:center">
+        <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Estou%20pronto%20para%20come%C3%A7ar%20com%20a%20AutoGenius.%20Como%20avanço%3F" target="_blank" class="btn-wa" style="font-size:1.05rem;padding:16px 42px;display:inline-flex;justify-content:center">
           <i class="fab fa-whatsapp" style="font-size:1.25rem"></i><span data-i18n="s8_cta">Falar com a AutoGenius agora</span>
         </a>
       </div>
@@ -1162,7 +1166,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
     <span class="sec-label">Contato</span>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;margin-bottom:6px;letter-spacing:-.025em"><span data-i18n="cont_h1">Entre em</span> <span data-i18n="cont_h1b" style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">contato</span></h1>
     <p data-i18n="cont_sub" style="color:var(--t2);margin-bottom:24px;font-size:.9rem">Prefere uma resposta rápida? Fale direto no WhatsApp.</p>
-    <a href="https://wa.me/5581991471765?text=Ol%C3%A1!" target="_blank" class="btn-wa" style="width:100%;justify-content:center;margin-bottom:24px">
+    <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20AutoGenius%20e%20quero%20conversar%20com%20a%20equipe." target="_blank" class="btn-wa" style="width:100%;justify-content:center;margin-bottom:24px">
       <i class="fab fa-whatsapp" style="font-size:1.1rem"></i><span data-i18n="cont_wa">Falar no WhatsApp agora</span>
     </a>
     <div data-i18n="cont_or" style="text-align:center;color:var(--t3);font-size:10.5px;margin-bottom:20px;letter-spacing:.04em">— ou preencha o formulário —</div>
@@ -1207,34 +1211,79 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
       </div>
     </div>
 
-    <!-- Founder -->
-    <div style="margin-bottom:48px">
-      <div data-i18n="sobre_founder" style="color:var(--t1);font-weight:700;font-size:1.1rem;font-family:'Space Grotesk',sans-serif;margin-bottom:20px;letter-spacing:-.02em">Fundador</div>
-      <div class="card" style="padding:32px;display:flex;align-items:center;gap:32px;flex-wrap:wrap">
-        <div style="position:relative;flex-shrink:0">
-          <img src="image/yuri_founder.png" alt="Yuri Matos — CEO & Fundador" loading="eager" decoding="async"
-            style="width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:center top;display:block;border:3px solid rgba(37,99,235,.4);box-shadow:0 0 0 6px rgba(37,99,235,.08),0 12px 40px rgba(0,0,0,.5)">
-          <div style="position:absolute;bottom:6px;right:6px;width:20px;height:20px;background:#10B981;border-radius:50%;border:3px solid var(--bg-s)"></div>
+    <!-- Founder — editorial, não LinkedIn -->
+    <div style="margin-bottom:48px;position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,rgba(10,18,36,.98) 0%,rgba(14,24,46,.95) 100%);border:1px solid rgba(37,99,235,.14)">
+      <!-- grade sutil de fundo -->
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(37,99,235,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,.035) 1px,transparent 1px);background-size:36px 36px;pointer-events:none"></div>
+      <!-- barra de acento lateral -->
+      <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--b3) 0%,var(--cy) 100%)"></div>
+
+      <div style="position:relative;z-index:1;display:flex;gap:0;flex-wrap:wrap">
+
+        <!-- Foto editorial — retangular, não circular -->
+        <div style="flex:0 0 200px;position:relative;overflow:hidden;min-height:280px">
+          <img src="image/yuri_founder.png" alt="Yuri Matos" loading="eager" decoding="async"
+            style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;min-height:280px;filter:grayscale(12%) contrast(1.05)">
+          <!-- fade lateral para o conteúdo -->
+          <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent 50%,rgba(10,18,36,.92) 100%)"></div>
+          <!-- fade inferior no mobile -->
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,18,36,.95) 100%)"></div>
         </div>
-        <div style="flex:1;min-width:220px">
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.35rem;color:var(--t1);margin-bottom:4px;letter-spacing:-.025em">Yuri Matos</div>
-          <div style="font-size:.75rem;color:var(--cy);margin-bottom:14px;font-family:'Space Mono',monospace;letter-spacing:.06em">CEO & FUNDADOR · RECIFE, PE</div>
-          <p style="color:var(--t2);font-size:.88rem;line-height:1.75;max-width:520px;margin-bottom:16px">
-            Empreendedor e especialista em automação inteligente com IA. Criou a AutoGenius AI para democratizar o acesso a agentes de IA robustos, com plataforma própria, governança e resultados mensuráveis. Palestrante e consultor em IA para negócios no Nordeste.
-          </p>
+
+        <!-- Conteúdo -->
+        <div style="flex:1;min-width:260px;padding:36px 36px 36px 28px;display:flex;flex-direction:column;justify-content:center">
+          <span data-i18n="sobre_founder" style="font-family:'Space Mono',monospace;font-size:.58rem;color:var(--b3);letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:18px;opacity:.7">Fundador</span>
+
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3rem);color:var(--t1);line-height:.95;letter-spacing:-.045em;margin-bottom:6px">Yuri<br>Matos</div>
+          <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--cy);letter-spacing:.1em;margin-bottom:24px">RECIFE, PE</div>
+
+          <!-- Quote pessoal como lead, não bio de LinkedIn -->
+          <blockquote style="margin:0 0 20px;padding:14px 18px;background:rgba(37,99,235,.06);border-left:2px solid var(--b3);border-radius:0 8px 8px 0">
+            <p style="color:var(--t1);font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;line-height:1.65;font-style:italic;margin:0">
+              "Construo IA que funciona de verdade — não demo, não hype. Sistema que entra no ar e não sai mais."
+            </p>
+          </blockquote>
+
+          <!-- Stats editoriais, não bullets de currículo -->
+          <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:22px">
+            <div>
+              <div style="font-family:'Space Mono',monospace;font-size:1.25rem;font-weight:700;color:var(--t1);letter-spacing:-.03em">5k<span style="color:var(--b3)">+</span></div>
+              <div style="font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-top:2px">entregas</div>
+            </div>
+            <div style="width:1px;background:var(--bord)"></div>
+            <div>
+              <div style="font-family:'Space Mono',monospace;font-size:1.25rem;font-weight:700;color:var(--t1);letter-spacing:-.03em">GCN<span style="color:var(--cy)">'25</span></div>
+              <div style="font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-top:2px">Google Cloud</div>
+            </div>
+            <div style="width:1px;background:var(--bord)"></div>
+            <div>
+              <div style="font-family:'Space Mono',monospace;font-size:1.25rem;font-weight:700;color:var(--t1);letter-spacing:-.03em">CS<span style="color:var(--gr)">c.</span></div>
+              <div style="font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-top:2px">CESAR School</div>
+            </div>
+          </div>
+
+          <!-- Social — minimal, só ícones -->
           <div style="display:flex;gap:10px;align-items:center">
-            <a href="https://www.linkedin.com/in/yuri-matos2002/" target="_blank"
-              style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.2);color:var(--b3);font-size:.78rem;font-weight:600;text-decoration:none;font-family:'DM Sans',sans-serif;transition:background .2s"
-              onmouseover="this.style.background='rgba(37,99,235,.22)'" onmouseout="this.style.background='rgba(37,99,235,.12)'">
-              <i class="fab fa-linkedin"></i> LinkedIn
+            <a href="https://www.linkedin.com/in/yuri-matos2002/" target="_blank" title="LinkedIn"
+              style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--t2);font-size:.85rem;text-decoration:none;transition:all .2s"
+              onmouseover="this.style.background='rgba(37,99,235,.2)';this.style.color='var(--b3)';this.style.borderColor='rgba(37,99,235,.4)'"
+              onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='var(--t2)';this.style.borderColor='rgba(255,255,255,.1)'">
+              <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://www.instagram.com/useautogenius/" target="_blank"
-              style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;background:rgba(236,72,153,.08);border:1px solid rgba(236,72,153,.2);color:#f472b6;font-size:.78rem;font-weight:600;text-decoration:none;font-family:'DM Sans',sans-serif;transition:background .2s"
-              onmouseover="this.style.background='rgba(236,72,153,.18)'" onmouseout="this.style.background='rgba(236,72,153,.08)'">
-              <i class="fab fa-instagram"></i> Instagram
+            <a href="https://www.instagram.com/useautogenius/" target="_blank" title="Instagram"
+              style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--t2);font-size:.85rem;text-decoration:none;transition:all .2s"
+              onmouseover="this.style.background='rgba(236,72,153,.15)';this.style.color='#f472b6';this.style.borderColor='rgba(236,72,153,.3)'"
+              onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.color='var(--t2)';this.style.borderColor='rgba(255,255,255,.1)'">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5581991703773?text=Ol%C3%A1%20Yuri!%20Vi%20seu%20perfil%20no%20site%20da%20AutoGenius%20e%20gostaria%20de%20conversar." target="_blank" title="WhatsApp"
+              style="display:inline-flex;align-items:center;gap:7px;padding:7px 14px;height:34px;border-radius:8px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);color:var(--gr);font-size:.75rem;font-weight:600;text-decoration:none;font-family:'DM Sans',sans-serif;transition:all .2s;white-space:nowrap"
+              onmouseover="this.style.background='rgba(16,185,129,.18)'" onmouseout="this.style.background='rgba(16,185,129,.08)'">
+              <i class="fab fa-whatsapp"></i> Falar com Yuri
             </a>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -1598,7 +1647,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
       <div style="display:flex;gap:14px;margin-bottom:12px">
         <a href="https://www.instagram.com/useautogenius/" target="_blank" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#ec4899'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/yuri-matos2002/" target="_blank" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-linkedin"></i></a>
-        <a href="https://wa.me/5581991471765" target="_blank" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AutoGenius%20e%20quero%20saber%20mais." target="_blank" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-whatsapp"></i></a>
       </div>
       <a href="mailto:contato@useautogenius.com" style="color:var(--t2);font-size:11px;text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .2s" onmouseover="this.style.color='#06b6d4'" onmouseout="this.style.color='#94A3B8'"><i class="fas fa-envelope"></i>contato@useautogenius.com</a>
     </div>
@@ -1612,7 +1661,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 <!-- WA Float -->
 <div class="wa-float">
   <div data-i18n="wa_tooltip" class="wa-tt">Fale agora — resposta em minutos</div>
-  <a href="https://wa.me/5581991471765?text=Ol%C3%A1!" target="_blank" class="wa-fb" aria-label="WhatsApp">
+  <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AutoGenius.%20Tenho%20uma%20d%C3%BAvida." target="_blank" class="wa-fb" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 </div>
