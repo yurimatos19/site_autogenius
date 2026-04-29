@@ -319,6 +319,8 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
   backdrop-filter:blur(16px);transition:border-color .2s,box-shadow .2s;
   box-shadow:0 0 18px rgba(37,99,235,.15)}
 #audio-btn:hover{border-color:rgba(59,130,246,.5);box-shadow:0 0 28px rgba(37,99,235,.28)}
+@keyframes audioPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,0),0 0 18px rgba(37,99,235,.15)}55%{box-shadow:0 0 0 10px rgba(37,99,235,.2),0 0 28px rgba(37,99,235,.35)}}
+#audio-btn.audio-hint{animation:audioPulse 2s ease-in-out infinite;border-color:rgba(59,130,246,.5)}
 #audio-bars{display:flex;gap:2px;align-items:flex-end;height:12px}
 #audio-bars span{width:2px;background:var(--b3);border-radius:1px;transform:scaleY(.3)}
 #audio-bars.playing span{animation:bar 1s ease-in-out infinite}
@@ -2131,31 +2133,31 @@ bgAudio.volume=0.55;
 
 function _setAudioUI(on){
   document.getElementById('audio-bars').classList.toggle('playing',on);
-  const t=(typeof TRANSLATIONS!=='undefined'&&TRANSLATIONS[_curLang])||TRANSLATIONS.pt||{};
+  const t=(typeof TRANSLATIONS!=='undefined'&&TRANSLATIONS[_curLang])||(TRANSLATIONS&&TRANSLATIONS.pt)||{};
   document.getElementById('audio-label').textContent=on?(t.sound_off||'Pausar'):(t.sound_on||'Som');
 }
 
-function _tryPlay(){
-  bgAudio.play().then(()=>{isPlaying=true;_setAudioUI(true);}).catch(()=>{isPlaying=false;_setAudioUI(false);});
-}
-
 function toggleAudio(){
-  if(isPlaying){bgAudio.pause();isPlaying=false;_setAudioUI(false);}
-  else{_tryPlay();}
+  if(isPlaying){bgAudio.pause();isPlaying=false;_setAudioUI(false);return;}
+  bgAudio.play()
+    .then(()=>{isPlaying=true;_setAudioUI(true);document.getElementById('audio-btn').classList.remove('audio-hint');})
+    .catch(()=>{isPlaying=false;_setAudioUI(false);});
 }
 
-/* Desktop: tenta autoplay imediato ao carregar a página */
-_tryPlay();
-
-/* Mobile: no primeiro toque destrava o AudioContext do iOS e inicia o áudio.
-   Sem flag once — fica tentando até play() confirmar, aí remove o listener. */
-function _mobileTryPlay(){
-  if(isPlaying)return;
-  try{const AC=window.AudioContext||window.webkitAudioContext;if(AC){const c=new AC();c.resume().then(()=>c.close());}}catch(_){}
-  _tryPlay();
-}
-document.addEventListener('touchstart',_mobileTryPlay,{passive:true});
-bgAudio.addEventListener('play',()=>document.removeEventListener('touchstart',_mobileTryPlay),{once:true});
+/* Desktop: autoplay imediato ao carregar */
+bgAudio.play()
+  .then(()=>{isPlaying=true;_setAudioUI(true);})
+  .catch(()=>{
+    /* Mobile/iOS: autoplay bloqueado — hint pulsante no botão,
+       inicia no primeiro clique em qualquer lugar da página */
+    document.getElementById('audio-btn').classList.add('audio-hint');
+    function _unlock(e){
+      if(isPlaying||e.target.closest('#audio-btn'))return;
+      toggleAudio();
+    }
+    document.addEventListener('click',_unlock,{passive:true});
+    bgAudio.addEventListener('play',()=>document.removeEventListener('click',_unlock),{once:true});
+  });
 
 /* ── Bokeh city lights generator ── */
 (function(){
