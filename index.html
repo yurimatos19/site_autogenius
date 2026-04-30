@@ -1175,7 +1175,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 <!-- ══ FAQ ══════════════════════════════════ -->
 <div class="page" id="page-faq">
   <section style="padding:64px 24px;max-width:700px;margin:0 auto">
-    <span class="sec-label">FAQ</span>
+    <span class="sec-label" data-i18n="nav_faq">FAQ</span>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;margin-bottom:6px;letter-spacing:-.025em"><span data-i18n="faq_h1">Dúvidas</span> <span data-i18n="faq_h1b" style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">frequentes</span></h1>
     <p data-i18n="faq_sub" style="color:var(--t2);margin-bottom:32px;font-size:.9rem">Tudo que você precisa saber antes de começar.</p>
     <div style="display:flex;flex-direction:column;gap:8px" id="faqlist"></div>
@@ -1185,7 +1185,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 <!-- ══ CONTATO ══════════════════════════════ -->
 <div class="page" id="page-contato">
   <section style="padding:64px 24px;max-width:520px;margin:0 auto">
-    <span class="sec-label">Contato</span>
+    <span class="sec-label" data-i18n="nav_contact">Contato</span>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;margin-bottom:6px;letter-spacing:-.025em"><span data-i18n="cont_h1">Entre em</span> <span data-i18n="cont_h1b" style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">contato</span></h1>
     <p data-i18n="cont_sub" style="color:var(--t2);margin-bottom:24px;font-size:.9rem">Prefere uma resposta rápida? Fale direto no WhatsApp.</p>
     <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20AutoGenius%20e%20quero%20conversar%20com%20a%20equipe." target="_blank" class="btn-wa" style="width:100%;justify-content:center;margin-bottom:24px">
@@ -1205,7 +1205,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 <!-- ══ SOBRE ══════════════════════════════════ -->
 <div class="page" id="page-sobre">
   <section style="padding:64px 24px 40px;max-width:820px;margin:0 auto">
-    <span class="sec-label">Sobre</span>
+    <span class="sec-label" data-i18n="nav_about">Sobre</span>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:12px">
       <span data-i18n="sobre_h1">Somos a</span> <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">AutoGenius AI</span>
     </h1>
@@ -1440,7 +1440,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 <!-- ══ PALESTRA ══════════════════════════════ -->
 <div class="page" id="page-palestra">
   <section style="padding:64px 24px;max-width:820px;margin:0 auto">
-    <span class="sec-label">Palestra</span>
+    <span class="sec-label" data-i18n="nav_talk">Palestra</span>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:12px">
       <span data-i18n="talk_h1">IA aplicada a</span> <span data-i18n="talk_h1b" style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">negócios reais</span>
     </h1>
@@ -1801,7 +1801,7 @@ const TRANSLATIONS={
     mission_label:'NOSSA MISSÃO',mission_text:'"Tornar inteligência artificial aplicada acessível para qualquer empresa que queira crescer — independente do tamanho, do setor ou da cidade."',
     footer_tagline:'IA que executa para o crescimento do seu negócio.',footer_prod:'Produto',footer_social:'Social',footer_faq:'Dúvidas',footer_contact:'Contato',footer_copy:'© 2026 AutoGenius AI. Feito com ❤️ em Recife, Brasil.',
     p0_stat1:'Tempo médio',p0_stat2:'Disponível',p0_sim_label:'SIMULAÇÃO DE ATENDIMENTO',p0_client:'Oi! Vocês têm horário disponível hoje?',p0_agent:'Olá! Sim, temos 14h e 16h disponíveis. Qual prefere? 😊',p0_replied:'respondeu em 1.2s',
-    p1_stat1:'Conversão',p1_stat2:'Triagem manual',
+    p1_stat1:'Conversão',p1_stat2:'Triagem manual',lead_card:'PERFIL DO LEAD · AUTOMÁTICO',lead_intent:'Intenção de compra',lead_intent_val:'Alta ●',lead_budget:'Orçamento estimado',lead_status:'Status',lead_status_val:'Pronto p/ fechar',
     p2_stat1:'No-show',p2_stat2:'Agendas',p2_card_label:'AGENDA · QUINTA-FEIRA',p2_confirmed:'✓ confirmado',p2_avail:'Disponível',
     p3_stat1:'Recuperação',p3_stat2:'Sequências',p3_seq_label:'SEQUÊNCIA DE FOLLOW-UP',p3_s1h:'24h — Lembrança',p3_s1t:'"Oi! Ainda posso ajudar você hoje?" ✓ enviado',p3_s2h:'72h — Valor',p3_s2t:'"Veja o que nossos clientes dizem..." ✓ enviado',p3_s3h:'7d — Última chance',p3_s3t:'Agendado para envio',
     talk_themes_h:'Temas disponíveis',talk_formats_h:'Formatos',
@@ -1906,7 +1906,7 @@ const TRANSLATIONS={
     mission_label:'OUR MISSION',mission_text:'"Make applied artificial intelligence accessible to any company that wants to grow — regardless of size, sector or city."',
     footer_tagline:'AI that executes for the growth of your business.',footer_prod:'Product',footer_social:'Social',footer_faq:'FAQ',footer_contact:'Contact',footer_copy:'© 2026 AutoGenius AI. Made with ❤️ in Recife, Brazil.',
     p0_stat1:'Avg. response',p0_stat2:'Available',p0_sim_label:'SUPPORT SIMULATION',p0_client:'Hi! Do you have any slots available today?',p0_agent:'Hello! Yes, we have 2pm and 4pm available. Which do you prefer? 😊',p0_replied:'replied in 1.2s',
-    p1_stat1:'Conversion',p1_stat2:'Manual screening',
+    p1_stat1:'Conversion',p1_stat2:'Manual screening',lead_card:'LEAD PROFILE · AUTOMATIC',lead_intent:'Purchase intent',lead_intent_val:'High ●',lead_budget:'Estimated budget',lead_status:'Status',lead_status_val:'Ready to close',
     p2_stat1:'No-show',p2_stat2:'Calendars',p2_card_label:'SCHEDULE · THURSDAY',p2_confirmed:'✓ confirmed',p2_avail:'Available',
     p3_stat1:'Recovery',p3_stat2:'Sequences',p3_seq_label:'FOLLOW-UP SEQUENCE',p3_s1h:'24h — Reminder',p3_s1t:'"Hi! Can I still help you today?" ✓ sent',p3_s2h:'72h — Value',p3_s2t:'"See what our customers say..." ✓ sent',p3_s3h:'7d — Last chance',p3_s3t:'Scheduled to send',
     talk_themes_h:'Available topics',talk_formats_h:'Formats',
@@ -2011,7 +2011,7 @@ const TRANSLATIONS={
     mission_label:'NUESTRA MISIÓN',mission_text:'"Hacer la inteligencia artificial aplicada accesible para cualquier empresa que quiera crecer — independientemente del tamaño, el sector o la ciudad."',
     footer_tagline:'IA que ejecuta para el crecimiento de tu negocio.',footer_prod:'Producto',footer_social:'Social',footer_faq:'Preguntas',footer_contact:'Contacto',footer_copy:'© 2026 AutoGenius AI. Hecho con ❤️ en Recife, Brasil.',
     p0_stat1:'Tiempo prom.',p0_stat2:'Disponible',p0_sim_label:'SIMULACIÓN DE ATENCIÓN',p0_client:'¡Hola! ¿Tienen horario disponible hoy?',p0_agent:'¡Hola! Sí, tenemos 14h y 16h disponibles. ¿Cuál prefieres? 😊',p0_replied:'respondió en 1.2s',
-    p1_stat1:'Conversión',p1_stat2:'Triaje manual',
+    p1_stat1:'Conversión',p1_stat2:'Triaje manual',lead_card:'PERFIL DEL LEAD · AUTOMÁTICO',lead_intent:'Intención de compra',lead_intent_val:'Alta ●',lead_budget:'Presupuesto estimado',lead_status:'Estado',lead_status_val:'Listo para cerrar',
     p2_stat1:'No-show',p2_stat2:'Agendas',p2_card_label:'AGENDA · JUEVES',p2_confirmed:'✓ confirmado',p2_avail:'Disponible',
     p3_stat1:'Recuperación',p3_stat2:'Secuencias',p3_seq_label:'SECUENCIA DE SEGUIMIENTO',p3_s1h:'24h — Recordatorio',p3_s1t:'"¡Hola! ¿Puedo ayudarte hoy?" ✓ enviado',p3_s2h:'72h — Valor',p3_s2t:'"Mira lo que dicen nuestros clientes..." ✓ enviado',p3_s3h:'7d — Última oportunidad',p3_s3t:'Programado para enviar',
     talk_themes_h:'Temas disponibles',talk_formats_h:'Formatos',
@@ -2116,7 +2116,7 @@ const TRANSLATIONS={
     mission_label:'UNSERE MISSION',mission_text:'"Angewandte künstliche Intelligenz für jedes Unternehmen zugänglich machen, das wachsen möchte — unabhängig von Größe, Branche oder Stadt."',
     footer_tagline:'KI, die für das Wachstum Ihres Unternehmens handelt.',footer_prod:'Produkt',footer_social:'Social',footer_faq:'FAQ',footer_contact:'Kontakt',footer_copy:'© 2026 AutoGenius AI. Gemacht mit ❤️ in Recife, Brasilien.',
     p0_stat1:'Ø Antwortzeit',p0_stat2:'Verfügbar',p0_sim_label:'SUPPORT-SIMULATION',p0_client:'Hallo! Haben Sie heute freie Termine?',p0_agent:'Hallo! Ja, wir haben 14 Uhr und 16 Uhr frei. Was passt Ihnen? 😊',p0_replied:'geantwortet in 1,2s',
-    p1_stat1:'Konversion',p1_stat2:'Manuelle Sichtung',
+    p1_stat1:'Konversion',p1_stat2:'Manuelle Sichtung',lead_card:'LEAD-PROFIL · AUTOMATISCH',lead_intent:'Kaufabsicht',lead_intent_val:'Hoch ●',lead_budget:'Geschätztes Budget',lead_status:'Status',lead_status_val:'Kaufbereit',
     p2_stat1:'No-show',p2_stat2:'Kalender',p2_card_label:'TERMINE · DONNERSTAG',p2_confirmed:'✓ bestätigt',p2_avail:'Verfügbar',
     p3_stat1:'Rückgewinnung',p3_stat2:'Sequenzen',p3_seq_label:'FOLLOW-UP-SEQUENZ',p3_s1h:'24h — Erinnerung',p3_s1t:'"Hallo! Kann ich Ihnen noch heute helfen?" ✓ gesendet',p3_s2h:'72h — Mehrwert',p3_s2t:'"Sehen Sie, was unsere Kunden sagen..." ✓ gesendet',p3_s3h:'7d — Letzte Chance',p3_s3t:'Für den Versand geplant',
     talk_themes_h:'Verfügbare Themen',talk_formats_h:'Formate',
@@ -2221,7 +2221,7 @@ const TRANSLATIONS={
     mission_label:'我们的使命',mission_text:'"让应用人工智能对任何想要增长的企业都触手可及——无论规模大小、所属行业或所在城市。"',
     footer_tagline:'AI助力您的业务增长。',footer_prod:'产品',footer_social:'社交',footer_faq:'常见问题',footer_contact:'联系',footer_copy:'© 2026 AutoGenius AI. 用❤️制作于巴西累西腓。',
     p0_stat1:'平均响应',p0_stat2:'随时在线',p0_sim_label:'客服模拟',p0_client:'你好！今天有空档吗？',p0_agent:'您好！有，下午2点和4点都有空。您更喜欢哪个时间？😊',p0_replied:'1.2秒内回复',
-    p1_stat1:'转化率',p1_stat2:'人工筛选',
+    p1_stat1:'转化率',p1_stat2:'人工筛选',lead_card:'线索档案 · 自动',lead_intent:'购买意向',lead_intent_val:'高 ●',lead_budget:'预计预算',lead_status:'状态',lead_status_val:'准备成交',
     p2_stat1:'爽约率',p2_stat2:'日历',p2_card_label:'日程 · 周四',p2_confirmed:'✓ 已确认',p2_avail:'空闲',
     p3_stat1:'找回率',p3_stat2:'序列数',p3_seq_label:'跟进序列',p3_s1h:'24小时 — 提醒',p3_s1t:'"您好！今天我还能帮您吗？" ✓ 已发送',p3_s2h:'72小时 — 价值',p3_s2t:'"看看我们的客户怎么说..." ✓ 已发送',p3_s3h:'7天 — 最后机会',p3_s3t:'已计划发送',
     talk_themes_h:'可用主题',talk_formats_h:'形式',
