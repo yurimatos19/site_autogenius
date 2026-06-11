@@ -41,7 +41,12 @@ auto_genius/
 
 - O site principal continua sem build system; o jogo é um projeto Vite isolado
   em `mundo-src/`, cujo build estático é publicado em `/mundo/`.
-- Única mudança no site atual: nova aba **"Mundo AG"** no menu apontando para `/mundo/`.
+- Única mudança no site atual: nova aba **"Mundo AG"** no menu — link simples
+  `href="/mundo/"` (não segue o padrão SPA `onclick="go(...)"` das outras abas).
+  "Mundo AG" é nome de marca: invariante, sem chave i18n.
+- Deploy: verificar que o host atual serve o subpath `/mundo/` como estático.
+  Procedimento de atualização do jogo: `npm run build` em `mundo-src/` →
+  copiar dist para `/mundo/` → commit. Documentar em `mundo-src/README.md`.
 
 ### Stack (herdada do folio-2025)
 
@@ -61,12 +66,12 @@ então a troca é modular.
 |---|---|---|
 | Landing (spawn) | **Spawn AG** | Letreiro 3D "AUTO GENIUS" derrubável + headline "Enquanto você dormia, um concorrente respondeu o seu cliente." no chão |
 | Career | **Zona Agentes de IA** | Totens interativos por agente (vendas, atendimento, tarefas); cada um abre modal com demo simulada de conversa WhatsApp |
-| Projects | **Zona Cases & Clientes** | Outdoors com logos de clientes e números reais; aproximar revela resultado/depoimento |
+| Projects | **Zona Cases & Clientes** | Outdoors com logos de clientes e números reais; aproximar revela resultado/depoimento. Todo o copy (logos, números, depoimentos, scripts das demos de WhatsApp) é extraído das seções existentes do `index.html` — nunca inventado |
 | Social | **Zona Consultoria & Fundador** | Foto do fundador, credencial Google Cloud Next '25, botão para página de consultoria |
 | Lab | **Minigame de Leads** | Ver seção abaixo |
 | Bowling | Mantida | Diversão (conquistas adaptadas) |
 | Circuit | Mantida | Corrida com cronômetro |
-| Jukebox | Mantida | Toca a trilha NCS já usada pelo site ("Spektrem - Shine") |
+| Jukebox | Mantida | Toca a trilha NCS já usada pelo site ("Spektrem - Shine"). Nota: o jukebox não é uma Area — vive no sistema de áudio (`Audio.js`/`Game.js`); a troca de trilha é mudança de áudio, não de área |
 | Achievements | Mantida (adaptada) | Conquistas AG: "Respondeu 10 leads", "Visitou todas as zonas", strike no boliche etc. |
 | Toilet, Altar, TimeMachine, BehindTheScene, Cookie, Easter | **Removidas** | Sem propósito comercial; menos download e menos limpeza |
 
@@ -115,7 +120,9 @@ Varredura completa e remoção/substituição de:
 ## Critérios de sucesso
 
 1. `/mundo/` carrega e roda em desktop e mobile (joystick virtual) sem erros
-2. As 4 zonas apresentam conteúdo Auto Genius com CTAs de WhatsApp funcionais
+2. As 4 zonas apresentam conteúdo Auto Genius com CTAs de WhatsApp funcionais —
+   mesmo número do site (`wa.me/5581991471765`) com mensagem pré-preenchida
+   específica do jogo (ex: "Vim do Mundo AG...") para distinguir leads na origem
 3. Minigame de Leads jogável do início ao fim com a mensagem de conversão
 4. Nenhum conteúdo pessoal do Bruno visível (textos, fotos, áudio, links, metadados)
 5. Mundo re-pintado: noturno, roxo, acentos verdes — coerente com o site
