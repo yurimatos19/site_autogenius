@@ -441,6 +441,23 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
   #nav{top:0!important}
 }
   </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2464162037434399');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -2280,32 +2297,7 @@ function toggleAudio(){
     .catch(()=>{isPlaying=false;_setAudioUI(false);});
 }
 
-/* Desktop: autoplay imediato ao carregar */
-bgAudio.play()
-  .then(()=>{isPlaying=true;_setAudioUI(true);})
-  .catch(()=>{
-    /* Mobile/iOS: autoplay bloqueado.
-       touchstart dispara no PRIMEIRO CONTATO do dedo — antes de qualquer scroll
-       ou tap completar. É o momento mais cedo possível no iOS.
-       click fica como fallback para desktop com política mais restrita. */
-    document.getElementById('audio-btn').classList.add('audio-hint');
-    let _trying=false;
-    function _unlock(e){
-      if(isPlaying||_trying)return;
-      /* Se o toque for no botão de áudio, o onclick já cuida */
-      if(e.type==='touchstart'&&e.target.closest('#audio-btn'))return;
-      _trying=true;
-      bgAudio.play()
-        .then(()=>{isPlaying=true;_trying=false;_setAudioUI(true);document.getElementById('audio-btn').classList.remove('audio-hint');})
-        .catch(()=>{_trying=false;});
-    }
-    document.addEventListener('touchstart',_unlock,{passive:true});
-    document.addEventListener('click',_unlock,{passive:true});
-    bgAudio.addEventListener('play',()=>{
-      document.removeEventListener('touchstart',_unlock);
-      document.removeEventListener('click',_unlock);
-    },{once:true});
-  });
+/* O áudio agora é iniciado manualmente através do botão */
 
 /* ── Bokeh city lights generator ── */
 (function(){
