@@ -117,6 +117,8 @@
   --t2:      #94A3B8;
   --t3:      #475569;
   --t4:      #2d3f57;
+  --or:      #f97316;
+  --tq:      #14b8a6;
   --bord:    rgba(255,255,255,.065);
   --bord-a:  rgba(59,130,246,.38);
   --grad:    linear-gradient(135deg,#1d4ed8,#2563EB,#06b6d4);
@@ -183,6 +185,18 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
   padding:10px 20px;align-items:center;justify-content:center;gap:12px;
   font-size:12.5px;font-weight:600;position:fixed;top:0;left:0;width:100%;z-index:102;text-decoration:none;cursor:pointer;box-sizing:border-box}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+
+/* Desktop Nav Visibility Rules */
+#burger { display: none!important; }
+#navlinks { display: flex!important; gap: 20px; align-items: center; }
+#nav-wa { display: inline-flex!important; }
+
+@media(max-width:767px){
+  #burger { display: flex!important; }
+  #navlinks { display: none!important; }
+  #nav-wa { display: none!important; }
+}
 
 /* ━━━━ Nav ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 #nav{position:fixed;top:37px;width:100%;z-index:100}
@@ -341,106 +355,84 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:48px;height:4
 #lang-dd.open{display:block}
 .lang-opt{padding:7px 12px;border-radius:7px;font-size:.82rem;cursor:pointer;color:var(--t2);transition:background .15s,color .15s;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:8px}
 .lang-opt:hover,.lang-opt.active{background:rgba(37,99,235,.12);color:var(--t1)}
-@media(max-width:767px){#lang-btn{padding:6px 9px!important;font-size:.65rem!important}}
-
-/* ━━━━ Scrollbar ━━━━━━━━━━━━━━━━━━━━━━━ */
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:rgba(255,255,255,.09);border-radius:999px}
-
-/* ━━━━ Responsive ━━━━━━━━━━━━━━━━━━━━━━ */
-@media(min-width:1024px){#navlinks{display:flex!important}#nav-wa{display:inline-flex!important}#burger{display:none!important}.bar-extra{display:inline!important}}
-@media(max-width:1023px){.s4-grid{grid-template-columns:1fr!important}.s5-grid{grid-template-columns:1fr!important}}
-@media(max-width:640px){.s5-grid{grid-template-columns:1fr!important}.hero-btns{flex-direction:column!important}}
-/* Pricing scroll on non-desktop */
-@media(max-width:1100px){
-  .s7-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:12px;
-    margin-left:-24px;margin-right:-24px;padding-left:24px;padding-right:24px;
-    scrollbar-width:thin;scrollbar-color:rgba(59,130,246,.2) transparent}
-  .s7-scroll::-webkit-scrollbar{height:3px}
-  .s7-scroll::-webkit-scrollbar-thumb{background:rgba(59,130,246,.25);border-radius:99px}
-  .s7-grid{display:flex!important;width:max-content;gap:10px!important}
-  .s7-grid>div{width:220px!important;flex-shrink:0}
-}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.reveal-l{opacity:1!important;transform:none!important}}
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   MOBILE PERFORMANCE — otimizações críticas
-   Maioria dos usuários vem do mobile
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 @media(max-width:767px){
-  /* 1. Textos visíveis imediatamente — sem esperar JS/IntersectionObserver */
-  .reveal,.reveal-l{
-    opacity:1!important;
-    transform:none!important;
-    transition:none!important
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden!important;
+    width: 100%!important;
   }
 
-  /* 2. Custom cursor — inútil em touch, cria compositor layers desnecessários */
-  *{cursor:auto!important}
-  #cur-dot,#cur-ring{display:none!important}
-
-  /* 3. Background — imagem menor (768px) + sem kenburns no mobile */
-  #bg-img{
-    background-image:url('https://images.pexels.com/photos/17298658/pexels-photo-17298658.jpeg?auto=compress&cs=tinysrgb&w=768')!important;
-    animation:none!important;
-    transform:scale(1.04);
+  /* 1. Textos visíveis imediatamente no mobile */
+  .reveal, .reveal-l {
+    opacity: 1!important;
+    transform: none!important;
+    transition: none!important;
   }
 
-  /* 4. Efeitos de partículas/overlay — desabilitados no mobile */
-  #bokeh{display:none!important}
-  #noise{display:none!important}
-  #aurora{display:none!important}
+  /* 2. Custom cursor — desativado no mobile */
+  * { cursor: auto!important; }
+  #cur-dot, #cur-ring { display: none!important; }
 
-  /* 5. backdrop-filter blur — maior destruidor de GPU no mobile */
-  .card,.card-grad-border{
-    backdrop-filter:none!important;
-    -webkit-backdrop-filter:none!important;
-    background:rgba(13,24,41,.97)!important
-  }
-  .nav-inner{
-    backdrop-filter:none!important;
-    -webkit-backdrop-filter:none!important;
-    background:rgba(8,14,26,.99)!important
-  }
-  #mmenu{
-    backdrop-filter:none!important;
-    -webkit-backdrop-filter:none!important
+  /* 3. Efeitos visuais pesados — desativados no mobile */
+  #bokeh, #noise, #aurora, #spbar, #topbar { display: none!important; }
+  #nav { top: 0!important; }
+
+  /* 4. GPU Performance — sem backdrop blur no mobile */
+  .card, .card-grad-border, .nav-inner, #mmenu {
+    backdrop-filter: none!important;
+    -webkit-backdrop-filter: none!important;
+    background: rgba(13,24,41,.98)!important;
   }
 
-  /* 6. Audio button — compacto no mobile */
-  #audio-btn{padding:7px 13px!important;font-size:9.5px!important;bottom:16px!important;left:12px!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-
-  /* 7. Feature panels — força 1 coluna no mobile */
-  .fpanel.active{
-    display:flex!important;
-    flex-direction:column!important;
-    gap:20px!important
+  /* 5. Ajustes de Padding de Seções */
+  section {
+    padding-top: 44px!important;
+    padding-bottom: 44px!important;
+    padding-left: 16px!important;
+    padding-right: 16px!important;
   }
 
-  /* 8. Gradiente de background no lugar da imagem pesada */
-  body{
-    background:linear-gradient(160deg,#080e1a 0%,#0c1524 60%,#080e1a 100%)!important
+  /* 6. Grids empilhadas em 1 coluna no celular */
+  .s4-grid, .s5-grid, .s7-grid, .fpanel.active,
+  #cockpit-metrics, #trust-cards, #int-grid, #pillars-grid,
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns:repeat(3,1fr)"],
+  div[style*="grid-template-columns:repeat(4,1fr)"],
+  div[style*="grid-template-columns:repeat(5,1fr)"] {
+    grid-template-columns: 1fr!important;
+    gap: 16px!important;
   }
 
-  /* 9. Espaçamento excessivo — reduzir padding de seções no mobile */
-  section[style*="padding:96px"]{padding-top:52px!important;padding-bottom:52px!important}
-  section[style*="padding:108px"]{padding-top:60px!important;padding-bottom:60px!important}
+  /* 7. Calculadora no Mobile */
+  #calc-section div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr!important;
+    gap: 24px!important;
+  }
 
-  /* 10. Seção break S3 — min-height enorme cria espaço vazio no mobile */
-  section[style*="min-height:42vh"]{min-height:unset!important;padding:40px 24px!important}
+  /* 8. Botões e CTAs — Touch Friendly */
+  .btn-wa, .btn-blue, .btn-ghost {
+    width: 100%!important;
+    justify-content: center!important;
+    padding: 14px 20px!important;
+    font-size: .92rem!important;
+  }
 
-  /* 11. Hero section — reduzir padding bottom */
-  #home{padding-bottom:52px!important}
+  /* 9. Tabela de Comparativo (Battlecard) no Mobile — Scroll Horizontal Suave */
+  #battlecard-section div[style*="overflow-x:auto"] {
+    -webkit-overflow-scrolling: touch!important;
+    margin: 0 -8px!important;
+  }
+  #battlecard-section table {
+    min-width: 600px!important;
+  }
 
-  /* 12. Scroll progress bar — não necessário no mobile */
-  #spbar{display:none!important}
-
-  /* 13. Header — topbar some no mobile, nav sobe pra top:0 */
-  #topbar{display:none!important}
-  #nav{top:0!important}
+  /* 10. Hero Section */
+  #home {
+    padding-top: 76px!important;
+    padding-bottom: 40px!important;
+  }
 }
-  </style>
+</style>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -491,6 +483,10 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 <div id="spbar"></div>
 
 <!-- ── Announcement bar ─────────────────────── -->
+<div id="wa-tooltip-badge" style="position:fixed;bottom:92px;right:24px;z-index:998;background:rgba(13,24,41,.92);border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:6px 14px;font-size:.72rem;color:var(--t1);font-family:'Space Grotesk',sans-serif;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 4px 20px rgba(0,0,0,.4)">
+  <div style="width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite"></div>
+  <span>Resposta em &lt; 1 min</span>
+</div>
 <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AutoGenius%20e%20quero%20saber%20como%20funciona." target="_blank" rel="noopener" id="topbar">
   <div style="width:6px;height:6px;background:#10B981;border-radius:50%;animation:pulse 2s infinite;flex-shrink:0"></div>
   <span data-i18n="topbar_ai" style="color:var(--t1)">Agentes de IA 24/7</span>
@@ -506,7 +502,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       <span onclick="go('home')" style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;cursor:pointer;letter-spacing:-.025em">
         <span style="color:var(--t1)">Auto</span><span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Genius</span><span style="color:var(--t1)">AI</span>
       </span>
-      <div id="navlinks" style="display:none;gap:28px;align-items:center">
+      <div id="navlinks" style="display:flex;gap:28px;align-items:center">
         <span class="nav-link" data-i18n="nav_home" onclick="go('home')">Início</span>
         <span class="nav-link" data-i18n="nav_sol" onclick="go('home');scrollTo2('s4')">Solução</span>
         <span class="nav-link" data-i18n="nav_cases" onclick="go('home');scrollTo2('s5')">Cases</span>
@@ -598,9 +594,8 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
         <span data-i18n="hero_line3" style="color:var(--t1)">o seu cliente.</span>
       </h1>
 
-      <p data-i18n="hero_sub" class="reveal" style="color:var(--t2);font-size:clamp(.95rem,2vw,1.15rem);line-height:1.75;margin-bottom:42px;max-width:560px;margin-left:auto;margin-right:auto">
-        Agentes de IA que respondem, qualificam e fecham vendas no WhatsApp —
-        <strong style="color:var(--t1);font-weight:600">24 horas por dia, 7 dias por semana.</strong>
+      <p data-i18n="hero_sub" class="reveal" style="color:var(--t2);font-size:clamp(.95rem,2vw,1.15rem);line-height:1.75;margin-bottom:42px;max-width:620px;margin-left:auto;margin-right:auto">
+        IA especializada para <strong style="color:var(--t1)">Carros, Clínicas, Imóveis e Escolas</strong>. Responde, qualifica e agenda no WhatsApp <strong style="color:var(--t1)">24/7 em menos de 3 segundos</strong>.
       </p>
 
       <div class="hero-btns reveal" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:18px">
@@ -710,97 +705,77 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 
   <div class="sdiv"></div>
 
-  <!-- S4b · FEATURE TABS ──────────────────── -->
-  <section style="padding:96px 24px;background:rgba(13,24,41,.4)">
-    <div style="max-width:1100px;margin:0 auto">
-      <span data-i18n="s4b_label" class="sec-label reveal">2.1 · O que seu Agente faz</span>
-      <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:700;letter-spacing:-.025em;margin-bottom:32px">
-        <span data-i18n="s4b_h2">Escolha o que automatizar</span> <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent" data-i18n="s4b_h2b">primeiro.</span>
-      </h2>
-      <div class="feature-tabs" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px">
-        <button data-i18n="tab_0" class="ftab active" onclick="switchTab(0)">01 · Atendimento</button>
-        <button data-i18n="tab_1" class="ftab" onclick="switchTab(1)">02 · Qualificação</button>
-        <button data-i18n="tab_2" class="ftab" onclick="switchTab(2)">03 · Agendamento</button>
-        <button data-i18n="tab_3" class="ftab" onclick="switchTab(3)">04 · Follow-up</button>
+  <!-- S_CALC · CALCULADORA DE IMPACTO ──────────────────── -->
+  <section id="calc-section" style="padding:80px 24px;background:rgba(13,24,41,.6);position:relative;overflow:hidden">
+    <div style="max-width:960px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:36px">
+        <span class="sec-label reveal">1.1 · Calculadora de Impacto</span>
+        <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;letter-spacing:-.025em;margin-bottom:10px">
+          Descubra quanto dinheiro <span style="background:linear-gradient(135deg,#f87171,#ef4444);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">você deixa na mesa.</span>
+        </h2>
+        <p class="reveal" style="color:var(--t2);font-size:.9rem;max-width:600px;margin:0 auto">
+          Configure seu volume de leads e ticket médio para ver a estimativa real de vendas perdidas por falta de resposta imediata à noite e nos fins de semana.
+        </p>
       </div>
-      <!-- Panel 0 -->
-      <div id="ftpanel-0" class="fpanel active" style="grid-template-columns:1fr 1fr;gap:48px;align-items:center">
-        <div>
-          <div data-i18n="p0_kicker" style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--b3);letter-spacing:.06em;margin-bottom:14px">ATENDIMENTO 24/7</div>
-          <h3 data-i18n="p0_h3" style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--t1);letter-spacing:-.02em;margin-bottom:14px">Responda em segundos,<br>não em horas.</h3>
-          <p data-i18n="p0_desc" style="color:var(--t2);font-size:.9rem;line-height:1.72;margin-bottom:20px">Seu Agente responde qualquer mensagem no WhatsApp instantaneamente — fins de semana, madrugada, feriado. Sem pausas.</p>
-          <div style="display:flex;gap:12px">
-            <div style="text-align:center;background:rgba(37,99,235,.07);border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:14px 20px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.4rem;color:var(--b3)">&lt;3s</div><div data-i18n="p0_stat1" style="font-size:10px;color:var(--t3);margin-top:3px">Tempo médio</div></div>
-            <div style="text-align:center;background:rgba(6,182,212,.07);border:1px solid rgba(6,182,212,.15);border-radius:10px;padding:14px 20px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.4rem;color:var(--cy)">24/7</div><div data-i18n="p0_stat2" style="font-size:10px;color:var(--t3);margin-top:3px">Disponível</div></div>
+
+      <div class="card reveal" style="padding:32px;border-color:rgba(239,68,68,.25);background:linear-gradient(145deg,rgba(13,24,41,.92),rgba(8,14,26,.98))">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+          
+          <!-- Controls Column -->
+          <div style="display:flex;flex-direction:column;gap:24px">
+            
+            <!-- Segment preset selector -->
+            <div>
+              <label style="display:block;font-size:.78rem;font-weight:600;color:var(--t1);margin-bottom:10px;font-family:'Space Grotesk',sans-serif">1. Selecione o seu segmento:</label>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                <button type="button" onclick="setCalcSegment('carros', 150, 4500)" class="calc-seg-btn active" id="cseg-carros" style="padding:9px 12px;border-radius:8px;border:1px solid rgba(249,115,22,.35);background:rgba(249,115,22,.12);color:var(--t1);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s;font-weight:600">🏎️ Carros (R$ 4,5k)</button>
+                <button type="button" onclick="setCalcSegment('clinicas', 200, 250)" class="calc-seg-btn" id="cseg-clinicas" style="padding:9px 12px;border-radius:8px;border:1px solid var(--bord);background:transparent;color:var(--t2);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s">🏥 Clínicas (R$ 250)</button>
+                <button type="button" onclick="setCalcSegment('imoveis', 100, 12000)" class="calc-seg-btn" id="cseg-imoveis" style="padding:9px 12px;border-radius:8px;border:1px solid var(--bord);background:transparent;color:var(--t2);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s">🏢 Imóveis (R$ 12k)</button>
+                <button type="button" onclick="setCalcSegment('escolas', 120, 1300)" class="calc-seg-btn" id="cseg-escolas" style="padding:9px 12px;border-radius:8px;border:1px solid var(--bord);background:transparent;color:var(--t2);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s">🎓 Escolas (R$ 1.3k)</button>
+              </div>
+            </div>
+
+            <!-- Leads Slider -->
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+                <label style="font-size:.78rem;font-weight:600;color:var(--t1);font-family:'Space Grotesk',sans-serif">2. Leads no WhatsApp por mês:</label>
+                <span id="calc-leads-val" style="font-family:'Space Mono',monospace;font-size:.9rem;font-weight:700;color:var(--b3)">150 leads</span>
+              </div>
+              <input type="range" id="calc-leads-slider" min="20" max="1000" step="10" value="150" oninput="updateCalc()" style="width:100%;accent-color:var(--b5);cursor:pointer">
+            </div>
+
+            <!-- Ticket Slider -->
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+                <label style="font-size:.78rem;font-weight:600;color:var(--t1);font-family:'Space Grotesk',sans-serif">3. Ticket médio por cliente/venda:</label>
+                <span id="calc-ticket-val" style="font-family:'Space Mono',monospace;font-size:.9rem;font-weight:700;color:var(--gr)">R$ 4.500</span>
+              </div>
+              <input type="range" id="calc-ticket-slider" min="100" max="25000" step="100" value="4500" oninput="updateCalc()" style="width:100%;accent-color:var(--gr);cursor:pointer">
+            </div>
+
           </div>
-        </div>
-        <div class="card" style="padding:22px">
-          <div data-i18n="p0_sim_label" style="font-size:10px;color:var(--t3);font-family:'Space Mono',monospace;margin-bottom:14px;letter-spacing:.04em">SIMULAÇÃO DE ATENDIMENTO</div>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <div style="display:flex;gap:10px;align-items:flex-start"><div style="width:28px;height:28px;border-radius:50%;background:rgba(37,99,235,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px">👤</div><div data-i18n="p0_client" style="background:rgba(255,255,255,.04);border:1px solid var(--bord);border-radius:10px;padding:10px 13px;font-size:.8rem;color:var(--t2)">Oi! Vocês têm horário disponível hoje?</div></div>
-            <div style="display:flex;gap:10px;align-items:flex-start;flex-direction:row-reverse"><div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--b5),var(--cy));display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-robot" style="color:white;font-size:10px"></i></div><div data-i18n="p0_agent" style="background:rgba(37,99,235,.12);border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:10px 13px;font-size:.8rem;color:var(--t1)">Olá! Sim, temos 14h e 16h disponíveis. Qual prefere? 😊</div></div>
-            <div style="display:flex;align-items:center;gap:6px;padding-left:4px"><div style="width:5px;height:5px;background:var(--gr);border-radius:50%;animation:pulse 2s infinite"></div><span data-i18n="p0_replied" style="font-size:10px;color:var(--t3);font-family:'Space Mono',monospace">respondeu em 1.2s</span></div>
+
+          <!-- Result Display Column -->
+          <div style="padding:24px;border-radius:14px;background:rgba(8,14,26,.85);border:1px solid rgba(239,68,68,.25);text-align:center">
+            <div style="font-family:'Space Mono',monospace;font-size:10px;color:#f87171;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;font-weight:600">PERDA ESTIMADA FORA DO HORÁRIO</div>
+            
+            <div id="calc-lost-display" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,3.8vw,3.2rem);font-weight:800;color:#ef4444;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-shadow:0 0 20px rgba(239,68,68,.3)">
+              R$ 27.000<span style="font-size:1rem;font-weight:400;color:var(--t3)">/mês</span>
+            </div>
+
+            <div id="calc-lost-sub" style="font-size:.82rem;color:var(--t2);margin-bottom:20px;line-height:1.5">
+              Isso equivale a aproximadamente <strong style="color:var(--t1)" id="calc-lost-clients">6 clientes perdidos</strong> todos os meses por demora no atendimento.
+            </div>
+
+            <div style="padding:12px 14px;border-radius:10px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.18);font-size:.78rem;color:var(--t2);margin-bottom:20px">
+              ✅ <strong style="color:#10B981">Com a AutoGenius AI:</strong> Você recupera essas vendas por apenas <span style="color:var(--t1)">R$ 1.714/mês</span>.
+            </div>
+
+            <a id="calc-wa-btn" href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Fiz%20o%20c%C3%A1lculo%20no%20site%20e%20vi%20que%20estou%20perdendo%20R%24%2027.000%2Fm%C3%AAs.%20Quero%20recuperar%20esses%20clientes!" target="_blank" class="btn-wa" style="width:100%;justify-content:center;padding:14px;font-size:.9rem;font-weight:700">
+              <i class="fab fa-whatsapp" style="font-size:1.1rem"></i> Recuperar esse valor no WhatsApp
+            </a>
           </div>
-        </div>
-      </div>
-      <!-- Panel 1 -->
-      <div id="ftpanel-1" class="fpanel" style="grid-template-columns:1fr 1fr;gap:48px;align-items:center">
-        <div>
-          <div data-i18n="p1_kicker" style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--b3);letter-spacing:.06em;margin-bottom:14px">QUALIFICAÇÃO DE LEADS</div>
-          <h3 data-i18n="p1_h3" style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--t1);letter-spacing:-.02em;margin-bottom:14px">Só receba leads<br>que realmente compram.</h3>
-          <p data-i18n="p1_desc" style="color:var(--t2);font-size:.9rem;line-height:1.72;margin-bottom:20px">Seu Agente faz a triagem automaticamente: identifica intenção de compra, coleta dados e pontua o lead antes de passar para você.</p>
-          <div style="display:flex;gap:12px">
-            <div style="text-align:center;background:rgba(37,99,235,.07);border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:14px 20px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.4rem;color:var(--b3)">+68%</div><div data-i18n="p1_stat1" style="font-size:10px;color:var(--t3);margin-top:3px">Conversão</div></div>
-            <div style="text-align:center;background:rgba(37,211,102,.05);border:1px solid rgba(37,211,102,.15);border-radius:10px;padding:14px 20px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.4rem;color:var(--gr)">0h</div><div data-i18n="p1_stat2" style="font-size:10px;color:var(--t3);margin-top:3px">Triagem manual</div></div>
-          </div>
-        </div>
-        <div class="card" style="padding:22px">
-          <div data-i18n="lead_card" style="font-size:10px;color:var(--t3);font-family:'Space Mono',monospace;margin-bottom:14px;letter-spacing:.04em">PERFIL DO LEAD · AUTOMÁTICO</div>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:rgba(37,99,235,.06);border:1px solid rgba(59,130,246,.12);border-radius:8px"><span data-i18n="lead_intent" style="font-size:.78rem;color:var(--t2)">Intenção de compra</span><span data-i18n="lead_intent_val" style="font-size:.78rem;font-weight:700;color:var(--b3);font-family:'Space Mono',monospace">Alta ●</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:rgba(37,99,235,.06);border:1px solid rgba(59,130,246,.12);border-radius:8px"><span data-i18n="lead_budget" style="font-size:.78rem;color:var(--t2)">Orçamento estimado</span><span style="font-size:.78rem;font-weight:700;color:var(--cy);font-family:'Space Mono',monospace">R$800–1200</span></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:rgba(37,211,102,.04);border:1px solid rgba(37,211,102,.14);border-radius:8px"><span data-i18n="lead_status" style="font-size:.78rem;color:var(--t2)">Status</span><span data-i18n="lead_status_val" style="font-size:.78rem;font-weight:700;color:var(--gr);font-family:'Space Mono',monospace">Pronto p/ fechar</span></div>
-          </div>
-        </div>
-      </div>
-      <!-- Panel 2 -->
-      <div id="ftpanel-2" class="fpanel" style="grid-template-columns:1fr 1fr;gap:48px;align-items:center">
-        <div>
-          <div data-i18n="p2_kicker" style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--b3);letter-spacing:.06em;margin-bottom:14px">AGENDAMENTO AUTOMÁTICO</div>
-          <h3 data-i18n="p2_h3" style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--t1);letter-spacing:-.02em;margin-bottom:14px">Agenda cheia.<br>Sem você tocar no celular.</h3>
-          <p data-i18n="p2_desc" style="color:var(--t2);font-size:.9rem;line-height:1.72;margin-bottom:20px">O Agente consulta sua disponibilidade, agenda a consulta, envia confirmação e lembrete automático. Zero no-show.</p>
-          <div style="display:flex;gap:12px">
-            <div style="text-align:center;background:rgba(37,99,235,.07);border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:14px 20px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.4rem;color:var(--b3)">-82%</div><div data-i18n="p2_stat1" style="font-size:10px;color:var(--t3);margin-top:3px">No-show</div></div>
-            <div style="text-align:center;background:rgba(37,99,235,.07);border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:14px 20px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.4rem;color:var(--cy)">∞</div><div data-i18n="p2_stat2" style="font-size:10px;color:var(--t3);margin-top:3px">Agendas</div></div>
-          </div>
-        </div>
-        <div class="card" style="padding:22px">
-          <div data-i18n="p2_card_label" style="font-size:10px;color:var(--t3);font-family:'Space Mono',monospace;margin-bottom:14px;letter-spacing:.04em">AGENDA · QUINTA-FEIRA</div>
-          <div style="display:flex;flex-direction:column;gap:8px">
-            <div style="display:flex;gap:12px;align-items:center;padding:10px 12px;background:rgba(37,99,235,.08);border:1px solid rgba(59,130,246,.18);border-radius:8px"><span style="font-family:'Space Mono',monospace;font-size:.75rem;color:var(--b3);flex-shrink:0">14:00</span><span style="font-size:.8rem;color:var(--t1)">João Silva</span><span data-i18n="p2_confirmed" style="margin-left:auto;font-size:.7rem;color:var(--gr)">✓ confirmado</span></div>
-            <div style="display:flex;gap:12px;align-items:center;padding:10px 12px;background:rgba(37,99,235,.08);border:1px solid rgba(59,130,246,.18);border-radius:8px"><span style="font-family:'Space Mono',monospace;font-size:.75rem;color:var(--b3);flex-shrink:0">15:30</span><span style="font-size:.8rem;color:var(--t1)">Maria Oliveira</span><span data-i18n="p2_confirmed" style="margin-left:auto;font-size:.7rem;color:var(--gr)">✓ confirmado</span></div>
-            <div style="display:flex;gap:12px;align-items:center;padding:10px 12px;border:1px dashed rgba(255,255,255,.07);border-radius:8px"><span style="font-family:'Space Mono',monospace;font-size:.75rem;color:var(--t3);flex-shrink:0">17:00</span><span data-i18n="p2_avail" style="font-size:.8rem;color:var(--t3)">Disponível</span></div>
-          </div>
-        </div>
-      </div>
-      <!-- Panel 3 -->
-      <div id="ftpanel-3" class="fpanel" style="grid-template-columns:1fr 1fr;gap:48px;align-items:center">
-        <div>
-          <div data-i18n="p3_kicker" style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--b3);letter-spacing:.06em;margin-bottom:14px">FOLLOW-UP AUTOMÁTICO</div>
-          <h3 data-i18n="p3_h3" style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--t1);letter-spacing:-.02em;margin-bottom:14px">Nenhum lead<br>esfria sozinho.</h3>
-          <p data-i18n="p3_desc" style="color:var(--t2);font-size:.9rem;line-height:1.72;margin-bottom:20px">Seu Agente faz follow-up automático 24h, 72h e 7 dias após o primeiro contato. Recupera leads que pareciam perdidos.</p>
-          <div style="display:flex;gap:12px">
-            <div style="text-align:center;background:rgba(37,99,235,.07);border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:14px 20px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.4rem;color:var(--b3)">+40%</div><div data-i18n="p3_stat1" style="font-size:10px;color:var(--t3);margin-top:3px">Recuperação</div></div>
-            <div style="text-align:center;background:rgba(37,99,235,.07);border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:14px 20px"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.4rem;color:var(--cy)">3x</div><div data-i18n="p3_stat2" style="font-size:10px;color:var(--t3);margin-top:3px">Sequências</div></div>
-          </div>
-        </div>
-        <div class="card followup-seq" style="padding:22px">
-          <div data-i18n="p3_seq_label" style="font-size:10px;color:var(--t3);font-family:'Space Mono',monospace;margin-bottom:14px;letter-spacing:.04em">SEQUÊNCIA DE FOLLOW-UP</div>
-          <div style="display:flex;flex-direction:column;gap:0">
-            <div style="display:flex;gap:12px;align-items:flex-start;padding-bottom:14px;position:relative"><div style="width:24px;height:24px;border-radius:50%;background:var(--b5);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Space Mono',monospace;font-size:9px;color:white;font-weight:700">1</div><div style="position:absolute;left:11px;top:28px;width:2px;height:calc(100% - 14px);background:rgba(59,130,246,.15)"></div><div><div data-i18n="p3_s1h" style="font-size:.8rem;color:var(--t1);font-weight:600;margin-bottom:2px">24h — Lembrança</div><div data-i18n="p3_s1t" style="font-size:.75rem;color:var(--t2)">"Oi! Ainda posso ajudar você hoje?" ✓ enviado</div></div></div>
-            <div style="display:flex;gap:12px;align-items:flex-start;padding-bottom:14px;position:relative"><div style="width:24px;height:24px;border-radius:50%;background:var(--b5);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Space Mono',monospace;font-size:9px;color:white;font-weight:700">2</div><div style="position:absolute;left:11px;top:28px;width:2px;height:calc(100% - 14px);background:rgba(59,130,246,.15)"></div><div><div data-i18n="p3_s2h" style="font-size:.8rem;color:var(--t1);font-weight:600;margin-bottom:2px">72h — Valor</div><div data-i18n="p3_s2t" style="font-size:.75rem;color:var(--t2)">"Veja o que nossos clientes dizem..." ✓ enviado</div></div></div>
-            <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:24px;height:24px;border-radius:50%;background:rgba(59,130,246,.15);border:1px dashed rgba(59,130,246,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Space Mono',monospace;font-size:9px;color:var(--b3);font-weight:700">3</div><div><div data-i18n="p3_s3h" style="font-size:.8rem;color:var(--t3);font-weight:600;margin-bottom:2px">7d — Última chance</div><div data-i18n="p3_s3t" style="font-size:.75rem;color:var(--t3)">Agendado para envio</div></div></div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -808,43 +783,229 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 
   <div class="sdiv"></div>
 
-  <!-- S4 · SOLUÇÃO ────────────────────────── -->
-  <section id="s4" style="padding:96px 24px">
+      <!-- S4b · IA ESPECIALISTA ──────────────────── -->
+  <section style="padding:96px 24px;background:rgba(13,24,41,.4)">
     <div style="max-width:1100px;margin:0 auto">
-      <span data-i18n="s4_label" class="sec-label reveal">2.0 · Solução</span>
-      <div class="s4-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+      <span data-i18n="s4b_label" class="sec-label reveal">2.1 · IA Especialista no Seu Setor</span>
+      <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:700;letter-spacing:-.025em;margin-bottom:16px">
+        <span data-i18n="s4b_h2">Um núcleo. Quatro</span> <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent" data-i18n="s4b_h2b">especialidades.</span>
+      </h2>
+      <p class="reveal" style="color:var(--t2);font-size:1rem;line-height:1.72;margin-bottom:36px;max-width:700px">
+        A tecnologia é compartilhada, mas a linguagem, as perguntas, os fluxos, as integrações e os indicadores são <strong style="color:var(--t1)">específicos para cada operação</strong>.
+      </p>
+      
+      <!-- Tabs -->
+      <div class="feature-tabs" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:40px">
+        <button class="ftab active" onclick="switchTab(0)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--or);flex-shrink:0"></span>Carros</button>
+        <button class="ftab" onclick="switchTab(1)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--cy);flex-shrink:0"></span>Clínicas</button>
+        <button class="ftab" onclick="switchTab(2)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--vt);flex-shrink:0"></span>Imóveis</button>
+        <button class="ftab" onclick="switchTab(3)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--tq);flex-shrink:0"></span>Escolas</button>
+      </div>
+
+            <!-- ═══ Panel 0: CARROS ═══ -->
+      <div id="ftpanel-0" class="fpanel active" style="grid-template-columns:1fr 1fr;gap:36px;align-items:start">
         <div>
-          <div class="reveal" style="display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:9999px;border:1px solid rgba(37,99,235,.2);background:rgba(37,99,235,.07);margin-bottom:22px">
-            <span data-i18n="s4_badge" style="color:var(--b3);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em">O que é um Agente de IA?</span>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+            <img src="image/icon_carros.jpg" alt="Carros" style="width:56px;height:56px;border-radius:14px;border:1px solid rgba(249,115,22,.25);object-fit:cover">
+            <div>
+              <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--or);letter-spacing:.08em;margin-bottom:4px">VENDEDOR DIGITAL 24H & IA DE ESTOQUE</div>
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:var(--t1);letter-spacing:-.02em;line-height:1.2">Transformamos mensagens<br>em test-drives.</h3>
+            </div>
           </div>
-          <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.45rem,2.8vw,2.1rem);font-weight:700;line-height:1.18;letter-spacing:-.025em;margin-bottom:22px">
-            <span data-i18n="s4_h2a" style="color:var(--t1)">Um chatbot responde perguntas.<br></span>
-            <span data-i18n="s4_h2b" style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">O seu Agente toma decisões.</span>
-          </h2>
-          <div class="reveal" style="display:flex;flex-direction:column;gap:11px;margin-bottom:26px">
-            <div style="display:flex;align-items:center;gap:11px"><div style="width:24px;height:24px;border-radius:50%;background:rgba(37,99,235,.1);border:1px solid rgba(59,130,246,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-check" style="color:var(--b4);font-size:9px"></i></div><span data-i18n="s4_f1" style="color:var(--t2);font-size:.875rem">Qualifica o lead automaticamente</span></div>
-            <div style="display:flex;align-items:center;gap:11px"><div style="width:24px;height:24px;border-radius:50%;background:rgba(37,99,235,.1);border:1px solid rgba(59,130,246,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-check" style="color:var(--b4);font-size:9px"></i></div><span data-i18n="s4_f2" style="color:var(--t2);font-size:.875rem">Agenda direto na sua agenda</span></div>
-            <div style="display:flex;align-items:center;gap:11px"><div style="width:24px;height:24px;border-radius:50%;background:rgba(37,99,235,.1);border:1px solid rgba(59,130,246,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-check" style="color:var(--b4);font-size:9px"></i></div><span data-i18n="s4_f3" style="color:var(--t2);font-size:.875rem">Envia proposta e faz follow-up</span></div>
-            <div style="display:flex;align-items:center;gap:11px"><div style="width:24px;height:24px;border-radius:50%;background:rgba(37,99,235,.1);border:1px solid rgba(59,130,246,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-check" style="color:var(--b4);font-size:9px"></i></div><span data-i18n="s4_f4" style="color:var(--t2);font-size:.875rem">Cobra, confirma e fecha. Sozinho.</span></div>
+          <p style="color:var(--t2);font-size:.88rem;line-height:1.72;margin-bottom:18px">A IA vira o <strong style="color:var(--t1)">vendedor que nunca dorme</strong> para lojas de veículos, seminovos e concessionárias.</p>
+          
+          <!-- Key Metrics Badges -->
+          <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap">
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.25);color:var(--or);font-size:.72rem;font-weight:700">+40% test-drives agendados</div>
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#10B981;font-size:.72rem;font-weight:700">Avaliação de troca automática</div>
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(37,99,235,.1);border:1px solid rgba(59,130,246,.2);color:var(--b3);font-size:.72rem;font-weight:700">Leads OLX/Webmotors 24/7</div>
           </div>
-          <p data-i18n="s4_sub" class="reveal" style="color:var(--t3);font-size:.8rem;letter-spacing:.01em">Tudo no WhatsApp. Sem você precisar estar lá.</p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px">
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.12);border-radius:9px"><i class="fas fa-comments" style="color:var(--or);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Responde OLX, Insta e Whats</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.12);border-radius:9px"><i class="fas fa-car" style="color:var(--or);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Identifica modelo e versão</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.12);border-radius:9px"><i class="fas fa-exchange-alt" style="color:var(--or);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Avalia troca e financiamento</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.12);border-radius:9px"><i class="fas fa-warehouse" style="color:var(--or);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Consulta estoque ao vivo</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.12);border-radius:9px"><i class="fas fa-calendar-check" style="color:var(--or);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Agenda o test-drive</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.12);border-radius:9px"><i class="fas fa-user-tie" style="color:var(--or);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Notifica o vendedor no CRM</span></div>
+          </div>
+          
+          <!-- Software partners list -->
+          <div style="margin-bottom:16px;padding:10px 14px;background:rgba(8,14,26,.6);border:1px solid var(--bord);border-radius:9px;font-size:.72rem;color:var(--t2)">
+            <strong style="color:var(--t1)">Integrações automotivas:</strong> Syonet · AutoCerto · Linx Oficina · Webmotors · OLX Autos · Google Agenda · WhatsApp API
+          </div>
+
+          <div style="padding:14px 18px;border-radius:11px;border:1px solid rgba(249,115,22,.22);background:linear-gradient(135deg,rgba(249,115,22,.08),rgba(249,115,22,.02))">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--or);margin-bottom:2px">↑ Mais test-drives agendados com dados da troca</div>
+            <div style="font-size:.78rem;color:var(--t2)">A IA coleta modelo, ano e intenção de financiamento e entrega o cliente pronto no WhatsApp do seu vendedor.</div>
+          </div>
         </div>
-        <!-- WA Demo -->
-        <div class="reveal">
-          <div class="card" style="max-width:340px;margin:0 auto;padding:0;overflow:hidden">
-            <div style="display:flex;align-items:center;gap:11px;padding:14px;border-bottom:1px solid rgba(37,99,235,.1);background:rgba(13,24,41,.95)">
-              <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--b5),var(--cy));display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-robot" style="color:white;font-size:12px"></i></div>
-              <div>
-                <div style="color:var(--t1);font-weight:600;font-size:12.5px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Agente AutoGenius</div>
-                <div style="color:var(--gr);font-size:10.5px;display:flex;align-items:center;gap:4px"><span style="width:5px;height:5px;background:var(--gr);border-radius:50%;display:inline-block;animation:pulse 2s infinite"></span>Online agora</div>
-              </div>
+        
+        <!-- Right: WhatsApp Simulation -->
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="padding:14px 18px;background:rgba(249,115,22,.08);border-bottom:1px solid rgba(249,115,22,.12);display:flex;align-items:center;gap:10px">
+            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--or),#ea580c);display:flex;align-items:center;justify-content:center"><i class="fas fa-robot" style="color:white;font-size:11px"></i></div>
+            <div>
+              <div style="font-size:.82rem;font-weight:600;color:var(--t1)">AutoGenius · Carros</div>
+              <div style="font-size:.65rem;color:var(--or);display:flex;align-items:center;gap:4px"><div style="width:5px;height:5px;border-radius:50%;background:var(--or);animation:pulse 2s infinite"></div>online agora</div>
             </div>
-            <div id="wademo" style="padding:14px;min-height:220px;background:rgba(8,14,26,.9)"></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:11px;border-top:1px solid rgba(37,99,235,.1);background:rgba(13,24,41,.95)">
-              <div style="flex:1;background:rgba(37,99,235,.07);border-radius:9999px;padding:7px 13px;color:var(--t3);font-size:11.5px;border:1px solid rgba(37,99,235,.1)">Digite uma mensagem...</div>
-              <div style="width:32px;height:32px;border-radius:50%;background:var(--gr);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-paper-plane" style="color:white;font-size:11px"></i></div>
+            <div style="margin-left:auto;font-size:.6rem;color:var(--t3);font-family:'Space Mono',monospace">03:14 AM</div>
+          </div>
+          <div id="vchat-0" style="padding:18px;display:flex;flex-direction:column;gap:10px;min-height:340px;max-height:380px;overflow-y:auto"></div>
+        </div>
+      </div>
+
+      <!-- ═══ Panel 1: CLÍNICAS ═══ -->
+      <div id="ftpanel-1" class="fpanel" style="grid-template-columns:1fr 1fr;gap:36px;align-items:start">
+        <div>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+            <img src="image/icon_clinicas.jpg" alt="Clínicas" style="width:56px;height:56px;border-radius:14px;border:1px solid rgba(6,182,212,.25);object-fit:cover">
+            <div>
+              <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--cy);letter-spacing:.08em;margin-bottom:4px">RECEPÇÃO INTELIGENTE & IA DE RECEITA</div>
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:var(--t1);letter-spacing:-.02em;line-height:1.2">Transformamos contatos<br>em consultas confirmadas.</h3>
             </div>
           </div>
+          <p style="color:var(--t2);font-size:.88rem;line-height:1.72;margin-bottom:18px">Uma <strong style="color:var(--t1)">recepção que nunca fecha</strong> para clínicas médicas, odontologia, estética e saúde.</p>
+          
+          <!-- Key Metrics Badges -->
+          <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap">
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);color:var(--cy);font-size:.72rem;font-weight:700">↓ 75% no no-show</div>
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#10B981;font-size:.72rem;font-weight:700">+30% retorno de inativos</div>
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(37,99,235,.1);border:1px solid rgba(59,130,246,.2);color:var(--b3);font-size:.72rem;font-weight:700">Agenda 24/7 sincronizada</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px">
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-stethoscope" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Tira dúvidas de procedimentos</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-id-card" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Triagem de convênio ou particular</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-calendar-alt" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Agenda e reagenda consultas</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-bell" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Lembretes automáticos 24h antes</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-redo" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Reativa pacientes inativos</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-network-wired" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Integração médica & Webhooks</span></div>
+          </div>
+          
+          <!-- Software partners list -->
+          <div style="margin-bottom:16px;padding:10px 14px;background:rgba(8,14,26,.6);border:1px solid var(--bord);border-radius:9px;font-size:.72rem;color:var(--t2)">
+            <strong style="color:var(--t1)">Integrações clínicas:</strong> Clinicorp · Feegow · Dental Office · Trinks · Clínica nas Nuvens · iClinic · Simples Vet · Google Agenda
+          </div>
+
+          <div style="padding:14px 18px;border-radius:11px;border:1px solid rgba(6,182,212,.22);background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(6,182,212,.02))">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--cy);margin-bottom:2px">↓ Redução drástica de faltas e receita recuperada</div>
+            <div style="font-size:.78rem;color:var(--t2)">Agendamentos 24/7 com confirmação automática, lembretes de pré-consulta e resgate de pacientes sumidos.</div>
+          </div>
+        </div>
+        
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="padding:14px 18px;background:rgba(6,182,212,.08);border-bottom:1px solid rgba(6,182,212,.12);display:flex;align-items:center;gap:10px">
+            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--cy),var(--b5));display:flex;align-items:center;justify-content:center"><i class="fas fa-user-md" style="color:white;font-size:11px"></i></div>
+            <div>
+              <div style="font-size:.82rem;font-weight:600;color:var(--t1)">AutoGenius · Clínicas</div>
+              <div style="font-size:.65rem;color:var(--cy);display:flex;align-items:center;gap:4px"><div style="width:5px;height:5px;border-radius:50%;background:var(--cy);animation:pulse 2s infinite"></div>online agora</div>
+            </div>
+            <div style="margin-left:auto;font-size:.6rem;color:var(--t3);font-family:'Space Mono',monospace">03:16 AM</div>
+          </div>
+          <div id="vchat-1" style="padding:18px;display:flex;flex-direction:column;gap:10px;min-height:340px;max-height:380px;overflow-y:auto"></div>
+        </div>
+      </div>
+<!-- ═══ Panel 2: IMÓVEIS ═══ -->
+      <div id="ftpanel-2" class="fpanel" style="grid-template-columns:1fr 1fr;gap:36px;align-items:start">
+        <div>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+            <img src="image/icon_imoveis.jpg" alt="Imóveis" style="width:56px;height:56px;border-radius:14px;border:1px solid rgba(124,58,237,.25);object-fit:cover">
+            <div>
+              <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--vt);letter-spacing:.08em;margin-bottom:4px">CORRETOR DIGITAL 24H & TRIAGEM DE PORTAISA</div>
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:var(--t1);letter-spacing:-.02em;line-height:1.2">Transformamos leads<br>em visitas qualificadas.</h3>
+            </div>
+          </div>
+          <p style="color:var(--t2);font-size:.88rem;line-height:1.72;margin-bottom:18px">Um <strong style="color:var(--t1)">corretor incansável</strong> para imobiliárias, incorporadoras e equipes de corretores.</p>
+          
+          <!-- Key Metrics Badges -->
+          <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap">
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);color:var(--vt);font-size:.72rem;font-weight:700">3x mais visitas qualificadas</div>
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#10B981;font-size:.72rem;font-weight:700">Filtro anti-curiosos</div>
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(37,99,235,.1);border:1px solid rgba(59,130,246,.2);color:var(--b3);font-size:.72rem;font-weight:700">ZAP / VivaReal / OLX 24/7</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px">
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.12);border-radius:99px"><i class="fas fa-search" style="color:var(--vt);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Compra, aluguel ou investimento</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.12);border-radius:9px"><i class="fas fa-map-marker-alt" style="color:var(--vt);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Região, preço e tipo de imóvel</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.12);border-radius:9px"><i class="fas fa-filter" style="color:var(--vt);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Filtra curiosos de compradores</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.12);border-radius:9px"><i class="fas fa-paper-plane" style="color:var(--vt);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Envia fotos e opções compatíveis</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.12);border-radius:9px"><i class="fas fa-key" style="color:var(--vt);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Agenda visitas presenciais</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.12);border-radius:9px"><i class="fas fa-database" style="color:var(--vt);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Integra com CRM imobiliário</span></div>
+          </div>
+
+          <!-- Software partners list -->
+          <div style="margin-bottom:16px;padding:10px 14px;background:rgba(8,14,26,.6);border:1px solid var(--bord);border-radius:9px;font-size:.72rem;color:var(--t2)">
+            <strong style="color:var(--t1)">Integrações imobiliárias:</strong> Vista CRM · Kenlo · ZAP Imóveis · VivaReal · Universal Software · Tecimob · Google Agenda
+          </div>
+          
+          <div style="padding:14px 18px;border-radius:11px;border:1px solid rgba(124,58,237,.22);background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(124,58,237,.02))">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--vt);margin-bottom:2px">↑ Visitas presenciais com compradores reais</div>
+            <div style="font-size:.78rem;color:var(--t2)">Menos tempo desperdiçado com curiosos e corretores focados apenas em fechar negócio.</div>
+          </div>
+        </div>
+        
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="padding:14px 18px;background:rgba(139,92,246,.08);border-bottom:1px solid rgba(139,92,246,.12);display:flex;align-items:center;gap:10px">
+            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--vt),#6d28d9);display:flex;align-items:center;justify-content:center"><i class="fas fa-building" style="color:white;font-size:11px"></i></div>
+            <div>
+              <div style="font-size:.82rem;font-weight:600;color:var(--t1)">AutoGenius · Imóveis</div>
+              <div style="font-size:.65rem;color:var(--vt);display:flex;align-items:center;gap:4px"><div style="width:5px;height:5px;border-radius:50%;background:var(--vt);animation:pulse 2s infinite"></div>online agora</div>
+            </div>
+            <div style="margin-left:auto;font-size:.6rem;color:var(--t3);font-family:'Space Mono',monospace">03:18 AM</div>
+          </div>
+          <div id="vchat-2" style="padding:18px;display:flex;flex-direction:column;gap:10px;min-height:340px;max-height:380px;overflow-y:auto"></div>
+        </div>
+      </div>
+<!-- ═══ Panel 3: ESCOLAS ═══ -->
+      <div id="ftpanel-3" class="fpanel" style="grid-template-columns:1fr 1fr;gap:36px;align-items:start">
+        <div>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+            <img src="image/icon_escolas.jpg" alt="Escolas" style="width:56px;height:56px;border-radius:14px;border:1px solid rgba(20,184,166,.25);object-fit:cover">
+            <div>
+              <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--tq);letter-spacing:.08em;margin-bottom:4px">SECRETARIA COMERCIAL 24H & REMATRÍCULA</div>
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:var(--t1);letter-spacing:-.02em;line-height:1.2">Transformamos dúvidas<br>em matrículas.</h3>
+            </div>
+          </div>
+          <p style="color:var(--t2);font-size:.88rem;line-height:1.72;margin-bottom:18px">Uma <strong style="color:var(--t1)">secretaria comercial incansável</strong> para escolas, cursos, faculdades e instituições de ensino.</p>
+          
+          <!-- Key Metrics Badges -->
+          <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap">
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(20,184,166,.1);border:1px solid rgba(20,184,166,.25);color:var(--tq);font-size:.72rem;font-weight:700">+25% matrículas no prazo</div>
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#10B981;font-size:.72rem;font-weight:700">Rematrícula automatizada</div>
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(37,99,235,.1);border:1px solid rgba(59,130,246,.2);color:var(--b3);font-size:.72rem;font-weight:700">Visitas pedagógicas 24/7</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px">
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-question-circle" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Responde sobre vagas e horários</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-child" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Identifica idade e série</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-file-alt" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Informa documentação</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-school" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Agenda visitas pedagógicas</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-bullhorn" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Campanhas de matrícula</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-sync-alt" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Rematrícula automatizada</span></div>
+          </div>
+
+          <!-- Software partners list -->
+          <div style="margin-bottom:16px;padding:10px 14px;background:rgba(8,14,26,.6);border:1px solid var(--bord);border-radius:9px;font-size:.72rem;color:var(--t2)">
+            <strong style="color:var(--t1)">Integrações educacionais:</strong> Sponte · SophiA · TOTVS Educacional · Gennera · WPensar · Google Agenda
+          </div>
+          
+          <div style="padding:14px 18px;border-radius:11px;border:1px solid rgba(20,184,166,.22);background:linear-gradient(135deg,rgba(20,184,166,.08),rgba(20,184,166,.02))">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--tq);margin-bottom:2px">↑ Mais matrículas e menos sobrecarga na secretaria</div>
+            <div style="font-size:.78rem;color:var(--t2)">Mais pais visitando a escola, dúvidas de mensalidade resolvidas e rematrículas sem filas.</div>
+          </div>
+        </div>
+        
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="padding:14px 18px;background:rgba(20,184,166,.08);border-bottom:1px solid rgba(20,184,166,.12);display:flex;align-items:center;gap:10px">
+            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--tq),#0d9488);display:flex;align-items:center;justify-content:center"><i class="fas fa-graduation-cap" style="color:white;font-size:11px"></i></div>
+            <div>
+              <div style="font-size:.82rem;font-weight:600;color:var(--t1)">AutoGenius · Escolas</div>
+              <div style="font-size:.65rem;color:var(--tq);display:flex;align-items:center;gap:4px"><div style="width:5px;height:5px;border-radius:50%;background:var(--tq);animation:pulse 2s infinite"></div>online agora</div>
+            </div>
+            <div style="margin-left:auto;font-size:.6rem;color:var(--t3);font-family:'Space Mono',monospace">03:20 AM</div>
+          </div>
+          <div id="vchat-3" style="padding:18px;display:flex;flex-direction:column;gap:10px;min-height:340px;max-height:380px;overflow-y:auto"></div>
         </div>
       </div>
     </div>
@@ -861,37 +1022,37 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
           <span data-i18n="s5_badge" style="color:#FBBF24;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em">Pessoas que pararam de perder vendas</span>
         </div>
       </div>
-      <div class="s5-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+              <div class="s5-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
 
         <div class="card reveal" style="padding:24px">
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.3rem;color:var(--b3);letter-spacing:-.02em">+8h</div>
-          <div data-i18n="t1_label" style="color:var(--b3);font-size:11.5px;font-weight:600;margin-bottom:14px">livres por dia</div>
-          <p data-i18n="t1_quote" style="color:var(--t2);font-size:.82rem;line-height:1.65;font-style:italic;margin-bottom:16px">"A IA cuida do atendimento e eu foco 100% na estratégia. É como ter um assistente perfeito que nunca cansa."</p>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.3rem;color:var(--cy);letter-spacing:-.02em">+90%</div>
+          <div style="color:var(--cy);font-size:11.5px;font-weight:600;margin-bottom:14px">de consultas confirmadas</div>
+          <p style="color:var(--t2);font-size:.82rem;line-height:1.65;font-style:italic;margin-bottom:16px">"As pacientes tiram dúvidas de procedimentos estética 24h e agendam direto. A IA reduziu drasticamente o tempo de resposta e o no-show."</p>
           <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px">
-            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--b),var(--cy));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:10.5px;font-family:'Space Grotesk',sans-serif;flex-shrink:0">AS</div>
-            <div><div style="color:var(--t1);font-weight:600;font-size:11.5px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Alexandre Sampaio</div><div style="color:var(--t3);font-size:10px">CEO · Olore Parfum</div></div>
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--cy),var(--b5));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:11px;font-family:'Space Grotesk',sans-serif;flex-shrink:0">LD</div>
+            <div><div style="color:var(--t1);font-weight:600;font-size:11.5px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Laser Dream</div><div style="color:var(--t3);font-size:10px">Rede de Clínicas de Estética</div></div>
           </div>
           <div style="display:flex;gap:2px"><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i></div>
         </div>
 
         <div class="card reveal" style="padding:24px;transition-delay:.1s">
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.3rem;color:var(--gr);letter-spacing:-.02em">+20h</div>
-          <div data-i18n="t2_label" style="color:var(--gr);font-size:11.5px;font-weight:600;margin-bottom:14px">livres por semana</div>
-          <p data-i18n="t2_quote" style="color:var(--t2);font-size:.82rem;line-height:1.65;font-style:italic;margin-bottom:16px">"Passava horas explicando prazos para cada cliente. Hoje a IA faz isso automaticamente e os leads chegam qualificados."</p>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.3rem;color:var(--gr);letter-spacing:-.02em">+15h</div>
+          <div style="color:var(--gr);font-size:11.5px;font-weight:600;margin-bottom:14px">livres para a médica/semana</div>
+          <p style="color:var(--t2);font-size:.82rem;line-height:1.65;font-style:italic;margin-bottom:16px">"Antes a recepção ficava atolada com dúvidas de pós-procedimento e horários. Hoje a IA faz o atendimento inicial perfeito no WhatsApp."</p>
           <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px">
-            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#059669,var(--cy));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:10.5px;font-family:'Space Grotesk',sans-serif;flex-shrink:0">OM</div>
-            <div><div style="color:var(--t1);font-weight:600;font-size:11.5px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Osvaldo de Melo</div><div style="color:var(--t3);font-size:10px">Advogado · Matos de Melo Advocacia</div></div>
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#059669,var(--cy));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:11px;font-family:'Space Grotesk',sans-serif;flex-shrink:0">SB</div>
+            <div><div style="color:var(--t1);font-weight:600;font-size:11.5px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Dra. Shirley Bounafina</div><div style="color:var(--t3);font-size:10px">Clínica de Estética & Saúde</div></div>
           </div>
           <div style="display:flex;gap:2px"><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i></div>
         </div>
 
         <div class="card reveal" style="padding:24px;transition-delay:.2s">
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.3rem;color:var(--cy);letter-spacing:-.02em">24/7</div>
-          <div data-i18n="t3_label" style="color:var(--cy);font-size:11.5px;font-weight:600;margin-bottom:14px">vendas toda madrugada</div>
-          <p data-i18n="t3_quote" style="color:var(--t2);font-size:.82rem;line-height:1.65;font-style:italic;margin-bottom:16px">"Antes eu só vendia quando estava online. Hoje a IA vende enquanto eu durmo — e as vendas triplicaram."</p>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.3rem;color:var(--b3);letter-spacing:-.02em">+8h</div>
+          <div style="color:var(--b3);font-size:11.5px;font-weight:600;margin-bottom:14px">livres por dia</div>
+          <p style="color:var(--t2);font-size:.82rem;line-height:1.65;font-style:italic;margin-bottom:16px">"A IA cuida do atendimento no WhatsApp e eu foco 100% na estratégia comercial. É como ter um assistente perfeito que nunca cansa."</p>
           <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px">
-            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--b5),var(--cy));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:10.5px;font-family:'Space Grotesk',sans-serif;flex-shrink:0">EO</div>
-            <div><div style="color:var(--t1);font-weight:600;font-size:11.5px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Eduarda Oliveira</div><div style="color:var(--t3);font-size:10px">Fundadora · Little para Você</div></div>
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--b),var(--cy));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:11px;font-family:'Space Grotesk',sans-serif;flex-shrink:0">AS</div>
+            <div><div style="color:var(--t1);font-weight:600;font-size:11.5px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Alexandre Sampaio</div><div style="color:var(--t3);font-size:10px">CEO · Olore Parfum</div></div>
           </div>
           <div style="display:flex;gap:2px"><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i><i class="fas fa-star" style="color:#F59E0B;font-size:9px"></i></div>
         </div>
@@ -940,7 +1101,10 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
         <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.45rem,3vw,2.1rem);font-weight:700;letter-spacing:-.025em;margin-bottom:10px">
           <span data-i18n="s7_h2a">Escolha o</span> <span data-i18n="s7_h2b" style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">plano certo</span> <span data-i18n="s7_h2c">para o seu volume</span>
         </h2>
-        <p data-i18n="s7_guarantee" class="reveal" style="color:var(--t2);font-size:.85rem;margin-bottom:20px">Plataforma própria · 7 dias de garantia · Sem fidelidade</p>
+        <p data-i18n="s7_guarantee" class="reveal" style="color:var(--t2);font-size:.85rem;margin-bottom:12px">Plataforma própria · 7 dias de garantia · Sem fidelidade</p>
+        <div class="reveal" style="margin:0 auto 20px;max-width:650px;padding:10px 16px;border-radius:10px;background:rgba(37,99,235,.06);border:1px solid rgba(59,130,246,.18);font-size:.8rem;color:var(--t2);line-height:1.5">
+          💡 <strong style="color:var(--t1)">Investimento com Retorno Rápido:</strong> 1 venda de veículo, 2 consultas salvas ou 1 matrícula fechada já cobrem a mensalidade.
+        </div>
         <!-- Cluster toggle -->
         <div class="reveal" style="display:inline-flex;background:rgba(13,24,41,.7);border:1px solid var(--bord);border-radius:9999px;padding:3px;gap:3px">
           <button id="btn-low" onclick="setCluster('low')" style="background:var(--b5);color:white;border:none;border-radius:9999px;padding:7px 20px;font-size:.75rem;font-weight:700;font-family:'Space Mono',monospace;cursor:pointer;transition:all .2s">CLUSTER LOW</button>
@@ -954,89 +1118,66 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       </div>
 
       <!-- Plans grid -->
-      <div class="s7-scroll">
-      <div class="s7-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:start;margin-bottom:20px">
+            <div class="s7-scroll">
+      <div class="s7-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;margin-bottom:24px;max-width:1050px;margin-left:auto;margin-right:auto">
 
-        <!-- Essencial -->
-        <div class="card reveal" style="padding:20px">
-          <div data-i18n="plan_name_essencial" style="color:var(--t2);font-size:8.5px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;margin-bottom:10px;font-family:'Space Mono',monospace">Essencial</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:var(--t1);letter-spacing:-.02em"><span class="p-month">R$794</span><span style="font-size:.65rem;font-weight:400;color:var(--t3)">/mês</span></div>
-          <div style="color:var(--t3);font-size:9px;margin-bottom:13px">+ <span class="p-setup">R$1.380</span> implantação</div>
-          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;font-size:.74rem;color:var(--t2)">
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span class="p-contacts">3k contatos/mês</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span class="p-agendas">1 agenda</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_capture">Captação de leads</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_1dash">1 dashboard KPIs</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_2int">2 integrações</span></div>
+        <!-- Starter -->
+        <div class="card reveal" style="padding:24px">
+          <div style="color:var(--t2);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;margin-bottom:10px;font-family:'Space Mono',monospace">Starter</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;color:var(--t1);letter-spacing:-.02em"><span class="p-month">R$794</span><span style="font-size:.7rem;font-weight:400;color:var(--t3)">/mês</span></div>
+          <div style="color:var(--t3);font-size:10px;margin-bottom:16px">+ <span class="p-setup">R$1.380</span> implantação</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;font-size:.8rem;color:var(--t2)">
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--b4);font-size:8px;flex-shrink:0"></i><span class="p-contacts">Até 3k contatos/mês</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--b4);font-size:8px;flex-shrink:0"></i><span class="p-agendas">1 agenda de atendimento</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--b4);font-size:8px;flex-shrink:0"></i><span>Atendimento & Qualificação 24/7</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--b4);font-size:8px;flex-shrink:0"></i><span>Dashboard de métricas básicas</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--b4);font-size:8px;flex-shrink:0"></i><span>2 integrações com sistemas</span></div>
           </div>
-          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20G%C3%AAnio%20Essencial.%20Pode%20me%20dar%20mais%20detalhes%3F" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'" data-i18n="plan_cta">Quero este plano</a>
+          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Starter.%20Pode%20me%20ajudar%3F" target="_blank" style="display:block;text-align:center;padding:10px;border-radius:8px;border:1px solid var(--bord);color:var(--t2);font-size:12px;font-weight:600;text-decoration:none;transition:all .2s">Quero este plano</a>
         </div>
 
-        <!-- Avançado -->
-        <div class="card reveal" style="padding:20px;transition-delay:.05s">
-          <div data-i18n="plan_name_avancado" style="color:var(--t2);font-size:8.5px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;margin-bottom:10px;font-family:'Space Mono',monospace">Avançado</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:var(--t1);letter-spacing:-.02em"><span class="p-month">R$1.139</span><span style="font-size:.65rem;font-weight:400;color:var(--t3)">/mês</span></div>
-          <div style="color:var(--t3);font-size:9px;margin-bottom:13px">+ <span class="p-setup">R$2.070</span> implantação</div>
-          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;font-size:.74rem;color:var(--t2)">
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span class="p-contacts">8k contatos/mês</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span class="p-agendas">2 agendas</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_tags">Tags + fila + lembretes</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_bi">BI funil por etapa</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_4int">4 integrações</span></div>
-          </div>
-          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20G%C3%AAnio%20Avan%C3%A7ado.%20Pode%20me%20dar%20mais%20detalhes%3F" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'" data-i18n="plan_cta">Quero este plano</a>
-        </div>
-
-        <!-- Performance (Featured) -->
-        <div class="plan-featured reveal" style="position:relative;transition-delay:.1s">
-          <div data-i18n="plan_badge" class="plan-featured-badge">★ MAIS ESCOLHIDO</div>
-          <div class="card-grad-border plan-featured-card" style="padding:20px;position:relative">
-            <div data-i18n="plan_name_performance" class="plan-featured-kicker">Performance</div>
-            <div class="plan-featured-price" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:-.02em">
+        <!-- Crescer (Featured) -->
+        <div class="plan-featured reveal" style="position:relative;transition-delay:.08s">
+          <div class="plan-featured-badge">★ MAIS ESCOLHIDO</div>
+          <div class="card-grad-border plan-featured-card" style="padding:24px;position:relative">
+            <div class="plan-featured-kicker">Crescer</div>
+            <div class="plan-featured-price" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-.02em">
               <span class="p-month">R$1.714</span><span class="plan-featured-per">/mês</span>
             </div>
             <div class="plan-featured-setup">+ <span class="p-setup">R$2.875</span> implantação</div>
-            <div class="plan-featured-list" style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;font-size:.74rem">
-              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check plan-featured-check" style="font-size:7.5px;flex-shrink:0"></i><span class="p-contacts">15k contatos/mês</span></div>
-              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check plan-featured-check" style="font-size:7.5px;flex-shrink:0"></i><span class="p-agendas">5 agendas</span></div>
-              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check plan-featured-check" style="font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_followup">Follow-up automático</span></div>
-              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check plan-featured-check" style="font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_campaigns">Campanhas recorrentes</span></div>
-              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check plan-featured-check" style="font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_nps">NPS/CSAT automático</span></div>
-              <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check plan-featured-check" style="font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_7int">7 integrações + webhooks</span></div>
+            
+            <div style="font-size:10px;font-family:'Space Mono',monospace;color:var(--b3);margin-bottom:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em">Tudo do plano Starter, mais:</div>
+            
+            <div class="plan-featured-list" style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;font-size:.8rem">
+              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span class="p-contacts">Até 15k contatos/mês</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span class="p-agendas">5 agendas de atendimento</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span>Follow-up automático de propostas</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span>Lembretes & Reativação de clientes</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span>Pesquisas de satisfação (NPS/CSAT)</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span>7 integrações + Webhooks custom</span></div>
             </div>
-            <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20G%C3%AAnio%20Performance.%20Como%20funciona%3F" target="_blank" class="plan-featured-cta" data-i18n="plan_cta" style="display:block;text-align:center;padding:8px;border-radius:7px;font-size:11px;font-weight:700;text-decoration:none">Quero este plano</a>
+            <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Crescer.%20Pode%20me%20ajudar%3F" target="_blank" class="plan-featured-cta" style="display:block;text-align:center;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none">Quero este plano</a>
           </div>
         </div>
 
-        <!-- Premium -->
-        <div class="card reveal" style="padding:20px;transition-delay:.15s">
-          <div data-i18n="plan_name_premium" style="color:var(--t2);font-size:8.5px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;margin-bottom:10px;font-family:'Space Mono',monospace">Premium</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:var(--t1);letter-spacing:-.02em"><span class="p-month">R$2.634</span><span style="font-size:.65rem;font-weight:400;color:var(--t3)">/mês</span></div>
-          <div style="color:var(--t3);font-size:9px;margin-bottom:13px">+ <span class="p-setup">R$4.025</span> implantação</div>
-          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;font-size:.74rem;color:var(--t2)">
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span class="p-contacts">30k contatos/mês</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span class="p-agendas">10 agendas</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_billing">Cobrança/pagamento</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_workflows">Workflows ilimitados</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--b4);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_rbac">RBAC (papéis/perfis)</span></div>
+        <!-- Escalar -->
+        <div class="card reveal" style="padding:24px;transition-delay:.16s;border-color:rgba(124,58,237,.22)">
+          <div style="color:var(--vt);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;margin-bottom:10px;font-family:'Space Mono',monospace">Escalar</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;color:var(--t1);letter-spacing:-.02em"><span class="p-month">R$3.890</span><span style="font-size:.7rem;font-weight:400;color:var(--t3)">/mês</span></div>
+          <div style="color:var(--t3);font-size:10px;margin-bottom:16px">+ <span class="p-setup">R$5.500</span> implantação</div>
+          
+          <div style="font-size:10px;font-family:'Space Mono',monospace;color:var(--vt);margin-bottom:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em">Tudo do plano Crescer, mais:</div>
+          
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;font-size:.8rem;color:var(--t2)">
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--vt);font-size:8px;flex-shrink:0"></i><span class="p-contacts">Até 50k contatos/mês</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--vt);font-size:8px;flex-shrink:0"></i><span class="p-agendas">15 agendas de atendimento</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--vt);font-size:8px;flex-shrink:0"></i><span>Suporte multi-unidade & franquias</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--vt);font-size:8px;flex-shrink:0"></i><span>Gestão de perfis & permissões (RBAC)</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--vt);font-size:8px;flex-shrink:0"></i><span>Painéis executivos & BI dedicado</span></div>
           </div>
-          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20G%C3%AAnio%20Premium.%20Pode%20me%20ajudar%3F" target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid var(--bord);color:var(--t2);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(59,130,246,.35)';this.style.color='#F1F5F9'" onmouseout="this.style.borderColor='rgba(255,255,255,.065)';this.style.color='#94A3B8'" data-i18n="plan_cta">Quero este plano</a>
+          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Plano%20Escalar." target="_blank" style="display:block;text-align:center;padding:10px;border-radius:8px;border:1px solid rgba(124,58,237,.3);color:var(--vt);font-size:12px;font-weight:600;text-decoration:none;transition:all .2s">Quero este plano</a>
         </div>
 
-        <!-- Elite -->
-        <div class="card reveal" style="padding:20px;transition-delay:.2s;border-color:rgba(124,58,237,.22)">
-          <div data-i18n="plan_name_elite" style="color:var(--vt);font-size:8.5px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;margin-bottom:10px;font-family:'Space Mono',monospace">Elite</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:var(--t1);letter-spacing:-.02em"><span class="p-month">R$4.014</span><span style="font-size:.65rem;font-weight:400;color:var(--t3)">/mês</span></div>
-          <div style="color:var(--t3);font-size:9px;margin-bottom:13px">+ <span class="p-setup">R$6.785</span> implantação</div>
-          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;font-size:.74rem;color:var(--t2)">
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--vt);font-size:7.5px;flex-shrink:0"></i><span class="p-contacts">60k contatos/mês</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--vt);font-size:7.5px;flex-shrink:0"></i><span class="p-agendas">15 agendas</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--vt);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_panels">Painéis executivos</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--vt);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_multi">Multi-unidade</span></div>
-            <div style="display:flex;align-items:center;gap:6px"><i class="fas fa-check" style="color:var(--vt);font-size:7.5px;flex-shrink:0"></i><span data-i18n="feat_security">Controles de segurança</span></div>
-          </div>
-          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Plano%20G%C3%AAnio%20Elite%20e%20o%20que%20est%C3%A1%20incluso." target="_blank" style="display:block;text-align:center;padding:8px;border-radius:7px;border:1px solid rgba(124,58,237,.3);color:var(--vt);font-size:11px;font-weight:600;text-decoration:none;transition:all .2s" onmouseover="this.style.borderColor='rgba(124,58,237,.6)';this.style.color='#a78bfa'" onmouseout="this.style.borderColor='rgba(124,58,237,.3)';this.style.color='#7C3AED'" data-i18n="plan_cta">Quero este plano</a>
-        </div>
       </div>
       </div><!-- /s7-scroll -->
 
@@ -1062,105 +1203,33 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <!-- S_CONSULTING · CONSULTORIA DE TECNOLOGIA ──────────────────────── -->
-  <section id="s-consulting" style="padding:96px 24px;background:rgba(4,7,16,.7);position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(37,99,235,.07) 0%,transparent 70%);pointer-events:none"></div>
-    <div style="max-width:860px;margin:0 auto;position:relative">
-
-      <span data-i18n="sc_label" class="sec-label reveal" style="color:var(--cy);border-color:rgba(6,182,212,.22);background:rgba(6,182,212,.05)">Consultoria de Tecnologia</span>
-
-      <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4.5vw,3rem);font-weight:800;letter-spacing:-.035em;line-height:1.12;margin:18px 0 20px">
-        <span data-i18n="sc_h2a">Alguém na sua empresa ainda precisa</span><br>
-        <span data-i18n="sc_h2b" style="background:linear-gradient(135deg,#06B6D4,#3B82F6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">montar o relatório para você decidir.</span>
-      </h2>
-
-      <p data-i18n="sc_desc" class="reveal" style="color:var(--t2);font-size:1rem;line-height:1.8;max-width:600px;margin-bottom:44px">
-        Esse custo não aparece no P&L. Mas ele existe toda vez que a decisão chega depois que o evento já aconteceu — porque alguém teve que compilar, transcrever e formatar antes de te avisar.
-      </p>
-
-      <!-- O problema e o que fazemos — dois blocos -->
-      <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;border-radius:14px;overflow:hidden;margin-bottom:32px;border:1px solid rgba(255,255,255,.06)">
-
-        <div style="padding:32px;background:rgba(6,182,212,.04)">
-          <div data-i18n="sc_prob_label" style="font-family:'Space Mono',monospace;font-size:9px;color:var(--cy);letter-spacing:.14em;font-weight:600;margin-bottom:16px">O PADRÃO QUE ENCONTRAMOS</div>
-          <div style="display:flex;flex-direction:column;gap:14px">
-            <div style="display:flex;gap:12px;align-items:flex-start">
-              <div style="width:6px;height:6px;border-radius:50%;background:rgba(6,182,212,.5);margin-top:7px;flex-shrink:0"></div>
-              <span data-i18n="sc_prob_1" style="font-size:.83rem;color:var(--t2);line-height:1.65">O dado existe no sistema — mas a decisão espera alguém que ainda não terminou a planilha</span>
-            </div>
-            <div style="display:flex;gap:12px;align-items:flex-start">
-              <div style="width:6px;height:6px;border-radius:50%;background:rgba(6,182,212,.5);margin-top:7px;flex-shrink:0"></div>
-              <span data-i18n="sc_prob_2" style="font-size:.83rem;color:var(--t2);line-height:1.65">Se uma pessoa-chave sai ou se ausenta, o processo volta ao modo manual em 24 horas</span>
-            </div>
-            <div style="display:flex;gap:12px;align-items:flex-start">
-              <div style="width:6px;height:6px;border-radius:50%;background:rgba(6,182,212,.5);margin-top:7px;flex-shrink:0"></div>
-              <span data-i18n="sc_prob_3" style="font-size:.83rem;color:var(--t2);line-height:1.65">Correções são feitas em silêncio, sem registro de quem alterou o quê e quando</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="padding:32px;background:rgba(37,99,235,.05)">
-          <div data-i18n="sc_sol_label" style="font-family:'Space Mono',monospace;font-size:9px;color:var(--b3);letter-spacing:.14em;font-weight:600;margin-bottom:16px">O QUE FAZEMOS</div>
-          <div style="display:flex;flex-direction:column;gap:14px">
-            <div style="display:flex;gap:12px;align-items:flex-start">
-              <div style="width:6px;height:6px;border-radius:50%;background:rgba(37,99,235,.6);margin-top:7px;flex-shrink:0"></div>
-              <span data-i18n="sc_sol_1" style="font-size:.83rem;color:var(--t2);line-height:1.65">Entramos na sua operação e trabalhamos <strong style="color:var(--t1)">diretamente com cada equipe</strong> — não só com a gestão</span>
-            </div>
-            <div style="display:flex;gap:12px;align-items:flex-start">
-              <div style="width:6px;height:6px;border-radius:50%;background:rgba(37,99,235,.6);margin-top:7px;flex-shrink:0"></div>
-              <span data-i18n="sc_sol_2" style="font-size:.83rem;color:var(--t2);line-height:1.65">Analisamos os problemas <strong style="color:var(--t1)">de dentro</strong>, documentamos tudo e construímos a solução com quem vai usar</span>
-            </div>
-            <div style="display:flex;gap:12px;align-items:flex-start">
-              <div style="width:6px;height:6px;border-radius:50%;background:rgba(37,99,235,.6);margin-top:7px;flex-shrink:0"></div>
-              <span data-i18n="sc_sol_3" style="font-size:.83rem;color:var(--t2);line-height:1.65">Saímos quando a sua equipe opera sozinha — <strong style="color:var(--t1)">sem depender de nós</strong></span>
-            </div>
-          </div>
-        </div>
-
+    <!-- S_CONSULTING · PREVIEW DE CONSULTORIA ──────────────────────── -->
+  <section id="s-consulting" style="padding:64px 24px;background:rgba(4,7,16,.5)">
+    <div class="card reveal" style="max-width:960px;margin:0 auto;padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;border-color:rgba(6,182,212,.22);background:linear-gradient(135deg,rgba(6,182,212,.06),rgba(37,99,235,.04))">
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:10.5px;color:var(--cy);letter-spacing:.12em;font-weight:600;margin-bottom:8px">CONSULTORIA DE TECNOLOGIA</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.35rem;color:var(--t1);margin-bottom:6px">Precisa de uma arquitetura de IA sob medida para sua operação?</h3>
+        <p style="color:var(--t2);font-size:.88rem;line-height:1.6;margin:0;max-width:620px">Analisamos os processos da sua empresa, desenhamos o fluxo autônomo e implementamos integrando com seu ERP, CRM e sistemas internos.</p>
       </div>
-
-      <!-- Como acontece na prática -->
-      <div class="reveal" style="display:flex;gap:0;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:36px;padding:22px 24px;border-radius:11px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)">
-        <div style="text-align:center;flex:1;min-width:80px">
-          <div data-i18n="sc_t1h" style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--cy);font-weight:600;letter-spacing:.08em;margin-bottom:6px">ENTRAMOS</div>
-          <div data-i18n="sc_t1d" style="font-size:.72rem;color:var(--t3)">Visita e entrevistas com cada área</div>
-        </div>
-        <div style="color:rgba(255,255,255,.12);font-size:.7rem">→</div>
-        <div style="text-align:center;flex:1;min-width:80px">
-          <div data-i18n="sc_t2h" style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--b3);font-weight:600;letter-spacing:.08em;margin-bottom:6px">ANALISAMOS</div>
-          <div data-i18n="sc_t2d" style="font-size:.72rem;color:var(--t3)">Mapeamos o retrabalho real</div>
-        </div>
-        <div style="color:rgba(255,255,255,.12);font-size:.7rem">→</div>
-        <div style="text-align:center;flex:1;min-width:80px">
-          <div data-i18n="sc_t3h" style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--b3);font-weight:600;letter-spacing:.08em;margin-bottom:6px">DOCUMENTAMOS</div>
-          <div data-i18n="sc_t3d" style="font-size:.72rem;color:var(--t3)">Tudo fica registrado e com você</div>
-        </div>
-        <div style="color:rgba(255,255,255,.12);font-size:.7rem">→</div>
-        <div style="text-align:center;flex:1;min-width:80px">
-          <div data-i18n="sc_t4h" style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--vt);font-weight:600;letter-spacing:.08em;margin-bottom:6px">IMPLEMENTAMOS</div>
-          <div data-i18n="sc_t4d" style="font-size:.72rem;color:var(--t3)">Com a equipe, no ponto de uso</div>
-        </div>
-        <div style="color:rgba(255,255,255,.12);font-size:.7rem">→</div>
-        <div style="text-align:center;flex:1;min-width:80px">
-          <div data-i18n="sc_t5h" style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--gr);font-weight:600;letter-spacing:.08em;margin-bottom:6px">TRANSFERIMOS</div>
-          <div data-i18n="sc_t5d" style="font-size:.72rem;color:var(--t3)">Equipe opera sozinha no final</div>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="reveal" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:28px 32px;border-radius:12px;border:1px solid rgba(6,182,212,.18);background:rgba(6,182,212,.03)">
-        <div>
-          <div data-i18n="sc_cta_h" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--t1);margin-bottom:4px">Primeiro, a gente entende a sua operação.</div>
-          <div data-i18n="sc_cta_sub" style="font-size:.82rem;color:var(--t3)">Sem proposta antecipada. Sem pitch. Só conversa — e depois o que fizer sentido para os dois lados.</div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-          <a href="https://wa.me/5581991471765?text=Quero%20entender%20como%20funciona%20a%20consultoria%20AutoGenius" target="_blank" class="btn-wa" style="font-size:.85rem;padding:11px 24px;white-space:nowrap"><i class="fab fa-whatsapp"></i><span data-i18n="sc_wa_btn">Conversar sobre minha operação</span></a>
-          <a href="#" onclick="go('consultoria');return false;" style="font-size:.82rem;font-weight:600;color:var(--cy);text-decoration:none;white-space:nowrap;font-family:'Space Grotesk',sans-serif" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'"><span data-i18n="sc_method_link">Ver metodologia →</span></a>
-        </div>
-      </div>
-
+      <a href="#" onclick="go('consultoria');return false;" class="btn-ghost" style="padding:12px 24px;font-size:.88rem;white-space:nowrap;border-color:rgba(6,182,212,.35);color:var(--cy)">Ver como funciona a Consultoria →</a>
     </div>
   </section>
+
+    <!-- S_GUARANTEE · GARANTIA RISCO ZERO ──────────────────── -->
+  <section style="padding:48px 24px">
+    <div class="card reveal" style="max-width:880px;margin:0 auto;padding:32px;border-color:rgba(34,197,94,.3);background:linear-gradient(145deg,rgba(34,197,94,.06),rgba(13,24,41,.95));display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+      <div style="width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);display:flex;align-items:center;justify-content:center;color:#22c55e;font-size:1.8rem;flex-shrink:0">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <div style="flex:1;min-width:260px">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:#22c55e;letter-spacing:.12em;font-weight:700;margin-bottom:4px">GARANTIA INCONDICIONAL DE 7 DIAS</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.25rem;color:var(--t1);margin-bottom:6px">Risco Zero para a sua empresa</h3>
+        <p style="color:var(--t2);font-size:.85rem;line-height:1.6;margin:0">Teste a AutoGenius na sua operação. Se você não observar respostas em segundos e agendamentos automáticos na sua empresa, devolvemos 100% do seu investimento imediatamente. Sem pegadinhas.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sdiv"></div>
 
   <!-- S8 · CTA FINAL ──────────────────────── -->
   <section style="padding:108px 24px;text-align:center;position:relative;overflow:hidden">
@@ -1209,12 +1278,12 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       <i class="fab fa-whatsapp" style="font-size:1.1rem"></i><span data-i18n="cont_wa">Falar no WhatsApp agora</span>
     </a>
     <div data-i18n="cont_or" style="text-align:center;color:var(--t3);font-size:10.5px;margin-bottom:20px;letter-spacing:.04em">— ou preencha o formulário —</div>
-    <div class="card" style="padding:24px;display:flex;flex-direction:column;gap:13px">
-      <div><div data-i18n="cont_f1" style="color:var(--t2);font-size:11.5px;font-weight:500;margin-bottom:5px">Nome</div><input data-i18n-ph="cont_f1ph" class="ginput" placeholder="Seu nome completo"/></div>
-      <div><div style="color:var(--t2);font-size:11.5px;font-weight:500;margin-bottom:5px">WhatsApp</div><input class="ginput" placeholder="+55 81 99999-9999"/></div>
-      <div><div data-i18n="cont_f3" style="color:var(--t2);font-size:11.5px;font-weight:500;margin-bottom:5px">Segmento</div><input data-i18n-ph="cont_f3ph" class="ginput" placeholder="Ex: Clínica, Advocacia, E-commerce…"/></div>
-      <div><div data-i18n="cont_f4" style="color:var(--t2);font-size:11.5px;font-weight:500;margin-bottom:5px">Mensagem</div><textarea data-i18n-ph="cont_f4ph" class="ginput" rows="4" placeholder="Como podemos ajudar?" style="resize:vertical"></textarea></div>
-      <button class="btn-blue" style="width:100%;justify-content:center;border:none;cursor:pointer;font-size:.875rem"><span data-i18n="cont_send">Enviar mensagem</span> <i class="fas fa-paper-plane" style="font-size:.75rem;margin-left:4px"></i></button>
+        <div class="card" style="padding:24px;display:flex;flex-direction:column;gap:13px">
+      <div><div style="color:var(--t2);font-size:11.5px;font-weight:500;margin-bottom:5px">Nome</div><input id="c_nome" class="ginput" placeholder="Seu nome completo"/></div>
+      <div><div style="color:var(--t2);font-size:11.5px;font-weight:500;margin-bottom:5px">WhatsApp / Telefone</div><input id="c_whats" class="ginput" placeholder="+55 81 99999-9999"/></div>
+      <div><div style="color:var(--t2);font-size:11.5px;font-weight:500;margin-bottom:5px">Segmento</div><input id="c_seg" class="ginput" placeholder="Ex: Clínica de Estética, Revenda de Carros, Imobiliária, Escola…"/></div>
+      <div><div style="color:var(--t2);font-size:11.5px;font-weight:500;margin-bottom:5px">Mensagem</div><textarea id="c_msg" class="ginput" rows="4" placeholder="Como podemos ajudar seu negócio?" style="resize:vertical"></textarea></div>
+      <button onclick="sendFormToWA()" class="btn-wa" style="width:100%;justify-content:center;border:none;cursor:pointer;font-size:.875rem;padding:12px"><i class="fab fa-whatsapp" style="font-size:1.1rem"></i> Enviar direto para o WhatsApp</button>
     </div>
   </section>
 </div>
@@ -2326,37 +2395,26 @@ function toggleAudio(){
 /* ── Cluster toggle ── */
 const CLUSTER_PLANS={
   low:[
-    {month:'R$794',setup:'R$1.380',contacts:{pt:'3k contatos/mês',en:'3k contacts/mo',es:'3k contactos/mes',de:'3k Kontakte/Monat',zh:'每月3k联系人'}},
-    {month:'R$1.139',setup:'R$2.070',contacts:{pt:'8k contatos/mês',en:'8k contacts/mo',es:'8k contactos/mes',de:'8k Kontakte/Monat',zh:'每月8k联系人'}},
-    {month:'R$1.714',setup:'R$2.875',contacts:{pt:'15k contatos/mês',en:'15k contacts/mo',es:'15k contactos/mes',de:'15k Kontakte/Monat',zh:'每月15k联系人'}},
-    {month:'R$2.634',setup:'R$4.025',contacts:{pt:'30k contatos/mês',en:'30k contacts/mo',es:'30k contactos/mes',de:'30k Kontakte/Monat',zh:'每月30k联系人'}},
-    {month:'R$4.014',setup:'R$6.785',contacts:{pt:'60k contatos/mês',en:'60k contacts/mo',es:'60k contactos/mes',de:'60k Kontakte/Monat',zh:'每月60k联系人'}},
+    {month:'R$794',setup:'R$1.380',contacts:{pt:'Até 3k contatos/mês',en:'Up to 3k contacts/mo',es:'Hasta 3k contactos/mes',de:'Bis zu 3k Kontakte/Monat',zh:'每月最多3k联系人'}},
+    {month:'R$1.714',setup:'R$2.875',contacts:{pt:'Até 15k contatos/mês',en:'Up to 15k contacts/mo',es:'Hasta 15k contactos/mes',de:'Bis zu 15k Kontakte/Monat',zh:'每月最多15k联系人'}},
+    {month:'R$3.890',setup:'R$5.500',contacts:{pt:'Até 50k contatos/mês',en:'Up to 50k contacts/mo',es:'Hasta 50k contactos/mes',de:'Bis zu 50k Kontakte/Monat',zh:'每月最多50k联系人'}}
   ],
   high:[
-    {month:'R$1.139',setup:'R$2.070',contacts:{pt:'5k contatos/mês',en:'5k contacts/mo',es:'5k contactos/mes',de:'5k Kontakte/Monat',zh:'每月5k联系人'}},
-    {month:'R$1.714',setup:'R$2.875',contacts:{pt:'12k contatos/mês',en:'12k contacts/mo',es:'12k contactos/mes',de:'12k Kontakte/Monat',zh:'每月12k联系人'}},
-    {month:'R$2.634',setup:'R$4.025',contacts:{pt:'25k contatos/mês',en:'25k contacts/mo',es:'25k contactos/mes',de:'25k Kontakte/Monat',zh:'每月25k联系人'}},
-    {month:'R$4.014',setup:'R$6.785',contacts:{pt:'50k contatos/mês',en:'50k contacts/mo',es:'50k contactos/mes',de:'50k Kontakte/Monat',zh:'每月50k联系人'}},
-    {month:'R$6.785',setup:'R$14.835',contacts:{pt:'100k contatos/mês',en:'100k contacts/mo',es:'100k contactos/mes',de:'100k Kontakte/Monat',zh:'每月100k联系人'}},
+    {month:'R$1.139',setup:'R$2.070',contacts:{pt:'Até 8k contatos/mês',en:'Up to 8k contacts/mo',es:'Hasta 8k contactos/mes',de:'Bis zu 8k Kontakte/Monat',zh:'每月最多8k联系人'}},
+    {month:'R$2.634',setup:'R$4.025',contacts:{pt:'Até 30k contatos/mês',en:'Up to 30k contacts/mo',es:'Hasta 30k contactos/mes',de:'Bis zu 30k Kontakte/Monat',zh:'每月最多30k联系人'}},
+    {month:'R$5.500',setup:'R$8.900',contacts:{pt:'Até 80k contatos/mês',en:'Up to 80k contacts/mo',es:'Hasta 80k contactos/mes',de:'Bis zu 80k Kontakte/Monat',zh:'每月最多80k联系人'}}
   ]
 };
-const CLUSTER_AGENDA_LABELS={pt:['agenda','agendas'],en:['calendar','calendars'],es:['agenda','agendas'],de:['Kalender','Kalender'],zh:['日历','日历']};
+const CLUSTER_AGENDA_LABELS={pt:['agenda de atendimento','agendas de atendimento'],en:['calendar','calendars'],es:['agenda','agendas'],de:['Kalender','Kalender'],zh:['日历','日历']};
 const CLUSTER_DESCS={
-  low:{pt:'Low: até 60k contatos/mês · ideal para PMEs e profissionais liberais',en:'Low: up to 60k contacts/mo · ideal for SMEs and freelancers',es:'Low: hasta 60k contactos/mes · ideal para PyMEs y profesionales',de:'Low: bis zu 60k Kontakte/Monat · ideal für KMUs und Freiberufler',zh:'低档：每月最多60k联系人 · 适合中小企业和自由职业者'},
-  high:{pt:'High: até 100k contatos/mês · para operações de alto volume',en:'High: up to 100k contacts/mo · for high-volume operations',es:'High: hasta 100k contactos/mes · para operaciones de alto volumen',de:'High: bis zu 100k Kontakte/Monat · für Hochvolumen-Betriebe',zh:'高档：每月最多100k联系人 · 适合高量运营'}
+  low:{pt:'Low: até 50k contatos/mês · ideal para PMEs e operações locais',en:'Low: up to 50k contacts/mo · ideal for SMEs and local operations',es:'Low: hasta 50k contactos/mes · ideal para PyMEs y operaciones locales',de:'Low: bis zu 50k Kontakte/Monat · ideal für KMUs',zh:'低档：每月最多50k联系人 · 适合中小企业'},
+  high:{pt:'High: até 80k+ contatos/mês · para operações de alto volume e redes',en:'High: up to 80k+ contacts/mo · for high-volume operations & chains',es:'High: hasta 80k+ contactos/mes · para operaciones de alto volumen',de:'High: bis zu 80k+ Kontakte/Monat · für Hochvolumen-Betriebe',zh:'高档：每月最多80k+联系人 · 适合高量运营'}
 };
 const CLUSTER_TAGS_I18N={
-  low:{pt:['Clínicas & consultórios','Imobiliárias','Restaurantes & delivery','Farmácias','Academias','Hotéis & pousadas','Escolas & cursos','Eventos & buffets'],en:['Clinics & offices','Real estate agencies','Restaurants & delivery','Pharmacies','Gyms','Hotels & guesthouses','Schools & courses','Events & catering'],es:['Clínicas & consultorios','Inmobiliarias','Restaurantes & delivery','Farmacias','Gimnasios','Hoteles & posadas','Escuelas & cursos','Eventos & catering'],de:['Kliniken & Praxen','Immobilienbüros','Restaurants & Lieferservice','Apotheken','Fitnessstudios','Hotels & Pensionen','Schulen & Kurse','Events & Catering'],zh:['诊所&门诊','房产中介','餐厅&外卖','药店','健身房','酒店&旅馆','学校&课程','活动&餐饮']},
-  high:{pt:['Distribuidoras B2B','Concessionárias','Franquias multi-unidade','Redes varejistas','E-commerce de alto volume','Planos de saúde','Fintechs','SaaS & recorrência'],en:['B2B distributors','Dealerships','Multi-unit franchises','Retail chains','High-volume e-commerce','Health plans','Fintechs','SaaS & subscription'],es:['Distribuidoras B2B','Concesionarias','Franquicias multi-unidad','Cadenas minoristas','E-commerce de alto volumen','Planes de salud','Fintechs','SaaS & recurrencia'],de:['B2B-Distributoren','Autohäuser','Multi-Standort-Franchises','Einzelhandelsketten','Hochvolumen-E-Commerce','Krankenkassen','Fintechs','SaaS & Abo-Modelle'],zh:['B2B分销商','经销商','多门店加盟','零售连锁','高量电商','医疗保险','金融科技','SaaS&订阅']}
+  low:{pt:['Clínicas & consultórios','Revendas de carros','Imobiliárias','Escolas & cursos','Restaurantes & delivery','Farmácias','Academias','Hotéis & pousadas'],en:['Clinics & offices','Car dealerships','Real estate agencies','Schools & courses','Restaurants & delivery','Pharmacies','Gyms','Hotels'],es:['Clínicas & consultorios','Concesionarias de autos','Inmobiliarias','Escuelas & cursos','Restaurantes','Farmacias','Gimnasios','Hoteles'],de:['Kliniken & Praxen','Autohäuser','Immobilienbüros','Schulen & Kurse','Restaurants','Apotheken','Fitnessstudios','Hotels'],zh:['诊所&门诊','汽车经销商','房产中介','学校&课程','餐厅&外卖','药店','健身房','酒店']},
+  high:{pt:['Distribuidoras B2B','Concessionárias','Franquias multi-unidade','Redes varejistas','E-commerce de alto volume','Planos de saúde','Fintechs','SaaS & recorrência'],en:['B2B distributors','Dealerships','Multi-unit franchises','Retail chains','High-volume e-commerce','Health plans','Fintechs','SaaS'],es:['Distribuidoras B2B','Concesionarias','Franquicias multi-unidad','Cadenas minoristas','E-commerce de alto volumen','Planes de salud','Fintechs','SaaS'],de:['B2B-Distributoren','Autohäuser','Multi-Standort-Franchises','Einzelhandelsketten','Hochvolumen-E-Commerce','Krankenkassen','Fintechs','SaaS'],zh:['B2B分销商','经销商','多门店加盟','零售连锁','高量电商','医疗保险','金融科技','SaaS']}
 };
-const CLUSTERS={
-  low:{plans:CLUSTER_PLANS.low,desc:'Low: até 60k contatos/mês · ideal para PMEs e profissionais liberais'},
-  high:{plans:CLUSTER_PLANS.high,desc:'High: até 100k contatos/mês · para operações de alto volume'}
-};
-const CLUSTER_TAGS={
-  low:['Clínicas & consultórios','Imobiliárias','Restaurantes & delivery','Farmácias','Academias','Hotéis & pousadas','Escolas & cursos','Eventos & buffets'],
-  high:['Distribuidoras B2B','Concessionárias','Franquias multi-unidade','Redes varejistas','E-commerce de alto volume','Planos de saúde','Fintechs','SaaS & recorrência']
-};
+
 let _cluster='low';
 function _clearEl(el){while(el.firstChild)el.removeChild(el.firstChild);}
 function setCluster(c){
@@ -2372,7 +2430,7 @@ function setCluster(c){
     const ct=card.querySelector('.p-contacts');const ag=card.querySelector('.p-agendas');
     if(m)m.textContent=p.month;if(s)s.textContent=p.setup;
     if(ct)ct.textContent=(p.contacts[lang]||p.contacts.pt);
-    if(ag){const agNums=[1,2,5,10,15];const n=agNums[i]||1;ag.textContent=n+' '+(n===1?agendaForms[0]:agendaForms[1]);}
+    if(ag){const agNums=c==='high'?[2,10,25]:[1,5,15];const n=agNums[i]||1;ag.textContent=n+' '+(n===1?agendaForms[0]:agendaForms[1]);}
   });
   const desc=document.getElementById('cluster-desc');
   if(desc)desc.textContent=(CLUSTER_DESCS[c][lang]||CLUSTER_DESCS[c].pt);
@@ -2447,45 +2505,25 @@ runDemo();
 /* ── FAQ builder (DOM-only, no innerHTML) ── */
 const FAQS={
   pt:[
-    {q:'O que é a AutoGenius AI?',a:'Empresa especializada em Agentes de IA autônomos para WhatsApp. Em vez de apenas conversar, nossos Agentes realizam tarefas como agendamentos, vendas e qualificação de leads 24/7.'},
-    {q:'Quanto tempo leva para implementar?',a:'A maioria dos projetos fica pronta em 7 dias úteis, dependendo da complexidade das integrações necessárias.'},
-    {q:'A IA entende áudios e erros de digitação?',a:'Sim. Nossa IA é treinada para variações de linguagem, gírias, erros de digitação e transcrição de mensagens de áudio.'},
-    {q:'Posso cancelar a qualquer momento?',a:'Sim. Nossos planos são sem fidelidade. Você pode cancelar sem multas. O serviço permanece ativo até o fim do ciclo pago.'},
-    {q:'Meus dados estão seguros?',a:'Totalmente. Usamos criptografia e seguimos as diretrizes da LGPD. Seus dados são confidenciais.'},
-    {q:'Qual a diferença entre chatbot e agente de IA?',a:'Chatbots seguem fluxos fixos. Nossos Agentes entendem contexto, tomam decisões e executam tarefas reais — agendando, qualificando leads, enviando propostas e disparando follow-ups automaticamente.'},
+    {q:'O que é a AutoGenius AI?',a:'Somos uma plataforma de Agentes Autônomos de IA para WhatsApp que atende, qualifica leads, consulta estoque/agendas e fecha vendas 24 horas por dia, 7 dias por semana.'},
+    {q:'Quanto tempo leva para implementar na minha empresa?',a:'Entregamos o seu agente 100% configurado e integrado ao seu sistema em 7 dias úteis.'},
+    {q:'A IA entende mensagens de áudio e erros de digitação?',a:'Sim! Nossa IA transcreve áudios em segundos, entende gírias, erros de digitação e contexto como uma pessoa real.'},
+    {q:'E se a IA não souber responder alguma pergunta do cliente?',a:'A IA possui guardrails rígidos. Se o cliente solicitar uma condição especial fora das regras, a IA transfere o atendimento para sua equipe humana no CRM mantendo todo o histórico.'},
+    {q:'Como funciona a integração com meu CRM ou sistema atual?',a:'Conectamos nativamente via API e Webhooks com os principais CRMs (RD Station, HubSpot, Kommo, Pipedrive) e sistemas de agenda (Google Agenda, Feegow, Syonet, Vista CRM, Sponte, etc.).'},
+    {q:'Posso cancelar a qualquer momento?',a:'Sim! Todos os nossos planos são mensais e sem fidelidade. Você pode cancelar quando quiser sem multas.'},
+    {q:'Meus dados e os dos meus clientes estão seguros?',a:'Sim, utilizamos criptografia AES-256 em trânsito e em repouso e estamos 100% em conformidade com a LGPD.'},
+    {q:'Qual a diferença entre um chatbot comum e o Agente da AutoGenius?',a:'Chatbots comuns seguem botões e opções engessadas ("digite 1"). O Agente AutoGenius entende a conversa em linguagem natural, tira dúvidas e executa ações de agendamento e venda.'},
+    {q:'Como funciona a Garantia de 7 Dias?',a:'Você testa a AutoGenius na prática. Se não observar agendamentos mais rápidos e respostas imediatas na sua operação, devolvemos 100% do seu dinheiro.'},
+    {q:'Quantos atendimentos a IA consegue fazer ao mesmo tempo?',a:'Ilimitados! A IA atende milhares de clientes simultaneamente sem fila de espera e com tempo de resposta menor que 3 segundos.'}
   ],
   en:[
-    {q:'What is AutoGenius AI?',a:'A company specializing in autonomous AI Agents for WhatsApp. Instead of just chatting, our Agents perform tasks like scheduling, sales, and lead qualification 24/7.'},
-    {q:'How long does implementation take?',a:'Most projects are ready in 7 business days, depending on the complexity of the integrations required.'},
-    {q:'Does the AI understand audio messages and typos?',a:'Yes. Our AI is trained for language variations, slang, typos, and audio message transcription.'},
-    {q:'Can I cancel at any time?',a:'Yes. Our plans have no lock-in. You can cancel without penalties. The service remains active until the end of the paid cycle.'},
-    {q:'Is my data secure?',a:'Completely. We use encryption and follow LGPD guidelines. Your data is confidential.'},
-    {q:'What\'s the difference between a chatbot and an AI agent?',a:'Chatbots follow fixed flows. Our Agents understand context, make decisions and perform real tasks — scheduling, qualifying leads, sending proposals and firing follow-ups automatically.'},
-  ],
-  es:[
-    {q:'¿Qué es AutoGenius AI?',a:'Empresa especializada en Agentes de IA autónomos para WhatsApp. En lugar de solo conversar, nuestros Agentes realizan tareas como agendamiento, ventas y calificación de leads 24/7.'},
-    {q:'¿Cuánto tiempo tarda la implementación?',a:'La mayoría de los proyectos están listos en 7 días hábiles, según la complejidad de las integraciones necesarias.'},
-    {q:'¿La IA entiende audios y errores de tipeo?',a:'Sí. Nuestra IA está entrenada para variaciones de lenguaje, jerga, errores tipográficos y transcripción de mensajes de audio.'},
-    {q:'¿Puedo cancelar en cualquier momento?',a:'Sí. Nuestros planes no tienen permanencia. Puedes cancelar sin penalizaciones. El servicio permanece activo hasta el final del ciclo pagado.'},
-    {q:'¿Mis datos están seguros?',a:'Totalmente. Usamos cifrado y seguimos las directrices de la LGPD. Tus datos son confidenciales.'},
-    {q:'¿Cuál es la diferencia entre chatbot y agente de IA?',a:'Los chatbots siguen flujos fijos. Nuestros Agentes entienden contexto, toman decisiones y ejecutan tareas reales — agendando, calificando leads, enviando propuestas y disparando seguimientos automáticamente.'},
-  ],
-  de:[
-    {q:'Was ist AutoGenius AI?',a:'Ein Unternehmen, das auf autonome KI-Agenten für WhatsApp spezialisiert ist. Statt nur zu chatten, führen unsere Agenten Aufgaben wie Terminplanung, Verkauf und Lead-Qualifizierung 24/7 aus.'},
-    {q:'Wie lange dauert die Implementierung?',a:'Die meisten Projekte sind in 7 Werktagen fertig, abhängig von der Komplexität der erforderlichen Integrationen.'},
-    {q:'Versteht die KI Sprachnachrichten und Tippfehler?',a:'Ja. Unsere KI ist für Sprachvariationen, Slang, Tippfehler und Audio-Transkription trainiert.'},
-    {q:'Kann ich jederzeit kündigen?',a:'Ja. Unsere Pläne haben keine Bindungszeit. Sie können ohne Vertragsstrafen kündigen. Der Service bleibt bis zum Ende des bezahlten Zyklus aktiv.'},
-    {q:'Sind meine Daten sicher?',a:'Vollständig. Wir verwenden Verschlüsselung und folgen den LGPD-Richtlinien. Ihre Daten sind vertraulich.'},
-    {q:'Was ist der Unterschied zwischen Chatbot und KI-Agent?',a:'Chatbots folgen festen Abläufen. Unsere Agenten verstehen Kontext, treffen Entscheidungen und führen reale Aufgaben aus — Termine planen, Leads qualifizieren, Angebote senden und Follow-ups automatisch auslösen.'},
-  ],
-  zh:[
-    {q:'AutoGenius AI是什么？',a:'专注于WhatsApp自主AI代理的公司。我们的代理不只是聊天，还能全天候执行预约、销售和线索筛选等任务。'},
-    {q:'实施需要多长时间？',a:'大多数项目在7个工作日内完成，具体取决于所需集成的复杂性。'},
-    {q:'AI能理解语音消息和拼写错误吗？',a:'可以。我们的AI经过训练，能处理语言变体、俚语、拼写错误和语音消息转录。'},
-    {q:'我可以随时取消吗？',a:'可以。我们的套餐没有绑定期。您可以无违约金取消。服务在付费周期结束前持续有效。'},
-    {q:'我的数据安全吗？',a:'完全安全。我们使用加密技术并遵循LGPD准则。您的数据是保密的。'},
-    {q:'聊天机器人和AI代理有什么区别？',a:'聊天机器人遵循固定流程。我们的代理理解上下文，做出决策并执行真实任务——自动预约、筛选线索、发送报价和跟进。'},
-  ],
+    {q:'What is AutoGenius AI?',a:'We are an Autonomous AI Agent platform for WhatsApp that handles, qualifies leads, checks inventory/calendars, and closes sales 24/7.'},
+    {q:'How long does implementation take?',a:'We deliver your agent 100% configured and integrated with your system within 7 business days.'},
+    {q:'Does the AI understand voice notes and typos?',a:'Yes! Our AI transcribes audio notes, understands slang, typos, and context just like a real person.'},
+    {q:'What if the AI cannot answer a question?',a:'The AI has strict guardrails. If a request falls outside business rules, it smoothly hands off to a human agent with full history.'},
+    {q:'Can I cancel anytime?',a:'Yes! All our plans are monthly with no lock-in contracts.'},
+    {q:'Is my data safe?',a:'Yes, 100% encrypted with AES-256 and compliant with privacy regulations.'}
+  ]
 };
 function buildFAQ(){
   const list=document.getElementById('faqlist');
@@ -2534,6 +2572,263 @@ function tfaq(i){
   document.querySelectorAll('[id^="fi"]').forEach(ic=>{ic.style.transform='';ic.style.color='#3B82F6';});
   if(!open){ans.style.maxHeight=ans.scrollHeight+'px';ico.style.transform='rotate(45deg)';ico.style.color='#06b6d4';}
 }
+
+function sendFormToWA() {
+  const nome = document.getElementById('c_nome')?.value || 'Não informado';
+  const whats = document.getElementById('c_whats')?.value || 'Não informado';
+  const seg = document.getElementById('c_seg')?.value || 'Não informado';
+  const msg = document.getElementById('c_msg')?.value || 'Sem mensagem';
+  
+  const text = `*Novo Contato via Site AutoGenius*%0A%0A` +
+               `*Nome:* ${encodeURIComponent(nome)}%0A` +
+               `*WhatsApp:* ${encodeURIComponent(whats)}%0A` +
+               `*Segmento:* ${encodeURIComponent(seg)}%0A` +
+               `*Mensagem:* ${encodeURIComponent(msg)}`;
+               
+  window.open(`https://wa.me/5581991471765?text=${text}`, '_blank');
+}
+
+
+// ━━━━ CALCULADORA GAMIFICADA DE ROI ━━━━
+function setCalcSegment(seg, defaultLeads, defaultTicket) {
+  document.querySelectorAll('.calc-seg-btn').forEach(btn => {
+    btn.style.background = 'transparent';
+    btn.style.borderColor = 'var(--bord)';
+    btn.style.color = 'var(--t2)';
+    btn.style.fontWeight = 'normal';
+  });
+
+  const activeBtn = document.getElementById('cseg-' + seg);
+  if (activeBtn) {
+    let color = 'var(--b5)';
+    if (seg === 'carros') color = 'rgba(249,115,22,.35)';
+    if (seg === 'clinicas') color = 'rgba(6,182,212,.35)';
+    if (seg === 'imoveis') color = 'rgba(124,58,237,.35)';
+    if (seg === 'escolas') color = 'rgba(20,184,166,.35)';
+    
+    activeBtn.style.background = 'rgba(37,99,235,.12)';
+    activeBtn.style.borderColor = color;
+    activeBtn.style.color = 'var(--t1)';
+    activeBtn.style.fontWeight = '600';
+  }
+
+  document.getElementById('calc-leads-slider').value = defaultLeads;
+  document.getElementById('calc-ticket-slider').value = defaultTicket;
+  updateCalc();
+}
+
+function updateCalc() {
+  const leads = parseInt(document.getElementById('calc-leads-slider').value) || 150;
+  const ticket = parseInt(document.getElementById('calc-ticket-slider').value) || 4500;
+
+  document.getElementById('calc-leads-val').innerText = leads.toLocaleString('pt-BR') + ' leads';
+  document.getElementById('calc-ticket-val').innerText = 'R$ ' + ticket.toLocaleString('pt-BR');
+
+  // ~4% a 6% do total de leads são vendas perdidas diretamente por demora no atendimento fora do horário
+  const lostClients = Math.max(1, Math.round(leads * 0.05));
+  const lostRevenue = lostClients * ticket;
+
+  const formattedRevenue = 'R$ ' + lostRevenue.toLocaleString('pt-BR');
+
+  document.getElementById('calc-lost-display').innerHTML = formattedRevenue + '<span style="font-size:1rem;font-weight:400;color:var(--t3)">/mês</span>';
+  document.getElementById('calc-lost-clients').innerText = lostClients + (lostClients === 1 ? ' cliente perdido' : ' clientes perdidos');
+
+  const waText = encodeURIComponent(`Olá! Fiz o cálculo no site da AutoGenius e vi que estou perdendo cerca de ${formattedRevenue}/mês por demora no atendimento. Quero recuperar esse valor!`);
+  document.getElementById('calc-wa-btn').href = `https://wa.me/5581991471765?text=${waText}`;
+}
+
+// Mobile responsive fix for calculator
+const calcCss = document.createElement('style');
+calcCss.innerHTML = `@media(max-width:767px){#calc-section div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;gap:24px!important}}`;
+document.head.appendChild(calcCss);
+
+
+const extraCss = document.createElement('style');
+extraCss.innerHTML = `@media(max-width:767px){#cockpit-metrics{grid-template-columns:1fr 1fr!important} #trust-cards{grid-template-columns:1fr!important}}`;
+document.head.appendChild(extraCss);
+
+
+const intCss = document.createElement('style');
+intCss.innerHTML = `@media(max-width:767px){#int-grid{grid-template-columns:1fr 1fr!important}}`;
+document.head.appendChild(intCss);
+
+
+const pilCss = document.createElement('style');
+pilCss.innerHTML = `@media(max-width:767px){#pillars-grid{grid-template-columns:1fr 1fr!important}}`;
+document.head.appendChild(pilCss);
+
+
+
+/* ━━━━ VERTICAL CHAT SEQUENTIAL STREAMING ENGINE ━━━━ */
+const VCHAT_DATA = [
+  // 0: CARROS
+  {
+    themeColor: 'var(--or)',
+    bgAgent: 'rgba(249,115,22,.12)',
+    borderAgent: 'rgba(249,115,22,.18)',
+    iconAgent: '<i class="fas fa-robot" style="color:white;font-size:9px"></i>',
+    bgIcon: 'linear-gradient(135deg,var(--or),#ea580c)',
+    messages: [
+      { sender: 'user', text: 'Oi, vi o Corolla 2023 no OLX. Ainda tem? Aceita troca?' },
+      { sender: 'agent', text: 'Oi! 😊 Sim, o Corolla XEi 2023 está disponível! Aceitamos troca sim. Qual carro você tem atualmente e qual o ano?' },
+      { sender: 'user', text: 'Um HB20 2020 completo' },
+      { sender: 'agent', text: 'Ótimo! O HB20 2020 é bem procurado. Vou registrar para avaliação. Que tal agendar um test-drive? Temos horários amanhã às 10h e 14h. Qual prefere?' },
+      { sender: 'user', text: '14h tá ótimo!' },
+      { sender: 'agent', text: 'Perfeito! ✅ Test-drive agendado para amanhã às 14h com o vendedor Rafael. Ele já vai estar com o Corolla preparado. Até lá!' }
+    ],
+    badge: 'lead qualificado → test-drive agendado em 1m42s · 03:16 AM'
+  },
+  // 1: CLÍNICAS
+  {
+    themeColor: 'var(--cy)',
+    bgAgent: 'rgba(6,182,212,.12)',
+    borderAgent: 'rgba(6,182,212,.18)',
+    iconAgent: '<i class="fas fa-user-md" style="color:white;font-size:9px"></i>',
+    bgIcon: 'linear-gradient(135deg,var(--cy),var(--b5))',
+    messages: [
+      { sender: 'user', text: 'Olá, gostaria de saber se a Dra. Shirley atende amanhã para avaliação?' },
+      { sender: 'agent', text: 'Olá! 😊 Sim, a Dra. Shirley Bounafina atende amanhã! Temos horários disponíveis às 14h30 ou 16h. Qual fica melhor para você?' },
+      { sender: 'user', text: '16h é perfeito! Qual o valor da consulta?' },
+      { sender: 'agent', text: 'Agendado para amanhã às 16h com a Dra. Shirley! ✅ O valor da consulta com avaliação completa é R$ 250.' },
+      { sender: 'user', text: 'Ótimo, confirmado!' },
+      { sender: 'agent', text: 'Lembrete de preparação e localização enviados no seu WhatsApp. Te esperamos na clínica! 🌸' }
+    ],
+    badge: 'consulta agendada & no-show evitado em 1m10s · 03:18 AM'
+  },
+  // 2: IMÓVEIS
+  {
+    themeColor: 'var(--vt)',
+    bgAgent: 'rgba(139,92,246,.12)',
+    borderAgent: 'rgba(139,92,246,.18)',
+    iconAgent: '<i class="fas fa-building" style="color:white;font-size:9px"></i>',
+    bgIcon: 'linear-gradient(135deg,var(--vt),#6d28d9)',
+    messages: [
+      { sender: 'user', text: 'Vi o apartamento de 3 quartos em Boa Viagem por R$ 650k. Aceita financiamento?' },
+      { sender: 'agent', text: 'Olá! 👋 Sim, aceita financiamento por qualquer banco e uso do FGTS! O apartamento tem 88m² e vaga coberta. Quer agendar uma visita?' },
+      { sender: 'user', text: 'Quero agendar uma visita no sábado de manhã.' },
+      { sender: 'agent', text: 'Perfeito! Visita agendada para sábado às 10h com o corretor Lucas. Vou te enviar a localização exata e fotos em HD agora. 🏢' }
+    ],
+    badge: 'lead altamente qualificado → visita marcada em 1m50s · 03:20 AM'
+  },
+  // 3: ESCOLAS
+  {
+    themeColor: 'var(--tq)',
+    bgAgent: 'rgba(20,184,166,.12)',
+    borderAgent: 'rgba(20,184,166,.18)',
+    iconAgent: '<i class="fas fa-graduation-cap" style="color:white;font-size:9px"></i>',
+    bgIcon: 'linear-gradient(135deg,var(--tq),#0d9488)',
+    messages: [
+      { sender: 'user', text: 'Boa tarde, gostaria de informações sobre matrícula para o 6º ano fundamental.' },
+      { sender: 'agent', text: 'Olá! Seja bem-vindo ao Colégio St. Victor! 😊 Temos poucas vagas para o 6º ano. Gostaria de agendar uma visita pedagógica para conhecer a estrutura?' },
+      { sender: 'user', text: 'Sim! Quinta-feira às 15h seria possível?' },
+      { sender: 'agent', text: 'Com certeza! Agendado para quinta-feira às 15h com a nossa coordenação pedagógica. Já deixei o material reservado! 🎓' }
+    ],
+    badge: 'visita pedagógica agendada · conversão automatizada · 03:22 AM'
+  }
+];
+
+let _vchatTimers = {};
+
+function runVChatAnimation(panelIdx) {
+  const container = document.getElementById('vchat-' + panelIdx);
+  if (!container) return;
+
+  // Clear existing timers for this panel
+  if (_vchatTimers[panelIdx]) {
+    _vchatTimers[panelIdx].forEach(t => clearTimeout(t));
+  }
+  _vchatTimers[panelIdx] = [];
+
+  container.innerHTML = '';
+  const data = VCHAT_DATA[panelIdx];
+  if (!data) return;
+
+  let currentDelay = 300;
+
+  data.messages.forEach((msg, i) => {
+    // 1. Show Typing Indicator before agent message
+    if (msg.sender === 'agent') {
+      const typingId = `typing-${panelIdx}-${i}`;
+      const timerType = setTimeout(() => {
+        const typeEl = document.createElement('div');
+        typeEl.id = typingId;
+        typeEl.style.cssText = 'display:flex;gap:8px;align-items:center;flex-direction:row-reverse;opacity:0.75';
+        typeEl.innerHTML = `
+          <div style="width:24px;height:24px;border-radius:50%;background:${data.bgIcon};display:flex;align-items:center;justify-content:center;flex-shrink:0">${data.iconAgent}</div>
+          <div style="background:${data.bgAgent};border:1px solid ${data.borderAgent};border-radius:10px 10px 2px 10px;padding:8px 12px;font-size:.75rem;color:var(--t2);display:flex;align-items:center;gap:4px">
+            <span style="font-size:10px;font-style:italic">digitando...</span>
+            <div style="width:4px;height:4px;border-radius:50%;background:${data.themeColor};animation:pulse 1s infinite"></div>
+          </div>
+        `;
+        container.appendChild(typeEl);
+        container.scrollTop = container.scrollHeight;
+      }, currentDelay);
+      _vchatTimers[panelIdx].push(timerType);
+
+      currentDelay += 900; // time spent typing
+    }
+
+    // 2. Insert Message
+    const timerMsg = setTimeout(() => {
+      // remove typing indicator if exists
+      const typeEl = document.getElementById(`typing-${panelIdx}-${i}`);
+      if (typeEl) typeEl.remove();
+
+      const msgRow = document.createElement('div');
+      msgRow.style.cssText = 'display:flex;gap:8px;align-items:flex-end;opacity:0;transform:translateY(8px);transition:all .35s ease;';
+
+      if (msg.sender === 'user') {
+        msgRow.innerHTML = `
+          <div style="width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px">👤</div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid var(--bord);border-radius:10px 10px 10px 2px;padding:10px 13px;font-size:.8rem;color:var(--t2);max-width:82%">${msg.text}</div>
+        `;
+      } else {
+        msgRow.style.flexDirection = 'row-reverse';
+        msgRow.innerHTML = `
+          <div style="width:24px;height:24px;border-radius:50%;background:${data.bgIcon};display:flex;align-items:center;justify-content:center;flex-shrink:0">${data.iconAgent}</div>
+          <div style="background:${data.bgAgent};border:1px solid ${data.borderAgent};border-radius:10px 10px 2px 10px;padding:10px 13px;font-size:.8rem;color:var(--t1);max-width:82%">${msg.text}</div>
+        `;
+      }
+
+      container.appendChild(msgRow);
+      setTimeout(() => {
+        msgRow.style.opacity = '1';
+        msgRow.style.transform = 'translateY(0)';
+      }, 20);
+
+      container.scrollTop = container.scrollHeight;
+    }, currentDelay);
+
+    _vchatTimers[panelIdx].push(timerMsg);
+    currentDelay += msg.sender === 'user' ? 800 : 1200;
+  });
+
+  // 3. Show Badge at the end
+  const timerBadge = setTimeout(() => {
+    const badgeRow = document.createElement('div');
+    badgeRow.style.cssText = 'display:flex;align-items:center;gap:6px;padding:6px 0;opacity:0;transition:opacity .5s';
+    badgeRow.innerHTML = `
+      <div style="width:6px;height:6px;background:${data.themeColor};border-radius:50%;animation:pulse 2s infinite"></div>
+      <span style="font-size:9.5px;color:var(--t3);font-family:'Space Mono',monospace;font-weight:600">${data.badge}</span>
+    `;
+    container.appendChild(badgeRow);
+    setTimeout(() => { badgeRow.style.opacity = '1'; }, 20);
+    container.scrollTop = container.scrollHeight;
+  }, currentDelay + 400);
+
+  _vchatTimers[panelIdx].push(timerBadge);
+}
+
+// Hook into switchTab to trigger chat animation
+const _origSwitchTab = switchTab;
+switchTab = function(idx) {
+  _origSwitchTab(idx);
+  runVChatAnimation(idx);
+};
+
+// Start initial chat animation on page load for Panel 0
+setTimeout(() => { runVChatAnimation(0); }, 600);
+
 </script>
 </body>
 </html>
