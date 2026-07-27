@@ -268,9 +268,9 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
 @keyframes mi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 
 /* ━━━━ Scroll reveal ━━━━━━━━━━━━━━━━━━━ */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
-.reveal-l{opacity:0;transform:translateX(-18px);transition:opacity .6s ease,transform .6s ease}
+.reveal-l{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
 .reveal-l.in{opacity:1;transform:translateX(0)}
 
 /* ━━━━ Input ━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -2163,6 +2163,15 @@ switchTab = function(idx) {
 
 // Start initial chat animation on page load for Panel 0
 setTimeout(() => { runVChatAnimation(0); }, 600);
+
+
+/* ── Scroll reveal observer ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .reveal-l').forEach(el => obs.observe(el));
+});
 
 </script>
 </body>
