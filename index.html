@@ -573,7 +573,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       </h1>
 
       <p data-i18n="hero_sub" class="reveal" style="color:var(--t2);font-size:clamp(.95rem,2vw,1.15rem);line-height:1.75;margin-bottom:42px;max-width:620px;margin-left:auto;margin-right:auto">
-        IA especializada para <strong style="color:var(--t1)">Carros, Clínicas, Imóveis e Escolas</strong>. Responde, qualifica e agenda no WhatsApp <strong style="color:var(--t1)">24/7 em menos de 3 segundos</strong>.
+        IA especializada para <strong style="color:var(--t1)">Concessionárias, Clínicas, Imobiliárias e Escolas</strong>. Responde, qualifica e agenda no WhatsApp <strong style="color:var(--t1)">24/7 em menos de 3 segundos</strong>.
       </p>
 
       <div class="hero-btns reveal" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:18px">
@@ -706,29 +706,35 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             <div>
               <label style="display:block;font-size:.78rem;font-weight:600;color:var(--t1);margin-bottom:10px;font-family:'Space Grotesk',sans-serif">1. Selecione o seu segmento:</label>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-                <button type="button" onclick="setCalcSegment('carros', 150, 4500)" class="calc-seg-btn active" id="cseg-carros" style="padding:9px 12px;border-radius:8px;border:1px solid rgba(249,115,22,.35);background:rgba(249,115,22,.12);color:var(--t1);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s;font-weight:600">🏎️ Carros (R$ 4,5k)</button>
-                <button type="button" onclick="setCalcSegment('clinicas', 200, 250)" class="calc-seg-btn" id="cseg-clinicas" style="padding:9px 12px;border-radius:8px;border:1px solid var(--bord);background:transparent;color:var(--t2);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s">🏥 Clínicas (R$ 250)</button>
-                <button type="button" onclick="setCalcSegment('imoveis', 100, 12000)" class="calc-seg-btn" id="cseg-imoveis" style="padding:9px 12px;border-radius:8px;border:1px solid var(--bord);background:transparent;color:var(--t2);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s">🏢 Imóveis (R$ 12k)</button>
-                <button type="button" onclick="setCalcSegment('escolas', 120, 1300)" class="calc-seg-btn" id="cseg-escolas" style="padding:9px 12px;border-radius:8px;border:1px solid var(--bord);background:transparent;color:var(--t2);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s">🎓 Escolas (R$ 1.3k)</button>
+                <button type="button" onclick="setCalcSegment('carros', 150, 4500)" class="calc-seg-btn active" id="cseg-carros" style="padding:9px 12px;border-radius:8px;border:1px solid rgba(249,115,22,.35);background:rgba(249,115,22,.12);color:var(--t1);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s;font-weight:600">🏎️ Concessionárias (Lucro R$ 4,5k)</button>
+                <button type="button" onclick="setCalcSegment('clinicas', 200, 250)" class="calc-seg-btn" id="cseg-clinicas" style="padding:9px 12px;border-radius:8px;border:1px solid var(--bord);background:transparent;color:var(--t2);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s">🏥 Clínicas (Consulta R$ 250)</button>
+                <button type="button" onclick="setCalcSegment('imoveis', 100, 12000)" class="calc-seg-btn" id="cseg-imoveis" style="padding:9px 12px;border-radius:8px;border:1px solid var(--bord);background:transparent;color:var(--t2);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s">🏢 Imobiliárias (Comissão R$ 12k)</button>
+                <button type="button" onclick="setCalcSegment('escolas', 120, 1300)" class="calc-seg-btn" id="cseg-escolas" style="padding:9px 12px;border-radius:8px;border:1px solid var(--bord);background:transparent;color:var(--t2);font-size:.75rem;cursor:pointer;text-align:left;transition:all .2s">🎓 Escolas (Mensalidade R$ 1,3k)</button>
               </div>
             </div>
 
-            <!-- Leads Slider -->
+            <!-- Leads Slider & Input -->
             <div>
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
                 <label style="font-size:.78rem;font-weight:600;color:var(--t1);font-family:'Space Grotesk',sans-serif">2. Leads no WhatsApp por mês:</label>
-                <span id="calc-leads-val" style="font-family:'Space Mono',monospace;font-size:.9rem;font-weight:700;color:var(--b3)">150 leads</span>
+                <div style="display:flex;align-items:center;gap:4px;background:rgba(8,14,26,.9);border:1px solid rgba(59,130,246,.3);border-radius:8px;padding:3px 8px">
+                  <input type="number" id="calc-leads-num" min="1" max="50000" value="150" oninput="syncCalcFromInput('leads')" style="width:65px;background:transparent;border:none;color:var(--b3);font-family:'Space Mono',monospace;font-size:.88rem;font-weight:700;outline:none;text-align:right">
+                  <span style="font-size:.72rem;color:var(--t2);font-family:'Space Mono',monospace">leads</span>
+                </div>
               </div>
-              <input type="range" id="calc-leads-slider" min="20" max="1000" step="10" value="150" oninput="updateCalc()" style="width:100%;accent-color:var(--b5);cursor:pointer">
+              <input type="range" id="calc-leads-slider" min="20" max="1000" step="10" value="150" oninput="syncCalcFromSlider('leads')" style="width:100%;accent-color:var(--b5);cursor:pointer">
             </div>
 
-            <!-- Ticket Slider -->
+            <!-- Ticket Slider & Input -->
             <div>
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-                <label style="font-size:.78rem;font-weight:600;color:var(--t1);font-family:'Space Grotesk',sans-serif">3. Ticket médio por cliente/venda:</label>
-                <span id="calc-ticket-val" style="font-family:'Space Mono',monospace;font-size:.9rem;font-weight:700;color:var(--gr)">R$ 4.500</span>
+                <label style="font-size:.78rem;font-weight:600;color:var(--t1);font-family:'Space Grotesk',sans-serif">3. Lucro / Ticket médio por venda:</label>
+                <div style="display:flex;align-items:center;gap:3px;background:rgba(8,14,26,.9);border:1px solid rgba(34,197,94,.3);border-radius:8px;padding:3px 8px">
+                  <span style="font-size:.8rem;color:var(--gr);font-weight:700;font-family:'Space Mono',monospace">R$</span>
+                  <input type="number" id="calc-ticket-num" min="1" max="1000000" value="4500" oninput="syncCalcFromInput('ticket')" style="width:85px;background:transparent;border:none;color:var(--gr);font-family:'Space Mono',monospace;font-size:.88rem;font-weight:700;outline:none;text-align:right">
+                </div>
               </div>
-              <input type="range" id="calc-ticket-slider" min="100" max="25000" step="100" value="4500" oninput="updateCalc()" style="width:100%;accent-color:var(--gr);cursor:pointer">
+              <input type="range" id="calc-ticket-slider" min="100" max="25000" step="100" value="4500" oninput="syncCalcFromSlider('ticket')" style="width:100%;accent-color:var(--gr);cursor:pointer">
             </div>
 
           </div>
@@ -746,7 +752,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             </div>
 
             <div style="padding:12px 14px;border-radius:10px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.18);font-size:.78rem;color:var(--t2);margin-bottom:20px">
-              ✅ <strong style="color:#10B981">Com a AutoGenius AI:</strong> Você recupera essas vendas por apenas <span style="color:var(--t1)">R$ 1.714/mês</span>.
+              ✅ <strong style="color:#10B981">Com a AutoGenius AI:</strong> Você recupera essas vendas a partir de apenas <span style="color:var(--t1)">R$ 490/mês</span>.
             </div>
 
             <a id="calc-wa-btn" href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Fiz%20o%20c%C3%A1lculo%20no%20site%20e%20vi%20que%20estou%20perdendo%20R%24%2027.000%2Fm%C3%AAs.%20Quero%20recuperar%20esses%20clientes!" target="_blank" class="btn-wa" style="width:100%;justify-content:center;padding:14px;font-size:.9rem;font-weight:700">
@@ -762,7 +768,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
   <div class="sdiv"></div>
 
       <!-- S4b · IA ESPECIALISTA ──────────────────── -->
-  <section style="padding:96px 24px;background:rgba(13,24,41,.4)">
+  <section id="s4" style="padding:96px 24px;background:rgba(13,24,41,.4)">
     <div style="max-width:1100px;margin:0 auto">
       <span data-i18n="s4b_label" class="sec-label reveal">2.1 · IA Especialista no Seu Setor</span>
       <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:700;letter-spacing:-.025em;margin-bottom:16px">
@@ -774,9 +780,9 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       
       <!-- Tabs -->
       <div class="feature-tabs" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:40px">
-        <button class="ftab active" onclick="switchTab(0)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--or);flex-shrink:0"></span>Carros</button>
+        <button class="ftab active" onclick="switchTab(0)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--or);flex-shrink:0"></span>Concessionárias</button>
         <button class="ftab" onclick="switchTab(1)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--cy);flex-shrink:0"></span>Clínicas</button>
-        <button class="ftab" onclick="switchTab(2)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--vt);flex-shrink:0"></span>Imóveis</button>
+        <button class="ftab" onclick="switchTab(2)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--vt);flex-shrink:0"></span>Imobiliárias</button>
         <button class="ftab" onclick="switchTab(3)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--tq);flex-shrink:0"></span>Escolas</button>
       </div>
 
@@ -824,7 +830,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
           <div style="padding:14px 18px;background:rgba(249,115,22,.08);border-bottom:1px solid rgba(249,115,22,.12);display:flex;align-items:center;gap:10px">
             <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--or),#ea580c);display:flex;align-items:center;justify-content:center"><i class="fas fa-robot" style="color:white;font-size:11px"></i></div>
             <div>
-              <div style="font-size:.82rem;font-weight:600;color:var(--t1)">AutoGenius · Carros</div>
+              <div style="font-size:.82rem;font-weight:600;color:var(--t1)">AutoGenius · Concessionárias</div>
               <div style="font-size:.65rem;color:var(--or);display:flex;align-items:center;gap:4px"><div style="width:5px;height:5px;border-radius:50%;background:var(--or);animation:pulse 2s infinite"></div>online agora</div>
             </div>
             <div style="margin-left:auto;font-size:.6rem;color:var(--t3);font-family:'Space Mono',monospace">03:14 AM</div>
@@ -927,7 +933,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
           <div style="padding:14px 18px;background:rgba(139,92,246,.08);border-bottom:1px solid rgba(139,92,246,.12);display:flex;align-items:center;gap:10px">
             <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--vt),#6d28d9);display:flex;align-items:center;justify-content:center"><i class="fas fa-building" style="color:white;font-size:11px"></i></div>
             <div>
-              <div style="font-size:.82rem;font-weight:600;color:var(--t1)">AutoGenius · Imóveis</div>
+              <div style="font-size:.82rem;font-weight:600;color:var(--t1)">AutoGenius · Imobiliárias</div>
               <div style="font-size:.65rem;color:var(--vt);display:flex;align-items:center;gap:4px"><div style="width:5px;height:5px;border-radius:50%;background:var(--vt);animation:pulse 2s infinite"></div>online agora</div>
             </div>
             <div style="margin-left:auto;font-size:.6rem;color:var(--t3);font-family:'Space Mono',monospace">03:18 AM</div>
@@ -1764,6 +1770,84 @@ let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
 (function loop(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;dot.style.left=mx+'px';dot.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
 
+/* ── Navigation Router & Scroll ── */
+function go(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.getElementById('page-' + page);
+  if (el) {
+    el.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  if (page === 'faq' && typeof buildFAQ === 'function') buildFAQ();
+  try {
+    localStorage.setItem('ag-page', page);
+  } catch(e) {}
+}
+
+function scrollTo2(id) {
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) {
+      const navHeight = 80;
+      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: elementPosition - navHeight, behavior: 'smooth' });
+    }
+  }, 80);
+}
+
+function toggleAudio() {
+  const audio = document.getElementById('bg-audio');
+  const label = document.getElementById('audio-label');
+  const bars = document.getElementById('audio-bars');
+  const btn = document.getElementById('audio-btn');
+  if (!audio) return;
+  if (audio.paused) {
+    audio.play().then(() => {
+      if (bars) bars.classList.add('playing');
+      if (label) label.textContent = 'Pausar';
+      if (btn) btn.classList.remove('audio-hint');
+    }).catch(err => console.log('Audio error:', err));
+  } else {
+    audio.pause();
+    if (bars) bars.classList.remove('playing');
+    if (label) label.textContent = 'Som';
+  }
+}
+
+const CLUSTERS = {
+  low: {
+    plans: [
+      { month: 'R$ 490', setup: 'R$ 699', contacts: '1.500/mês', agendas: '1 agenda' },
+      { month: 'R$ 990', setup: 'R$ 1.800', contacts: '4.000/mês', agendas: '5 agendas' },
+      { month: 'R$ 2.490', setup: 'R$ 3.500', contacts: '15.000/mês', agendas: '15 agendas' },
+    ],
+    desc: 'PMEs & Operações Enxutas: ideal para consultórios, pequenas clínicas e corretores.'
+  },
+  high: {
+    plans: [
+      { month: 'R$ 1.490', setup: 'R$ 2.500', contacts: '8.000/mês', agendas: '10 agendas' },
+      { month: 'R$ 2.490', setup: 'R$ 3.500', contacts: '15.000/mês', agendas: '15 agendas' },
+      { month: 'Sob Consulta', setup: 'R$ 14.900+', contacts: 'Sem Limite', agendas: 'Ilimitado' },
+    ]
+  }
+};
+
+function setCluster(c) {
+  const data = CLUSTERS[c];
+  if (!data) return;
+  const desc = document.getElementById('cluster-desc');
+  if (desc) desc.textContent = data.desc;
+
+  const bl = document.getElementById('btn-low');
+  const bh = document.getElementById('btn-high');
+  if (bl && bh) {
+    bl.style.background = c === 'low' ? 'var(--b5)' : 'transparent';
+    bl.style.color = c === 'low' ? 'white' : 'var(--t2)';
+    bh.style.background = c === 'high' ? 'var(--b5)' : 'transparent';
+    bh.style.color = c === 'high' ? 'white' : 'var(--t2)';
+  }
+}
+
 /* ── Feature tabs ── */
 function switchTab(idx){document.querySelectorAll('.ftab').forEach((t,i)=>t.classList.toggle('active',i===idx));document.querySelectorAll('.fpanel').forEach((p,i)=>p.classList.toggle('active',i===idx));}
 
@@ -1947,29 +2031,71 @@ function setCalcSegment(seg, defaultLeads, defaultTicket) {
     activeBtn.style.fontWeight = '600';
   }
 
-  document.getElementById('calc-leads-slider').value = defaultLeads;
-  document.getElementById('calc-ticket-slider').value = defaultTicket;
+  const numLeads = document.getElementById('calc-leads-num');
+  const slideLeads = document.getElementById('calc-leads-slider');
+  if (numLeads) numLeads.value = defaultLeads;
+  if (slideLeads) slideLeads.value = defaultLeads;
+
+  const numTicket = document.getElementById('calc-ticket-num');
+  const slideTicket = document.getElementById('calc-ticket-slider');
+  if (numTicket) numTicket.value = defaultTicket;
+  if (slideTicket) slideTicket.value = defaultTicket;
+
+  updateCalc();
+}
+
+function syncCalcFromInput(type) {
+  if (type === 'leads') {
+    const val = parseInt(document.getElementById('calc-leads-num').value) || 0;
+    const slider = document.getElementById('calc-leads-slider');
+    if (slider) slider.value = Math.min(Math.max(val, 20), 1000);
+  } else if (type === 'ticket') {
+    const val = parseInt(document.getElementById('calc-ticket-num').value) || 0;
+    const slider = document.getElementById('calc-ticket-slider');
+    if (slider) slider.value = Math.min(Math.max(val, 100), 25000);
+  }
+  updateCalc();
+}
+
+function syncCalcFromSlider(type) {
+  if (type === 'leads') {
+    const slider = document.getElementById('calc-leads-slider');
+    const num = document.getElementById('calc-leads-num');
+    if (slider && num) num.value = slider.value;
+  } else if (type === 'ticket') {
+    const slider = document.getElementById('calc-ticket-slider');
+    const num = document.getElementById('calc-ticket-num');
+    if (slider && num) num.value = slider.value;
+  }
   updateCalc();
 }
 
 function updateCalc() {
-  const leads = parseInt(document.getElementById('calc-leads-slider').value) || 150;
-  const ticket = parseInt(document.getElementById('calc-ticket-slider').value) || 4500;
+  const leadsNumEl = document.getElementById('calc-leads-num');
+  const leadsSliderEl = document.getElementById('calc-leads-slider');
+  const leads = parseInt(leadsNumEl ? leadsNumEl.value : (leadsSliderEl ? leadsSliderEl.value : 150)) || 150;
 
-  document.getElementById('calc-leads-val').innerText = leads.toLocaleString('pt-BR') + ' leads';
-  document.getElementById('calc-ticket-val').innerText = 'R$ ' + ticket.toLocaleString('pt-BR');
+  const ticketNumEl = document.getElementById('calc-ticket-num');
+  const ticketSliderEl = document.getElementById('calc-ticket-slider');
+  const ticket = parseInt(ticketNumEl ? ticketNumEl.value : (ticketSliderEl ? ticketSliderEl.value : 4500)) || 4500;
 
-  // ~4% a 6% do total de leads são vendas perdidas diretamente por demora no atendimento fora do horário
+  // ~5% do total de leads são vendas perdidas diretamente por demora no atendimento fora do horário
   const lostClients = Math.max(1, Math.round(leads * 0.05));
   const lostRevenue = lostClients * ticket;
 
   const formattedRevenue = 'R$ ' + lostRevenue.toLocaleString('pt-BR');
 
-  document.getElementById('calc-lost-display').innerHTML = formattedRevenue + '<span style="font-size:1rem;font-weight:400;color:var(--t3)">/mês</span>';
-  document.getElementById('calc-lost-clients').innerText = lostClients + (lostClients === 1 ? ' cliente perdido' : ' clientes perdidos');
+  const displayEl = document.getElementById('calc-lost-display');
+  if (displayEl) displayEl.innerHTML = formattedRevenue + '<span style="font-size:1rem;font-weight:400;color:var(--t3)">/mês</span>';
+  
+  const clientsEl = document.getElementById('calc-lost-clients');
+  if (clientsEl) clientsEl.innerText = lostClients + (lostClients === 1 ? ' cliente perdido' : ' clientes perdidos');
 
-  const waText = encodeURIComponent(`Olá! Fiz o cálculo no site da AutoGenius e vi que estou perdendo cerca de ${formattedRevenue}/mês por demora no atendimento. Quero recuperar esse valor!`);
-  document.getElementById('calc-wa-btn').href = `https://wa.me/5581991471765?text=${waText}`;
+  const waBtn = document.getElementById('calc-wa-btn');
+  if (waBtn) {
+    const waText = encodeURIComponent(`Olá! Fiz o cálculo no site da AutoGenius e vi que estou perdendo cerca de ${formattedRevenue}/mês por demora no atendimento. Quero recuperar esse valor!`);
+    waBtn.href = `https://wa.me/5581991471765?text=${waText}`;
+  }
 }
 
 // Mobile responsive fix for calculator
