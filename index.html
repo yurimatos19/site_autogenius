@@ -485,7 +485,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 <!-- ── Announcement bar ─────────────────────── -->
 <div id="wa-tooltip-badge" style="position:fixed;bottom:92px;right:24px;z-index:998;background:rgba(13,24,41,.92);border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:6px 14px;font-size:.72rem;color:var(--t1);font-family:'Space Grotesk',sans-serif;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 4px 20px rgba(0,0,0,.4)">
   <div style="width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite"></div>
-  <span>Resposta em &lt; 1 min</span>
+  <span><span data-i18n="wa_badge_txt">Resposta em &lt; 1 min</span></span>
 </div>
 <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AutoGenius%20e%20quero%20saber%20como%20funciona." target="_blank" rel="noopener" id="topbar">
   <div style="width:6px;height:6px;background:#10B981;border-radius:50%;animation:pulse 2s infinite;flex-shrink:0"></div>
@@ -1222,9 +1222,9 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
         <i class="fas fa-shield-alt"></i>
       </div>
       <div style="flex:1;min-width:260px">
-        <div style="font-family:'Space Mono',monospace;font-size:10px;color:#22c55e;letter-spacing:.12em;font-weight:700;margin-bottom:4px">GARANTIA INCONDICIONAL DE 7 DIAS</div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.25rem;color:var(--t1);margin-bottom:6px">Risco Zero para a sua empresa</h3>
-        <p style="color:var(--t2);font-size:.85rem;line-height:1.6;margin:0">Teste a AutoGenius na sua operação. Se você não observar respostas em segundos e agendamentos automáticos na sua empresa, devolvemos 100% do seu investimento imediatamente. Sem pegadinhas.</p>
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:#22c55e;letter-spacing:.12em;font-weight:700;margin-bottom:4px"><span data-i18n="guar_badge">GARANTIA INCONDICIONAL DE 7 DIAS</span></div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.25rem;color:var(--t1);margin-bottom:6px"><span data-i18n="guar_h3">Risco Zero para a sua empresa</span></h3>
+        <p style="color:var(--t2);font-size:.85rem;line-height:1.6;margin:0"><span data-i18n="guar_p">Teste a AutoGenius na sua operação. Se você não observar respostas em segundos e agendamentos automáticos na sua empresa, devolvemos 100% do seu investimento imediatamente. Sem pegadinhas.</span></p>
       </div>
     </div>
   </section>
@@ -1791,7 +1791,7 @@ function switchTab(idx){document.querySelectorAll('.ftab').forEach((t,i)=>t.clas
 
 /* ── Translations ── */
 const TRANSLATIONS={
-  pt:{
+  pt:{tech_desc:'Construído com as melhores tecnologias de infraestrutura e IA do mercado.',tech_h:'Stack Tecnológico',talk_t3d:'Passos concretos sem gastar fortunas em softwares.',talk_t3h:'Transformação Digital Prática em PMEs',talk_t2d:'A substituição de formulários por IA conversacional.',talk_t2h:'O Futuro das Vendas no WhatsApp',talk_t1d:'Como empresas reais usam automação para multiplicar vendas.',talk_t1h:'IA Sem Hype: Como Vender no Mundo Real',talk_f4_desc:'Conteúdo customizado para o time de vendas e liderança da sua empresa.',talk_f4_title:'Evento Corporativo Fechado',talk_f3_desc:'Participação como especialista debatedor em painéis de inovação.',talk_f3_title:'Painel & Mesa Redonda',talk_f2_desc:'Sessão interativa de 2 a 4 horas com exercícios e mapeamento ao vivo.',talk_f2_title:'Workshop Prático',talk_f1_desc:'Palestra magna de 45 a 60 minutos para grandes eventos e convenções.',talk_f1_title:'Keynote Principal',talk_formats_h:'Formatos Disponíveis',mission_text:'Democratizar o acesso à inteligência artificial de alto nível para empresas de todos os portes.',mission_label:'Nossa Missão',media_h:'Imprensa & Mídia',m4_label:'Atendimento 24/7',m3_label:'Integração Nativa',m2_label:'Resposta em < 3s',m1_label:'100% Autônomo',footer_copy:'© 2026 AutoGenius AI. Todos os direitos reservados.',footer_social:'Redes Sociais',footer_faq:'Ajuda',footer_contact:'Contato',footer_prod:'Produto',footer_tagline:'Agentes de IA para WhatsApp que executam.',cons_who_4:'Equipes que precisam de treinamento na prática',cons_who_3:'Gestores que querem automação de verdade',cons_who_2:'Operações que perderam o controle no WhatsApp',cons_who_1:'Empresas com processos manuais travados',cons_who_h:'Para quem é a consultoria',talk_t3_p:'Os passos concretos para modernizar processos e cultura sem gastar fortunas em softwares pesados.',talk_t3_h:'3. Transformação Digital Prática em PMEs',talk_t2_p:'Como a inteligência artificial conversacional está substituindo formulários e chats engessados no Brasil.',talk_t2_h:'2. O Futuro do Atendimento & Vendas no WhatsApp',talk_t1_p:'Uma visão prática sobre como empresas reais estão usando automação e IA para multiplicar vendas e reduzir custos.',talk_t1_h:'1. IA Sem Hype: Como Vender e Operar no Mundo Real',talk_themes_h:'Temas de Palestras & Workshops',cons_guar_t:'Trabalhamos com entregáveis claros em cada etapa. Se o acordo não for cumprido por nossa causa, você pode encerrar sem multa.',cons_guar_h:'Garantia de Entrega & Compromisso',cons_s5_t:'Sua equipe opera e evolui o que foi construído de forma independente sem depender da gente.',cons_s5_h:'5. Autonomia total',cons_s4_t:'O treinamento acontece no dia a dia com os processos reais rodando, garantindo adesão 100%.',cons_s4_h:'4. Implementamos ao lado da equipe',cons_s3_t:'Definimos as frentes de transformação em ordem de impacto real com prazos e responsáveis.',cons_s3_h:'3. Construímos o plano de ação',cons_s2_t:'Mapeamos cada problema: retrabalho, custos invisíveis e riscos de pessoa-chave. Tudo documentado.',cons_s2_h:'2. Analisamos e documentamos tudo',cons_s1_t:'Visitamos a operação. Conversamos com quem trabalha no processo. Vemos o que realmente acontece na rotina.',cons_s1_h:'1. Entramos e vemos de perto',cons_steps_sub:'Do primeiro contato até a equipe operar sozinha',cons_steps_h:'O que acontece na prática',cons_intro2:'Nossa consultoria funciona diferente: entramos na operação, trabalhamos junto com a equipe e implementamos até funcionar.',cons_intro1:'O sistema foi entregue, a equipe não sabia usar, não confiava no processo e voltou para o WhatsApp em duas semanas.',cons_chat_p:'Fazemos uma análise inicial sem custo. Mapeamos os pontos de atrito e mostramos o que pode ser automatizado.',cons_chat_h:'Quer entender onde sua operação está travada?',cons_chat_eye:'Olhar externo e técnico',commit_h:'Compromisso com Resultados',c3_desc:'Mapeamento de processos, capacitação de equipes, governança de dados e eliminação de gargalos operacionais.',c3_title:'Consultoria & Transformação Digital',c2_desc:'Modelos de linguagem avançados (LLMs), RAG (Retrieval-Augmented Generation), transcrição de áudio e automação de processos.',c2_title:'IA Aplicada & Agentes Autônomos',c1_desc:'Desenvolvimento de sistemas robustos, integrações nativas de API, bancos de dados vetoriais e plataformas escaláveis.',c1_title:'Engenharia & Arquitetura de Software',
     hero_line1:'Enquanto você dormia,',hero_line2:'um concorrente respondeu',hero_line3:'o seu cliente.',
     hero_sub:'Agentes de IA que respondem, qualificam e fecham vendas no WhatsApp — <strong style="color:var(--t1);font-weight:600">24 horas por dia, 7 dias por semana.</strong>',
     hero_cta:'<i class="fab fa-whatsapp" style="font-size:1.2rem"></i>Falar agora no WhatsApp',
@@ -1807,15 +1807,27 @@ const TRANSLATIONS={
     nav_home:'Início',nav_sol:'Solução',nav_cases:'Cases',nav_plans:'Planos',nav_about:'Sobre',nav_talk:'Palestra',nav_cons:'Consultoria',nav_faq:'Dúvidas',nav_contact:'Contato',nav_wa:'Falar no WhatsApp',
     sound_on:'Som',sound_off:'Pausar',
     marquee_label:'EMPRESAS QUE CONFIAM NA AUTOGENIUS',
-    s4b_label:'2.1 · O que seu Agente faz',s4b_h2:'Escolha o que automatizar',s4b_h2b:'primeiro.',
-    tab_0:'01 · Atendimento',tab_1:'02 · Qualificação',tab_2:'03 · Agendamento',tab_3:'04 · Follow-up',
-    p0_kicker:'ATENDIMENTO 24/7',p0_h3:'Responda em segundos,<br>não em horas.',p0_desc:'Seu Agente responde qualquer mensagem no WhatsApp instantaneamente — fins de semana, madrugada, feriado. Sem pausas.',
-    p1_kicker:'QUALIFICAÇÃO DE LEADS',p1_h3:'Só receba leads<br>que realmente compram.',p1_desc:'Seu Agente faz a triagem automaticamente: identifica intenção de compra, coleta dados e pontua o lead antes de passar para você.',
-    p2_kicker:'AGENDAMENTO AUTOMÁTICO',p2_h3:'Agenda cheia.<br>Sem você tocar no celular.',p2_desc:'O Agente consulta sua disponibilidade, agenda a consulta, envia confirmação e lembrete automático. Zero no-show.',
-    p3_kicker:'FOLLOW-UP AUTOMÁTICO',p3_h3:'Nenhum lead<br>esfria sozinho.',p3_desc:'Seu Agente faz follow-up automático 24h, 72h e 7 dias após o primeiro contato. Recupera leads que pareciam perdidos.',
+    s4b_label:'2.1 · IA Especialista no Seu Setor',s4b_h2:'Um núcleo. Quatro',s4b_h2b:'especialidades.',
     s4_label:'2.0 · Solução',s4_badge:'O que é um Agente de IA?',s4_h2a:'Um chatbot responde perguntas.',s4_h2b:'O seu Agente toma decisões.',
     s4_f1:'Qualifica o lead automaticamente',s4_f2:'Agenda direto na sua agenda',s4_f3:'Envia proposta e faz follow-up',s4_f4:'Cobra, confirma e fecha. Sozinho.',
     s4_sub:'Tudo no WhatsApp. Sem você precisar estar lá.',
+    calc_label:'2.2 · Calculadora de Oportunidade',calc_h2:'Quanto dinheiro sua empresa está deixando na mesa por demora no atendimento?',
+    calc_sub:'Simule o impacto de responder em menos de 3 segundos no WhatsApp',calc_seg_lbl:'Selecione seu segmento:',
+    calc_leads_lbl:'Mensagens / Leads por mês',calc_ticket_lbl:'Ticket Médio por Venda / Cliente (R$)',
+    calc_lost_lbl:'Vendas perdidas estimadas / mês por demora no WhatsApp:',calc_rev_lbl:'Receita estimada deixada na mesa todo mês:',
+    calc_btn:'Recuperar essa receita agora com IA',
+    pil_label:'2.3 · Plataforma Completa',pil_h2:'Não é só um chatbot. É a sua operação inteira automatizada.',
+    pil_sub:'O ecossistema completo para atender, gerenciar, acompanhar e medir seu atendimento no WhatsApp.',
+    pil1_h:'Agente de IA 24/7 Autônomo',pil1_t:'Atende em segundos por áudio ou texto. Qualifica leads, tira dúvidas de produtos e agenda compromissos sem intervenção humana.',
+    pil2_h:'CRM Kanban Visual Nativo',pil2_t:'Acompanhe todos os contatos por etapas: Novo Lead → Em Atendimento → Agendado → Venda Fechada. Visibilidade total do funil.',
+    pil3_h:'Inbox Omnichannel Multi-Atendente',pil3_t:'Sua equipe humana assume o chat quando necessário com um clique. Histórico unificado e transferência sem perda de contexto.',
+    pil4_h:'Analytics & Relatórios de Receita',pil4_t:'Métricas em tempo real de tempo de resposta, taxa de conversão, no-show evitado e receita gerada por canal.',
+    bat_label:'2.4 · Comparativo de Mercado',bat_h2:'Por que a AutoGenius é superior às alternativas tradicionais?',
+    bat_col1:'Chatbots Engessados',bat_col2:'Suítes Lentas (Blip/Zenvia)',bat_col3:'AutoGenius AI (Agente Autônomo)',
+    tru_label:'2.5 · Governança & Segurança',tru_h2:'Segurança Enterprise e Controle Total para o seu negócio',
+    tru_c1_h:'Criptografia AES-256 e LGPD',tru_c1_t:'Dados criptografados de ponta a ponta. 100% de conformidade com a LGPD e privacidade garantida.',
+    tru_c2_h:'Guardrails Rígidos de IA',tru_c2_t:'A IA nunca inventa preços nem ultrapassa as regras comerciais definidas pela sua empresa.',
+    tru_c3_h:'Transição Suave para Humano',tru_c3_t:'Notificação imediata no WhatsApp da equipe quando o cliente pede atendimento humano.',
     s5_label:'3.0 · Resultados reais',s5_badge:'Pessoas que pararam de perder vendas',
     s6_label:'4.0 · Como funciona',s6_h2a:'Simples de começar.',s6_h2b:'Poderoso de usar.',s6_desc:'Do diagnóstico ao seu Agente ativo em 7 dias.',
     s6_s1h:'Diagnóstico',s6_s1p:'1 conversa de 30 minutos. Entendemos seu negócio.',
@@ -1823,14 +1835,15 @@ const TRANSLATIONS={
     s6_s3h:'Resultado',s6_s3p:'Você ativa. Ele trabalha. Para sempre.',
     s7_label:'5.0 · Planos',s7_h2a:'Escolha o',s7_h2b:'plano certo',s7_h2c:'para o seu volume',
     s7_guarantee:'Plataforma própria · 7 dias de garantia · Sem fidelidade',
-    plan_cta:'Quero este plano',
-    ent_title:'Volumes ilimitados · Integrações complexas · Ambiente dedicado',
+    plan_cta:'Quero este plano',ent_title:'Volumes ilimitados · Integrações complexas · Ambiente dedicado',
     ent_desc:'SSO/SCIM · IA com dados internos · Datalake · SLA custom · Auditoria completa',
     ent_price:'A combinar',ent_cta:'Solicitar proposta →',
+    guar_badge:'GARANTIA INCONDICIONAL DE 7 DIAS',guar_h3:'Risco Zero para a sua empresa',
+    guar_p:'Teste a AutoGenius na sua operação. Se você não observar respostas em segundos e agendamentos automáticos na sua empresa, devolvemos 100% do seu investimento imediatamente. Sem pegadinhas.',
     s8_label:'6.0 · Agora é sua vez',s8_h2a:'Seu concorrente',s8_h2b:'já está usando IA.',
     s8_desc:'Cada dia sem automação é dinheiro deixado na mesa.<br>A conversa é gratuita. A decisão é sua.',
     s8_cta:'Falar com a AutoGenius agora',s8_g1:'Garantia de 7 dias',s8_g2:'Sem fidelidade',s8_g3:'Deploy em 7 dias',
-    wa_tooltip:'Fale agora — resposta em minutos',
+    wa_tooltip:'Fale agora — resposta em minutos',wa_badge_txt:'Resposta em &lt; 1 min',
     faq_h1:'Dúvidas',faq_h1b:'frequentes',faq_sub:'Tudo que você precisa saber antes de começar.',
     cont_h1:'Entre em',cont_h1b:'contato',cont_sub:'Prefere uma resposta rápida? Fale direto no WhatsApp.',cont_wa:'Falar no WhatsApp agora',cont_or:'— ou preencha o formulário —',
     cont_f1:'Nome',cont_f1ph:'Seu nome completo',cont_f3:'Segmento',cont_f3ph:'Ex: Clínica, Advocacia, E-commerce…',cont_f4:'Mensagem',cont_f4ph:'Como podemos ajudar?',cont_send:'Enviar mensagem',
@@ -1838,644 +1851,257 @@ const TRANSLATIONS={
     talk_h1:'IA aplicada a',talk_h1b:'negócios reais',talk_desc:'Yuri Matos leva para o seu evento uma visão prática, sem hype e com cases reais de como IA está transformando vendas, atendimento e operações no Brasil.',
     talk_cta_h:'Interesse em contratar uma palestra?',talk_cta_p:'Enviamos proposta completa com valores e formatos disponíveis para o seu evento.',talk_cta_btn:'Contratar palestra',
     cons_label:'Consultoria de Tecnologia',cons_h1:'A maioria das implantações falha.',cons_h1b:'Não por tecnologia — por comportamento.',cons_cta:'Quero entender minha operação',cons_cta_note:'Primeira conversa gratuita · Sem compromisso',
-    badge_sla:'RESPOSTA &lt; 3s · 99% UPTIME',badge_langs:'DISPONÍVEL EM 5 IDIOMAS',badge_lgpd:'LGPD COMPLIANT',s2_label:'1.0 · Dor',
-    cons_intro1:'O sistema foi entregue, a equipe não sabia usar, não confiava no processo e voltou para o WhatsApp e a planilha em duas semanas. Isso acontece em toda empresa que contrata tecnologia como se fosse produto.',
-    cons_intro2:'Nossa consultoria funciona diferente: a gente entra na operação, trabalha diretamente com cada equipe, analisa os problemas de dentro, documenta tudo — e implementa junto com quem vai usar, até funcionar.',
-    cons_steps_h:'O que acontece na prática',cons_steps_sub:'Do primeiro contato até a equipe operar sozinha',
-    cons_s1_h:'Entramos e vemos de perto',cons_s1_t:'Visitamos a operação. Conversamos com quem trabalha no processo — não só com a liderança. Vemos o que realmente acontece: onde o papel ainda manda, onde alguém anota no caderno antes de lançar no sistema, onde uma pessoa só sabe fazer aquilo. Isso não aparece em reunião de apresentação.',
-    cons_s2_h:'Analisamos e documentamos tudo',cons_s2_t:'Mapeamos cada problema: o retrabalho que gera custo invisível, o risco de pessoa-chave que paralisa o processo quando alguém falta, os números que chegam sem rastreabilidade. Documentamos processos, falhas e oportunidades. Esse material fica com você — independente de qualquer coisa.',
-    cons_s3_h:'Construímos o plano com quem vai executar',cons_s3_t:'Definimos as frentes de transformação em ordem de impacto real. Cada frente tem uma entrega concreta e uma pessoa que para de fazer algo que não deveria estar fazendo. Nada é imposto — cada mudança é validada com quem vai usar antes de ser finalizada.',
-    cons_s4_h:'Implementamos ao lado da equipe',cons_s4_t:'O treinamento acontece onde o trabalho acontece — no almoxarifado, na oficina, no escritório. A equipe aprende fazendo com o processo real rodando, não em apresentação de slide. Identificamos resistências antes que virem bloqueios. Estamos disponíveis direto com cada líder de área durante toda a implantação.',
-    cons_s5_h:'Transferimos — e saímos quando funciona',cons_s5_t:'O objetivo nunca foi criar dependência. Ao final, a sua equipe opera e evolui o que foi construído sem precisar de nós. Tudo que foi entregue — painéis, automações, documentação, bases — fica com você. Sempre.',
-    cons_guar_h:'Não pedimos confiança às cegas',cons_guar_t:'No final do mês 3, fazemos uma reunião de resultado com a diretoria. Se os entregáveis acordados nos pilotos não foram cumpridos por responsabilidade nossa, você encerra o contrato sem multa ou penalidade. O que já foi entregue — painéis, bases, documentação — permanece integralmente com você. Pedimos 3 meses para provar que a parceria funciona.',
-    cons_who_h:'Faz sentido se você reconhecer algum desses cenários',cons_who_1:'Você tem SAP, ERP ou algum sistema implantado — mas a decisão ainda passa por alguém que compila manualmente antes de te avisar',cons_who_2:'Existe uma pessoa-chave no seu time que, se sair ou faltar, o processo volta ao modo manual em 24 horas',cons_who_3:'Você já tentou implantar tecnologia antes — mas a equipe não usou, o processo não mudou e você ficou pagando por algo que ninguém adotou',cons_who_4:'Sua operação tem múltiplas áreas, e cada uma vive num silo — sem visibilidade cruzada para a gestão tomar decisão em tempo real',
-    cons_chat_eye:'COMEÇA COM UMA CONVERSA',cons_chat_h:'Primeiro a gente entende.<br>Depois, se fizer sentido, a gente propõe.',cons_chat_p:'Sem proposta antecipada. Sem pitch de vendas. A primeira conversa é só para entender o que está acontecendo na sua operação — e ver se faz sentido trabalhar juntos.',
-    t1_label:'livres por dia',t1_quote:'"A IA cuida do atendimento e eu foco 100% na estratégia. É como ter um assistente perfeito que nunca cansa."',
-    t2_label:'livres por semana',t2_quote:'"Passava horas explicando prazos para cada cliente. Hoje a IA faz isso automaticamente e os leads chegam qualificados."',
-    t3_label:'vendas toda madrugada',t3_quote:'"Antes eu só vendia quando estava online. Hoje a IA vende enquanto eu durmo — e as vendas triplicaram."',
-    plan_name_essencial:'Essencial',plan_name_avancado:'Avançado',plan_name_performance:'Performance',plan_name_premium:'Premium',plan_name_elite:'Elite',
-    plan_badge:'★ MAIS ESCOLHIDO',
-    feat_capture:'Captação de leads',feat_1dash:'1 dashboard KPIs',feat_2int:'2 integrações',
-    feat_tags:'Tags + fila + lembretes',feat_bi:'BI funil por etapa',feat_4int:'4 integrações',
-    feat_followup:'Follow-up automático',feat_campaigns:'Campanhas recorrentes',feat_nps:'NPS/CSAT automático',feat_7int:'7 integrações + webhooks',
-    feat_billing:'Cobrança/pagamento',feat_workflows:'Workflows ilimitados',feat_rbac:'RBAC (papéis/perfis)',
-    feat_panels:'Painéis executivos',feat_multi:'Multi-unidade',feat_security:'Controles de segurança',
-    sc_label:'Consultoria de Tecnologia',sc_h2a:'Alguém na sua empresa ainda precisa',sc_h2b:'montar o relatório para você decidir.',
-    sc_desc:'Esse custo não aparece no P&L. Mas ele existe toda vez que a decisão chega depois que o evento já aconteceu — porque alguém teve que compilar, transcrever e formatar antes de te avisar.',
-    sc_prob_label:'O PADRÃO QUE ENCONTRAMOS',
-    sc_prob_1:'O dado existe no sistema — mas a decisão espera alguém que ainda não terminou a planilha',
-    sc_prob_2:'Se uma pessoa-chave sai ou se ausenta, o processo volta ao modo manual em 24 horas',
-    sc_prob_3:'Correções são feitas em silêncio, sem registro de quem alterou o quê e quando',
-    sc_sol_label:'O QUE FAZEMOS',
-    sc_sol_1:'Entramos na sua operação e trabalhamos <strong style="color:var(--t1)">diretamente com cada equipe</strong> — não só com a gestão',
-    sc_sol_2:'Analisamos os problemas <strong style="color:var(--t1)">de dentro</strong>, documentamos tudo e construímos a solução com quem vai usar',
-    sc_sol_3:'Saímos quando a sua equipe opera sozinha — <strong style="color:var(--t1)">sem depender de nós</strong>',
-    sc_t1h:'ENTRAMOS',sc_t1d:'Visita e entrevistas com cada área',
-    sc_t2h:'ANALISAMOS',sc_t2d:'Mapeamos o retrabalho real',
-    sc_t3h:'DOCUMENTAMOS',sc_t3d:'Tudo fica registrado e com você',
-    sc_t4h:'IMPLEMENTAMOS',sc_t4d:'Com a equipe, no ponto de uso',
-    sc_t5h:'TRANSFERIMOS',sc_t5d:'Equipe opera sozinha no final',
-    sc_cta_h:'Primeiro, a gente entende a sua operação.',sc_cta_sub:'Sem proposta antecipada. Sem pitch. Só conversa — e depois o que fizer sentido para os dois lados.',
-    sc_wa_btn:'Conversar sobre minha operação',sc_method_link:'Ver metodologia →',
-    m1_label:'Empresas atendidas',m2_label:'Mensagens processadas',m3_label:'Uptime garantido',m4_label:'Para você operar',
-    tech_h:'Tecnologias e parceiros',tech_desc:'Construímos sobre as melhores infraestruturas do mundo para garantir escala, segurança e performance.',
-    commit_h:'Nosso compromisso',
-    c1_title:'Resultados em 7 dias ou reembolso',c1_desc:'Se o agente não estiver operando em 7 dias úteis, devolvemos 100% do valor de setup. Sem burocracia.',
-    c2_title:'Dados protegidos · LGPD',c2_desc:'Toda conversa é criptografada. Nunca revendemos ou compartilhamos dados dos seus clientes. Conformidade total com a LGPD.',
-    c3_title:'Suporte humano · sempre',c3_desc:'Atendimento de segunda a sábado. Equipe técnica disponível por WhatsApp, e-mail e reunião de vídeo quando precisar.',
-    media_h:'Na mídia',
-    mission_label:'NOSSA MISSÃO',mission_text:'"Tornar inteligência artificial aplicada acessível para qualquer empresa que queira crescer — independente do tamanho, do setor ou da cidade."',
-    footer_tagline:'IA que executa para o crescimento do seu negócio.',footer_prod:'Produto',footer_social:'Social',footer_faq:'Dúvidas',footer_contact:'Contato',footer_copy:'© 2026 AutoGenius AI. Feito com ❤️ em Recife, Brasil.',
-    p0_stat1:'Tempo médio',p0_stat2:'Disponível',p0_sim_label:'SIMULAÇÃO DE ATENDIMENTO',p0_client:'Oi! Vocês têm horário disponível hoje?',p0_agent:'Olá! Sim, temos 14h e 16h disponíveis. Qual prefere? 😊',p0_replied:'respondeu em 1.2s',
-    p1_stat1:'Conversão',p1_stat2:'Triagem manual',lead_card:'PERFIL DO LEAD · AUTOMÁTICO',lead_intent:'Intenção de compra',lead_intent_val:'Alta ●',lead_budget:'Orçamento estimado',lead_status:'Status',lead_status_val:'Pronto p/ fechar',
-    p2_stat1:'No-show',p2_stat2:'Agendas',p2_card_label:'AGENDA · QUINTA-FEIRA',p2_confirmed:'✓ confirmado',p2_avail:'Disponível',
-    p3_stat1:'Recuperação',p3_stat2:'Sequências',p3_seq_label:'SEQUÊNCIA DE FOLLOW-UP',p3_s1h:'24h — Lembrança',p3_s1t:'"Oi! Ainda posso ajudar você hoje?" ✓ enviado',p3_s2h:'72h — Valor',p3_s2t:'"Veja o que nossos clientes dizem..." ✓ enviado',p3_s3h:'7d — Última chance',p3_s3t:'Agendado para envio',
-    talk_themes_h:'Temas disponíveis',talk_formats_h:'Formatos',
-    talk_t1h:'Como agentes de IA vendem pelo WhatsApp 24/7',talk_t1d:'Da teoria ao case real: como montar um agente que responde, qualifica e fecha vendas sem intervenção humana. Cases reais de PMEs brasileiras.',
-    talk_t2h:'O futuro do trabalho com IA: o que muda (e o que não muda)',talk_t2d:'Uma visão realista sobre automação inteligente — quais funções serão transformadas, quais profissionais têm vantagem e como se preparar agora.',
-    talk_t3h:'Automação sem código: como qualquer empresa pode começar hoje',talk_t3d:'Workshop prático sobre as principais ferramentas de automação (n8n, Make, WhatsApp API) e como conectá-las com IA sem precisar de programação.',
-    talk_f1_title:'Keynote',talk_f1_desc:'30 a 60 min · Conferências e eventos corporativos',talk_f2_title:'Workshop',talk_f2_desc:'2 a 4h · Conteúdo prático com hands-on',talk_f3_title:'Painel / Mesa',talk_f3_desc:'Debate com especialistas do mercado',talk_f4_title:'Online ao vivo',talk_f4_desc:'Webinar e masterclass para equipes remotas',
+    badge_sla:'RESPOSTA &lt; 3s · 99% UPTIME',badge_langs:'DISPONÍVEL EM 5 IDIOMAS',badge_lgpd:'LGPD COMPLIANT',s2_label:'1.0 · Dor'
   },
-  en:{
-    hero_line1:'While you slept,',hero_line2:'a competitor answered',hero_line3:'your customer.',
-    hero_sub:'AI agents that respond, qualify and close sales on WhatsApp — <strong style="color:var(--t1);font-weight:600">24 hours a day, 7 days a week.</strong>',
-    hero_cta:'<i class="fab fa-whatsapp" style="font-size:1.2rem"></i>Talk on WhatsApp Now',
-    hero_cta2:'How it works <i class="fas fa-arrow-right" style="font-size:.72rem;margin-left:2px"></i>',
+  en:{tech_desc:'Built with industry-leading AI & infrastructure tech.',tech_h:'Tech Stack',talk_t3d:'Concrete steps without fortune-spending.',talk_t3h:'Practical SME Digital Transformation',talk_t2d:'Replacing forms with conversational AI.',talk_t2h:'The Future of WhatsApp Sales',talk_t1d:'How real companies use automation to multiply sales.',talk_t1h:'AI Without Hype: Real World Sales',talk_f4_desc:'Customized content for your company\'s sales and leadership teams.',talk_f4_title:'Closed Corporate Event',talk_f3_desc:'Expert participation in innovation panels.',talk_f3_title:'Panel & Round Table',talk_f2_desc:'2 to 4-hour interactive session with live mapping.',talk_f2_title:'Hands-on Workshop',talk_f1_desc:'45 to 60-minute keynote for major events and conventions.',talk_f1_title:'Main Keynote',talk_formats_h:'Available Formats',mission_text:'Democratize access to high-level AI for companies of all sizes.',mission_label:'Our Mission',media_h:'Press & Media',m4_label:'24/7 Service',m3_label:'Native Integration',m2_label:'Reply in < 3s',m1_label:'100% Autonomous',footer_copy:'© 2026 AutoGenius AI. All rights reserved.',footer_social:'Social Media',footer_faq:'Help',footer_contact:'Contact',footer_prod:'Product',footer_tagline:'AI Agents for WhatsApp that execute.',cons_who_4:'Teams that need hands-on training',cons_who_3:'Managers who want real automation',cons_who_2:'Operations that lost control on WhatsApp',cons_who_1:'Companies with stuck manual processes',cons_who_h:'Who is the consulting for',talk_t3_p:'Concrete steps to modernize processes and culture without spending fortunes on complex software.',talk_t3_h:'3. Practical Digital Transformation in SMEs',talk_t2_p:'How conversational AI is replacing forms and rigid chatbots across modern businesses.',talk_t2_h:'2. The Future of Customer Service & Sales on WhatsApp',talk_t1_p:'A practical view on how real companies are using automation and AI to multiply sales and cut costs.',talk_t1_h:'1. AI Without Hype: Selling & Operating in the Real World',talk_themes_h:'Keynote Topics & Workshops',cons_guar_t:'We work with clear deliverables per stage. If agreed terms are not met due to us, cancel without penalty.',cons_guar_h:'Delivery Guarantee & Commitment',cons_s5_t:'Your team operates and evolves what was built independently without lock-in.',cons_s5_h:'5. Total autonomy',cons_s4_t:'Training happens day-to-day with real live processes running, guaranteeing 100% adoption.',cons_s4_h:'4. We implement alongside your team',cons_s3_t:'We define transformation fronts in order of real business impact with deadlines.',cons_s3_h:'3. We build the action plan',cons_s2_t:'We map every issue: rework, hidden costs, and key-person dependencies. Fully documented.',cons_s2_h:'2. We analyze and document everything',cons_s1_t:'We visit operations. We talk with ground workers. We see what really happens day-to-day.',cons_s1_h:'1. We enter and observe closely',cons_steps_sub:'From first contact until your team operates independently',cons_steps_h:'What happens in practice',cons_intro2:'Our consulting works differently: we dive into operations, work alongside your team, and build until it works.',cons_intro1:'The system was delivered, the team didn\'t know how to use it, and reverted to spreadsheets within two weeks.',cons_chat_p:'We do a free initial analysis. We map friction points and show what can be automated.',cons_chat_h:'Want to understand where your operation is stuck?',cons_chat_eye:'External & technical perspective',commit_h:'Commitment to Results',c3_desc:'Process mapping, team training, data governance, and elimination of operational bottlenecks.',c3_title:'Consulting & Digital Transformation',c2_desc:'Advanced Language Models (LLMs), RAG (Retrieval-Augmented Generation), audio transcription, and process automation.',c2_title:'Applied AI & Autonomous Agents',c1_desc:'Development of robust systems, native API integrations, vector databases, and scalable platforms.',c1_title:'Software Engineering & Architecture',
+    hero_line1:'While you were sleeping,',hero_line2:'a competitor responded to',hero_line3:'your customer.',
+    hero_sub:'AI Agents that answer, qualify, and close sales on WhatsApp — <strong style="color:var(--t1);font-weight:600">24 hours a day, 7 days a week.</strong>',
+    hero_cta:'<i class="fab fa-whatsapp" style="font-size:1.2rem"></i>Chat now on WhatsApp',
+    hero_cta2:'See how it works <i class="fas fa-arrow-right" style="font-size:.72rem;margin-left:2px"></i>',
     hero_badge:'AI Reference in Brazil',
-    stat_comp:'Companies',stat_roi:'Avg ROI',stat_days:'To activate',
-    pain_badge:'Sound familiar?',
-    pain_1:'You respond to customers <strong style="color:var(--t1);font-weight:600">when you can</strong>. Not when they need it.',
+    stat_comp:'Companies',stat_roi:'Avg ROI',stat_days:'To launch',
+    pain_badge:'Do you recognize this?',
+    pain_1:'You answer customers <strong style="color:var(--t1);font-weight:600">when you can</strong>. Not when they need it.',
     pain_2:'Leads you paid to attract <strong style="color:var(--t1);font-weight:600">went cold</strong> before you replied.',
-    pain_3:'You know you\'re losing sales. <strong style="color:var(--t1);font-weight:600">You just don\'t know how many.</strong>',
-    break_q:'What if every unanswered message became a closed deal?',
-    topbar_ai:'AI Agents 24/7',topbar_impl:'Live in 7 days',topbar_cta:'— Talk on WhatsApp →',
-    nav_home:'Home',nav_sol:'Solution',nav_cases:'Cases',nav_plans:'Plans',nav_about:'About',nav_talk:'Talk',nav_cons:'Consulting',nav_faq:'FAQ',nav_contact:'Contact',nav_wa:'Talk on WhatsApp',
+    pain_3:'You know you lose sales. <strong style="color:var(--t1);font-weight:600">You just don't know how many.</strong>',
+    break_q:'What if every unanswered message became a closed sale?',
+    topbar_ai:'24/7 AI Agents',topbar_impl:'Launch in 7 days',topbar_cta:'— Chat on WhatsApp now →',
+    nav_home:'Home',nav_sol:'Solution',nav_cases:'Cases',nav_plans:'Plans',nav_about:'About',nav_talk:'Keynote',nav_cons:'Consulting',nav_faq:'FAQ',nav_contact:'Contact',nav_wa:'Chat on WhatsApp',
     sound_on:'Sound',sound_off:'Pause',
     marquee_label:'COMPANIES THAT TRUST AUTOGENIUS',
-    s4b_label:'2.1 · What your Agent does',s4b_h2:'Choose what to automate',s4b_h2b:'first.',
-    tab_0:'01 · Support',tab_1:'02 · Qualification',tab_2:'03 · Scheduling',tab_3:'04 · Follow-up',
-    p0_kicker:'24/7 SUPPORT',p0_h3:'Respond in seconds,<br>not hours.',p0_desc:'Your Agent replies to any WhatsApp message instantly — weekends, midnight, holidays. No breaks.',
-    p1_kicker:'LEAD QUALIFICATION',p1_h3:'Only receive leads<br>that actually buy.',p1_desc:'Your Agent screens automatically: identifies purchase intent, collects data and scores the lead before passing it to you.',
-    p2_kicker:'AUTOMATIC SCHEDULING',p2_h3:'Full calendar.<br>Without touching your phone.',p2_desc:'The Agent checks your availability, books the appointment, sends confirmation and automatic reminders. Zero no-shows.',
-    p3_kicker:'AUTOMATIC FOLLOW-UP',p3_h3:'No lead<br>goes cold alone.',p3_desc:'Your Agent follows up automatically at 24h, 72h and 7 days after first contact. Recovers leads that seemed lost.',
-    s4_label:'2.0 · Solution',s4_badge:'What is an AI Agent?',s4_h2a:'A chatbot answers questions.',s4_h2b:'Your Agent makes decisions.',
-    s4_f1:'Qualifies leads automatically',s4_f2:'Books directly into your calendar',s4_f3:'Sends proposals and follows up',s4_f4:'Charges, confirms and closes. Alone.',
-    s4_sub:'All on WhatsApp. Without you needing to be there.',
-    s5_label:'3.0 · Real results',s5_badge:'People who stopped losing sales',
-    s6_label:'4.0 · How it works',s6_h2a:'Simple to start.',s6_h2b:'Powerful to use.',s6_desc:'From diagnosis to your active Agent in 7 days.',
-    s6_s1h:'Diagnosis',s6_s1p:'1 conversation of 30 minutes. We understand your business.',
+    s4b_label:'2.1 · Industry AI Specialist',s4b_h2:'One core. Four',s4b_h2b:'specialties.',
+    s4_label:'2.0 · Solution',s4_badge:'What is an AI Agent?',s4_h2a:'A chatbot answers questions.',s4_h2b:'Your AI Agent makes decisions.',
+    s4_f1:'Qualifies leads automatically',s4_f2:'Schedules directly on your calendar',s4_f3:'Sends proposals & follow-ups',s4_f4:'Invoices, confirms & closes. Alone.',
+    s4_sub:'All on WhatsApp. Without you having to be there.',
+    calc_label:'2.2 · Opportunity Calculator',calc_h2:'How much revenue is your business losing due to slow response times?',
+    calc_sub:'Simulate the impact of responding in under 3 seconds on WhatsApp',calc_seg_lbl:'Select your industry:',
+    calc_leads_lbl:'Messages / Leads per month',calc_ticket_lbl:'Average Sale / Customer Value ($)',
+    calc_lost_lbl:'Estimated lost sales / month due to WhatsApp delay:',calc_rev_lbl:'Estimated revenue left on the table each month:',
+    calc_btn:'Recover this revenue now with AI',
+    pil_label:'2.3 · Complete Platform',pil_h2:'It's not just a chatbot. It's your entire operation automated.',
+    pil_sub:'The complete ecosystem to serve, manage, track, and measure your WhatsApp service.',
+    pil1_h:'24/7 Autonomous AI Agent',pil1_t:'Responds in seconds via voice or text. Qualifies leads, answers product questions, and books appointments without human effort.',
+    pil2_h:'Native Visual Kanban CRM',pil2_t:'Track all contacts through stages: New Lead → In Progress → Scheduled → Closed Deal. Total funnel visibility.',
+    pil3_h:'Multi-Agent Omnichannel Inbox',pil3_t:'Your human team takes over chats whenever needed with a single click. Unified history and smooth handoff.',
+    pil4_h:'Revenue Analytics & Reports',pil4_t:'Real-time metrics on response speed, conversion rate, avoided no-shows, and revenue generated per channel.',
+    bat_label:'2.4 · Market Comparison',bat_h2:'Why is AutoGenius superior to traditional alternatives?',
+    bat_col1:'Rigid Chatbots',bat_col2:'Slow Enterprise Suites (Blip/Zenvia)',bat_col3:'AutoGenius AI (Autonomous Agent)',
+    tru_label:'2.5 · Governance & Security',tru_h2:'Enterprise Security and Total Control for your business',
+    tru_c1_h:'AES-256 Encryption & Privacy',tru_c1_t:'End-to-end encrypted data. 100% compliant with international data privacy laws.',
+    tru_c2_h:'Strict AI Guardrails',tru_c2_t:'The AI never invents prices or exceeds business rules set by your company.',
+    tru_c3_h:'Smooth Human Handoff',tru_c3_t:'Instant notification on your team's WhatsApp whenever a customer requests a human.',
+    s5_label:'3.0 · Real Results',s5_badge:'People who stopped losing sales',
+    s6_label:'4.0 · How it works',s6_h2a:'Simple to start.',s6_h2b:'Powerful to run.',s6_desc:'From diagnosis to active AI Agent in 7 days.',
+    s6_s1h:'Diagnosis',s6_s1p:'1 30-minute call. We map your operation.',
     s6_s2h:'Setup',s6_s2p:'We build and train your Agent in 7 days.',
     s6_s3h:'Results',s6_s3p:'You activate. It works. Forever.',
     s7_label:'5.0 · Plans',s7_h2a:'Choose the',s7_h2b:'right plan',s7_h2c:'for your volume',
-    s7_guarantee:'Own platform · 7-day guarantee · No lock-in',
-    plan_cta:'Get this plan',
-    ent_title:'Unlimited volume · Complex integrations · Dedicated environment',
-    ent_desc:'SSO/SCIM · AI with internal data · Datalake · Custom SLA · Full audit',
-    ent_price:'Custom pricing',ent_cta:'Request a proposal →',
-    s8_label:'6.0 · Now it\'s your turn',s8_h2a:'Your competitor',s8_h2b:'is already using AI.',
-    s8_desc:'Every day without automation is money left on the table.<br>The conversation is free. The decision is yours.',
-    s8_cta:'Talk to AutoGenius now',s8_g1:'7-day guarantee',s8_g2:'No lock-in',s8_g3:'Deploy in 7 days',
-    wa_tooltip:'Talk now — reply in minutes',
-    faq_h1:'Frequently',faq_h1b:'Asked Questions',faq_sub:'Everything you need to know before getting started.',
-    cont_h1:'Get in',cont_h1b:'touch',cont_sub:'Prefer a quick response? Chat directly on WhatsApp.',cont_wa:'Talk on WhatsApp now',cont_or:'— or fill out the form —',
-    cont_f1:'Name',cont_f1ph:'Your full name',cont_f3:'Segment',cont_f3ph:'e.g. Clinic, Law firm, E-commerce…',cont_f4:'Message',cont_f4ph:'How can we help?',cont_send:'Send message',
-    sobre_h1:'We are',sobre_desc:'Born in Recife to prove that high-level automation isn\'t exclusive to large companies. We deliver AI agents that execute — sell, schedule, qualify and retain customers — 24 hours a day, 7 days a week, directly on WhatsApp.',sobre_founder:'Founder',sobre_cta:'Talk to the team now',
-    talk_h1:'AI applied to',talk_h1b:'real business',talk_desc:'Yuri Matos brings to your event a practical view, without hype and with real cases of how AI is transforming sales, service and operations in Brazil.',
-    talk_cta_h:'Interested in booking a keynote?',talk_cta_p:'We send a complete proposal with prices and formats available for your event.',talk_cta_btn:'Book keynote',
-    cons_label:'Technology Consulting',cons_h1:'Most implementations fail.',cons_h1b:'Not because of technology — because of behavior.',cons_cta:'I want to understand my operation',cons_cta_note:'First conversation free · No commitment',
-    badge_sla:'RESPONSE &lt; 3s · 99% UPTIME',badge_langs:'AVAILABLE IN 5 LANGUAGES',badge_lgpd:'LGPD COMPLIANT',s2_label:'1.0 · Pain',
-    cons_intro1:'The system was delivered, the team didn\'t know how to use it, didn\'t trust the process, and went back to WhatsApp and spreadsheets within two weeks. This happens in every company that buys technology like a product.',
-    cons_intro2:'Our consulting works differently: we enter your operation, work directly with each team, analyze problems from the inside, document everything — and implement alongside those who will use it, until it works.',
-    cons_steps_h:'What happens in practice',cons_steps_sub:'From first contact until your team operates independently',
-    cons_s1_h:'We enter and see up close',cons_s1_t:'We visit the operation. We talk to the people who work in the process — not just leadership. We see what really happens: where paper still rules, where someone writes in a notebook before entering the system, where only one person knows how to do something. This doesn\'t come up in a presentation meeting.',
-    cons_s2_h:'We analyze and document everything',cons_s2_t:'We map every problem: the rework that generates invisible costs, the key-person risk that stalls the process when someone is absent, the numbers that arrive without traceability. We document processes, failures, and opportunities. This material stays with you — regardless of anything.',
-    cons_s3_h:'We build the plan with those who will execute it',cons_s3_t:'We define transformation tracks in order of real impact. Each track has a concrete deliverable and a person who stops doing something they shouldn\'t be doing. Nothing is imposed — each change is validated with the users before being finalized.',
-    cons_s4_h:'We implement alongside the team',cons_s4_t:'Training happens where work happens — in the warehouse, in the workshop, in the office. The team learns by doing with the real process running, not in a slide presentation. We identify resistance before it becomes a blocker. We\'re available directly with each area leader throughout the entire implementation.',
-    cons_s5_h:'We transfer — and leave when it works',cons_s5_t:'The goal was never to create dependency. At the end, your team operates and evolves what was built without needing us. Everything delivered — dashboards, automations, documentation, databases — stays with you. Always.',
-    cons_guar_h:'We don\'t ask for blind trust',cons_guar_t:'At the end of month 3, we hold a results meeting with management. If the deliverables agreed in the pilots were not met due to our responsibility, you can end the contract without penalty or fines. What has already been delivered — dashboards, databases, documentation — remains entirely with you. We ask for 3 months to prove the partnership works.',
-    cons_who_h:'This makes sense if you recognize any of these scenarios',cons_who_1:'You have SAP, ERP, or some system in place — but decisions still go through someone who compiles manually before telling you',cons_who_2:'There\'s a key person on your team who, if they leave or are absent, the process reverts to manual mode within 24 hours',cons_who_3:'You\'ve tried to implement technology before — but the team didn\'t use it, the process didn\'t change, and you ended up paying for something nobody adopted',cons_who_4:'Your operation has multiple areas, and each one lives in a silo — without cross-visibility for management to make decisions in real time',
-    cons_chat_eye:'IT STARTS WITH A CONVERSATION',cons_chat_h:'First we understand.<br>Then, if it makes sense, we propose.',cons_chat_p:'No upfront proposal. No sales pitch. The first conversation is just to understand what\'s happening in your operation — and see if it makes sense to work together.',
-    t1_label:'free hours per day',t1_quote:'"The AI handles customer service and I focus 100% on strategy. It\'s like having a perfect assistant that never gets tired."',
-    t2_label:'free hours per week',t2_quote:'"I used to spend hours explaining deadlines to each client. Now the AI does it automatically and leads arrive already qualified."',
-    t3_label:'sales every night',t3_quote:'"Before I only sold when I was online. Now the AI sells while I sleep — and sales have tripled."',
-    plan_name_essencial:'Essential',plan_name_avancado:'Advanced',plan_name_performance:'Performance',plan_name_premium:'Premium',plan_name_elite:'Elite',
-    plan_badge:'★ MOST POPULAR',
-    feat_capture:'Lead capture',feat_1dash:'1 KPI dashboard',feat_2int:'2 integrations',
-    feat_tags:'Tags + queue + reminders',feat_bi:'Funnel BI by stage',feat_4int:'4 integrations',
-    feat_followup:'Automatic follow-up',feat_campaigns:'Recurring campaigns',feat_nps:'Automatic NPS/CSAT',feat_7int:'7 integrations + webhooks',
-    feat_billing:'Billing/payment',feat_workflows:'Unlimited workflows',feat_rbac:'RBAC (roles/profiles)',
-    feat_panels:'Executive dashboards',feat_multi:'Multi-unit',feat_security:'Security controls',
-    sc_label:'Technology Consulting',sc_h2a:'Someone at your company still needs to',sc_h2b:'build the report before you can decide.',
-    sc_desc:'That cost doesn\'t show up in the P&L. But it exists every time a decision arrives after the event already happened — because someone had to compile, transcribe, and format before notifying you.',
-    sc_prob_label:'THE PATTERN WE FIND',
-    sc_prob_1:'The data exists in the system — but the decision waits for someone who hasn\'t finished the spreadsheet',
-    sc_prob_2:'If a key person leaves or is absent, the process reverts to manual mode within 24 hours',
-    sc_prob_3:'Corrections are made silently, with no record of who changed what and when',
-    sc_sol_label:'WHAT WE DO',
-    sc_sol_1:'We enter your operation and work <strong style="color:var(--t1)">directly with each team</strong> — not just management',
-    sc_sol_2:'We analyze problems <strong style="color:var(--t1)">from the inside</strong>, document everything and build the solution with those who will use it',
-    sc_sol_3:'We leave when your team operates independently — <strong style="color:var(--t1)">without depending on us</strong>',
-    sc_t1h:'WE ENTER',sc_t1d:'Site visits and interviews with each area',
-    sc_t2h:'WE ANALYZE',sc_t2d:'Map the real rework',
-    sc_t3h:'WE DOCUMENT',sc_t3d:'Everything recorded and yours to keep',
-    sc_t4h:'WE IMPLEMENT',sc_t4d:'With the team, at the point of use',
-    sc_t5h:'WE TRANSFER',sc_t5d:'Team operates independently at the end',
-    sc_cta_h:'First, we understand your operation.',sc_cta_sub:'No upfront proposal. No pitch. Just a conversation — and then whatever makes sense for both sides.',
-    sc_wa_btn:'Talk about my operation',sc_method_link:'See methodology →',
-    m1_label:'Companies served',m2_label:'Messages processed',m3_label:'Uptime guaranteed',m4_label:'To get you live',
-    tech_h:'Technologies & partners',tech_desc:'We build on the world\'s best infrastructure to ensure scale, security and performance.',
-    commit_h:'Our commitment',
-    c1_title:'Results in 7 days or refund',c1_desc:'If the agent isn\'t operating within 7 business days, we refund 100% of the setup fee. No red tape.',
-    c2_title:'Protected data · LGPD',c2_desc:'Every conversation is encrypted. We never resell or share your customers\' data. Full LGPD compliance.',
-    c3_title:'Human support · always',c3_desc:'Support Monday through Saturday. Technical team available via WhatsApp, email and video call whenever you need.',
-    media_h:'In the press',
-    mission_label:'OUR MISSION',mission_text:'"Make applied artificial intelligence accessible to any company that wants to grow — regardless of size, sector or city."',
-    footer_tagline:'AI that executes for the growth of your business.',footer_prod:'Product',footer_social:'Social',footer_faq:'FAQ',footer_contact:'Contact',footer_copy:'© 2026 AutoGenius AI. Made with ❤️ in Recife, Brazil.',
-    p0_stat1:'Avg. response',p0_stat2:'Available',p0_sim_label:'SUPPORT SIMULATION',p0_client:'Hi! Do you have any slots available today?',p0_agent:'Hello! Yes, we have 2pm and 4pm available. Which do you prefer? 😊',p0_replied:'replied in 1.2s',
-    p1_stat1:'Conversion',p1_stat2:'Manual screening',lead_card:'LEAD PROFILE · AUTOMATIC',lead_intent:'Purchase intent',lead_intent_val:'High ●',lead_budget:'Estimated budget',lead_status:'Status',lead_status_val:'Ready to close',
-    p2_stat1:'No-show',p2_stat2:'Calendars',p2_card_label:'SCHEDULE · THURSDAY',p2_confirmed:'✓ confirmed',p2_avail:'Available',
-    p3_stat1:'Recovery',p3_stat2:'Sequences',p3_seq_label:'FOLLOW-UP SEQUENCE',p3_s1h:'24h — Reminder',p3_s1t:'"Hi! Can I still help you today?" ✓ sent',p3_s2h:'72h — Value',p3_s2t:'"See what our customers say..." ✓ sent',p3_s3h:'7d — Last chance',p3_s3t:'Scheduled to send',
-    talk_themes_h:'Available topics',talk_formats_h:'Formats',
-    talk_t1h:'How AI agents sell on WhatsApp 24/7',talk_t1d:'From theory to real case: how to build an agent that responds, qualifies and closes deals without human intervention. Real cases from Brazilian SMEs.',
-    talk_t2h:'The future of work with AI: what changes (and what doesn\'t)',talk_t2d:'A realistic view on intelligent automation — which roles will be transformed, which professionals have an advantage, and how to prepare now.',
-    talk_t3h:'No-code automation: how any company can start today',talk_t3d:'Hands-on workshop covering the main automation tools (n8n, Make, WhatsApp API) and how to connect them with AI without needing to code.',
-    talk_f1_title:'Keynote',talk_f1_desc:'30 to 60 min · Conferences and corporate events',talk_f2_title:'Workshop',talk_f2_desc:'2 to 4h · Practical content with hands-on',talk_f3_title:'Panel / Roundtable',talk_f3_desc:'Debate with market experts',talk_f4_title:'Live online',talk_f4_desc:'Webinar and masterclass for remote teams',
+    s7_guarantee:'Proprietary platform · 7-day guarantee · No lock-in',
+    plan_cta:'Get this plan',ent_title:'Unlimited volume · Custom integrations · Dedicated environment',
+    ent_desc:'SSO/SCIM · Private data LLM · Datalake · Custom SLA · Full audit log',
+    ent_price:'Custom quote',ent_cta:'Request proposal →',
+    guar_badge:'7-DAY UNCONDITIONAL GUARANTEE',guar_h3:'Zero Risk for your business',
+    guar_p:'Test AutoGenius in your operation. If you don't observe instant responses and automated bookings, we refund 100% of your investment immediately.',
+    s8_label:'6.0 · Your turn',s8_h2a:'Your competitor',s8_h2b:'is already using AI.',
+    s8_desc:'Every day without automation is money left on the table.<br>The call is free. The choice is yours.',
+    s8_cta:'Talk to AutoGenius now',s8_g1:'7-day guarantee',s8_g2:'No lock-in',s8_g3:'7-day launch',
+    wa_tooltip:'Talk now — response in minutes',wa_badge_txt:'Replies in &lt; 1 min',
+    faq_h1:'Frequently Asked',faq_h1b:'Questions',faq_sub:'Everything you need to know before starting.',
+    cont_h1:'Get in',cont_h1b:'touch',cont_sub:'Want a fast answer? Chat directly on WhatsApp.',cont_wa:'Talk on WhatsApp now',cont_or:'— or fill out the form —',
+    cont_f1:'Name',cont_f1ph:'Your full name',cont_f3:'Industry',cont_f3ph:'e.g. Clinic, Real Estate, E-commerce…',cont_f4:'Message',cont_f4ph:'How can we help?',cont_send:'Send message',
+    sobre_h1:'We are',sobre_desc:'Founded to prove high-level automation is not just for mega-corporations. We deliver AI agents that execute — sell, schedule, qualify, and retain customers — 24/7 on WhatsApp.',sobre_founder:'Founder',sobre_cta:'Talk to our team now',
+    talk_h1:'Applied AI for',talk_h1b:'real business',talk_desc:'Yuri Matos brings a practical, hype-free keynote on how AI is transforming sales and operations in Latin America.',
+    talk_cta_h:'Interested in booking a keynote?',talk_cta_p:'We send a full proposal with dates and formats for your event.',talk_cta_btn:'Book keynote',
+    cons_label:'Tech Consulting',cons_h1:'Most implementations fail.',cons_h1b:'Not because of technology — because of adoption.',cons_cta:'Understand my operation',cons_cta_note:'First call free · No commitment',
+    badge_sla:'RESPONSE &lt; 3s · 99% UPTIME',badge_langs:'AVAILABLE IN 5 LANGUAGES',badge_lgpd:'PRIVACY COMPLIANT',s2_label:'1.0 · Pain'
   },
-  es:{
+  es:{tech_desc:'Construido con las mejores tecnologías de IA del mercado.',tech_h:'Stack Tecnológico',talk_t3d:'Pasos concretos sin gastar fortunas.',talk_t3h:'Transformación Digital en PyMEs',talk_t2d:'La sustitución de formularios por IA conversacional.',talk_t2h:'El Futuro de Ventas en WhatsApp',talk_t1d:'Cómo empresas reales usan automatización para multiplicar ventas.',talk_t1h:'IA Sin Hype: Ventas en el Mundo Real',talk_f4_desc:'Contenido personalizado para el equipo de ventas y liderazgo.',talk_f4_title:'Evento Corporativo Privado',talk_f3_desc:'Participación como experto en paneles de innovación.',talk_f3_title:'Panel y Mesa Redonda',talk_f2_desc:'Sesión interactiva de 2 a 4 horas con mapeo en vivo.',talk_f2_title:'Taller Práctico',talk_f1_desc:'Conferencia de 45 a 60 minutos para grandes eventos.',talk_f1_title:'Conferencia Principal',talk_formats_h:'Formatos Disponibles',mission_text:'Democratizar el acceso a la IA de alto nivel para empresas de todos los tamaños.',mission_label:'Nuestra Misión',media_h:'Prensa y Medios',m4_label:'Atención 24/7',m3_label:'Integración Nativa',m2_label:'Respuesta en < 3s',m1_label:'100% Autónomo',footer_copy:'© 2026 AutoGenius AI. Todos los derechos reservados.',footer_social:'Redes Sociales',footer_faq:'Ayuda',footer_contact:'Contacto',footer_prod:'Producto',footer_tagline:'Agentes de IA para WhatsApp que ejecutan.',cons_who_4:'Equipos que necesitan capacitación práctica',cons_who_3:'Gestores que quieren automatización real',cons_who_2:'Operaciones que perdieron el control en WhatsApp',cons_who_1:'Empresas con procesos manuales trabados',cons_who_h:'Para quién es la consultoría',talk_t3_p:'Pasos concretos para modernizar procesos y cultura sin gastar fortunas en softwares pesados.',talk_t3_h:'3. Transformación Digital Práctica en PyMEs',talk_t2_p:'Cómo la IA conversacional está reemplazando formularios y chatbots rígidos.',talk_t2_h:'2. El Futuro de la Atención y Ventas en WhatsApp',talk_t1_p:'Una visión práctica de cómo empresas reales usan automatización e IA para multiplicar ventas.',talk_t1_h:'1. IA Sin Hype: Cómo Vender y Operar en el Mundo Real',talk_themes_h:'Temas de Conferencias y Talleres',cons_guar_t:'Trabajamos con entregables claros en cada etapa. Si no cumplimos, cancelas sin penalización.',cons_guar_h:'Garantía de Entrega y Compromiso',cons_s5_t:'Tu equipo opera y evoluciona lo construido de manera independiente.',cons_s5_h:'5. Autonomía total',cons_s4_t:'La capacitación ocurre en el día a día con procesos reales ejecutándose.',cons_s4_h:'4. Implementamos al lado del equipo',cons_s3_t:'Definimos las frentes de transformación en orden de impacto real con plazos.',cons_s3_h:'3. Construimos el plan de acción',cons_s2_t:'Mapeamos cada problema: reprocesos, costos invisibles y riesgos de personas clave. Todo documentado.',cons_s2_h:'2. Analizamos y documentamos todo',cons_s1_t:'Visitamos la operación. Hablamos con los trabajadores. Vemos lo que realmente sucede en el día a día.',cons_s1_h:'1. Entramos y vemos de cerca',cons_steps_sub:'Desde el primer contacto hasta que el equipo opere solo',cons_steps_h:'Lo que sucede en la práctica',cons_intro2:'Nuestra consultoría funciona diferente: entramos en la operación, trabajamos junto al equipo e implementamos hasta que funcione.',cons_intro1:'El sistema fue entregado, el equipo no sabía usarlo y volvió a las hojas de cálculo en dos semanas.',cons_chat_p:'Hacemos un análisis inicial sin costo. Mapeamos puntos de fricción y mostramos qué se puede automatizar.',cons_chat_h:'¿Quieres entender dónde está trabada tu operación?',cons_chat_eye:'Perspectiva externa y técnica',commit_h:'Compromiso con Resultados',c3_desc:'Mapeo de procesos, capacitación de equipos, gobernanza de datos y eliminación de cuellos de botella.',c3_title:'Consultoría y Transformación Digital',c2_desc:'Modelos de lenguaje avanzados (LLM), RAG, transcripción de audio y automatización de procesos.',c2_title:'IA Aplicada y Agentes Autónomos',c1_desc:'Desarrollo de sistemas robustos, integraciones nativas de API, bases de datos vectoriales y plataformas escalables.',c1_title:'Ingeniería y Arquitectura de Software',
     hero_line1:'Mientras dormías,',hero_line2:'un competidor respondió',hero_line3:'a tu cliente.',
-    hero_sub:'Agentes de IA que responden, califican y cierran ventas en WhatsApp — <strong style="color:var(--t1);font-weight:600">24 horas al día, 7 días a la semana.</strong>',
-    hero_cta:'<i class="fab fa-whatsapp" style="font-size:1.2rem"></i>Hablar en WhatsApp',
+    hero_sub:'Agentes de IA que responden, clasifican y cierran ventas en WhatsApp — <strong style="color:var(--t1);font-weight:600">24 horas al día, 7 días a la semana.</strong>',
+    hero_cta:'<i class="fab fa-whatsapp" style="font-size:1.2rem"></i>Hablar ahora en WhatsApp',
     hero_cta2:'Ver cómo funciona <i class="fas fa-arrow-right" style="font-size:.72rem;margin-left:2px"></i>',
     hero_badge:'Referencia en IA en Brasil',
     stat_comp:'Empresas',stat_roi:'ROI Promedio',stat_days:'Para activar',
-    pain_badge:'¿Te suena familiar?',
-    pain_1:'Respondes a clientes <strong style="color:var(--t1);font-weight:600">cuando puedes</strong>. No cuando lo necesitan.',
-    pain_2:'Leads que pagaste para atraer <strong style="color:var(--t1);font-weight:600">se enfriaron</strong> antes de que respondieras.',
+    pain_badge:'¿Reconoces esto?',
+    pain_1:'Respondes a los clientes <strong style="color:var(--t1);font-weight:600">cuando puedes</strong>. No cuando ellos lo necesitan.',
+    pain_2:'Los clientes potenciales que pagaste por atraer <strong style="color:var(--t1);font-weight:600">se enfriaron</strong> antes de que respondieras.',
     pain_3:'Sabes que pierdes ventas. <strong style="color:var(--t1);font-weight:600">Solo no sabes cuántas.</strong>',
-    break_q:'¿Y si cada mensaje sin respuesta se convirtiera en una venta cerrada?',
-    topbar_ai:'Agentes de IA 24/7',topbar_impl:'Implementación en 7 días',topbar_cta:'— Hablar en WhatsApp →',
-    nav_home:'Inicio',nav_sol:'Solución',nav_cases:'Cases',nav_plans:'Planes',nav_about:'Sobre',nav_talk:'Conferencia',nav_cons:'Consultoría',nav_faq:'Preguntas',nav_contact:'Contacto',nav_wa:'Hablar por WhatsApp',
+    break_q:'¿Y si cada mensaje no respondido se convirtiera en una venta cerrada?',
+    topbar_ai:'Agentes de IA 24/7',topbar_impl:'Implementación en 7 días',topbar_cta:'— Habla ahora en WhatsApp →',
+    nav_home:'Inicio',nav_sol:'Solución',nav_cases:'Casos',nav_plans:'Planes',nav_about:'Sobre',nav_talk:'Conferencia',nav_cons:'Consultoría',nav_faq:'Dudas',nav_contact:'Contacto',nav_wa:'Hablar en WhatsApp',
     sound_on:'Sonido',sound_off:'Pausar',
     marquee_label:'EMPRESAS QUE CONFÍAN EN AUTOGENIUS',
-    s4b_label:'2.1 · Qué hace tu Agente',s4b_h2:'Elige qué automatizar',s4b_h2b:'primero.',
-    tab_0:'01 · Atención',tab_1:'02 · Calificación',tab_2:'03 · Agenda',tab_3:'04 · Seguimiento',
-    p0_kicker:'ATENCIÓN 24/7',p0_h3:'Responde en segundos,<br>no en horas.',p0_desc:'Tu Agente responde cualquier mensaje de WhatsApp al instante — fines de semana, madrugada, feriados. Sin pausas.',
-    p1_kicker:'CALIFICACIÓN DE LEADS',p1_h3:'Solo recibe leads<br>que realmente compran.',p1_desc:'Tu Agente filtra automáticamente: identifica intención de compra, recopila datos y puntúa el lead antes de pasártelo.',
-    p2_kicker:'AGENDAMIENTO AUTOMÁTICO',p2_h3:'Agenda llena.<br>Sin tocar el teléfono.',p2_desc:'El Agente consulta tu disponibilidad, agenda la cita, envía confirmación y recordatorio automático. Cero no-shows.',
-    p3_kicker:'SEGUIMIENTO AUTOMÁTICO',p3_h3:'Ningún lead<br>se enfría solo.',p3_desc:'Tu Agente hace seguimiento automático a las 24h, 72h y 7 días del primer contacto. Recupera leads que parecían perdidos.',
+    s4b_label:'2.1 · IA Especialista por Sector',s4b_h2:'Un núcleo. Cuatro',s4b_h2b:'especialidades.',
     s4_label:'2.0 · Solución',s4_badge:'¿Qué es un Agente de IA?',s4_h2a:'Un chatbot responde preguntas.',s4_h2b:'Tu Agente toma decisiones.',
-    s4_f1:'Califica leads automáticamente',s4_f2:'Agenda directo en tu calendario',s4_f3:'Envía propuestas y hace seguimiento',s4_f4:'Cobra, confirma y cierra. Solo.',
-    s4_sub:'Todo en WhatsApp. Sin que necesites estar ahí.',
+    s4_f1:'Califica el cliente automáticamente',s4_f2:'Agenda directo en tu calendario',s4_f3:'Envía propuestas y hace seguimiento',s4_f4:'Cobra, confirma y cierra. Solo.',
+    s4_sub:'Todo en WhatsApp. Sin que tengas que estar allí.',
+    calc_label:'2.2 · Calculadora de Oportunidad',calc_h2:'¿Cuánto dinero está perdiendo tu empresa por demora en la atención?',
+    calc_sub:'Simula el impacto de responder en menos de 3 segundos en WhatsApp',calc_seg_lbl:'Selecciona tu sector:',
+    calc_leads_lbl:'Mensajes / Leads por mes',calc_ticket_lbl:'Ticket Medio por Venta / Cliente ($)',
+    calc_lost_lbl:'Ventas perdidas estimadas / mes por demora en WhatsApp:',calc_rev_lbl:'Ingresos estimados dejados sobre la mesa cada mes:',
+    calc_btn:'Recuperar estos ingresos ahora con IA',
+    pil_label:'2.3 · Plataforma Completa',pil_h2:'No es solo un chatbot. Es toda tu operación automatizada.',
+    pil_sub:'El ecosistema completo para atender, gestionar, seguir y medir tu atención en WhatsApp.',
+    pil1_h:'Agente de IA 24/7 Autónomo',pil1_t:'Responde en segundos por voz o texto. Califica leads, aclara dudas de productos y agenda citas sin intervención humana.',
+    pil2_h:'CRM Kanban Visual Nativo',pil2_t:'Sigue todos los contactos por etapas: Nuevo Lead → En Atención → Agendado → Venta Cerrada. Visibilidad total del embudo.',
+    pil3_h:'Bandeja Omnicanal Multi-Atendiente',pil3_t:'Tu equipo humano toma el control del chat cuando sea necesario con un clic. Historial unificado y transferencia sin perder contexto.',
+    pil4_h:'Analytics y Reportes de Ingresos',pil4_t:'Métricas en tiempo real de velocidad de respuesta, tasa de conversión, citas confirmadas e ingresos generados por canal.',
+    bat_label:'2.4 · Comparativo de Mercado',bat_h2:'¿Por qué AutoGenius es superior a las alternativas tradicionales?',
+    bat_col1:'Chatbots Rígidos',bat_col2:'Plataformas Lentas (Blip/Zenvia)',bat_col3:'AutoGenius AI (Agente Autónomo)',
+    tru_label:'2.5 · Gobernanza y Seguridad',tru_h2:'Seguridad Enterprise y Control Total para tu negocio',
+    tru_c1_h:'Encriptación AES-256 y Privacidad',tru_c1_t:'Datos encriptados de extremo a extremo. 100% de cumplimiento con leyes internacionales de privacidad.',
+    tru_c2_h:'Límites Rígidos de IA',tru_c2_t:'La IA nunca inventa precios ni sobrepasa las reglas comerciales definidas por tu empresa.',
+    tru_c3_h:'Transición Fluida a Humano',tru_c3_t:'Notificación inmediata en el WhatsApp de tu equipo cuando el cliente solicita atención humana.',
     s5_label:'3.0 · Resultados reales',s5_badge:'Personas que dejaron de perder ventas',
     s6_label:'4.0 · Cómo funciona',s6_h2a:'Simple de comenzar.',s6_h2b:'Poderoso de usar.',s6_desc:'Del diagnóstico a tu Agente activo en 7 días.',
-    s6_s1h:'Diagnóstico',s6_s1p:'1 conversación de 30 minutos. Entendemos tu negocio.',
+    s6_s1h:'Diagnóstico',s6_s1p:'1 charla de 30 minutos. Entendemos tu negocio.',
     s6_s2h:'Configuración',s6_s2p:'Montamos y entrenamos tu Agente en 7 días.',
-    s6_s3h:'Resultado',s6_s3p:'Tú lo activas. Él trabaja. Para siempre.',
+    s6_s3h:'Resultado',s6_s3p:'Tú activas. Él trabaja. Para siempre.',
     s7_label:'5.0 · Planes',s7_h2a:'Elige el',s7_h2b:'plan correcto',s7_h2c:'para tu volumen',
     s7_guarantee:'Plataforma propia · 7 días de garantía · Sin permanencia',
-    plan_cta:'Quiero este plan',
-    ent_title:'Volumen ilimitado · Integraciones complejas · Entorno dedicado',
-    ent_desc:'SSO/SCIM · IA con datos internos · Datalake · SLA personalizado · Auditoría completa',
+    plan_cta:'Quiero este plan',ent_title:'Volúmenes ilimitados · Integraciones complejas · Ambiente dedicado',
+    ent_desc:'SSO/SCIM · IA con datos privados · Datalake · SLA personalizado · Auditoría completa',
     ent_price:'A convenir',ent_cta:'Solicitar propuesta →',
+    guar_badge:'GARANTÍA INCONDIIONAL DE 7 DÍAS',guar_h3:'Riesgo Cero para tu empresa',
+    guar_p:'Prueba AutoGenius en tu operación. Si no observas respuestas en segundos y reservas automáticas, te devolvemos el 100% de tu inversión de inmediato.',
     s8_label:'6.0 · Ahora es tu turno',s8_h2a:'Tu competidor',s8_h2b:'ya está usando IA.',
-    s8_desc:'Cada día sin automatización es dinero dejado en la mesa.<br>La conversación es gratuita. La decisión es tuya.',
-    s8_cta:'Hablar con AutoGenius ahora',s8_g1:'Garantía de 7 días',s8_g2:'Sin permanencia',s8_g3:'Deploy en 7 días',
-    wa_tooltip:'Habla ahora — respuesta en minutos',
+    s8_desc:'Cada día sin automatización es dinero dejado en la mesa.<br>La charla es gratuita. La decisión es tuya.',
+    s8_cta:'Hablar con AutoGenius ahora',s8_g1:'Garantía de 7 días',s8_g2:'Sin permanencia',s8_g3:'Despliegue en 7 días',
+    wa_tooltip:'Habla ahora — respuesta en minutos',wa_badge_txt:'Responde en &lt; 1 min',
     faq_h1:'Preguntas',faq_h1b:'frecuentes',faq_sub:'Todo lo que necesitas saber antes de empezar.',
-    cont_h1:'Ponte en',cont_h1b:'contacto',cont_sub:'¿Prefieres una respuesta rápida? Habla directamente en WhatsApp.',cont_wa:'Hablar en WhatsApp ahora',cont_or:'— o rellena el formulario —',
-    cont_f1:'Nombre',cont_f1ph:'Tu nombre completo',cont_f3:'Segmento',cont_f3ph:'Ej: Clínica, Derecho, E-commerce…',cont_f4:'Mensaje',cont_f4ph:'¿Cómo podemos ayudarte?',cont_send:'Enviar mensaje',
-    sobre_h1:'Somos',sobre_desc:'Nacimos en Recife para demostrar que la automatización de alto nivel no es exclusiva de las grandes empresas. Entregamos agentes de IA que ejecutan — venden, agendan, califican y retienen clientes — 24 horas al día, 7 días a la semana, directamente en WhatsApp.',sobre_founder:'Fundador',sobre_cta:'Hablar con el equipo ahora',
-    talk_h1:'IA aplicada a',talk_h1b:'negocios reales',talk_desc:'Yuri Matos lleva a tu evento una visión práctica, sin hype y con casos reales de cómo la IA está transformando ventas, atención y operaciones en Brasil.',
-    talk_cta_h:'¿Interesado en contratar una conferencia?',talk_cta_p:'Enviamos propuesta completa con precios y formatos disponibles para tu evento.',talk_cta_btn:'Contratar conferencia',
-    cons_label:'Consultoría de Tecnología',cons_h1:'La mayoría de las implantaciones fallan.',cons_h1b:'No por tecnología — por comportamiento.',cons_cta:'Quiero entender mi operación',cons_cta_note:'Primera conversación gratuita · Sin compromiso',
-    badge_sla:'RESPUESTA &lt; 3s · 99% UPTIME',badge_langs:'DISPONIBLE EN 5 IDIOMAS',badge_lgpd:'LGPD COMPLIANT',s2_label:'1.0 · Dolor',
-    cons_intro1:'El sistema fue entregado, el equipo no sabía usarlo, no confiaba en el proceso y volvió al WhatsApp y la planilla en dos semanas. Esto le pasa a toda empresa que contrata tecnología como si fuera un producto.',
-    cons_intro2:'Nuestra consultoría funciona diferente: entramos en la operación, trabajamos directamente con cada equipo, analizamos los problemas desde adentro, documentamos todo — e implementamos junto con quienes lo van a usar, hasta que funcione.',
-    cons_steps_h:'Qué pasa en la práctica',cons_steps_sub:'Desde el primer contacto hasta que el equipo opera solo',
-    cons_s1_h:'Entramos y vemos de cerca',cons_s1_t:'Visitamos la operación. Hablamos con quienes trabajan en el proceso — no solo con el liderazgo. Vemos lo que realmente pasa: dónde el papel todavía manda, dónde alguien anota en el cuaderno antes de cargar en el sistema, dónde una sola persona sabe hacer algo. Esto no aparece en una reunión de presentación.',
-    cons_s2_h:'Analizamos y documentamos todo',cons_s2_t:'Mapeamos cada problema: el retrabajo que genera costo invisible, el riesgo de persona clave que paraliza el proceso cuando alguien falta, los números que llegan sin trazabilidad. Documentamos procesos, fallas y oportunidades. Este material queda contigo — sin importar nada.',
-    cons_s3_h:'Construimos el plan con quienes lo van a ejecutar',cons_s3_t:'Definimos los frentes de transformación en orden de impacto real. Cada frente tiene una entrega concreta y una persona que deja de hacer algo que no debería estar haciendo. Nada se impone — cada cambio es validado con los usuarios antes de ser finalizado.',
-    cons_s4_h:'Implementamos al lado del equipo',cons_s4_t:'La capacitación ocurre donde el trabajo ocurre — en el almacén, en el taller, en la oficina. El equipo aprende haciendo con el proceso real corriendo, no en una presentación de slides. Identificamos resistencias antes de que se vuelvan bloqueos. Estamos disponibles directamente con cada líder de área durante toda la implementación.',
-    cons_s5_h:'Transferimos — y nos vamos cuando funciona',cons_s5_t:'El objetivo nunca fue crear dependencia. Al final, tu equipo opera y evoluciona lo que fue construido sin necesitarnos. Todo lo que fue entregado — paneles, automatizaciones, documentación, bases — queda contigo. Siempre.',
-    cons_guar_h:'No pedimos confianza ciega',cons_guar_t:'Al final del mes 3, hacemos una reunión de resultados con la dirección. Si los entregables acordados en los pilotos no fueron cumplidos por responsabilidad nuestra, puedes terminar el contrato sin multa ni penalidad. Lo que ya fue entregado — paneles, bases, documentación — permanece íntegramente contigo. Pedimos 3 meses para probar que la alianza funciona.',
-    cons_who_h:'Tiene sentido si reconoces alguno de estos escenarios',cons_who_1:'Tienes SAP, ERP o algún sistema implantado — pero la decisión todavía pasa por alguien que compila manualmente antes de avisarte',cons_who_2:'Existe una persona clave en tu equipo que, si se va o falta, el proceso vuelve al modo manual en 24 horas',cons_who_3:'Ya intentaste implantar tecnología antes — pero el equipo no la usó, el proceso no cambió y terminaste pagando por algo que nadie adoptó',cons_who_4:'Tu operación tiene múltiples áreas, y cada una vive en un silo — sin visibilidad cruzada para que la gestión tome decisiones en tiempo real',
-    cons_chat_eye:'EMPIEZA CON UNA CONVERSACIÓN',cons_chat_h:'Primero entendemos.<br>Luego, si tiene sentido, proponemos.',cons_chat_p:'Sin propuesta anticipada. Sin pitch de ventas. La primera conversación es solo para entender qué está pasando en tu operación — y ver si tiene sentido trabajar juntos.',
-    t1_label:'horas libres por día',t1_quote:'"La IA se encarga de la atención y yo me concentro 100% en la estrategia. Es como tener un asistente perfecto que nunca se cansa."',
-    t2_label:'horas libres por semana',t2_quote:'"Pasaba horas explicando plazos a cada cliente. Ahora la IA lo hace automáticamente y los leads llegan calificados."',
-    t3_label:'ventas de madrugada',t3_quote:'"Antes solo vendía cuando estaba en línea. Ahora la IA vende mientras duermo — y las ventas se triplicaron."',
-    plan_name_essencial:'Esencial',plan_name_avancado:'Avanzado',plan_name_performance:'Performance',plan_name_premium:'Premium',plan_name_elite:'Elite',
-    plan_badge:'★ MÁS ELEGIDO',
-    feat_capture:'Captación de leads',feat_1dash:'1 dashboard KPIs',feat_2int:'2 integraciones',
-    feat_tags:'Tags + cola + recordatorios',feat_bi:'BI embudo por etapa',feat_4int:'4 integraciones',
-    feat_followup:'Seguimiento automático',feat_campaigns:'Campañas recurrentes',feat_nps:'NPS/CSAT automático',feat_7int:'7 integraciones + webhooks',
-    feat_billing:'Cobros/pagos',feat_workflows:'Flujos ilimitados',feat_rbac:'RBAC (roles/perfiles)',
-    feat_panels:'Paneles ejecutivos',feat_multi:'Multi-unidad',feat_security:'Controles de seguridad',
-    sc_label:'Consultoría de Tecnología',sc_h2a:'Alguien en tu empresa todavía necesita',sc_h2b:'armar el informe para que tú puedas decidir.',
-    sc_desc:'Ese costo no aparece en el P&L. Pero existe cada vez que la decisión llega después de que el evento ya ocurrió — porque alguien tuvo que compilar, transcribir y formatear antes de avisarte.',
-    sc_prob_label:'EL PATRÓN QUE ENCONTRAMOS',
-    sc_prob_1:'El dato existe en el sistema — pero la decisión espera a alguien que aún no terminó la planilla',
-    sc_prob_2:'Si una persona clave se va o falta, el proceso vuelve al modo manual en 24 horas',
-    sc_prob_3:'Las correcciones se hacen en silencio, sin registro de quién cambió qué y cuándo',
-    sc_sol_label:'QUÉ HACEMOS',
-    sc_sol_1:'Entramos en tu operación y trabajamos <strong style="color:var(--t1)">directamente con cada equipo</strong> — no solo con la gestión',
-    sc_sol_2:'Analizamos los problemas <strong style="color:var(--t1)">desde adentro</strong>, documentamos todo y construimos la solución con quienes la van a usar',
-    sc_sol_3:'Nos vamos cuando tu equipo opera solo — <strong style="color:var(--t1)">sin depender de nosotros</strong>',
-    sc_t1h:'ENTRAMOS',sc_t1d:'Visita y entrevistas con cada área',
-    sc_t2h:'ANALIZAMOS',sc_t2d:'Mapeamos el retrabajo real',
-    sc_t3h:'DOCUMENTAMOS',sc_t3d:'Todo queda registrado y contigo',
-    sc_t4h:'IMPLEMENTAMOS',sc_t4d:'Con el equipo, en el punto de uso',
-    sc_t5h:'TRANSFERIMOS',sc_t5d:'El equipo opera solo al final',
-    sc_cta_h:'Primero, entendemos tu operación.',sc_cta_sub:'Sin propuesta anticipada. Sin pitch. Solo conversación — y después lo que tenga sentido para los dos.',
-    sc_wa_btn:'Hablar sobre mi operación',sc_method_link:'Ver metodología →',
-    m1_label:'Empresas atendidas',m2_label:'Mensajes procesados',m3_label:'Uptime garantizado',m4_label:'Para que operes',
-    tech_h:'Tecnologías y socios',tech_desc:'Construimos sobre las mejores infraestructuras del mundo para garantizar escala, seguridad y rendimiento.',
-    commit_h:'Nuestro compromiso',
-    c1_title:'Resultados en 7 días o reembolso',c1_desc:'Si el agente no está operando en 7 días hábiles, devolvemos el 100% del valor de setup. Sin burocracia.',
-    c2_title:'Datos protegidos · LGPD',c2_desc:'Toda conversación está cifrada. Nunca revendemos ni compartimos datos de tus clientes. Cumplimiento total con la LGPD.',
-    c3_title:'Soporte humano · siempre',c3_desc:'Atención de lunes a sábado. Equipo técnico disponible por WhatsApp, email y videollamada cuando lo necesites.',
-    media_h:'En los medios',
-    mission_label:'NUESTRA MISIÓN',mission_text:'"Hacer la inteligencia artificial aplicada accesible para cualquier empresa que quiera crecer — independientemente del tamaño, el sector o la ciudad."',
-    footer_tagline:'IA que ejecuta para el crecimiento de tu negocio.',footer_prod:'Producto',footer_social:'Social',footer_faq:'Preguntas',footer_contact:'Contacto',footer_copy:'© 2026 AutoGenius AI. Hecho con ❤️ en Recife, Brasil.',
-    p0_stat1:'Tiempo prom.',p0_stat2:'Disponible',p0_sim_label:'SIMULACIÓN DE ATENCIÓN',p0_client:'¡Hola! ¿Tienen horario disponible hoy?',p0_agent:'¡Hola! Sí, tenemos 14h y 16h disponibles. ¿Cuál prefieres? 😊',p0_replied:'respondió en 1.2s',
-    p1_stat1:'Conversión',p1_stat2:'Triaje manual',lead_card:'PERFIL DEL LEAD · AUTOMÁTICO',lead_intent:'Intención de compra',lead_intent_val:'Alta ●',lead_budget:'Presupuesto estimado',lead_status:'Estado',lead_status_val:'Listo para cerrar',
-    p2_stat1:'No-show',p2_stat2:'Agendas',p2_card_label:'AGENDA · JUEVES',p2_confirmed:'✓ confirmado',p2_avail:'Disponible',
-    p3_stat1:'Recuperación',p3_stat2:'Secuencias',p3_seq_label:'SECUENCIA DE SEGUIMIENTO',p3_s1h:'24h — Recordatorio',p3_s1t:'"¡Hola! ¿Puedo ayudarte hoy?" ✓ enviado',p3_s2h:'72h — Valor',p3_s2t:'"Mira lo que dicen nuestros clientes..." ✓ enviado',p3_s3h:'7d — Última oportunidad',p3_s3t:'Programado para enviar',
-    talk_themes_h:'Temas disponibles',talk_formats_h:'Formatos',
-    talk_t1h:'Cómo los agentes de IA venden por WhatsApp 24/7',talk_t1d:'De la teoría al caso real: cómo montar un agente que responde, califica y cierra ventas sin intervención humana. Casos reales de PyMEs brasileñas.',
-    talk_t2h:'El futuro del trabajo con IA: qué cambia (y qué no)',talk_t2d:'Una visión realista sobre la automatización inteligente — qué funciones serán transformadas, qué profesionales tienen ventaja y cómo prepararse ahora.',
-    talk_t3h:'Automatización sin código: cómo cualquier empresa puede empezar hoy',talk_t3d:'Workshop práctico sobre las principales herramientas de automatización (n8n, Make, WhatsApp API) y cómo conectarlas con IA sin necesidad de programación.',
-    talk_f1_title:'Keynote',talk_f1_desc:'30 a 60 min · Conferencias y eventos corporativos',talk_f2_title:'Workshop',talk_f2_desc:'2 a 4h · Contenido práctico con hands-on',talk_f3_title:'Panel / Mesa',talk_f3_desc:'Debate con especialistas del mercado',talk_f4_title:'Online en vivo',talk_f4_desc:'Webinar y masterclass para equipos remotos',
+    cont_h1:'Ponte en',cont_h1b:'contacto',cont_sub:'¿Prefieres respuesta rápida? Habla directo por WhatsApp.',cont_wa:'Hablar en WhatsApp ahora',cont_or:'— o llena el formulario —',
+    cont_f1:'Nombre',cont_f1ph:'Tu nombre completo',cont_f3:'Sector',cont_f3ph:'Ej: Clínica, Inmobiliaria, E-commerce…',cont_f4:'Mensaje',cont_f4ph:'¿Cómo podemos ayudarte?',cont_send:'Enviar mensaje',
+    sobre_h1:'Somos',sobre_desc:'Nacimos para demostrar que la automatización de alto nivel no es exclusiva de grandes corporaciones. Entregamos agentes de IA que ejecutan en WhatsApp.',sobre_founder:'Fundador',sobre_cta:'Hablar con el equipo',
+    talk_h1:'IA aplicada a',talk_h1b:'negocios reales',talk_desc:'Yuri Matos ofrece una conferencia práctica sobre cómo la IA transforma ventas y atención en América Latina.',
+    talk_cta_h:'¿Interesado en contratar una conferencia?',talk_cta_p:'Enviamos propuesta completa con fechas y formatos.',talk_cta_btn:'Contratar conferencia',
+    cons_label:'Consultoría de Tecnología',cons_h1:'La mayoría de las implementaciones fallan.',cons_h1b:'No por tecnología — por comportamiento.',cons_cta:'Quiero entender mi operación',cons_cta_note:'Primera charla gratuita · Sin compromiso',
+    badge_sla:'RESPUESTA &lt; 3s · 99% UPTIME',badge_langs:'DISPONIBLE EN 5 IDIOMAS',badge_lgpd:'CUMPLIMIENTO LGPD',s2_label:'1.0 · Dolor'
   },
-  de:{
-    hero_line1:'Während Sie schliefen,',hero_line2:'antwortete ein Konkurrent',hero_line3:'Ihrem Kunden.',
+  de:{tech_desc:'Gebaut mit führender KI & Infrastruktur.',tech_h:'Tech-Stack',talk_t3d:'Konkrete Schritte ohne hohe Kosten.',talk_t3h:'Digitale Transformation für KMUs',talk_t2d:'Ersetzung von Formularen durch KI.',talk_t2h:'Die Zukunft des WhatsApp-Vertriebs',talk_t1d:'Wie Unternehmen mit Automatisierung Verkäufe steigern.',talk_t1h:'KI Ohne Hype: Echter Vertrieb',talk_f4_desc:'Maßgeschneidert für Vertriebs- und Führungsteams.',talk_f4_title:'Internes Firmen-Event',talk_f3_desc:'Expertenbeitrag in Diskussionsrunden.',talk_f3_title:'Podiumsdiskussion',talk_f2_desc:'2 bis 4 Stunden interaktiver Workshop mit Live-Mapping.',talk_f2_title:'Praxis-Workshop',talk_f1_desc:'45 bis 60 Minuten Keynote für Großveranstaltungen.',talk_f1_title:'Hauptvortrag (Keynote)',talk_formats_h:'Verfügbare Formate',mission_text:'Zugang zu hochkarätiger KI für Unternehmen aller Größen demokratisieren.',mission_label:'Unsere Mission',media_h:'Presse & Medien',m4_label:'24/7 Kundenservice',m3_label:'Native Integration',m2_label:'Antwort in < 3s',m1_label:'100% Autonom',footer_copy:'© 2026 AutoGenius AI. Alle Rechte vorbehalten.',footer_social:'Soziale Medien',footer_faq:'Hilfe',footer_contact:'Kontakt',footer_prod:'Produkt',footer_tagline:'KI-Agenten für WhatsApp, die handeln.',cons_who_4:'Teams, die praxisnahes Training benötigen',cons_who_3:'Manager, die echte Automatisierung wollen',cons_who_2:'Betriebe, die die Kontrolle auf WhatsApp verloren haben',cons_who_1:'Unternehmen mit festgefahrenen manuellen Prozessen',cons_who_h:'Für wen die Beratung ist',talk_t3_p:'Konkrete Schritte zur Modernisierung von Prozessen ohne Vermögen für Software auszugeben.',talk_t3_h:'3. Praktische Digitale Transformation in KMUs',talk_t2_p:'Wie KI-Conversational-Agenten starre Formulare und Chatbots ersetzen.',talk_t2_h:'2. Die Zukunft des WhatsApp-Vertriebs & Services',talk_t1_p:'Ein praktischer Einblick, wie Unternehmen mit KI Verkäufe vervielfachen.',talk_t1_h:'1. KI Ohne Hype: Echter Vertrieb & Betrieb im Alltag',talk_themes_h:'Vortragsthemen & Workshops',cons_guar_t:'Wir arbeiten mit klaren Etappenzielen. Werden diese nicht erfüllt, kündigen Sie kostenfrei.',cons_guar_h:'Liefergarantie & Engagement',cons_s5_t:'Ihr Team steuert und entwickelt das System eigenständig weiter.',cons_s5_h:'5. Volle Autonomie',cons_s4_t:'Das Training findet direkt im Live-Betrieb statt, um 100% Akzeptanz zu sichern.',cons_s4_h:'4. Wir umsetzen gemeinsam',cons_s3_t:'Wir definieren die Transformationsschritte nach höchster Auswirkung.',cons_s3_h:'3. Wir erstellen den Aktionsplan',cons_s2_t:'Wir dokumentieren alle Engpässe, versteckten Kosten und Risiken.',cons_s2_h:'2. Wir analysieren & dokumentieren alles',cons_s1_t:'Wir besuchen den Betrieb, sprechen mit Mitarbeitern und sehen den echten Alltag.',cons_s1_h:'1. Wir analysieren vor Ort',cons_steps_sub:'Vom ersten Kontakt bis das Team eigenständig arbeitet',cons_steps_h:'Was in der Praxis passiert',cons_intro2:'Unsere Beratung arbeitet anders: Wir gehen in den Betrieb, arbeiten Seite an Seite mit dem Team, bis es läuft.',cons_intro1:'Das System wurde geliefert, das Team konnte es nicht bedienen und kehrte nach zwei Wochen zu Excel zurück.',cons_chat_p:'Wir führen eine kostenlose Erstanalyse durch. Wir kartieren Reibungspunkte und zeigen Potenziale auf.',cons_chat_h:'Möchten Sie wissen, wo Ihr Betrieb stockt?',cons_chat_eye:'Externe & technische Perspektive',commit_h:'Engagement für Ergebnisse',c3_desc:'Prozesskartierung, Teamschulung, Data Governance und Beseitigung betrieblicher Engpässe.',c3_title:'Beratung & Digitale Transformation',c2_desc:'Fortgeschrittene Sprachmodelle (LLMs), RAG, Audiotranskription und Prozessautomatisierung.',c2_title:'Angewandte KI & Autonome Agenten',c1_desc:'Entwicklung robuster Systeme, nativer API-Integrationen, Vektordatenbanken und skalierbarer Plattformen.',c1_title:'Software-Engineering & Architektur',
+    hero_line1:'Während Sie schliefen,',hero_line2:'hat ein Konkurrent',hero_line3:'Ihren Kunden geantwortet.',
     hero_sub:'KI-Agenten, die auf WhatsApp antworten, qualifizieren und Verkäufe abschließen — <strong style="color:var(--t1);font-weight:600">24 Stunden am Tag, 7 Tage die Woche.</strong>',
-    hero_cta:'<i class="fab fa-whatsapp" style="font-size:1.2rem"></i>Jetzt auf WhatsApp sprechen',
+    hero_cta:'<i class="fab fa-whatsapp" style="font-size:1.2rem"></i>Jetzt auf WhatsApp chatten',
     hero_cta2:'Wie es funktioniert <i class="fas fa-arrow-right" style="font-size:.72rem;margin-left:2px"></i>',
     hero_badge:'KI-Referenz in Brasilien',
-    stat_comp:'Unternehmen',stat_roi:'Ø ROI',stat_days:'Aktivierung',
-    pain_badge:'Kommt Ihnen das bekannt vor?',
-    pain_1:'Sie antworten Kunden <strong style="color:var(--t1);font-weight:600">wenn Sie können</strong>. Nicht wenn sie es brauchen.',
-    pain_2:'Leads, für die Sie bezahlt haben, <strong style="color:var(--t1);font-weight:600">wurden kalt</strong> bevor Sie antworteten.',
-    pain_3:'Sie wissen, dass Sie Verkäufe verlieren. <strong style="color:var(--t1);font-weight:600">Nur nicht wie viele.</strong>',
-    break_q:'Was wäre, wenn jede unbeantwortete Nachricht ein abgeschlossener Deal würde?',
-    topbar_ai:'KI-Agenten 24/7',topbar_impl:'Live in 7 Tagen',topbar_cta:'— Auf WhatsApp sprechen →',
-    nav_home:'Start',nav_sol:'Lösung',nav_cases:'Cases',nav_plans:'Pläne',nav_about:'Über uns',nav_talk:'Vortrag',nav_cons:'Beratung',nav_faq:'FAQ',nav_contact:'Kontakt',nav_wa:'Auf WhatsApp sprechen',
+    stat_comp:'Unternehmen',stat_roi:'Durchschn. ROI',stat_days:'Bis zum Start',
+    pain_badge:'Kennen Sie das?',
+    pain_1:'Sie antworten Kunden, <strong style="color:var(--t1);font-weight:600">wenn Sie Zeit haben</strong>. Nicht wenn sie es brauchen.',
+    pain_2:'Teuer gewonnene Leads <strong style="color:var(--t1);font-weight:600">sind erkaltet</strong>, bevor Sie antworten konnten.',
+    pain_3:'Sie wissen, dass Sie Verkäufe verlieren. <strong style="color:var(--t1);font-weight:600">Sie wissen nur nicht wie viele.</strong>',
+    break_q:'Was wäre, wenn jede unbeantwortete Nachricht zu einem Verkauf würde?',
+    topbar_ai:'24/7 KI-Agenten',topbar_impl:'Start in 7 Tagen',topbar_cta:'— Jetzt auf WhatsApp chatten →',
+    nav_home:'Startseite',nav_sol:'Lösung',nav_cases:'Erfolge',nav_plans:'Tarife',nav_about:'Über uns',nav_talk:'Vortrag',nav_cons:'Beratung',nav_faq:'FAQ',nav_contact:'Kontakt',nav_wa:'Auf WhatsApp chatten',
     sound_on:'Ton',sound_off:'Pause',
     marquee_label:'UNTERNEHMEN, DIE AUTOGENIUS VERTRAUEN',
-    s4b_label:'2.1 · Was Ihr Agent macht',s4b_h2:'Wählen Sie, was zuerst',s4b_h2b:'automatisiert wird.',
-    tab_0:'01 · Support',tab_1:'02 · Qualifizierung',tab_2:'03 · Terminierung',tab_3:'04 · Follow-up',
-    p0_kicker:'24/7 KUNDENSUPPORT',p0_h3:'Antworten in Sekunden,<br>nicht in Stunden.',p0_desc:'Ihr Agent antwortet auf jede WhatsApp-Nachricht sofort — Wochenenden, Nächte, Feiertage. Keine Pausen.',
-    p1_kicker:'LEAD-QUALIFIZIERUNG',p1_h3:'Nur Leads erhalten,<br>die wirklich kaufen.',p1_desc:'Ihr Agent siebt automatisch: erkennt Kaufabsicht, sammelt Daten und bewertet den Lead, bevor er an Sie weitergeleitet wird.',
-    p2_kicker:'AUTOMATISCHE TERMINIERUNG',p2_h3:'Voller Kalender.<br>Ohne das Handy anzufassen.',p2_desc:'Der Agent prüft Ihre Verfügbarkeit, bucht den Termin, sendet Bestätigung und automatische Erinnerungen. Null No-Shows.',
-    p3_kicker:'AUTOMATISCHES FOLLOW-UP',p3_h3:'Kein Lead<br>wird allein kalt.',p3_desc:'Ihr Agent folgt automatisch bei 24h, 72h und 7 Tagen nach Erstkontakt nach. Erholt Leads, die verloren schienen.',
-    s4_label:'2.0 · Lösung',s4_badge:'Was ist ein KI-Agent?',s4_h2a:'Ein Chatbot beantwortet Fragen.',s4_h2b:'Ihr Agent trifft Entscheidungen.',
-    s4_f1:'Qualifiziert Leads automatisch',s4_f2:'Bucht direkt in Ihren Kalender',s4_f3:'Sendet Angebote und folgt nach',s4_f4:'Zahlung, Bestätigung, Abschluss. Allein.',
-    s4_sub:'Alles auf WhatsApp. Ohne dass Sie dabei sein müssen.',
-    s5_label:'3.0 · Echte Ergebnisse',s5_badge:'Menschen, die aufgehört haben, Verkäufe zu verlieren',
-    s6_label:'4.0 · Wie es funktioniert',s6_h2a:'Einfach zu starten.',s6_h2b:'Leistungsstark zu nutzen.',s6_desc:'Von der Diagnose bis zu Ihrem aktiven Agenten in 7 Tagen.',
-    s6_s1h:'Diagnose',s6_s1p:'1 Gespräch von 30 Minuten. Wir verstehen Ihr Geschäft.',
+    s4b_label:'2.1 · Branchen-Spezifische KI',s4b_h2:'Ein Kern. Vier',s4b_h2b:'Spezialgebiete.',
+    s4_label:'2.0 · Lösung',s4_badge:'Was ist ein KI-Agent?',s4_h2a:'Ein Chatbot beantwortet Fragen.',s4_h2b:'Ihr KI-Agent trifft Entscheidungen.',
+    s4_f1:'Qualifiziert Leads automatisch',s4_f2:'Bucht direkt in Ihrem Kalender',s4_f3:'Sendet Angebote & Follow-ups',s4_f4:'Rechnet ab, bestätigt & schließt ab. Allein.',
+    s4_sub:'Alles auf WhatsApp. Ohne dass Sie anwesend sein müssen.',
+    calc_label:'2.2 · Chancen-Rechner',calc_h2:'Wie viel Umsatz verliert Ihr Unternehmen durch langsame Antworten?',
+    calc_sub:'Simulieren Sie die Auswirkung von Antworten unter 3 Sekunden auf WhatsApp',calc_seg_lbl:'Wählen Sie Ihre Branche:',
+    calc_leads_lbl:'Nachrichten / Leads pro Monat',calc_ticket_lbl:'Durchschnittlicher Kundenwert (€)',
+    calc_lost_lbl:'Geschätzte verlorene Verkäufe / Monat durch Verzögerungen:',calc_rev_lbl:'Geschätzter ungenutzter Umsatz pro Monat:',
+    calc_btn:'Diesen Umsatz jetzt mit KI zurückholen',
+    pil_label:'2.3 · Komplett-Plattform',pil_h2:'Nicht nur ein Chatbot. Ihre gesamte Operation automatisiert.',
+    pil_sub:'Das komplette Ökosystem für Kundenservice, Verwaltung und Messung auf WhatsApp.',
+    pil1_h:'24/7 Autonomer KI-Agent',pil1_t:'Antwortet in Sekunden per Sprachnachricht oder Text. Qualifiziert Leads und bucht Termine ohne menschlichen Aufwand.',
+    pil2_h:'Natives Visuelles Kanban-CRM',pil2_t:'Verfolgen Sie alle Kontakte nach Phasen: Neuer Lead → In Bearbeitung → Gebucht → Verkauf. Volle Transparenz.',
+    pil3_h:'Multi-Agenten-Omnichannel-Posteingang',pil3_t:'Ihr Team übernimmt den Chat bei Bedarf mit einem Klick. Vereinheitlichter Verlauf.',
+    pil4_h:'Umsatz-Analytics & Berichte',pil4_t:'Echtzeit-Metriken zu Antwortgeschwindigkeit, Konvertierungsrate und generiertem Umsatz.',
+    bat_label:'2.4 · Marktvergleich',bat_h2:'Warum ist AutoGenius herkömmlichen Alternativen überlegen?',
+    bat_col1:'Starre Chatbots',bat_col2:'Langsame Plattformen (Blip/Zenvia)',bat_col3:'AutoGenius AI (Autonomer Agent)',
+    tru_label:'2.5 · Governance & Sicherheit',tru_h2:'Enterprise-Sicherheit und volle Kontrolle für Ihr Unternehmen',
+    tru_c1_h:'AES-256 Verschlüsselung & Datenschutz',tru_c1_t:'Ende-zu-Ende verschlüsselte Daten. 100% konform mit Datenschutzgesetzen.',
+    tru_c2_h:'Strikte KI-Leitplanken',tru_c2_t:'Die KI erfindet niemals Preise und überschreitet keine von Ihnen festgelegten Regeln.',
+    tru_c3_h:'Nahtlose Übergabe an Menschen',tru_c3_t:'Sofortige Benachrichtigung im WhatsApp Ihres Teams, wenn ein Mensch angefordert wird.',
+    s5_label:'3.0 · Echte Ergebnisse',s5_badge:'Kunden, die keine Verkäufe mehr verlieren',
+    s6_label:'4.0 · Wie es funktioniert',s6_h2a:'Einfach zu starten.',s6_h2b:'Stark im Betrieb.',s6_desc:'Vom Diagnosegespräch zum aktiven KI-Agenten in 7 Tagen.',
+    s6_s1h:'Diagnose',s6_s1p:'1 30-minütiges Gespräch. Wir analysieren Ihren Betrieb.',
     s6_s2h:'Einrichtung',s6_s2p:'Wir bauen und trainieren Ihren Agenten in 7 Tagen.',
     s6_s3h:'Ergebnis',s6_s3p:'Sie aktivieren. Er arbeitet. Für immer.',
-    s7_label:'5.0 · Pläne',s7_h2a:'Wählen Sie den',s7_h2b:'richtigen Plan',s7_h2c:'für Ihr Volumen',
-    s7_guarantee:'Eigene Plattform · 7 Tage Garantie · Keine Bindung',
-    plan_cta:'Diesen Plan wählen',
-    ent_title:'Unbegrenztes Volumen · Komplexe Integrationen · Dedizierte Umgebung',
-    ent_desc:'SSO/SCIM · KI mit internen Daten · Datalake · Custom SLA · Vollständiges Audit',
+    s7_label:'5.0 · Tarife',s7_h2a:'Wählen Sie den',s7_h2b:'passenden Tarif',s7_h2c:'für Ihr Volumen',
+    s7_guarantee:'Eigene Plattform · 7 Tage Garantie · Keine Mindestlaufzeit',
+    plan_cta:'Diesen Tarif wählen',ent_title:'Unbegrenztes Volumen · Komplexe Integrationen · Dedizierte Umgebung',
+    ent_desc:'SSO/SCIM · KI mit internen Daten · Datalake · Individuelles SLA',
     ent_price:'Auf Anfrage',ent_cta:'Angebot anfordern →',
-    s8_label:'6.0 · Jetzt sind Sie dran',s8_h2a:'Ihr Konkurrent',s8_h2b:'nutzt bereits KI.',
-    s8_desc:'Jeder Tag ohne Automatisierung ist liegengelassenes Geld.<br>Das Gespräch ist kostenlos. Die Entscheidung liegt bei Ihnen.',
-    s8_cta:'Jetzt mit AutoGenius sprechen',s8_g1:'7 Tage Garantie',s8_g2:'Keine Bindung',s8_g3:'Live in 7 Tagen',
-    wa_tooltip:'Jetzt sprechen — Antwort in Minuten',
+    guar_badge:'7 TAGE BEDINGUNGSLOSE GARANTIE',guar_h3:'Null Risiko für Ihr Unternehmen',
+    guar_p:'Testen Sie AutoGenius in Ihrem Betrieb. Wenn Sie keine sofortigen Antworten und automatischen Buchungen feststellen, erstatten wir 100% Ihrer Investition.',
+    s8_label:'6.0 · Sie sind dran',s8_h2a:'Ihr Konkurrent',s8_h2b:'nutzt bereits KI.',
+    s8_desc:'Jeder Tag ohne Automatisierung ist liegengelassenes Geld.<br>Das Gespräch ist kostenlos.',
+    s8_cta:'Jetzt mit AutoGenius sprechen',s8_g1:'7 Tage Garantie',s8_g2:'Keine Bindung',s8_g3:'Start in 7 Tagen',
+    wa_tooltip:'Jetzt sprechen — Antwort in Minuten',wa_badge_txt:'Antwortet in &lt; 1 Min',
     faq_h1:'Häufig gestellte',faq_h1b:'Fragen',faq_sub:'Alles, was Sie vor dem Start wissen müssen.',
-    cont_h1:'Kontakt',cont_h1b:'aufnehmen',cont_sub:'Bevorzugen Sie eine schnelle Antwort? Sprechen Sie direkt auf WhatsApp.',cont_wa:'Jetzt auf WhatsApp sprechen',cont_or:'— oder Formular ausfüllen —',
-    cont_f1:'Name',cont_f1ph:'Ihr vollständiger Name',cont_f3:'Branche',cont_f3ph:'z.B. Klinik, Kanzlei, E-Commerce…',cont_f4:'Nachricht',cont_f4ph:'Wie können wir helfen?',cont_send:'Nachricht senden',
-    sobre_h1:'Wir sind',sobre_desc:'Gegründet in Recife, um zu beweisen, dass Automatisierung auf hohem Niveau nicht nur großen Unternehmen vorbehalten ist. Wir liefern KI-Agenten, die ausführen — verkaufen, terminieren, qualifizieren und Kunden halten — 24h/Tag, 7 Tage/Woche, direkt auf WhatsApp.',sobre_founder:'Gründer',sobre_cta:'Jetzt mit dem Team sprechen',
-    talk_h1:'KI angewendet auf',talk_h1b:'reale Unternehmen',talk_desc:'Yuri Matos bringt zu Ihrer Veranstaltung eine praktische Sicht, ohne Hype und mit echten Fällen, wie KI Vertrieb, Service und Betrieb in Brasilien transformiert.',
-    talk_cta_h:'Interesse an einem Vortrag?',talk_cta_p:'Wir senden ein vollständiges Angebot mit Preisen und verfügbaren Formaten für Ihre Veranstaltung.',talk_cta_btn:'Vortrag buchen',
-    cons_label:'Technologieberatung',cons_h1:'Die meisten Implementierungen scheitern.',cons_h1b:'Nicht an Technologie — an Verhalten.',cons_cta:'Ich möchte meinen Betrieb verstehen',cons_cta_note:'Erstes Gespräch kostenlos · Keine Verpflichtung',
-    badge_sla:'ANTWORT &lt; 3s · 99% UPTIME',badge_langs:'IN 5 SPRACHEN VERFÜGBAR',badge_lgpd:'LGPD KONFORM',s2_label:'1.0 · Schmerz',
-    cons_intro1:'Das System wurde geliefert, das Team wusste nicht, wie es zu benutzen war, vertraute dem Prozess nicht und kehrte innerhalb von zwei Wochen zu WhatsApp und Tabellen zurück. Das passiert in jedem Unternehmen, das Technologie wie ein Produkt kauft.',
-    cons_intro2:'Unsere Beratung funktioniert anders: Wir gehen in den Betrieb, arbeiten direkt mit jedem Team, analysieren die Probleme von innen, dokumentieren alles — und implementieren gemeinsam mit denen, die es nutzen werden, bis es funktioniert.',
-    cons_steps_h:'Was in der Praxis passiert',cons_steps_sub:'Vom ersten Kontakt bis zum selbstständigen Betrieb Ihres Teams',
-    cons_s1_h:'Wir gehen rein und sehen genau hin',cons_s1_t:'Wir besuchen den Betrieb. Wir sprechen mit denen, die im Prozess arbeiten — nicht nur mit der Führung. Wir sehen, was wirklich passiert: wo Papier noch regiert, wo jemand im Notizbuch schreibt, bevor er ins System einträgt, wo nur eine Person weiß, wie etwas geht. Das kommt in einem Präsentationsmeeting nicht vor.',
-    cons_s2_h:'Wir analysieren und dokumentieren alles',cons_s2_t:'Wir kartieren jedes Problem: die Nacharbeit, die unsichtbare Kosten verursacht, das Schlüsselpersonenrisiko, das den Prozess blockiert, wenn jemand fehlt, die Zahlen, die ohne Nachvollziehbarkeit ankommen. Wir dokumentieren Prozesse, Fehler und Chancen. Dieses Material bleibt bei Ihnen — unabhängig von allem.',
-    cons_s3_h:'Wir bauen den Plan mit denen, die ihn umsetzen',cons_s3_t:'Wir definieren Transformationsfelder in der Reihenfolge des realen Einflusses. Jedes Feld hat eine konkrete Lieferung und eine Person, die aufhört, etwas zu tun, das sie nicht tun sollte. Nichts wird aufgezwungen — jede Änderung wird mit den Nutzern validiert, bevor sie abgeschlossen wird.',
-    cons_s4_h:'Wir implementieren an der Seite des Teams',cons_s4_t:'Das Training findet dort statt, wo die Arbeit stattfindet — im Lager, in der Werkstatt, im Büro. Das Team lernt durch Tun mit dem laufenden echten Prozess, nicht in einer Slide-Präsentation. Wir identifizieren Widerstände, bevor sie zu Blockaden werden. Wir sind direkt für jeden Bereichsleiter während der gesamten Implementierung verfügbar.',
-    cons_s5_h:'Wir übergeben — und gehen, wenn es funktioniert',cons_s5_t:'Das Ziel war nie, Abhängigkeit zu schaffen. Am Ende betreibt und entwickelt Ihr Team das Gebaute ohne uns zu benötigen. Alles Gelieferte — Dashboards, Automatisierungen, Dokumentation, Datenbanken — bleibt bei Ihnen. Immer.',
-    cons_guar_h:'Wir bitten nicht um blindes Vertrauen',cons_guar_t:'Am Ende von Monat 3 halten wir ein Ergebnismeeting mit der Geschäftsführung ab. Wenn die in den Piloten vereinbarten Lieferungen aufgrund unserer Verantwortung nicht erfüllt wurden, können Sie den Vertrag ohne Strafe oder Gebühr beenden. Was bereits geliefert wurde — Dashboards, Datenbanken, Dokumentation — bleibt vollständig bei Ihnen. Wir bitten um 3 Monate, um zu beweisen, dass die Partnerschaft funktioniert.',
-    cons_who_h:'Das macht Sinn, wenn Sie eines dieser Szenarien erkennen',cons_who_1:'Sie haben SAP, ERP oder ein eingeführtes System — aber Entscheidungen gehen noch durch jemanden, der manuell kompiliert, bevor er Sie informiert',cons_who_2:'Es gibt eine Schlüsselperson in Ihrem Team, die, wenn sie geht oder fehlt, den Prozess innerhalb von 24 Stunden in den manuellen Modus zurückversetzt',cons_who_3:'Sie haben bereits versucht, Technologie einzuführen — aber das Team hat sie nicht genutzt, der Prozess hat sich nicht geändert, und Sie haben am Ende für etwas bezahlt, das niemand übernommen hat',cons_who_4:'Ihr Betrieb hat mehrere Bereiche, und jeder lebt in einem Silo — ohne übergreifende Sichtbarkeit für das Management, um in Echtzeit Entscheidungen zu treffen',
-    cons_chat_eye:'ES BEGINNT MIT EINEM GESPRÄCH',cons_chat_h:'Zuerst verstehen wir.<br>Dann, wenn es Sinn macht, schlagen wir vor.',cons_chat_p:'Kein Vorangebot. Kein Verkaufsgespräch. Das erste Gespräch dient nur dazu, zu verstehen, was in Ihrem Betrieb passiert — und zu sehen, ob es Sinn macht, zusammenzuarbeiten.',
-    t1_label:'freie Stunden pro Tag',t1_quote:'"Die KI kümmert sich um den Kundenservice und ich konzentriere mich 100% auf die Strategie. Es ist wie ein perfekter Assistent, der nie müde wird."',
-    t2_label:'freie Stunden pro Woche',t2_quote:'"Ich verbrachte Stunden damit, jedem Kunden Fristen zu erklären. Jetzt erledigt das die KI automatisch und die Leads kommen bereits qualifiziert."',
-    t3_label:'Verkäufe jede Nacht',t3_quote:'"Früher verkaufte ich nur, wenn ich online war. Jetzt verkauft die KI während ich schlafe — und der Umsatz hat sich verdreifacht."',
-    plan_name_essencial:'Basis',plan_name_avancado:'Erweitert',plan_name_performance:'Performance',plan_name_premium:'Premium',plan_name_elite:'Elite',
-    plan_badge:'★ BELIEBTESTER',
-    feat_capture:'Lead-Erfassung',feat_1dash:'1 KPI-Dashboard',feat_2int:'2 Integrationen',
-    feat_tags:'Tags + Warteschlange + Erinnerungen',feat_bi:'Funnel-BI nach Phase',feat_4int:'4 Integrationen',
-    feat_followup:'Automatisches Follow-up',feat_campaigns:'Wiederkehrende Kampagnen',feat_nps:'Automatisches NPS/CSAT',feat_7int:'7 Integrationen + Webhooks',
-    feat_billing:'Abrechnung/Zahlung',feat_workflows:'Unbegrenzte Workflows',feat_rbac:'RBAC (Rollen/Profile)',
-    feat_panels:'Executive-Dashboards',feat_multi:'Multi-Standort',feat_security:'Sicherheitskontrollen',
-    sc_label:'Technologieberatung',sc_h2a:'Jemand in Ihrem Unternehmen muss noch immer',sc_h2b:'den Bericht erstellen, damit Sie entscheiden können.',
-    sc_desc:'Diese Kosten tauchen nicht in der GuV auf. Aber sie entstehen jedes Mal, wenn eine Entscheidung nach dem Ereignis eintrifft — weil jemand erst kompilieren, transkribieren und formatieren musste.',
-    sc_prob_label:'DAS MUSTER, DAS WIR FINDEN',
-    sc_prob_1:'Die Daten sind im System — aber die Entscheidung wartet auf jemanden, der die Tabelle noch nicht fertig hat',
-    sc_prob_2:'Wenn eine Schlüsselperson geht oder fehlt, kehrt der Prozess innerhalb von 24 Stunden zum manuellen Modus zurück',
-    sc_prob_3:'Korrekturen werden stillschweigend vorgenommen, ohne Aufzeichnung, wer was wann geändert hat',
-    sc_sol_label:'WAS WIR TUN',
-    sc_sol_1:'Wir treten in Ihren Betrieb ein und arbeiten <strong style="color:var(--t1)">direkt mit jedem Team</strong> — nicht nur mit dem Management',
-    sc_sol_2:'Wir analysieren Probleme <strong style="color:var(--t1)">von innen</strong>, dokumentieren alles und bauen die Lösung mit denen, die sie nutzen werden',
-    sc_sol_3:'Wir gehen, wenn Ihr Team selbstständig arbeitet — <strong style="color:var(--t1)">ohne von uns abzuhängen</strong>',
-    sc_t1h:'EINTRETEN',sc_t1d:'Besuch und Interviews mit jedem Bereich',
-    sc_t2h:'ANALYSIEREN',sc_t2d:'Echte Nacharbeit kartieren',
-    sc_t3h:'DOKUMENTIEREN',sc_t3d:'Alles aufgezeichnet und bei Ihnen',
-    sc_t4h:'UMSETZEN',sc_t4d:'Mit dem Team, am Einsatzort',
-    sc_t5h:'ÜBERGEBEN',sc_t5d:'Team arbeitet am Ende selbstständig',
-    sc_cta_h:'Zuerst verstehen wir Ihren Betrieb.',sc_cta_sub:'Kein Vorabangebot. Kein Pitch. Nur ein Gespräch — und dann, was für beide Seiten sinnvoll ist.',
-    sc_wa_btn:'Über meinen Betrieb sprechen',sc_method_link:'Methodik ansehen →',
-    m1_label:'Betreute Unternehmen',m2_label:'Verarbeitete Nachrichten',m3_label:'Garantierte Uptime',m4_label:'Bis zum Betrieb',
-    tech_h:'Technologien & Partner',tech_desc:'Wir bauen auf den besten Infrastrukturen der Welt, um Skalierbarkeit, Sicherheit und Leistung zu gewährleisten.',
-    commit_h:'Unser Engagement',
-    c1_title:'Ergebnisse in 7 Tagen oder Erstattung',c1_desc:'Wenn der Agent nicht innerhalb von 7 Werktagen in Betrieb ist, erstatten wir 100% der Setup-Gebühr. Kein Bürokratieaufwand.',
-    c2_title:'Geschützte Daten · LGPD',c2_desc:'Jedes Gespräch ist verschlüsselt. Wir verkaufen oder teilen niemals Kundendaten. Vollständige LGPD-Konformität.',
-    c3_title:'Menschlicher Support · immer',c3_desc:'Betreuung Montag bis Samstag. Technisches Team verfügbar per WhatsApp, E-Mail und Videoanruf, wann immer Sie es brauchen.',
-    media_h:'In der Presse',
-    mission_label:'UNSERE MISSION',mission_text:'"Angewandte künstliche Intelligenz für jedes Unternehmen zugänglich machen, das wachsen möchte — unabhängig von Größe, Branche oder Stadt."',
-    footer_tagline:'KI, die für das Wachstum Ihres Unternehmens handelt.',footer_prod:'Produkt',footer_social:'Social',footer_faq:'FAQ',footer_contact:'Kontakt',footer_copy:'© 2026 AutoGenius AI. Gemacht mit ❤️ in Recife, Brasilien.',
-    p0_stat1:'Ø Antwortzeit',p0_stat2:'Verfügbar',p0_sim_label:'SUPPORT-SIMULATION',p0_client:'Hallo! Haben Sie heute freie Termine?',p0_agent:'Hallo! Ja, wir haben 14 Uhr und 16 Uhr frei. Was passt Ihnen? 😊',p0_replied:'geantwortet in 1,2s',
-    p1_stat1:'Konversion',p1_stat2:'Manuelle Sichtung',lead_card:'LEAD-PROFIL · AUTOMATISCH',lead_intent:'Kaufabsicht',lead_intent_val:'Hoch ●',lead_budget:'Geschätztes Budget',lead_status:'Status',lead_status_val:'Kaufbereit',
-    p2_stat1:'No-show',p2_stat2:'Kalender',p2_card_label:'TERMINE · DONNERSTAG',p2_confirmed:'✓ bestätigt',p2_avail:'Verfügbar',
-    p3_stat1:'Rückgewinnung',p3_stat2:'Sequenzen',p3_seq_label:'FOLLOW-UP-SEQUENZ',p3_s1h:'24h — Erinnerung',p3_s1t:'"Hallo! Kann ich Ihnen noch heute helfen?" ✓ gesendet',p3_s2h:'72h — Mehrwert',p3_s2t:'"Sehen Sie, was unsere Kunden sagen..." ✓ gesendet',p3_s3h:'7d — Letzte Chance',p3_s3t:'Für den Versand geplant',
-    talk_themes_h:'Verfügbare Themen',talk_formats_h:'Formate',
-    talk_t1h:'Wie KI-Agenten 24/7 über WhatsApp verkaufen',talk_t1d:'Von der Theorie zum echten Fall: Wie man einen Agenten aufbaut, der antwortet, qualifiziert und Verkäufe ohne menschliche Eingriffe abschließt. Echte Fälle aus brasilianischen KMUs.',
-    talk_t2h:'Die Zukunft der Arbeit mit KI: Was sich ändert (und was nicht)',talk_t2d:'Ein realistischer Blick auf intelligente Automatisierung — welche Funktionen verändert werden, welche Fachleute im Vorteil sind und wie man sich jetzt vorbereitet.',
-    talk_t3h:'Automatisierung ohne Code: Wie jedes Unternehmen heute starten kann',talk_t3d:'Praxis-Workshop über die wichtigsten Automatisierungstools (n8n, Make, WhatsApp API) und wie man sie mit KI verbindet, ohne programmieren zu müssen.',
-    talk_f1_title:'Keynote',talk_f1_desc:'30 bis 60 Min · Konferenzen und Unternehmensveranstaltungen',talk_f2_title:'Workshop',talk_f2_desc:'2 bis 4h · Praxisinhalt mit Hands-on',talk_f3_title:'Panel / Diskussion',talk_f3_desc:'Debatte mit Marktexperten',talk_f4_title:'Live online',talk_f4_desc:'Webinar und Masterclass für Remote-Teams',
+    cont_h1:'Nehmen Sie',cont_h1b:'Kontakt auf',cont_sub:'Schnelle Antwort gewünscht? Chatten Sie direkt auf WhatsApp.',cont_wa:'Jetzt auf WhatsApp sprechen',cont_or:'— oder Formular ausfüllen —',
+    cont_f1:'Name',cont_f1ph:'Ihr vollständiger Name',cont_f3:'Branche',cont_f3ph:'z.B. Klinik, Immobilien, E-Commerce…',cont_f4:'Nachricht',cont_f4ph:'Wie können wir helfen?',cont_send:'Nachricht senden',
+    sobre_h1:'Wir sind',sobre_desc:'Gegründet um zu beweisen, dass High-End-Automatisierung nicht nur Großkonzernen vorbehalten ist. Wir liefern KI-Agenten auf WhatsApp.',sobre_founder:'Gründer',sobre_cta:'Jetzt mit dem Team sprechen',
+    talk_h1:'Angewandte KI für',talk_h1b:'echte Geschäfte',talk_desc:'Yuri Matos hält praxisnahe Vorträge darüber, wie KI den Vertrieb in Lateinamerika revolutioniert.',
+    talk_cta_h:'Interesse an einem Vortrag?',talk_cta_p:'Wir senden ein vollständiges Angebot für Ihr Event.',talk_cta_btn:'Vortrag buchen',
+    cons_label:'Technologie-Beratung',cons_h1:'Die meisten Implementierungen scheitern.',cons_h1b:'Nicht an der Technologie — am Verhalten.',cons_cta:'Meinen Betrieb verstehen',cons_cta_note:'Erstes Gespräch kostenlos · Unverbindlich',
+    badge_sla:'ANTWORT &lt; 3s · 99% UPTIME',badge_langs:'IN 5 SPRACHEN VERFÜGBAR',badge_lgpd:'DATENSCHUTZ-KONFORM',s2_label:'1.0 · Schmerz'
   },
-  zh:{
-    hero_line1:'当你入睡时，',hero_line2:'竞争对手已回复',hero_line3:'了你的客户。',
-    hero_sub:'AI代理在WhatsApp上响应、筛选并完成销售 — <strong style="color:var(--t1);font-weight:600">每天24小时，每周7天。</strong>',
-    hero_cta:'<i class="fab fa-whatsapp" style="font-size:1.2rem"></i>立即在WhatsApp上联系',
-    hero_cta2:'查看如何运作 <i class="fas fa-arrow-right" style="font-size:.72rem;margin-left:2px"></i>',
-    hero_badge:'巴西AI行业标杆',
-    stat_comp:'企业',stat_roi:'平均ROI',stat_days:'激活天数',
-    pain_badge:'这听起来是否很熟悉？',
-    pain_1:'您<strong style="color:var(--t1);font-weight:600">有空时</strong>才回复客户，而不是他们需要时。',
-    pain_2:'您付费吸引的潜在客户<strong style="color:var(--t1);font-weight:600">在您回复前已冷却</strong>。',
-    pain_3:'您知道您在失去销售机会。<strong style="color:var(--t1);font-weight:600">只是不知道多少。</strong>',
-    break_q:'如果每条未回复的消息都能变成一笔成交呢？',
-    topbar_ai:'AI代理 24/7',topbar_impl:'7天内上线',topbar_cta:'— 立即联系WhatsApp →',
-    nav_home:'首页',nav_sol:'解决方案',nav_cases:'案例',nav_plans:'套餐',nav_about:'关于我们',nav_talk:'演讲',nav_cons:'咨询',nav_faq:'常见问题',nav_contact:'联系',nav_wa:'联系WhatsApp',
-    sound_on:'音乐',sound_off:'暂停',
+  zh:{tech_desc:'基于业界领先的AI与基础设施构建。',tech_h:'技术栈',talk_t3d:'无需高昂费用的可落地步骤。',talk_t3h:'中小企业数字化转型',talk_t2d:'对话式AI全面替代传统表单。',talk_t2h:'WhatsApp销售的未来',talk_t1d:'真实企业如何使用自动化提升销售额。',talk_t1h:'去浮夸的AI：真实商业与销售',talk_f4_desc:'为贵公司销售与领导团队量身定制的内容。',talk_f4_title:'企业内部专场',talk_f3_desc:'作为专家顾问参与创新圆桌讨论。',talk_f3_title:'圆桌论坛',talk_f2_desc:'2-4小时的互动研讨与现场实战映射。',talk_f2_title:'实操工作坊',talk_f1_desc:'针对大型会议的45-60分钟主旨演讲。',talk_f1_title:'主旨演讲',talk_formats_h:'可选形式',mission_text:'让各种规模的企业都能平等使用高端人工智能。',mission_label:'我们的使命',media_h:'媒体与新闻报道',m4_label:'24/7全天候服务',m3_label:'原生系统无缝集成',m2_label:'3秒内响应',m1_label:'100% 自主运行',footer_copy:'© 2026 AutoGenius AI. 保留所有权利。',footer_social:'社交媒体',footer_faq:'帮助',footer_contact:'联系',footer_prod:'产品',footer_tagline:'真正落地的WhatsApp AI代理。',cons_who_4:'需要实操培训的团队',cons_who_3:'寻求真正自动化的管理者',cons_who_2:'WhatsApp管理失控的业务团队',cons_who_1:'手工作业流程卡顿的企业',cons_who_h:'咨询适用的对象',talk_t3_p:'无需购买昂贵臃肿软件，重构业务流程与团队效率的具体步骤。',talk_t3_h:'3. 中小企业可落地的数字化转型',talk_t2_p:'解析对话式人工智能如何革新传统表单与僵硬客服。',talk_t2_h:'2. WhatsApp客服与销售的未来发展趋势',talk_t1_p:'深度拆解真实企业如何利用AI与自动化倍增销售额并降低运营成本。',talk_t1_h:'1. 去浮夸的AI：如何在真实商业中落地与创收',talk_themes_h:'演讲与工作坊主题',cons_guar_t:'每个阶段均有明确交付指标，若因我方原因未能达标，可随时无罚款终止。',cons_guar_h:'交付结果承诺',cons_s5_t:'交付完整所有权，您的团队能够完全独立运行与持续迭代。',cons_s5_h:'5. 团队完全自主运作',cons_s4_t:'在真实业务流程中进行实操培训，确保团队100%掌握与顺畅使用。',cons_s4_h:'4. 陪跑陪练式落地',cons_s3_t:'按真实业务影响优先排序，明确阶段交付物与责任人。',cons_s3_h:'3. 制定针对性行动方案',cons_s2_t:'全面梳理返工、隐性成本与关键人员依赖风险，形成标准化文档。',cons_s2_h:'2. 梳理与完整文档化',cons_s1_t:'深入业务现场，与一线员工沟通，发掘实际日常工作中的真实痛点。',cons_s1_h:'1. 深入一线观察',cons_steps_sub:'从首次沟通到团队完全自主运行',cons_steps_h:'实际落地流程',cons_intro2:'我们的咨询完全不同：我们深入业务一线，与团队并肩作战，直到真正出结果。',cons_intro1:'系统交付后团队不会使用，两周内又倒退回传统的表格和人工处理。',cons_chat_p:'我们提供免费的初步评估，梳理流程卡点并展示自动化机会。',cons_chat_h:'想了解您的业务流程卡在何处吗？',cons_chat_eye:'客观的外部与技术视角',commit_h:'对结果的承诺',c3_desc:'流程梳理、团队培训、数据治理及消除业务瓶颈。',c3_title:'咨询与数字化转型',c2_desc:'高级语言模型(LLM)、RAG检索增强生成、语音转写及业务流程自动化。',c2_title:'应用AI与自主代理',c1_desc:'构建稳健系统、原生API集成、向量数据库及高扩展性平台。',c1_title:'软件工程与架构',
+    hero_line1:'当您入睡时，',hero_line2:'竞争对手已回复了',hero_line3:'您的客户。',
+    hero_sub:'在WhatsApp上自动回复、筛选意向并促成销售的AI代理 — <strong style="color:var(--t1);font-weight:600">每周7天，每天24小时不间断。</strong>',
+    hero_cta:'<i class="fab fa-whatsapp" style="font-size:1.2rem"></i>立即在WhatsApp上沟通',
+    hero_cta2:'查看工作原理 <i class="fas fa-arrow-right" style="font-size:.72rem;margin-left:2px"></i>',
+    hero_badge:'巴西AI技术标杆',
+    stat_comp:'合作企业',stat_roi:'平均投资回报',stat_days:'交付上线',
+    pain_badge:'您遇到过这些困扰吗？',
+    pain_1:'您在<strong style="color:var(--t1);font-weight:600">有空时</strong>才回复客户，而不是在他们需要时。',
+    pain_2:'您付费吸引的线索在收到回复前<strong style="color:var(--t1);font-weight:600">已经冷却</strong>。',
+    pain_3:'您知道正在失去订单，<strong style="color:var(--t1);font-weight:600">只是不知道具体失去了多少。</strong>',
+    break_q:'如果每条未回复的信息都能转化为成功的销售呢？',
+    topbar_ai:'24/7全天候AI代理',topbar_impl:'7天快速部署上线',topbar_cta:'— 立即在WhatsApp沟通 →',
+    nav_home:'首页',nav_sol:'解决方案',nav_cases:'客户案例',nav_plans:'服务套餐',nav_about:'关于我们',nav_talk:'主题演讲',nav_cons:'技术顾问',nav_faq:'常见问题',nav_contact:'联系我们',nav_wa:'WhatsApp沟通',
+    sound_on:'背景音',sound_off:'暂停',
     marquee_label:'信任AUTOGENIUS的企业',
-    s4b_label:'2.1 · 您的Agent能做什么',s4b_h2:'选择先自动化',s4b_h2b:'什么。',
-    tab_0:'01 · 客服',tab_1:'02 · 资质审核',tab_2:'03 · 预约',tab_3:'04 · 跟进',
-    p0_kicker:'全天候客服',p0_h3:'秒级响应，<br>无需等待。',p0_desc:'您的Agent即时回复任何WhatsApp消息 — 周末、凌晨、节假日，从不间断。',
-    p1_kicker:'线索资质审核',p1_h3:'只接收真正<br>会购买的线索。',p1_desc:'您的Agent自动筛选：识别购买意图，收集数据，评分后再转交给您。',
-    p2_kicker:'自动预约',p2_h3:'日程满档。<br>无需触碰手机。',p2_desc:'Agent查看您的空档，预约会面，发送确认和自动提醒。零爽约。',
-    p3_kicker:'自动跟进',p3_h3:'没有线索<br>会独自冷却。',p3_desc:'您的Agent在首次联系后24小时、72小时和7天自动跟进，找回看似流失的线索。',
-    s4_label:'2.0 · 解决方案',s4_badge:'什么是AI Agent？',s4_h2a:'聊天机器人只能回答问题。',s4_h2b:'您的Agent能做决定。',
-    s4_f1:'自动筛选线索',s4_f2:'直接预约到您的日历',s4_f3:'发送报价并跟进',s4_f4:'收款、确认、成交。独立完成。',
-    s4_sub:'一切都在WhatsApp上完成，无需您在场。',
-    s5_label:'3.0 · 真实成果',s5_badge:'那些不再流失销售机会的人',
-    s6_label:'4.0 · 如何运作',s6_h2a:'入门简单。',s6_h2b:'功能强大。',s6_desc:'从诊断到激活您的Agent，只需7天。',
-    s6_s1h:'诊断',s6_s1p:'30分钟对话，我们了解您的业务。',
-    s6_s2h:'配置',s6_s2p:'我们在7天内搭建并训练您的Agent。',
-    s6_s3h:'成果',s6_s3p:'您激活，它运作，永远如此。',
-    s7_label:'5.0 · 套餐',s7_h2a:'选择适合',s7_h2b:'您业务量的',s7_h2c:'套餐',
-    s7_guarantee:'自有平台 · 7天保障 · 无绑定',
-    plan_cta:'选择此套餐',
-    ent_title:'无限量 · 复杂集成 · 专属环境',
-    ent_desc:'SSO/SCIM · 内部数据AI · 数据湖 · 定制SLA · 完整审计',
-    ent_price:'面议',ent_cta:'申请方案 →',
-    s8_label:'6.0 · 现在轮到您了',s8_h2a:'您的竞争对手',s8_h2b:'已在使用AI。',
-    s8_desc:'每一天不自动化，都是流失的收入。<br>对话免费，决定权在您手中。',
-    s8_cta:'立即联系AutoGenius',s8_g1:'7天保障',s8_g2:'无绑定',s8_g3:'7天上线',
-    wa_tooltip:'立即联系 — 分钟内回复',
-    faq_h1:'常见',faq_h1b:'问题',faq_sub:'开始前您需要了解的一切。',
-    cont_h1:'联系',cont_h1b:'我们',cont_sub:'希望快速获得回复？直接在WhatsApp上联系我们。',cont_wa:'立即在WhatsApp上联系',cont_or:'— 或填写表单 —',
-    cont_f1:'姓名',cont_f1ph:'您的全名',cont_f3:'行业',cont_f3ph:'如：诊所、律师事务所、电商…',cont_f4:'留言',cont_f4ph:'我们能帮您什么？',cont_send:'发送留言',
-    sobre_h1:'我们是',sobre_desc:'我们在累西腓成立，旨在证明高水平自动化并非大企业的专利。我们提供AI代理，全天候执行——在WhatsApp上销售、预约、筛选和留住客户，每天24小时，每周7天。',sobre_founder:'创始人',sobre_cta:'立即与团队联系',
-    talk_h1:'AI应用于',talk_h1b:'真实业务',talk_desc:'Yuri Matos为您的活动带来实用视角——无炒作，附带AI如何在巴西改变销售、服务和运营的真实案例。',
-    talk_cta_h:'有意邀请演讲？',talk_cta_p:'我们将发送完整提案，包含您活动可用的费用和形式。',talk_cta_btn:'预约演讲',
-    cons_label:'技术咨询',cons_h1:'大多数实施都会失败。',cons_h1b:'不是因为技术——而是因为行为。',cons_cta:'我想了解我的运营',cons_cta_note:'首次对话免费 · 无需承诺',
-    badge_sla:'响应 &lt; 3秒 · 99% 可用率',badge_langs:'支持5种语言',badge_lgpd:'符合LGPD规定',s2_label:'1.0 · 痛点',
-    cons_intro1:'系统交付了，团队不知道如何使用，不信任流程，两周内又回到了WhatsApp和电子表格。这发生在每一家把技术当产品购买的公司。',
-    cons_intro2:'我们的咨询方式不同：我们进入运营现场，直接与每个团队合作，从内部分析问题，记录一切——并与将要使用它的人一起实施，直到它真正运作。',
-    cons_steps_h:'实际发生了什么',cons_steps_sub:'从第一次接触到团队独立运营',
-    cons_s1_h:'我们进入并近距离观察',cons_s1_t:'我们访问运营现场。与参与流程的人交谈——不仅仅是领导层。我们看到真实发生的事情：纸质文件仍然主导的地方，有人在录入系统前先写在笔记本上的地方，只有一个人知道如何做某事的地方。这在演示会议中是看不到的。',
-    cons_s2_h:'我们分析并记录一切',cons_s2_t:'我们梳理每个问题：产生隐性成本的重复工作，某人缺席时会停滞流程的关键人员风险，没有可追溯性的数据。我们记录流程、故障和机会。这些材料归您所有——无论如何。',
-    cons_s3_h:'我们与执行者共同制定计划',cons_s3_t:'我们按真实影响顺序定义转型方向。每个方向都有具体的交付物和一个停止做不该做的事的人。没有强加——每项变更在最终确定前都与使用者验证。',
-    cons_s4_h:'我们与团队并肩实施',cons_s4_t:'培训在工作发生的地方进行——在仓库、车间、办公室。团队在真实流程运行中边做边学，而不是在幻灯片演示中。我们在阻碍形成之前识别抵触情绪。在整个实施过程中，我们直接与每个区域负责人保持联系。',
-    cons_s5_h:'我们移交——并在成功后离开',cons_s5_t:'目标从来不是制造依赖。最终，您的团队无需依靠我们即可运营和发展所构建的一切。所有交付的内容——仪表板、自动化、文档、数据库——永远属于您。',
-    cons_guar_h:'我们不要求盲目信任',cons_guar_t:'在第3个月末，我们与管理层举行结果会议。如果试点中商定的交付物因我们的责任而未能完成，您可以无罚款或惩罚地终止合同。已交付的内容——仪表板、数据库、文档——完整保留在您手中。我们请求3个月来证明合作关系有效。',
-    cons_who_h:'如果您认出以下任何场景，这就适合您',cons_who_1:'您有SAP、ERP或某个已实施的系统——但决策仍然要经过某个在通知您之前手动汇编的人',cons_who_2:'您的团队中有一个关键人员，如果他们离开或缺席，流程会在24小时内恢复到手动模式',cons_who_3:'您以前尝试过实施技术——但团队没有使用，流程没有改变，您最终为没人采用的东西付钱',cons_who_4:'您的运营有多个部门，每个部门都生活在孤岛中——管理层无法实时获得跨部门视角来做决策',
-    cons_chat_eye:'从一次对话开始',cons_chat_h:'首先我们了解。<br>然后，如果有意义，我们提出建议。',cons_chat_p:'没有提前报价。没有销售推销。第一次对话只是为了了解您运营中正在发生的事情——看看是否有合作的意义。',
-    t1_label:'每天节省时间',t1_quote:'"AI负责客户服务，我100%专注于战略。就像拥有一个永不疲倦的完美助手。"',
-    t2_label:'每周自由时间',t2_quote:'"我以前要花几个小时向每个客户解释截止日期。现在AI自动完成，线索已预先筛选好。"',
-    t3_label:'每晚销售不停',t3_quote:'"以前我只有在线时才能销售。现在AI在我睡觉时也在卖——销售额翻了三倍。"',
-    plan_name_essencial:'基础版',plan_name_avancado:'进阶版',plan_name_performance:'性能版',plan_name_premium:'高级版',plan_name_elite:'旗舰版',
-    plan_badge:'★ 最受欢迎',
-    feat_capture:'线索捕获',feat_1dash:'1个KPI仪表板',feat_2int:'2个集成',
-    feat_tags:'标签+队列+提醒',feat_bi:'漏斗BI按阶段',feat_4int:'4个集成',
-    feat_followup:'自动跟进',feat_campaigns:'循环活动',feat_nps:'自动NPS/CSAT',feat_7int:'7个集成+Webhooks',
-    feat_billing:'账单/付款',feat_workflows:'无限工作流',feat_rbac:'RBAC（角色/权限）',
-    feat_panels:'高管仪表板',feat_multi:'多门店',feat_security:'安全控制',
-    sc_label:'技术咨询',sc_h2a:'您公司里还有人需要',sc_h2b:'整理报告才能让您做决定。',
-    sc_desc:'这个成本不会出现在损益表中。但它每次都存在——当决策在事件发生后才到来，因为有人必须先汇总、转录和格式化才能通知您。',
-    sc_prob_label:'我们发现的规律',
-    sc_prob_1:'数据存在于系统中——但决策在等待一个还没完成表格的人',
-    sc_prob_2:'如果关键人员离开或缺席，流程会在24小时内回到手动模式',
-    sc_prob_3:'修正被悄悄完成，没有记录谁在何时更改了什么',
-    sc_sol_label:'我们的做法',
-    sc_sol_1:'我们进入您的运营，<strong style="color:var(--t1)">直接与每个团队</strong>合作——而不仅仅是管理层',
-    sc_sol_2:'我们<strong style="color:var(--t1)">从内部</strong>分析问题，记录一切，并与实际使用者共同构建解决方案',
-    sc_sol_3:'当您的团队能独立运营时我们离开——<strong style="color:var(--t1)">不再依赖我们</strong>',
-    sc_t1h:'进入',sc_t1d:'访问并与各部门面谈',
-    sc_t2h:'分析',sc_t2d:'梳理真实的重复劳动',
-    sc_t3h:'记录',sc_t3d:'一切都记录在案并归您所有',
-    sc_t4h:'实施',sc_t4d:'与团队一起，在使用现场',
-    sc_t5h:'移交',sc_t5d:'最终团队独立运营',
-    sc_cta_h:'首先，我们了解您的运营。',sc_cta_sub:'无需提前报价，无需推销。只是对话——然后做对双方都有意义的事。',
-    sc_wa_btn:'聊聊我的运营',sc_method_link:'查看方法论 →',
-    m1_label:'服务企业数',m2_label:'处理消息数',m3_label:'保证正常运行时间',m4_label:'上线所需时间',
-    tech_h:'技术与合作伙伴',tech_desc:'我们基于全球最佳基础设施构建，确保规模、安全性和性能。',
-    commit_h:'我们的承诺',
-    c1_title:'7天内出结果或退款',c1_desc:'如果Agent在7个工作日内未能运营，我们退还100%的设置费。无繁文缛节。',
-    c2_title:'数据保护 · LGPD',c2_desc:'每次对话都经过加密。我们从不转售或共享您客户的数据。完全符合LGPD规定。',
-    c3_title:'人工支持 · 始终在线',c3_desc:'周一至周六提供支持。技术团队可通过WhatsApp、电子邮件和视频会议随时联系。',
-    media_h:'媒体报道',
-    mission_label:'我们的使命',mission_text:'"让应用人工智能对任何想要增长的企业都触手可及——无论规模大小、所属行业或所在城市。"',
-    footer_tagline:'AI助力您的业务增长。',footer_prod:'产品',footer_social:'社交',footer_faq:'常见问题',footer_contact:'联系',footer_copy:'© 2026 AutoGenius AI. 用❤️制作于巴西累西腓。',
-    p0_stat1:'平均响应',p0_stat2:'随时在线',p0_sim_label:'客服模拟',p0_client:'你好！今天有空档吗？',p0_agent:'您好！有，下午2点和4点都有空。您更喜欢哪个时间？😊',p0_replied:'1.2秒内回复',
-    p1_stat1:'转化率',p1_stat2:'人工筛选',lead_card:'线索档案 · 自动',lead_intent:'购买意向',lead_intent_val:'高 ●',lead_budget:'预计预算',lead_status:'状态',lead_status_val:'准备成交',
-    p2_stat1:'爽约率',p2_stat2:'日历',p2_card_label:'日程 · 周四',p2_confirmed:'✓ 已确认',p2_avail:'空闲',
-    p3_stat1:'找回率',p3_stat2:'序列数',p3_seq_label:'跟进序列',p3_s1h:'24小时 — 提醒',p3_s1t:'"您好！今天我还能帮您吗？" ✓ 已发送',p3_s2h:'72小时 — 价值',p3_s2t:'"看看我们的客户怎么说..." ✓ 已发送',p3_s3h:'7天 — 最后机会',p3_s3t:'已计划发送',
-    talk_themes_h:'可用主题',talk_formats_h:'形式',
-    talk_t1h:'AI代理如何通过WhatsApp 24/7销售',talk_t1d:'从理论到真实案例：如何构建一个无需人工干预即可响应、筛选和成交的代理。来自巴西中小企业的真实案例。',
-    talk_t2h:'AI时代工作的未来：什么在变（什么没变）',talk_t2d:'对智能自动化的现实审视——哪些职能将被转型，哪些专业人士有优势，以及现在如何做好准备。',
-    talk_t3h:'无代码自动化：任何公司如何从今天开始',talk_t3d:'关于主要自动化工具（n8n、Make、WhatsApp API）的实践工作坊，以及如何在无需编程的情况下将它们与AI连接。',
-    talk_f1_title:'主题演讲',talk_f1_desc:'30至60分钟 · 会议和企业活动',talk_f2_title:'工作坊',talk_f2_desc:'2至4小时 · 实践内容含动手操作',talk_f3_title:'圆桌讨论',talk_f3_desc:'与市场专家辩论',talk_f4_title:'线上直播',talk_f4_desc:'面向远程团队的网络研讨会和大师课',
+    s4b_label:'2.1 · 行业专属AI代理',s4b_h2:'同一个核心。四个',s4b_h2b:'专业领域。',
+    s4_label:'2.0 · 解决方案',s4_badge:'什么是AI代理？',s4_h2a:'传统客服机器人只能回答固定问题。',s4_h2b:'您的AI代理能够独立做出决策。',
+    s4_f1:'自动筛选与评估潜在客户',s4_f2:'直接同步并预约您的日程表',s4_f3:'自动发送报价与跟进信息',s4_f4:'自动确认、催款并完成闭环。',
+    s4_sub:'全都在WhatsApp上完成。无需您时刻守在手机前。',
+    calc_label:'2.2 · 收益与机会计算器',calc_h2:'因为回复延迟，您的企业每月损失了多少潜在收入？',
+    calc_sub:'模拟在WhatsApp上3秒内响应对销售额的提升',calc_seg_lbl:'选择您的行业领域：',
+    calc_leads_lbl:'每月咨询 / 线索数量',calc_ticket_lbl:'平均单笔交易 / 客户价值 (R$)',
+    calc_lost_lbl:'因回复延误估计每月损失的订单：',calc_rev_lbl:'每月白白流失的估计潜在收入：',
+    calc_btn:'立即使用AI挽回这笔收入',
+    pil_label:'2.3 · 完整全栈平台',pil_h2:'不仅仅是聊天机器人。这是您整套自动化的业务系统。',
+    pil_sub:'用于在WhatsApp上接待、管理、跟踪和评估服务全过程的完整生态。',
+    pil1_h:'24/7 自主AI代理',pil1_t:'几秒内通过语音或文字回复。自动筛选线索、解答产品疑问并预约日程，无需人工干预。',
+    pil2_h:'原生可视化Kanban CRM看板',pil2_t:'分阶段跟踪所有联系人：新线索 → 接待中 → 已预约 → 交易成功。漏斗全过程一目了然。',
+    pil3_h:'多座席全渠道收件箱',pil3_t:'人工团队可在需要时一键接管对话。统一历史记录，无缝切换无上下文丢失。',
+    pil4_h:'数据分析与收入报告',pil4_t:'实时监测响应速度、转化率、减少的失约率以及各渠道产生的具体收入。',
+    bat_label:'2.4 · 市场对比',bat_h2:'为什么AutoGenius优于传统替代方案？',
+    bat_col1:'僵硬的传统机器人',bat_col2:'臃肿缓慢的系统 (Blip/Zenvia)',bat_col3:'AutoGenius AI (自主代理)',
+    tru_label:'2.5 · 治理与安全',tru_h2:'企业级安全保障与完全可控',
+    tru_c1_h:'AES-256加密与隐私保护',tru_c1_t:'数据端到端加密。100%符合通用数据保护条例 (LGPD) 与隐私标准。',
+    tru_c2_h:'严格的AI行为边界',tru_c2_t:'AI绝不会虚构价格或超出您企业设定的商业规则。',
+    tru_c3_h:'无缝转接人工客服',tru_c3_t:'当客户请求人工服务时，团队WhatsApp将立即收到通知。',
+    s5_label:'3.0 · 真实结果',s5_badge:'停止流失订单的客户',
+    s6_label:'4.0 · 实施流程',s6_h2a:'简单开始。',s6_h2b:'功能强大。',s6_desc:'从诊断评估到AI代理上线仅需7天。',
+    s6_s1h:'业务诊断',s6_s1p:'30分钟沟通。深度了解您的业务流程。',
+    s6_s2h:'系统配置',s6_s2p:'7天内完成您的AI代理构建与数据训练。',
+    s6_s3h:'上线运行',s6_s3p:'一键激活。全天候为您高效工作。',
+    s7_label:'5.0 · 服务套餐',s7_h2a:'选择适合',s7_h2b:'您业务规模的',s7_h2c:'套餐',
+    s7_guarantee:'自主研发平台 · 7天无理由退款保证 · 无长期捆绑',
+    plan_cta:'选择此套餐',ent_title:'无限咨询量 · 复杂系统集成 · 专属独立环境',
+    ent_desc:'SSO/SCIM单点登录 · 内部数据私有LLM · 数据湖集成 · 专属SLA',
+    ent_price:'定制报价',ent_cta:'索取完整方案 →',
+    guar_badge:'7天无条件退款保证',guar_h3:'您的企业零风险试用',
+    guar_p:'在您的实际业务中测试AutoGenius。如果您没有看到秒级响应和自动化预约，我们将立即全额退还您的投资。',
+    s8_label:'6.0 · 现在轮到您了',s8_h2a:'您的竞争对手',s8_h2b:'已经在全面使用AI。',
+    s8_desc:'多拖延一天，就是在白白流失收入。<br>咨询完全免费。决定权在您手中。',
+    s8_cta:'立即与AutoGenius团队沟通',s8_g1:'7天无理由退款',s8_g2:'无长期束缚',s8_g3:'7天部署上线',
+    wa_tooltip:'立即沟通 — 数分钟内回复',wa_badge_txt:'1分钟内回复',
+    faq_h1:'常见',faq_h1b:'问题解答',faq_sub:'在开始前您需要了解的一切。',
+    cont_h1:'联系',cont_h1b:'我们',cont_sub:'想要快速获取回复？直接在WhatsApp上沟通。',cont_wa:'在WhatsApp上沟通',cont_or:'— 或填写表单 —',
+    cont_f1:'姓名',cont_f1ph:'您的姓名',cont_f3:'行业领域',cont_f3ph:'例如：诊所、房产中介、电商…',cont_f4:'留言内容',cont_f4ph:'我们能为您提供什么帮助？',cont_send:'发送留言',
+    sobre_h1:'关于',sobre_desc:'我们旨在证明高端自动化不仅是巨头企业的专利。我们在WhatsApp上提供能真正落地的AI代理。',sobre_founder:'创始人',sobre_cta:'立即联系团队',
+    talk_h1:'AI赋能',talk_h1b:'真实业务',talk_desc:'Yuri Matos带来接地气的主题演讲，分享AI如何重塑拉美的销售与服务。',
+    talk_cta_h:'有兴趣预约主题演讲？',talk_cta_p:'我们将为您发送包含日期和形式的完整方案。',talk_cta_btn:'预约演讲',
+    cons_label:'技术顾问服务',cons_h1:'大多数系统落地都会失败。',cons_h1b:'不是因为技术 — 而是因为习惯。',cons_cta:'了解我的业务流程',cons_cta_note:'首次沟通免费 · 无任何绑定',
+    badge_sla:'响应速度 &lt; 3秒 · 99%在线率',badge_langs:'支持5种语言切换',badge_lgpd:'符合数据隐私标准',s2_label:'1.0 · 痛点'
   }
 };
-let _curLang='pt';
-function _setElHTML(el,html){
-  const doc=new DOMParser().parseFromString('<body>'+html+'</body>','text/html');
-  el.replaceChildren(...Array.from(doc.body.childNodes));
-}
-function setLang(lang){
-  _curLang=lang;
-  const t=TRANSLATIONS[lang]||TRANSLATIONS.pt;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k=el.dataset.i18n;
-    if(t[k]===undefined)return;
-    if(/</.test(t[k])){_setElHTML(el,t[k]);}else{el.textContent=t[k];}
-  });
-  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
-    const k=el.dataset.i18nPh;
-    if(t[k]!==undefined)el.placeholder=t[k];
-  });
-  const cur=document.getElementById('lang-cur');
-  if(cur)cur.textContent=lang.toUpperCase();
-  document.querySelectorAll('.lang-opt').forEach(o=>o.classList.toggle('active',o.dataset.lang===lang));
-  document.getElementById('lang-dd')?.classList.remove('open');
-  document.documentElement.lang=lang==='pt'?'pt-BR':lang;
-  const lbl=document.getElementById('audio-label');
-  if(lbl)lbl.textContent=isPlaying?(t.sound_off||'Pausar'):(t.sound_on||'Som');
-  setCluster(_cluster);
-  runDemo();
-  const faqlist=document.getElementById('faqlist');
-  if(faqlist&&faqlist.children.length>0)buildFAQ();
-}
-document.addEventListener('click',e=>{if(!e.target.closest('#lang-sel'))document.getElementById('lang-dd')?.classList.remove('open');});
-
-/* ── Background audio (MP3) ── */
-const bgAudio=document.getElementById('bg-audio');
-let isPlaying=false;
-bgAudio.volume=0.55;
-
-function _setAudioUI(on){
-  document.getElementById('audio-bars').classList.toggle('playing',on);
-  const t=(typeof TRANSLATIONS!=='undefined'&&TRANSLATIONS[_curLang])||(TRANSLATIONS&&TRANSLATIONS.pt)||{};
-  document.getElementById('audio-label').textContent=on?(t.sound_off||'Pausar'):(t.sound_on||'Som');
-}
-
-function toggleAudio(){
-  if(isPlaying){bgAudio.pause();isPlaying=false;_setAudioUI(false);return;}
-  bgAudio.play()
-    .then(()=>{isPlaying=true;_setAudioUI(true);document.getElementById('audio-btn').classList.remove('audio-hint');})
-    .catch(()=>{isPlaying=false;_setAudioUI(false);});
-}
-
-/* O áudio agora é iniciado manualmente através do botão */
-
-/* ── Bokeh city lights generator ── */
-(function(){
-  /* Skip entirely on mobile — 32 animated blur elements kill GPU */
-  if(window.matchMedia('(max-width:767px)').matches)return;
-  const b=document.getElementById('bokeh');if(!b)return;
-  const cols=[
-    'rgba(255,210,80,.9)',   // warm gold
-    'rgba(255,160,55,.9)',   // amber
-    'rgba(100,195,255,.9)',  // cool blue
-    'rgba(255,255,255,.9)',  // white
-    'rgba(175,130,255,.9)',  // purple
-    'rgba(80,230,190,.9)',   // teal
-  ];
-  for(let i=0;i<32;i++){
-    const el=document.createElement('div');el.className='bk';
-    const s=4+Math.random()*65, bl=s*.35+Math.random()*16;
-    const o=0.05+Math.random()*0.20, dur=15+Math.random()*32;
-    const tx=(Math.random()-.5)*130, ty=(Math.random()-.5)*110;
-    const col=cols[Math.floor(Math.random()*cols.length)];
-    el.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*110}%;--s:${s}px;--bl:${bl}px;--o:${o};--d:${dur}s;--dl:${-(Math.random()*dur)}s;--tx:${tx}px;--ty:${ty}px;--c:${col};`;
-    b.appendChild(el);
-  }
-})();
-
-/* ── Cluster toggle ── */
-const CLUSTER_PLANS={
-  low:[
-    {month:'R$794',setup:'R$1.380',contacts:{pt:'Até 3k contatos/mês',en:'Up to 3k contacts/mo',es:'Hasta 3k contactos/mes',de:'Bis zu 3k Kontakte/Monat',zh:'每月最多3k联系人'}},
-    {month:'R$1.714',setup:'R$2.875',contacts:{pt:'Até 15k contatos/mês',en:'Up to 15k contacts/mo',es:'Hasta 15k contactos/mes',de:'Bis zu 15k Kontakte/Monat',zh:'每月最多15k联系人'}},
-    {month:'R$3.890',setup:'R$5.500',contacts:{pt:'Até 50k contatos/mês',en:'Up to 50k contacts/mo',es:'Hasta 50k contactos/mes',de:'Bis zu 50k Kontakte/Monat',zh:'每月最多50k联系人'}}
-  ],
-  high:[
-    {month:'R$1.139',setup:'R$2.070',contacts:{pt:'Até 8k contatos/mês',en:'Up to 8k contacts/mo',es:'Hasta 8k contactos/mes',de:'Bis zu 8k Kontakte/Monat',zh:'每月最多8k联系人'}},
-    {month:'R$2.634',setup:'R$4.025',contacts:{pt:'Até 30k contatos/mês',en:'Up to 30k contacts/mo',es:'Hasta 30k contactos/mes',de:'Bis zu 30k Kontakte/Monat',zh:'每月最多30k联系人'}},
-    {month:'R$5.500',setup:'R$8.900',contacts:{pt:'Até 80k contatos/mês',en:'Up to 80k contacts/mo',es:'Hasta 80k contactos/mes',de:'Bis zu 80k Kontakte/Monat',zh:'每月最多80k联系人'}}
-  ]
-};
-const CLUSTER_AGENDA_LABELS={pt:['agenda de atendimento','agendas de atendimento'],en:['calendar','calendars'],es:['agenda','agendas'],de:['Kalender','Kalender'],zh:['日历','日历']};
-const CLUSTER_DESCS={
-  low:{pt:'Low: até 50k contatos/mês · ideal para PMEs e operações locais',en:'Low: up to 50k contacts/mo · ideal for SMEs and local operations',es:'Low: hasta 50k contactos/mes · ideal para PyMEs y operaciones locales',de:'Low: bis zu 50k Kontakte/Monat · ideal für KMUs',zh:'低档：每月最多50k联系人 · 适合中小企业'},
-  high:{pt:'High: até 80k+ contatos/mês · para operações de alto volume e redes',en:'High: up to 80k+ contacts/mo · for high-volume operations & chains',es:'High: hasta 80k+ contactos/mes · para operaciones de alto volumen',de:'High: bis zu 80k+ Kontakte/Monat · für Hochvolumen-Betriebe',zh:'高档：每月最多80k+联系人 · 适合高量运营'}
-};
-const CLUSTER_TAGS_I18N={
-  low:{pt:['Clínicas & consultórios','Revendas de carros','Imobiliárias','Escolas & cursos','Restaurantes & delivery','Farmácias','Academias','Hotéis & pousadas'],en:['Clinics & offices','Car dealerships','Real estate agencies','Schools & courses','Restaurants & delivery','Pharmacies','Gyms','Hotels'],es:['Clínicas & consultorios','Concesionarias de autos','Inmobiliarias','Escuelas & cursos','Restaurantes','Farmacias','Gimnasios','Hoteles'],de:['Kliniken & Praxen','Autohäuser','Immobilienbüros','Schulen & Kurse','Restaurants','Apotheken','Fitnessstudios','Hotels'],zh:['诊所&门诊','汽车经销商','房产中介','学校&课程','餐厅&外卖','药店','健身房','酒店']},
-  high:{pt:['Distribuidoras B2B','Concessionárias','Franquias multi-unidade','Redes varejistas','E-commerce de alto volume','Planos de saúde','Fintechs','SaaS & recorrência'],en:['B2B distributors','Dealerships','Multi-unit franchises','Retail chains','High-volume e-commerce','Health plans','Fintechs','SaaS'],es:['Distribuidoras B2B','Concesionarias','Franquicias multi-unidad','Cadenas minoristas','E-commerce de alto volumen','Planes de salud','Fintechs','SaaS'],de:['B2B-Distributoren','Autohäuser','Multi-Standort-Franchises','Einzelhandelsketten','Hochvolumen-E-Commerce','Krankenkassen','Fintechs','SaaS'],zh:['B2B分销商','经销商','多门店加盟','零售连锁','高量电商','医疗保险','金融科技','SaaS']}
-};
-
-let _cluster='low';
-function _clearEl(el){while(el.firstChild)el.removeChild(el.firstChild);}
-function setCluster(c){
-  _cluster=c;
-  const lang=_curLang||'pt';
-  const plans=CLUSTER_PLANS[c];
-  const agendaForms=CLUSTER_AGENDA_LABELS[lang]||CLUSTER_AGENDA_LABELS.pt;
-  const cards=document.querySelectorAll('#s7 .s7-grid>div');
-  cards.forEach((card,i)=>{
-    if(!plans[i])return;
-    const p=plans[i];
-    const m=card.querySelector('.p-month');const s=card.querySelector('.p-setup');
-    const ct=card.querySelector('.p-contacts');const ag=card.querySelector('.p-agendas');
-    if(m)m.textContent=p.month;if(s)s.textContent=p.setup;
-    if(ct)ct.textContent=(p.contacts[lang]||p.contacts.pt);
-    if(ag){const agNums=c==='high'?[2,10,25]:[1,5,15];const n=agNums[i]||1;ag.textContent=n+' '+(n===1?agendaForms[0]:agendaForms[1]);}
-  });
-  const desc=document.getElementById('cluster-desc');
-  if(desc)desc.textContent=(CLUSTER_DESCS[c][lang]||CLUSTER_DESCS[c].pt);
-  const tags=document.getElementById('cluster-tags');
-  if(tags){
-    _clearEl(tags);
-    const tagList=(CLUSTER_TAGS_I18N[c][lang]||CLUSTER_TAGS_I18N[c].pt);
-    tagList.forEach(t=>{
-      const pill=document.createElement('span');
-      pill.textContent=t;
-      pill.style.cssText='display:inline-block;padding:3px 10px;border-radius:99px;font-size:.68rem;font-family:"Space Grotesk",sans-serif;font-weight:600;background:rgba(37,99,235,.13);color:var(--b3);border:1px solid rgba(59,130,246,.18);letter-spacing:.01em;white-space:nowrap';
-      tags.appendChild(pill);
-    });
-  }
-  const bl=document.getElementById('btn-low'),bh=document.getElementById('btn-high');
-  if(bl&&bh){
-    bl.style.background=c==='low'?'var(--b5)':'transparent';bl.style.color=c==='low'?'white':'var(--t2)';
-    bh.style.background=c==='high'?'var(--b5)':'transparent';bh.style.color=c==='high'?'white':'var(--t2)';
-  }
-}
-
-/* ── Router ── */
-function go(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const el=document.getElementById('page-'+page);if(el){el.classList.add('active');window.scrollTo(0,0);}if(page==='faq')buildFAQ();try{localStorage.setItem('ag-page',page);}catch(e){}}
-function scrollTo2(id){setTimeout(()=>{const el=document.getElementById(id);if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-100,behavior:'smooth'});},80);}
-try{go(localStorage.getItem('ag-page')||'home');}catch(e){go('home');}
-setCluster('low');
-
-/* ── Scroll progress ── */
-window.addEventListener('scroll',()=>{const d=document.documentElement;document.getElementById('spbar').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';},{passive:true});
-
-/* ── Scroll reveals ── */
-if(window.matchMedia('(max-width:767px)').matches){
-  /* Mobile: revelar tudo imediatamente — não esperar IntersectionObserver */
-  document.querySelectorAll('.reveal,.reveal-l').forEach(el=>el.classList.add('in'));
-}else{
-  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),(e.target.dataset.delay||0)*1);io.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
-  document.querySelectorAll('.reveal,.reveal-l').forEach(el=>io.observe(el));
-}
-
-/* ── Hero spotlight ── */
-const hero=document.getElementById('home'),spotlight=document.getElementById('spotlight');
-if(hero&&spotlight){hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect();spotlight.style.background='radial-gradient(600px circle at '+(e.clientX-r.left)+'px '+(e.clientY-r.top)+'px,rgba(37,99,235,.11),transparent 65%)';spotlight.style.opacity='1';});hero.addEventListener('mouseleave',()=>{spotlight.style.opacity='0';});}
-
-/* ── Card shimmer ── */
-if(!window.matchMedia('(hover:none)').matches){let _shimRaf=false;document.addEventListener('mousemove',e=>{if(_shimRaf)return;_shimRaf=true;requestAnimationFrame(()=>{document.querySelectorAll('.card').forEach(c=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});_shimRaf=false;});},{passive:true});}
 
 /* ── WA Demo ── */
 const WA_CONV={
@@ -2519,12 +2145,53 @@ const FAQS={
   en:[
     {q:'What is AutoGenius AI?',a:'We are an Autonomous AI Agent platform for WhatsApp that handles, qualifies leads, checks inventory/calendars, and closes sales 24/7.'},
     {q:'How long does implementation take?',a:'We deliver your agent 100% configured and integrated with your system within 7 business days.'},
-    {q:'Does the AI understand voice notes and typos?',a:'Yes! Our AI transcribes audio notes, understands slang, typos, and context just like a real person.'},
-    {q:'What if the AI cannot answer a question?',a:'The AI has strict guardrails. If a request falls outside business rules, it smoothly hands off to a human agent with full history.'},
-    {q:'Can I cancel anytime?',a:'Yes! All our plans are monthly with no lock-in contracts.'},
-    {q:'Is my data safe?',a:'Yes, 100% encrypted with AES-256 and compliant with privacy regulations.'}
+    {q:'Does the AI understand voice notes and typos?',a:'Yes! Our AI transcribes audio notes in seconds, understands slang, typos, and context just like a real person.'},
+    {q:'What if the AI cannot answer a specific question?',a:'The AI has strict guardrails. If a request falls outside business rules, it smoothly hands off to a human agent in the CRM with full history.'},
+    {q:'How does integration with my current CRM or ERP work?',a:'We connect natively via API & Webhooks with top CRMs (RD Station, HubSpot, Kommo, Pipedrive) and scheduling software.'},
+    {q:'Can I cancel anytime?',a:'Yes! All our plans are monthly with no lock-in contracts. Cancel anytime without penalty.'},
+    {q:'Is my data and my customers data safe?',a:'Yes, 100% encrypted with AES-256 in transit and at rest, and fully compliant with privacy laws.'},
+    {q:'What is the difference between a traditional chatbot and AutoGenius AI?',a:'Traditional chatbots follow rigid buttons ("press 1"). AutoGenius AI understands natural language, answers questions, and executes actual sales.'},
+    {q:'How does the 7-Day Guarantee work?',a:'Test AutoGenius in action. If you do not see faster responses and automated bookings, we refund 100% of your money.'},
+    {q:'How many simultaneous conversations can the AI handle?',a:'Unlimited! The AI handles thousands of customers at the same time with no waiting line and response times under 3 seconds.'}
+  ],
+  es:[
+    {q:'¿Qué es AutoGenius AI?',a:'Somos una plataforma de Agentes Autónomos de IA para WhatsApp que atiende, califica leads, consulta inventario y cierra ventas 24/7.'},
+    {q:'¿Cuánto tiempo toma la implementación?',a:'Entregamos tu agente 100% configurado e integrado con tu sistema en 7 días hábiles.'},
+    {q:'¿La IA entiende notas de voz y errores de escritura?',a:'¡Sí! Transcribe audios en segundos, entiende jerga, errores tipográficos y contexto como una persona real.'},
+    {q:'¿Qué pasa si la IA no sabe responder una pregunta?',a:'La IA tiene límites estrictos. Si la solicitud sale de las reglas, transfiere el chat a un agente humano en el CRM con historial completo.'},
+    {q:'¿Cómo funciona la integración con mi CRM o sistema actual?',a:'Nos conectamos de forma nativa vía API y Webhooks con los principales CRMs y agendas.'},
+    {q:'¿Puedo cancelar en cualquier momento?',a:'¡Sí! Todos los planes son mensuales sin contrato de permanencia.'},
+    {q:'¿Mis datos están seguros?',a:'Sí, 100% encriptados con AES-256 y en cumplimiento con leyes de privacidad.'},
+    {q:'¿Cuál es la diferencia con un chatbot tradicional?',a:'Los chatbots tradicionales siguen botones rígidos ("presione 1"). La IA de AutoGenius entiende lenguaje natural y ejecuta ventas reales.'},
+    {q:'¿Cómo funciona la Garantía de 7 Días?',a:'Prueba AutoGenius en tu empresa. Si no ves agendamientos automáticos y respuestas inmediatas, te devolvemos el 100% de tu dinero.'},
+    {q:'¿Cuántas conversaciones simultáneas puede atender la IA?',a:'¡Ilimitadas! Atiende miles de clientes al mismo tiempo sin filas de espera y en menos de 3 segundos.'}
+  ],
+  de:[
+    {q:'Was ist AutoGenius AI?',a:'Wir sind eine Plattform für autonome KI-Agenten auf WhatsApp, die rund um die Uhr leiten, qualifizieren und Verkäufe abschließen.'},
+    {q:'Wie lange dauert die Implementierung?',a:'Wir liefern Ihren fertig konfigurierten Agenten innerhalb von 7 Werktagen.'},
+    {q:'Versteht die KI Sprachnachrichten und Tippfehler?',a:'Ja! Unsere KI transkribiert Sprachnachrichten in Sekunden und versteht Kontext wie ein echter Mensch.'},
+    {q:'Was passiert, wenn die KI eine Frage nicht beantworten kann?',a:'Die KI hat strikte Leitplanken. Reicht eine Anfrage nicht aus, übergibt sie nahtlos an Ihr Team im CRM.'},
+    {q:'Wie funktioniert die Integration in mein CRM?',a:'Wir verbinden uns nativ über API & Webhooks mit den führenden CRMs und Kalendersystemen.'},
+    {q:'Kann ich jederzeit kündigen?',a:'Ja! Alle Tarife sind monatlich kündbar ohne Mindestlaufzeit.'},
+    {q:'Sind meine Daten sicher?',a:'Ja, 100% verschlüsselt nach AES-256 und vollkommen datenschutzkonform.'},
+    {q:'Was unterscheidet AutoGenius von einem normalen Chatbot?',a:'Normale Chatbots folgen starren Menüs. AutoGenius versteht natürliche Sprache und schließt Verkäufe ab.'},
+    {q:'Wie funktioniert die 7-Tage-Garantie?',a:'Testen Sie AutoGenius. Wenn Sie keine schnelleren Antworten sehen, erstatten wir 100% Ihres Geldes.'},
+    {q:'Wie viele Gespräche kann die KI gleichzeitig führen?',a:'Unbegrenzt! Die KI betreut Tausende Kunden gleichzeitig ohne Wartezeit in unter 3 Sekunden.'}
+  ],
+  zh:[
+    {q:'什么是AutoGenius AI？',a:'我们是专注于WhatsApp的自主AI代理平台，每周7天、每天24小时自动接待、筛选线索、查询库存并促成成交。'},
+    {q:'实施上线需要多长时间？',a:'我们在7个工作日内交付100%配置完成并集成您系统的AI代理。'},
+    {q:'AI能听懂语音消息和识别错别字吗？',a:'是的！我们的AI能在数秒内转写语音，理解俗语、错别字和上下文语境。'},
+    {q:'如果AI遇到不会回答的问题怎么办？',a:'AI拥有严格的安全边界。遇到超出规则的特殊要求时，会自动无缝转接给CRM中的人工客服。'},
+    {q:'如何与我现有的CRM或系统对接？',a:'我们通过原生API和Webhooks与主流CRM系统及日程软件无缝连接。'},
+    {q:'我随时可以取消订阅吗？',a:'是的！我们所有套餐均按月付费，无长期捆绑，随时可无违约金取消。'},
+    {q:'我的数据和客户数据安全吗？',a:'是的，传输与存储均采用AES-256高级加密，完全符合通用数据隐私法规。'},
+    {q:'传统聊天机器人与AutoGenius AI有什么区别？',a:'传统机器人依赖僵硬的菜单按钮（“按1”）。AutoGenius AI理解自然语言并能独立执行预约与销售。'},
+    {q:'7天退款保证如何工作？',a:'在您的实际业务中测试AutoGenius。如果没有看到秒级响应和自动预约，我们将全额退款。'},
+    {q:'AI同时能处理多少个对话？',a:'无上限！AI可同时接待数千位客户，无需排队，平均响应时间小于3秒。'}
   ]
 };
+
 function buildFAQ(){
   const list=document.getElementById('faqlist');
   if(!list)return;
