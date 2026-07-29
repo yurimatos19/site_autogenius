@@ -1078,112 +1078,466 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
   <div class="sdiv"></div>
 
   <!-- S7 · PLANOS ─────────────────────────── -->
-  <section id="s7" style="padding:96px 24px">
-    <div style="max-width:1280px;margin:0 auto">
-      <span data-i18n="s7_label" class="sec-label reveal">5.0 · Planos</span>
-      <div style="text-align:center;margin-bottom:36px">
-        <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.45rem,3vw,2.1rem);font-weight:700;letter-spacing:-.025em;margin-bottom:10px">
-          <span data-i18n="s7_h2a">Escolha o</span> <span data-i18n="s7_h2b" style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">plano certo</span> <span data-i18n="s7_h2c">para o seu volume</span>
+  <section id="s7" style="padding:96px 24px;position:relative">
+    <div style="max-width:1200px;margin:0 auto">
+      <span class="sec-label reveal">5.0 · Planos & Investimento</span>
+      
+      <div style="text-align:center;margin-bottom:48px">
+        <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:800;letter-spacing:-.03em;margin-bottom:14px">
+          Um plano para cada fase do <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">seu crescimento</span>
         </h2>
-        <p data-i18n="s7_guarantee" class="reveal" style="color:var(--t2);font-size:.85rem;margin-bottom:12px">Plataforma própria · 7 dias de garantia · Sem fidelidade</p>
-        <div class="reveal" style="margin:0 auto 20px;max-width:650px;padding:10px 16px;border-radius:10px;background:rgba(37,99,235,.06);border:1px solid rgba(59,130,246,.18);font-size:.8rem;color:var(--t2);line-height:1.5">
-          💡 <strong style="color:var(--t1)">Investimento com Retorno Rápido:</strong> 1 venda de veículo, 2 consultas salvas ou 1 matrícula fechada já cobrem a mensalidade.
-        </div>
-        <!-- Cluster toggle -->
-        <div class="reveal" style="display:inline-flex;background:rgba(13,24,41,.7);border:1px solid var(--bord);border-radius:9999px;padding:3px;gap:3px">
-          <button id="btn-low" onclick="setCluster('low')" style="background:var(--b5);color:white;border:none;border-radius:9999px;padding:7px 20px;font-size:.75rem;font-weight:700;font-family:'Space Mono',monospace;cursor:pointer;transition:all .2s">CLUSTER LOW</button>
-          <button id="btn-high" onclick="setCluster('high')" style="background:transparent;color:var(--t2);border:none;border-radius:9999px;padding:7px 20px;font-size:.75rem;font-weight:700;font-family:'Space Mono',monospace;cursor:pointer;transition:all .2s">CLUSTER HIGH</button>
-        </div>
-        <div style="color:var(--t2);font-size:.78rem;margin-top:8px;font-family:'Space Mono',monospace" id="cluster-desc">Low: até 60k contatos/mês · ideal para PMEs e profissionais liberais</div>
-      <div id="cluster-types" style="margin-top:14px;display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center">
-        <span style="font-size:.72rem;color:var(--t2)">Ideal para:</span>
-        <span id="cluster-tags" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center"></span>
-      </div>
-      </div>
+        <p class="reveal" style="color:var(--t2);font-size:clamp(.9rem,1.8vw,1.05rem);max-width:680px;margin:0 auto 28px;line-height:1.7">
+          Comece automatizando seu atendimento, evolua para uma operação comercial ativa e escale com inteligência, integrações e controle completo.
+        </p>
 
-      <!-- Plans grid -->
-            <div class="s7-scroll">
-      <div class="s7-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;margin-bottom:24px;max-width:1050px;margin-left:auto;margin-right:auto">
-
-        <!-- Starter -->
-        <div class="card reveal" style="padding:24px">
-          <div style="color:var(--t2);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;margin-bottom:10px;font-family:'Space Mono',monospace">Starter</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;color:var(--t1);letter-spacing:-.02em"><span class="p-month">R$794</span><span style="font-size:.7rem;font-weight:400;color:var(--t3)">/mês</span></div>
-          <div style="color:var(--t3);font-size:10px;margin-bottom:16px">+ <span class="p-setup">R$1.380</span> implantação</div>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;font-size:.8rem;color:var(--t2)">
-            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--b4);font-size:8px;flex-shrink:0"></i><span class="p-contacts">Até 3k contatos/mês</span></div>
-            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--b4);font-size:8px;flex-shrink:0"></i><span class="p-agendas">1 agenda de atendimento</span></div>
-            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--b4);font-size:8px;flex-shrink:0"></i><span>Atendimento & Qualificação 24/7</span></div>
-            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--b4);font-size:8px;flex-shrink:0"></i><span>Dashboard de métricas básicas</span></div>
-            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--b4);font-size:8px;flex-shrink:0"></i><span>2 integrações com sistemas</span></div>
+        <!-- Positioning Journey Pill Bar -->
+        <div class="reveal" style="display:inline-flex;flex-wrap:wrap;justify-content:center;gap:12px;padding:8px 20px;background:rgba(13,24,41,.7);border:1px solid var(--bord);border-radius:9999px;backdrop-filter:blur(12px)">
+          <div style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--t2)">
+            <strong style="color:var(--b3)">START:</strong> Organiza e automatiza
           </div>
-          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Starter.%20Pode%20me%20ajudar%3F" target="_blank" style="display:block;text-align:center;padding:10px;border-radius:8px;border:1px solid var(--bord);color:var(--t2);font-size:12px;font-weight:600;text-decoration:none;transition:all .2s">Quero este plano</a>
+          <span style="color:var(--t4)">|</span>
+          <div style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--t2)">
+            <strong style="color:var(--cy)">GROW:</strong> Recupera e converte
+          </div>
+          <span style="color:var(--t4)">|</span>
+          <div style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--t2)">
+            <strong style="color:var(--vt)">SCALE:</strong> Integra e escala
+          </div>
         </div>
+      </div>
 
-        <!-- Crescer (Featured) -->
-        <div class="plan-featured reveal" style="position:relative;transition-delay:.08s">
-          <div class="plan-featured-badge">★ MAIS ESCOLHIDO</div>
-          <div class="card-grad-border plan-featured-card" style="padding:24px;position:relative">
-            <div class="plan-featured-kicker">Crescer</div>
-            <div class="plan-featured-price" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-.02em">
-              <span class="p-month">R$1.714</span><span class="plan-featured-per">/mês</span>
+      <!-- 1. BASE DA PLATAFORMA (TODOS OS PLANOS INCLUEM) -->
+      <div class="card reveal" style="padding:24px 32px;margin-bottom:48px;border-color:rgba(59,130,246,.25);background:linear-gradient(135deg,rgba(13,24,41,.92),rgba(15,26,46,.95))">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:18px;border-bottom:1px solid var(--bord);padding-bottom:14px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(37,99,235,.15);border:1px solid rgba(59,130,246,.3);display:flex;align-items:center;justify-content:center;color:var(--b3);font-size:14px">
+              <i class="fas fa-layer-group"></i>
             </div>
-            <div class="plan-featured-setup">+ <span class="p-setup">R$2.875</span> implantação</div>
-            
-            <div style="font-size:10px;font-family:'Space Mono',monospace;color:var(--b3);margin-bottom:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em">Tudo do plano Starter, mais:</div>
-            
-            <div class="plan-featured-list" style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;font-size:.8rem">
-              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span class="p-contacts">Até 15k contatos/mês</span></div>
-              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span class="p-agendas">5 agendas de atendimento</span></div>
-              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span>Follow-up automático de propostas</span></div>
-              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span>Lembretes & Reativação de clientes</span></div>
-              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span>Pesquisas de satisfação (NPS/CSAT)</span></div>
-              <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check plan-featured-check" style="font-size:8px;flex-shrink:0"></i><span>7 integrações + Webhooks custom</span></div>
+            <div>
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--t1);margin:0">Todos os planos incluem:</h3>
+              <p style="font-size:.78rem;color:var(--t2);margin:0">Recursos fundamentais que vêm prontos em 100% dos pacotes</p>
             </div>
-            <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Crescer.%20Pode%20me%20ajudar%3F" target="_blank" class="plan-featured-cta" style="display:block;text-align:center;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none">Quero este plano</a>
+          </div>
+          <div style="font-size:.75rem;font-family:'Space Mono',monospace;color:#10B981;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);padding:4px 12px;border-radius:9999px;font-weight:600">
+            ✓ Base da Plataforma AutoGenius
           </div>
         </div>
 
-        <!-- Escalar -->
-        <div class="card reveal" style="padding:24px;transition-delay:.16s;border-color:rgba(124,58,237,.22)">
-          <div style="color:var(--vt);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.13em;margin-bottom:10px;font-family:'Space Mono',monospace">Escalar</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;color:var(--t1);letter-spacing:-.02em"><span class="p-month">R$3.890</span><span style="font-size:.7rem;font-weight:400;color:var(--t3)">/mês</span></div>
-          <div style="color:var(--t3);font-size:10px;margin-bottom:16px">+ <span class="p-setup">R$5.500</span> implantação</div>
-          
-          <div style="font-size:10px;font-family:'Space Mono',monospace;color:var(--vt);margin-bottom:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em">Tudo do plano Crescer, mais:</div>
-          
-          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;font-size:.8rem;color:var(--t2)">
-            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--vt);font-size:8px;flex-shrink:0"></i><span class="p-contacts">Até 50k contatos/mês</span></div>
-            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--vt);font-size:8px;flex-shrink:0"></i><span class="p-agendas">15 agendas de atendimento</span></div>
-            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--vt);font-size:8px;flex-shrink:0"></i><span>Suporte multi-unidade & franquias</span></div>
-            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--vt);font-size:8px;flex-shrink:0"></i><span>Gestão de perfis & permissões (RBAC)</span></div>
-            <div style="display:flex;align-items:center;gap:8px"><i class="fas fa-check" style="color:var(--vt);font-size:8px;flex-shrink:0"></i><span>Painéis executivos & BI dedicado</span></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--t1)">
+            <i class="fas fa-check-circle" style="color:var(--b4);font-size:14px;flex-shrink:0"></i>
+            <span>IA personalizada para o negócio</span>
           </div>
-          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Plano%20Escalar." target="_blank" style="display:block;text-align:center;padding:10px;border-radius:8px;border:1px solid rgba(124,58,237,.3);color:var(--vt);font-size:12px;font-weight:600;text-decoration:none;transition:all .2s">Quero este plano</a>
+          <div style="display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--t1)">
+            <i class="fas fa-check-circle" style="color:var(--b4);font-size:14px;flex-shrink:0"></i>
+            <span>Atendimento automático 24 horas</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--t1)">
+            <i class="fas fa-check-circle" style="color:var(--b4);font-size:14px;flex-shrink:0"></i>
+            <span>Qualificação de leads</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--t1)">
+            <i class="fas fa-check-circle" style="color:var(--b4);font-size:14px;flex-shrink:0"></i>
+            <span>Agendamento integrado</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--t1)">
+            <i class="fas fa-check-circle" style="color:var(--b4);font-size:14px;flex-shrink:0"></i>
+            <span>Histórico centralizado de conversas</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--t1)">
+            <i class="fas fa-check-circle" style="color:var(--b4);font-size:14px;flex-shrink:0"></i>
+            <span>Implantação e treinamento da equipe</span>
+          </div>
         </div>
-
       </div>
-      </div><!-- /s7-scroll -->
 
-      <!-- Enterprise CTA -->
-      <div class="card reveal" style="padding:24px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-color:rgba(6,182,212,.18)">
-        <div>
-          <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--cy);letter-spacing:.12em;font-weight:600;margin-bottom:6px">ENTERPRISE</div>
-          <div data-i18n="ent_title" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--t1);margin-bottom:4px">Volumes ilimitados · Integrações complexas · Ambiente dedicado</div>
-          <div data-i18n="ent_desc" style="color:var(--t2);font-size:.8rem">SSO/SCIM · IA com dados internos · Datalake · SLA custom · Auditoria completa</div>
-        </div>
-        <div style="text-align:right;flex-shrink:0">
-          <div data-i18n="ent_price" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;color:var(--t1);margin-bottom:6px">A combinar</div>
-          <a href="https://wa.me/5581991471765?text=Quero%20uma%20proposta%20Enterprise" target="_blank" style="display:inline-flex;align-items:center;gap:7px;padding:9px 20px;border-radius:8px;background:linear-gradient(90deg,rgba(6,182,212,.15),rgba(6,182,212,.08));border:1px solid rgba(6,182,212,.25);color:var(--cy);font-size:.8rem;font-weight:700;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:all .2s" onmouseover="this.style.background='rgba(6,182,212,.2)'" onmouseout="this.style.background='linear-gradient(90deg,rgba(6,182,212,.15),rgba(6,182,212,.08))'">
-            <span data-i18n="ent_cta">Solicitar proposta →</span>
+      <!-- 2. TRÊS CARDS DE PLANOS (START, GROW, SCALE) -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;margin-bottom:48px" class="plans-grid">
+        
+        <!-- CARD START -->
+        <div class="card reveal" style="padding:32px 24px;display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <div style="color:var(--b3);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:10px;font-family:'Space Mono',monospace">START</div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.6rem;color:var(--t1);letter-spacing:-.02em;margin-bottom:8px">Organizar & Automatizar</h3>
+            <p style="color:var(--t2);font-size:.82rem;line-height:1.6;margin-bottom:20px;min-height:52px">
+              Para empresas que querem automatizar o atendimento e parar de perder oportunidades.
+            </p>
+
+            <div style="margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--bord)">
+              <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:2.2rem;color:var(--t1);line-height:1">
+                R$ 490<span style="font-size:.85rem;font-weight:500;color:var(--t3)">/mês</span>
+              </div>
+              <div style="color:var(--t3);font-size:11px;margin-top:6px;font-family:'Space Mono',monospace">
+                + R$ 699 implantação e setup único
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;font-size:.84rem;color:var(--t2)">
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--b4);font-size:11px;flex-shrink:0"></i>
+                <span>1 número de WhatsApp</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--b4);font-size:11px;flex-shrink:0"></i>
+                <span>1 usuário</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--b4);font-size:11px;flex-shrink:0"></i>
+                <span>1 unidade</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--b4);font-size:11px;flex-shrink:0"></i>
+                <span>Qualificação automática</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--b4);font-size:11px;flex-shrink:0"></i>
+                <span>Agendamento integrado</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--b4);font-size:11px;flex-shrink:0"></i>
+                <span>Painel operacional</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--b4);font-size:11px;flex-shrink:0"></i>
+                <span>Suporte padrão</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20com%20o%20Plano%20START%20da%20AutoGenius." target="_blank" class="btn-ghost" style="width:100%;justify-content:center;padding:14px;font-size:.9rem;font-weight:700;border-color:rgba(59,130,246,.3);color:var(--t1)">
+            Começar agora
           </a>
         </div>
+
+        <!-- CARD GROW (MAIS ESCOLHIDO) -->
+        <div class="card-grad-border reveal" style="padding:34px 26px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:2">
+          <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#2563EB,#06b6d4);color:white;font-size:10px;font-weight:800;padding:5px 18px;border-radius:9999px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 4px 18px rgba(37,99,235,.4);white-space:nowrap">
+            ★ MAIS ESCOLHIDO
+          </div>
+          <div>
+            <div style="color:var(--cy);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:10px;font-family:'Space Mono',monospace;margin-top:6px">GROW</div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.6rem;color:var(--t1);letter-spacing:-.02em;margin-bottom:8px">Vender mais & Converter</h3>
+            <p style="color:var(--t2);font-size:.82rem;line-height:1.6;margin-bottom:20px;min-height:52px">
+              Para empresas que querem vender mais e trabalhar os leads de forma contínua.
+            </p>
+
+            <div style="margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--bord)">
+              <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:2.4rem;color:white;line-height:1">
+                R$ 990<span style="font-size:.85rem;font-weight:500;color:var(--t2)">/mês</span>
+              </div>
+              <div style="color:var(--cy);font-size:11px;margin-top:6px;font-family:'Space Mono',monospace;font-weight:600">
+                + R$ 1.800 implantação e setup único
+              </div>
+            </div>
+
+            <div style="font-size:10px;font-family:'Space Mono',monospace;color:var(--cy);margin-bottom:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em">
+              Tudo do Start, mais:
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;font-size:.84rem;color:var(--t1)">
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--cy);font-size:11px;flex-shrink:0"></i>
+                <span><strong>Follow-up automático</strong></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--cy);font-size:11px;flex-shrink:0"></i>
+                <span><strong>Campanhas para a base</strong> de contatos</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--cy);font-size:11px;flex-shrink:0"></i>
+                <span><strong>Múltiplos usuários</strong></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--cy);font-size:11px;flex-shrink:0"></i>
+                <span>Segmentação de clientes</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--cy);font-size:11px;flex-shrink:0"></i>
+                <span>Relatórios de conversão</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--cy);font-size:11px;flex-shrink:0"></i>
+                <span>Automações comerciais avançadas</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--cy);font-size:11px;flex-shrink:0"></i>
+                <span><strong>Suporte prioritário</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20o%20Plano%20GROW%20da%20AutoGenius%20(Mais%20escolhido)." target="_blank" class="btn-blue" style="width:100%;justify-content:center;padding:15px;font-size:.95rem;font-weight:700;box-shadow:0 4px 20px rgba(37,99,235,.4)">
+            Quero crescer
+          </a>
+        </div>
+
+        <!-- CARD SCALE -->
+        <div class="card reveal" style="padding:32px 24px;display:flex;flex-direction:column;justify-content:space-between;border-color:rgba(124,58,237,.3)">
+          <div>
+            <div style="color:var(--vt);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:10px;font-family:'Space Mono',monospace">SCALE</div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.6rem;color:var(--t1);letter-spacing:-.02em;margin-bottom:8px">Escalar & Integrar</h3>
+            <p style="color:var(--t2);font-size:.82rem;line-height:1.6;margin-bottom:20px;min-height:52px">
+              Para operações com alto volume, equipes maiores ou múltiplas unidades.
+            </p>
+
+            <div style="margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--bord)">
+              <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:2.2rem;color:var(--t1);line-height:1">
+                R$ 2.490<span style="font-size:.85rem;font-weight:500;color:var(--t3)">/mês</span>
+              </div>
+              <div style="color:var(--vt);font-size:11px;margin-top:6px;font-family:'Space Mono',monospace">
+                + R$ 3.500 implantação e setup dedicado
+              </div>
+            </div>
+
+            <div style="font-size:10px;font-family:'Space Mono',monospace;color:var(--vt);margin-bottom:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em">
+              Tudo do Grow, mais:
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;font-size:.84rem;color:var(--t2)">
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--vt);font-size:11px;flex-shrink:0"></i>
+                <span>Múltiplas unidades</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--vt);font-size:11px;flex-shrink:0"></i>
+                <span><strong>Integrações via API</strong></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--vt);font-size:11px;flex-shrink:0"></i>
+                <span>Fluxos personalizados</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--vt);font-size:11px;flex-shrink:0"></i>
+                <span>BI avançado</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--vt);font-size:11px;flex-shrink:0"></i>
+                <span>Gestão por equipe ou unidade</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--vt);font-size:11px;flex-shrink:0"></i>
+                <span>Permissões de acesso</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <i class="fas fa-check" style="color:var(--vt);font-size:11px;flex-shrink:0"></i>
+                <span>Implantação personalizada & SLA</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista%20sobre%20o%20Plano%20SCALE." target="_blank" class="btn-ghost" style="width:100%;justify-content:center;padding:14px;font-size:.9rem;font-weight:700;border-color:rgba(124,58,237,.4);color:var(--vt)">
+            Falar com especialista
+          </a>
+        </div>
+
       </div>
 
-      <!-- Add-ons note -->
-      <div style="text-align:center;margin-top:18px;color:var(--t3);font-size:.72rem;font-family:'Space Mono',monospace">
-        Add-ons: sobreuso +R$81/1.000 contatos · agenda extra R$57/mês
+      <!-- 3. TOGGLE VER TODOS OS RECURSOS / TABELA COMPLETA -->
+      <div style="text-align:center;margin-bottom:32px">
+        <button id="toggle-comp-btn" onclick="toggleComparisonTable()" class="btn-ghost" style="padding:13px 32px;font-size:.9rem;font-weight:600;gap:10px;border-color:rgba(59,130,246,.3)">
+          <span>Ver todos os recursos e comparativo completo</span>
+          <i id="comp-arrow" class="fas fa-chevron-down" style="transition:transform .3s"></i>
+        </button>
       </div>
+
+      <!-- COMPARISON TABLE SECTION (COLLAPSIBLE) -->
+      <div id="comp-table-wrapper" style="display:none;animation:fi .4s ease">
+        <div class="card" style="padding:32px 24px">
+          
+          <div style="text-align:center;margin-bottom:32px">
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:var(--t1)">Tabela Comparativa Detalhada</h3>
+            <p style="color:var(--t2);font-size:.85rem">Recursos organizados por categorias operacionais</p>
+          </div>
+
+          <!-- BLOCO 1: Atendimento e IA -->
+          <div style="margin-bottom:36px">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--b3);margin-bottom:14px;display:flex;align-items:center;gap:8px">
+              <i class="fas fa-robot"></i> Atendimento e IA
+            </div>
+            <div style="overflow-x:auto">
+              <table style="width:100%;border-collapse:collapse;font-size:.85rem;text-align:left">
+                <thead>
+                  <tr style="border-bottom:1px solid var(--bord);color:var(--t2)">
+                    <th style="padding:12px 16px;width:40%">Recurso</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%">START</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%;color:var(--cy)">GROW</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%;color:var(--vt)">SCALE</th>
+                  </tr>
+                </thead>
+                <tbody style="color:var(--t1)">
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">IA personalizada</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">Atendimento 24h</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">Qualificação de leads</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">Agendamento</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:13px 16px">Fluxos personalizados</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t2)">Essenciais</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--cy);font-weight:600">Avançados</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--vt);font-weight:600">Sob medida</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- BLOCO 2: Crescimento e Relacionamento -->
+          <div style="margin-bottom:36px">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--cy);margin-bottom:14px;display:flex;align-items:center;gap:8px">
+              <i class="fas fa-chart-line"></i> Crescimento e Relacionamento
+            </div>
+            <div style="overflow-x:auto">
+              <table style="width:100%;border-collapse:collapse;font-size:.85rem;text-align:left">
+                <thead>
+                  <tr style="border-bottom:1px solid var(--bord);color:var(--t2)">
+                    <th style="padding:12px 16px;width:40%">Recurso</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%">START</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%;color:var(--cy)">GROW</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%;color:var(--vt)">SCALE</th>
+                  </tr>
+                </thead>
+                <tbody style="color:var(--t1)">
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">Follow-up automático</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t4)">—</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--vt);font-weight:600">Avançado</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">Campanhas para clientes</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t4)">—</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--vt);font-weight:600">Avançado</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">Segmentação de contatos</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t2)">Básica</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--cy);font-weight:600">Avançada</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--vt);font-weight:600">Personalizada</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:13px 16px">Recuperação de leads</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t4)">—</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- BLOCO 3: Estrutura da Operação -->
+          <div style="margin-bottom:36px">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--vt);margin-bottom:14px;display:flex;align-items:center;gap:8px">
+              <i class="fas fa-sitemap"></i> Estrutura da Operação
+            </div>
+            <div style="overflow-x:auto">
+              <table style="width:100%;border-collapse:collapse;font-size:.85rem;text-align:left">
+                <thead>
+                  <tr style="border-bottom:1px solid var(--bord);color:var(--t2)">
+                    <th style="padding:12px 16px;width:40%">Recurso</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%">START</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%;color:var(--cy)">GROW</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%;color:var(--vt)">SCALE</th>
+                  </tr>
+                </thead>
+                <tbody style="color:var(--t1)">
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">Usuários</td>
+                    <td style="padding:13px 16px;text-align:center">1</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--cy);font-weight:600">Até 5</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--vt);font-weight:600">Personalizado</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">Unidades</td>
+                    <td style="padding:13px 16px;text-align:center">1</td>
+                    <td style="padding:13px 16px;text-align:center">1</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--vt);font-weight:600">Múltiplas</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">Canais ou números</td>
+                    <td style="padding:13px 16px;text-align:center">1</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--cy);font-weight:600">Até 3</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--vt);font-weight:600">Personalizado</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:13px 16px">Controle de permissões</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t4)">—</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t2)">Básico</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--vt);font-weight:600">Avançado</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- BLOCO 4: Dados e Integrações -->
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--gr);margin-bottom:14px;display:flex;align-items:center;gap:8px">
+              <i class="fas fa-database"></i> Dados e Integrações
+            </div>
+            <div style="overflow-x:auto">
+              <table style="width:100%;border-collapse:collapse;font-size:.85rem;text-align:left">
+                <thead>
+                  <tr style="border-bottom:1px solid var(--bord);color:var(--t2)">
+                    <th style="padding:12px 16px;width:40%">Recurso</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%">START</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%;color:var(--cy)">GROW</th>
+                    <th style="padding:12px 16px;text-align:center;width:20%;color:var(--vt)">SCALE</th>
+                  </tr>
+                </thead>
+                <tbody style="color:var(--t1)">
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">Painel de resultados</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t2)">Essencial</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--cy);font-weight:600">Completo</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--vt);font-weight:600">Executivo</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">Integrações nativas</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t2)">Essenciais</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--cy);font-weight:600">Ampliadas</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--vt);font-weight:600">Personalizadas</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid rgba(255,255,255,.04)">
+                    <td style="padding:13px 16px">API</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t4)">—</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t4)">—</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluída</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:13px 16px">BI avançado</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t4)">—</td>
+                    <td style="padding:13px 16px;text-align:center;color:var(--t4)">—</td>
+                    <td style="padding:13px 16px;text-align:center;color:#10B981;font-weight:600">Incluído</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1811,6 +2165,22 @@ function toggleAudio() {
     audio.pause();
     if (bars) bars.classList.remove('playing');
     if (label) label.textContent = 'Som';
+  }
+function toggleComparisonTable() {
+  const wrapper = document.getElementById('comp-table-wrapper');
+  const btn = document.getElementById('toggle-comp-btn');
+  const arrow = document.getElementById('comp-arrow');
+  if (!wrapper) return;
+
+  const isOpen = wrapper.style.display === 'block';
+  if (isOpen) {
+    wrapper.style.display = 'none';
+    if (arrow) arrow.style.transform = 'rotate(0deg)';
+    if (btn) btn.querySelector('span').textContent = 'Ver todos os recursos e comparativo completo';
+  } else {
+    wrapper.style.display = 'block';
+    if (arrow) arrow.style.transform = 'rotate(180deg)';
+    if (btn) btn.querySelector('span').textContent = 'Ocultar comparativo detalhado';
   }
 }
 
