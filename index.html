@@ -1947,7 +1947,7 @@ const FAQS={
 function buildFAQ(){
   const list=document.getElementById('faqlist');
   if(!list)return;
-  _clearEl(list);
+  list.innerHTML = '';
   const faqs=FAQS[_curLang]||FAQS.pt;
   faqs.forEach((f,i)=>{
     const wrap=document.createElement('div');
@@ -2293,6 +2293,7 @@ setTimeout(() => { runVChatAnimation(0); }, 600);
 
 /* ── Scroll reveal observer ── */
 document.addEventListener('DOMContentLoaded', () => {
+  if (typeof buildFAQ === 'function') buildFAQ();
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.1 });
