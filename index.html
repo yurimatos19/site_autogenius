@@ -199,9 +199,9 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
 }
 
 /* ━━━━ Nav ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-#nav{position:fixed;top:37px;width:100%;z-index:100}
+#nav{position:fixed;top:37px;width:100%;z-index:100;pointer-events:none}
 .nav-inner{background:rgba(8,14,26,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--bord)}
+  border-bottom:1px solid var(--bord);pointer-events:auto}
 .nav-link{color:var(--t2);font-weight:500;font-size:.825rem;transition:color .2s;cursor:pointer;letter-spacing:-.01em}
 .nav-link:hover{color:var(--t1)}
 
@@ -309,8 +309,34 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
 /* ━━━━ FAQ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .faq-ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
 
-/* ━━━━ Cursor default ━━━━━━━━━━━━━━━━━━━ */
-* { cursor: auto !important; }
+/* ━━━━ Custom cursor (Desktop only, 100% non-blocking) ━━━━━━━━━━━ */
+* { cursor: auto; }
+#cur-dot {
+  position: fixed; top: 0; left: 0;
+  width: 6px; height: 6px;
+  background: var(--cy);
+  border-radius: 50%;
+  pointer-events: none !important;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width .15s, height .15s, background .15s;
+}
+#cur-ring {
+  position: fixed; top: 0; left: 0;
+  width: 32px; height: 32px;
+  border: 1.5px solid rgba(6,182,212,.5);
+  border-radius: 50%;
+  pointer-events: none !important;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: transform .08s ease-out, width .2s, height .2s, border-color .2s;
+}
+body:has(a:hover) #cur-dot, body:has(button:hover) #cur-dot, body:has([onclick]:hover) #cur-dot {
+  width: 10px; height: 10px; background: var(--b3);
+}
+body:has(a:hover) #cur-ring, body:has(button:hover) #cur-ring, body:has([onclick]:hover) #cur-ring {
+  width: 44px; height: 44px; border-color: rgba(37,99,235,.65); box-shadow: 0 0 15px rgba(37,99,235,.3);
+}
 
 /* ━━━━ Marquee ━━━━━━━━━━━━━━━━━━━━━━━━ */
 .marquee-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,black 12%,black 88%,transparent)}
@@ -416,13 +442,17 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
     font-size: .92rem!important;
   }
 
-  /* 9. Tabela de Comparativo (Battlecard) no Mobile — Scroll Horizontal Suave */
-  #battlecard-section div[style*="overflow-x:auto"] {
+  /* 9. Tabela de Comparativo no Mobile — Scroll Horizontal Suave */
+  #s7-compare div[style*="overflow-x:auto"], #comp-table-wrapper div[style*="overflow-x:auto"], #battlecard-section div[style*="overflow-x:auto"] {
     -webkit-overflow-scrolling: touch!important;
-    margin: 0 -8px!important;
+    margin: 0 -4px!important;
   }
-  #battlecard-section table {
-    min-width: 600px!important;
+  #s7-compare table, #comp-table-wrapper table, #battlecard-section table {
+    min-width: 680px!important;
+  }
+  .plans-grid {
+    grid-template-columns: 1fr!important;
+    gap: 20px!important;
   }
 
   /* 10. Hero Section */
@@ -451,6 +481,10 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 </head>
 <body>
+
+<!-- Custom cursor (Desktop) -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
 
 
 
@@ -2276,6 +2310,21 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 </div>
 
 <script>
+/* ── Custom cursor ── */
+const dot = document.getElementById('cur-dot'), ring = document.getElementById('cur-ring');
+if (dot && ring) {
+  let mx = -100, my = -100, rx = -100, ry = -100;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  (function loop(){
+    rx += (mx - rx) * 0.18;
+    ry += (my - ry) * 0.18;
+    dot.style.left = mx + 'px';
+    dot.style.top = my + 'px';
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(loop);
+  })();
+}
 /* ── Navigation Router & Scroll ── */
 function go(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
