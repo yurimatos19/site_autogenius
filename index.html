@@ -94,7 +94,8 @@
   <!-- External resources -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap"></noscript>
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
@@ -2330,12 +2331,11 @@ if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
 }
 /* ── Navigation Router & Scroll ── */
 function go(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById('page-' + page);
-  if (el) {
-    el.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  if (!el) return;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   if (page === 'faq' && typeof buildFAQ === 'function') buildFAQ();
   try {
     localStorage.setItem('ag-page', page);
@@ -2552,11 +2552,13 @@ function syncCalcFromSlider(type) {
 function updateCalc() {
   const leadsNumEl = document.getElementById('calc-leads-num');
   const leadsSliderEl = document.getElementById('calc-leads-slider');
-  const leads = parseInt(leadsNumEl ? leadsNumEl.value : (leadsSliderEl ? leadsSliderEl.value : 150)) || 150;
+  let leads = parseInt(leadsNumEl ? leadsNumEl.value : (leadsSliderEl ? leadsSliderEl.value : 150));
+  if (isNaN(leads) || leads < 1) leads = 1;
 
   const ticketNumEl = document.getElementById('calc-ticket-num');
   const ticketSliderEl = document.getElementById('calc-ticket-slider');
-  const ticket = parseInt(ticketNumEl ? ticketNumEl.value : (ticketSliderEl ? ticketSliderEl.value : 4500)) || 4500;
+  let ticket = parseInt(ticketNumEl ? ticketNumEl.value : (ticketSliderEl ? ticketSliderEl.value : 4500));
+  if (isNaN(ticket) || ticket < 1) ticket = 1;
 
   // ~5% do total de leads são vendas perdidas diretamente por demora no atendimento fora do horário
   const lostClients = Math.max(1, Math.round(leads * 0.05));
