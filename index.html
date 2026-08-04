@@ -124,7 +124,34 @@
   --bord-a:  rgba(59,130,246,.38);
   --grad:    linear-gradient(135deg,#1d4ed8,#2563EB,#06b6d4);
   --grad-t:  linear-gradient(90deg,#3B82F6,#06b6d4);
+
+  /* ── Cor por vertical ──
+     Gradiente azul→ciano é exclusivo da marca. Produto usa cor chapada.
+     Ver docs/superpowers/specs/2026-08-04-sistema-cor-verticais-design.md */
+  --edu-deep:#053D2C; --edu-mid:#0F9E70; --edu:#1FE3A0; --edu-lite:#7CFFD1;
+  --cli-deep:#0B2E6B; --cli-mid:#2563EB; --cli:#3B82F6; --cli-cy:#22D3EE;
+  --imo-deep:#2E1065; --imo-mid:#6D28D9; --imo:#8B5CF6; --imo-lite:#C4B5FD;
+  --aut-deep:#7C2D12; --aut-mid:#EA580C; --aut:#F97316; --aut-lite:#FDBA74;
 }
+
+/* ━━━━ Seção clara ━━━━━━━━━━━━━━━━━━━━━━
+   Redefine os tokens no escopo da seção: tudo que usa var(--t1),
+   var(--t2), var(--bord) etc. se adapta sem precisar de override. */
+.sec-light{
+  background:#F4F7FB;
+  color:#0F172A;
+  --t1:#0F172A;
+  --t2:#4A5A70;
+  --t3:#8494AA;
+  --t4:#B6C2D2;
+  --bord:rgba(15,23,42,.10);
+  --bord-a:rgba(37,99,235,.28);
+  --card:rgba(255,255,255,.92);
+  --b3:#1D4ED8;
+  --cy:#0891B2;
+}
+.sec-light .sec-label{color:#64748B}
+.sec-light .btn-ghost{border-color:rgba(15,23,42,.16);color:#0F172A}
 
 /* ━━━━ Base ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 *{box-sizing:border-box;margin:0}
@@ -602,13 +629,13 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       </div>
 
       <h1 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,6vw,4.6rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:22px">
-        <span data-i18n="hero_line1" style="color:var(--t1)">Enquanto você dormia,</span><br>
-        <span data-i18n="hero_line2" style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">um concorrente respondeu</span><br>
-        <span data-i18n="hero_line3" style="color:var(--t1)">o seu cliente.</span>
+        <span style="color:var(--t1)">Um agente de IA que atende,</span><br>
+        <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">qualifica e vende</span><br>
+        <span style="color:var(--t1)">no seu WhatsApp.</span>
       </h1>
 
-      <p data-i18n="hero_sub" class="reveal" style="color:var(--t2);font-size:clamp(.95rem,2vw,1.15rem);line-height:1.75;margin-bottom:42px;max-width:620px;margin-left:auto;margin-right:auto">
-        IA especializada para <strong style="color:var(--t1)">Concessionárias, Clínicas, Imobiliárias e Escolas</strong>. Responde, qualifica e agenda no WhatsApp <strong style="color:var(--t1)">24/7 em menos de 3 segundos</strong>.
+      <p class="reveal" style="color:var(--t2);font-size:clamp(.95rem,2vw,1.15rem);line-height:1.75;margin-bottom:42px;max-width:620px;margin-left:auto;margin-right:auto">
+        Ele responde em <strong style="color:var(--t1)">menos de 3 segundos</strong>, 24 horas por dia — inclusive enquanto você dorme e o concorrente demora. Treinado para <strong style="color:var(--t1)">Concessionárias, Clínicas, Imobiliárias e Escolas</strong>.
       </p>
 
       <div class="hero-btns reveal" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:18px">
@@ -646,40 +673,117 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
   </section>
 
   <!-- MARQUEE · Clientes reais ──────────────── -->
-  <div style="padding:40px 0;position:relative;z-index:10">
+  <div class="sec-light" style="padding:44px 0;position:relative;z-index:10">
     <p data-i18n="marquee_label" style="text-align:center;color:var(--t2);font-size:10px;font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px">EMPRESAS QUE CONFIAM NA AUTOGENIUS</p>
     <div class="marquee-wrap">
       <div class="marquee-track">
-        <img src="image/renor_no_bg.png" alt="Renor Coworking" style="height:44px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/argus_no_bg.png" alt="Argus" style="height:28px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/ativus_logo.png" alt="Ativus" style="height:42px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/logo%20neto.png" alt="Neto" style="height:44px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/bm5_logo.png" alt="BM5 Comex" style="height:42px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/laserdream_logo.png" alt="Laser Dream" style="height:42px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/zurich_pharma_logo.png" alt="Zurich Pharma" style="height:46px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/olore_logo.png" alt="Olore Parfum" style="height:40px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/monteverde_logo.png" alt="Monteverde Arquitetura" style="height:38px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/primavera_logo.png" alt="Clínica Primavera" style="height:48px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/little_logo.png" alt="Little" style="height:42px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/zhonghua_logo.png" alt="Zhong Hua" style="height:42px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/stvictor_logo.png" alt="St. Victor" style="height:44px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
+        <img src="image/renor_no_bg.png" alt="Renor Coworking" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/argus_no_bg.png" alt="Argus" style="height:28px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/ativus_logo.png" alt="Ativus" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/logo%20neto.png" alt="Neto" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/bm5_logo.png" alt="BM5 Comex" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/laserdream_logo.png" alt="Laser Dream" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/zurich_pharma_logo.png" alt="Zurich Pharma" style="height:46px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/olore_logo.png" alt="Olore Parfum" style="height:40px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/monteverde_logo.png" alt="Monteverde Arquitetura" style="height:38px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/primavera_logo.png" alt="Clínica Primavera" style="height:48px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/little_logo.png" alt="Little" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/zhonghua_logo.png" alt="Zhong Hua" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/stvictor_logo.png" alt="St. Victor" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
         <!-- duplicate for seamless loop -->
-        <img src="image/renor_no_bg.png" alt="Renor Coworking" style="height:44px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/argus_no_bg.png" alt="Argus" style="height:28px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/ativus_logo.png" alt="Ativus" style="height:42px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/logo%20neto.png" alt="Neto" style="height:44px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/bm5_logo.png" alt="BM5 Comex" style="height:42px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/laserdream_logo.png" alt="Laser Dream" style="height:42px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/zurich_pharma_logo.png" alt="Zurich Pharma" style="height:46px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/olore_logo.png" alt="Olore Parfum" style="height:40px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/monteverde_logo.png" alt="Monteverde Arquitetura" style="height:38px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/primavera_logo.png" alt="Clínica Primavera" style="height:48px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/little_logo.png" alt="Little" style="height:42px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/zhonghua_logo.png" alt="Zhong Hua" style="height:42px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
-        <img src="image/stvictor_logo.png" alt="St. Victor" style="height:44px;opacity:.65;filter:brightness(0) invert(1);object-fit:contain;flex-shrink:0">
+        <img src="image/renor_no_bg.png" alt="Renor Coworking" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/argus_no_bg.png" alt="Argus" style="height:28px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/ativus_logo.png" alt="Ativus" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/logo%20neto.png" alt="Neto" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/bm5_logo.png" alt="BM5 Comex" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/laserdream_logo.png" alt="Laser Dream" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/zurich_pharma_logo.png" alt="Zurich Pharma" style="height:46px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/olore_logo.png" alt="Olore Parfum" style="height:40px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/monteverde_logo.png" alt="Monteverde Arquitetura" style="height:38px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/primavera_logo.png" alt="Clínica Primavera" style="height:48px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/little_logo.png" alt="Little" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/zhonghua_logo.png" alt="Zhong Hua" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/stvictor_logo.png" alt="St. Victor" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
       </div>
     </div>
   </div>
+
+  <!-- S1.5 · O PRODUTO FUNCIONANDO ──────────── -->
+  <style>
+    .demo-grid{display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:center;max-width:1060px;margin:0 auto}
+    .wa-phone{background:#0b141a;border-radius:26px;border:1px solid rgba(255,255,255,.1);
+      box-shadow:0 30px 80px rgba(0,0,0,.55);overflow:hidden}
+    .wa-top{display:flex;align-items:center;gap:10px;padding:13px 16px;background:#1f2c33}
+    .wa-av{width:32px;height:32px;border-radius:50%;background:var(--grad);flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;color:#fff}
+    .wa-body{padding:16px 14px 18px;display:flex;flex-direction:column;gap:7px;
+      background:#0b141a;min-height:430px}
+    .msg{max-width:82%;padding:8px 11px;border-radius:9px;font-size:.8rem;line-height:1.45;
+      position:relative;animation:msgin .45s both}
+    .msg .hh{display:block;font-size:.58rem;opacity:.5;text-align:right;margin-top:3px}
+    .them{align-self:flex-start;background:#1f2c33;color:#e9edef;border-top-left-radius:2px}
+    .us{align-self:flex-end;background:#005c4b;color:#e9edef;border-top-right-radius:2px}
+    @keyframes msgin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .beat{display:flex;gap:13px;padding:15px 0;border-top:1px solid var(--bord)}
+    .beat:first-of-type{border-top:0}
+    .beat-n{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--b3);
+      padding-top:2px;flex-shrink:0;letter-spacing:.05em}
+    .beat b{display:block;font-size:.9rem;color:var(--t1);margin-bottom:3px;font-weight:600}
+    .beat span{font-size:.82rem;color:var(--t2);line-height:1.55}
+    @media(max-width:900px){.demo-grid{grid-template-columns:1fr;gap:36px}}
+  </style>
+  <section id="demo" class="sec-light" style="padding:96px 24px;position:relative">
+    <div class="demo-grid">
+      <div>
+        <span class="sec-label reveal">1.5 · O produto</span>
+        <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;letter-spacing:-.025em;margin:0 0 14px;line-height:1.18">
+          É exatamente isto que<br>o seu cliente recebe.
+        </h2>
+        <p class="reveal" style="color:var(--t2);font-size:.95rem;line-height:1.7;margin-bottom:8px;max-width:46ch">
+          Uma conversa real de uma concessionária, às <strong style="color:var(--t1)">22h47</strong> de um sábado. Sem ninguém de plantão.
+        </p>
+        <div class="reveal" style="margin-top:20px">
+          <div class="beat">
+            <span class="beat-n">2s</span>
+            <div><b>Respondeu antes de esfriar</b><span>O lead chegou fora do horário comercial. O agente atendeu na hora, com o estoque real na mão.</span></div>
+          </div>
+          <div class="beat">
+            <span class="beat-n">4 perguntas</span>
+            <div><b>Qualificou sozinho</b><span>Troca, entrada, forma de pagamento e urgência — sem formulário e sem afastar o cliente.</span></div>
+          </div>
+          <div class="beat">
+            <span class="beat-n">1 clique</span>
+            <div><b>Agendou a visita</b><span>Consultou a agenda, ofereceu horário e confirmou. O vendedor acordou com a reunião marcada.</span></div>
+          </div>
+          <div class="beat">
+            <span class="beat-n">08h00</span>
+            <div><b>Entregou pronto</b><span>Resumo do lead no CRM: veículo de interesse, carro na troca, entrada e parcela simulada.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wa-phone reveal">
+        <div class="wa-top">
+          <div class="wa-av">AG</div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:.82rem;color:#e9edef;font-weight:600">Auto Genius · Vendas</div>
+            <div style="font-size:.62rem;color:#25D366">online</div>
+          </div>
+          <i class="fab fa-whatsapp" style="color:#25D366;font-size:1.05rem"></i>
+        </div>
+        <div class="wa-body">
+          <div class="msg them" style="animation-delay:.1s">Oi, vi o Corolla 2022 no site. Ainda tá disponível?<span class="hh">22:47</span></div>
+          <div class="msg us" style="animation-delay:.5s">Oi, Marcos! Tá sim 🚗 Corolla XEi 2022, 41 mil km, R$ 128.900. Você tem carro na troca?<span class="hh">22:47 ✓✓</span></div>
+          <div class="msg them" style="animation-delay:1s">Tenho um Onix 2019<span class="hh">22:49</span></div>
+          <div class="msg us" style="animation-delay:1.4s">Perfeito. Consigo avaliar já na visita. Prefere financiar ou à vista?<span class="hh">22:49 ✓✓</span></div>
+          <div class="msg them" style="animation-delay:1.9s">Financiado, entrada de uns 40<span class="hh">22:51</span></div>
+          <div class="msg us" style="animation-delay:2.3s">Fechado. Com R$ 40 mil de entrada + o Onix na troca, a parcela fica em torno de <strong>R$ 1.480 em 48x</strong>. Quer que eu agende sua visita amanhã às 10h?<span class="hh">22:51 ✓✓</span></div>
+          <div class="msg them" style="animation-delay:2.9s">Pode ser 👍<span class="hh">22:52</span></div>
+          <div class="msg us" style="animation-delay:3.3s">Agendado ✅ Te espero amanhã às 10h. Vou deixar o Corolla separado e a avaliação do Onix já agendada.<span class="hh">22:52 ✓✓</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="sdiv"></div>
 
@@ -805,20 +909,20 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       <!-- S4b · IA ESPECIALISTA ──────────────────── -->
   <section id="s4" style="padding:96px 24px;background:rgba(13,24,41,.4)">
     <div style="max-width:1100px;margin:0 auto">
-      <span data-i18n="s4b_label" class="sec-label reveal">2.1 · IA Especialista no Seu Setor</span>
+      <span class="sec-label reveal">2.1 · Escolha o seu setor</span>
       <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:700;letter-spacing:-.025em;margin-bottom:16px">
-        <span data-i18n="s4b_h2">Um núcleo. Quatro</span> <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent" data-i18n="s4b_h2b">especialidades.</span>
+        Quatro setores. Quatro agentes <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">já treinados.</span>
       </h2>
       <p class="reveal" style="color:var(--t2);font-size:1rem;line-height:1.72;margin-bottom:36px;max-width:700px">
-        A tecnologia é compartilhada, mas a linguagem, as perguntas, os fluxos, as integrações e os indicadores são <strong style="color:var(--t1)">específicos para cada operação</strong>.
+        Um agente genérico faz perguntas genéricas. O seu já sabe o que perguntar: <strong style="color:var(--t1)">as perguntas, os fluxos, as integrações e os indicadores mudam conforme a operação</strong>. Clique no seu setor.
       </p>
       
       <!-- Tabs -->
       <div class="feature-tabs" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:40px">
         <button class="ftab active" onclick="switchTab(0)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--or);flex-shrink:0"></span>Concessionárias</button>
-        <button class="ftab" onclick="switchTab(1)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--cy);flex-shrink:0"></span>Clínicas</button>
+        <button class="ftab" onclick="switchTab(1)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--cli);flex-shrink:0"></span>Clínicas</button>
         <button class="ftab" onclick="switchTab(2)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--vt);flex-shrink:0"></span>Imobiliárias</button>
-        <button class="ftab" onclick="switchTab(3)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--tq);flex-shrink:0"></span>Escolas</button>
+        <button class="ftab" onclick="switchTab(3)" style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--edu);flex-shrink:0"></span>Escolas</button>
       </div>
 
             <!-- ═══ Panel 0: CARROS ═══ -->
@@ -878,9 +982,9 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       <div id="ftpanel-1" class="fpanel" style="grid-template-columns:1fr 1fr;gap:36px;align-items:start">
         <div>
           <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
-            <img src="image/icon_clinicas.jpg" alt="Clínicas" style="width:56px;height:56px;border-radius:14px;border:1px solid rgba(6,182,212,.25);object-fit:cover">
+            <img src="image/icon_clinicas.jpg" alt="Clínicas" style="width:56px;height:56px;border-radius:14px;border:1px solid rgba(59,130,246,.25);object-fit:cover">
             <div>
-              <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--cy);letter-spacing:.08em;margin-bottom:4px">RECEPÇÃO INTELIGENTE & IA DE RECEITA</div>
+              <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--cli);letter-spacing:.08em;margin-bottom:4px">RECEPÇÃO INTELIGENTE & IA DE RECEITA</div>
               <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:var(--t1);letter-spacing:-.02em;line-height:1.2">Transformamos contatos<br>em consultas confirmadas.</h3>
             </div>
           </div>
@@ -888,18 +992,18 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
           
           <!-- Key Metrics Badges -->
           <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap">
-            <div style="padding:4px 10px;border-radius:6px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);color:var(--cy);font-size:.72rem;font-weight:700">↓ 75% no no-show</div>
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);color:var(--cli);font-size:.72rem;font-weight:700">↓ 75% no no-show</div>
             <div style="padding:4px 10px;border-radius:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#10B981;font-size:.72rem;font-weight:700">+30% retorno de inativos</div>
             <div style="padding:4px 10px;border-radius:6px;background:rgba(37,99,235,.1);border:1px solid rgba(59,130,246,.2);color:var(--b3);font-size:.72rem;font-weight:700">Agenda 24/7 sincronizada</div>
           </div>
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px">
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-stethoscope" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Tira dúvidas de procedimentos</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-id-card" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Triagem de convênio ou particular</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-calendar-alt" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Agenda e reagenda consultas</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-bell" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Lembretes automáticos 24h antes</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-redo" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Reativa pacientes inativos</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.12);border-radius:9px"><i class="fas fa-network-wired" style="color:var(--cy);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Integração médica & Webhooks</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.12);border-radius:9px"><i class="fas fa-stethoscope" style="color:var(--cli);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Tira dúvidas de procedimentos</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.12);border-radius:9px"><i class="fas fa-id-card" style="color:var(--cli);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Triagem de convênio ou particular</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.12);border-radius:9px"><i class="fas fa-calendar-alt" style="color:var(--cli);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Agenda e reagenda consultas</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.12);border-radius:9px"><i class="fas fa-bell" style="color:var(--cli);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Lembretes automáticos 24h antes</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.12);border-radius:9px"><i class="fas fa-redo" style="color:var(--cli);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Reativa pacientes inativos</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.12);border-radius:9px"><i class="fas fa-network-wired" style="color:var(--cli);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Integração médica & Webhooks</span></div>
           </div>
           
           <!-- Software partners list -->
@@ -907,18 +1011,18 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             <strong style="color:var(--t1)">Integrações clínicas:</strong> Clinicorp · Feegow · Dental Office · Trinks · Clínica nas Nuvens · iClinic · Simples Vet · Google Agenda
           </div>
 
-          <div style="padding:14px 18px;border-radius:11px;border:1px solid rgba(6,182,212,.22);background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(6,182,212,.02))">
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--cy);margin-bottom:2px">↓ Redução drástica de faltas e receita recuperada</div>
+          <div style="padding:14px 18px;border-radius:11px;border:1px solid rgba(59,130,246,.22);background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(59,130,246,.02))">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--cli);margin-bottom:2px">↓ Redução drástica de faltas e receita recuperada</div>
             <div style="font-size:.78rem;color:var(--t2)">Agendamentos 24/7 com confirmação automática, lembretes de pré-consulta e resgate de pacientes sumidos.</div>
           </div>
         </div>
         
         <div class="card" style="padding:0;overflow:hidden">
-          <div style="padding:14px 18px;background:rgba(6,182,212,.08);border-bottom:1px solid rgba(6,182,212,.12);display:flex;align-items:center;gap:10px">
-            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--cy),var(--b5));display:flex;align-items:center;justify-content:center"><i class="fas fa-user-md" style="color:white;font-size:11px"></i></div>
+          <div style="padding:14px 18px;background:rgba(59,130,246,.08);border-bottom:1px solid rgba(59,130,246,.12);display:flex;align-items:center;gap:10px">
+            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--cli),var(--b5));display:flex;align-items:center;justify-content:center"><i class="fas fa-user-md" style="color:white;font-size:11px"></i></div>
             <div>
               <div style="font-size:.82rem;font-weight:600;color:var(--t1)">AutoGenius · Clínicas</div>
-              <div style="font-size:.65rem;color:var(--cy);display:flex;align-items:center;gap:4px"><div style="width:5px;height:5px;border-radius:50%;background:var(--cy);animation:pulse 2s infinite"></div>online agora</div>
+              <div style="font-size:.65rem;color:var(--cli);display:flex;align-items:center;gap:4px"><div style="width:5px;height:5px;border-radius:50%;background:var(--cli);animation:pulse 2s infinite"></div>online agora</div>
             </div>
             <div style="margin-left:auto;font-size:.6rem;color:var(--t3);font-family:'Space Mono',monospace">03:16 AM</div>
           </div>
@@ -980,9 +1084,9 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       <div id="ftpanel-3" class="fpanel" style="grid-template-columns:1fr 1fr;gap:36px;align-items:start">
         <div>
           <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
-            <img src="image/icon_escolas.jpg" alt="Escolas" style="width:56px;height:56px;border-radius:14px;border:1px solid rgba(20,184,166,.25);object-fit:cover">
+            <img src="image/icon_escolas.jpg" alt="Escolas" style="width:56px;height:56px;border-radius:14px;border:1px solid rgba(31,227,160,.25);object-fit:cover">
             <div>
-              <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--tq);letter-spacing:.08em;margin-bottom:4px">SECRETARIA COMERCIAL 24H & REMATRÍCULA</div>
+              <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--edu);letter-spacing:.08em;margin-bottom:4px">SECRETARIA COMERCIAL 24H & REMATRÍCULA</div>
               <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:var(--t1);letter-spacing:-.02em;line-height:1.2">Transformamos dúvidas<br>em matrículas.</h3>
             </div>
           </div>
@@ -990,18 +1094,18 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
           
           <!-- Key Metrics Badges -->
           <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap">
-            <div style="padding:4px 10px;border-radius:6px;background:rgba(20,184,166,.1);border:1px solid rgba(20,184,166,.25);color:var(--tq);font-size:.72rem;font-weight:700">+25% matrículas no prazo</div>
+            <div style="padding:4px 10px;border-radius:6px;background:rgba(31,227,160,.1);border:1px solid rgba(31,227,160,.25);color:var(--edu);font-size:.72rem;font-weight:700">+25% matrículas no prazo</div>
             <div style="padding:4px 10px;border-radius:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#10B981;font-size:.72rem;font-weight:700">Rematrícula automatizada</div>
             <div style="padding:4px 10px;border-radius:6px;background:rgba(37,99,235,.1);border:1px solid rgba(59,130,246,.2);color:var(--b3);font-size:.72rem;font-weight:700">Visitas pedagógicas 24/7</div>
           </div>
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px">
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-question-circle" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Responde sobre vagas e horários</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-child" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Identifica idade e série</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-file-alt" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Informa documentação</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-school" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Agenda visitas pedagógicas</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-bullhorn" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Campanhas de matrícula</span></div>
-            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(20,184,166,.06);border:1px solid rgba(20,184,166,.12);border-radius:9px"><i class="fas fa-sync-alt" style="color:var(--tq);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Rematrícula automatizada</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(31,227,160,.06);border:1px solid rgba(31,227,160,.12);border-radius:9px"><i class="fas fa-question-circle" style="color:var(--edu);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Responde sobre vagas e horários</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(31,227,160,.06);border:1px solid rgba(31,227,160,.12);border-radius:9px"><i class="fas fa-child" style="color:var(--edu);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Identifica idade e série</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(31,227,160,.06);border:1px solid rgba(31,227,160,.12);border-radius:9px"><i class="fas fa-file-alt" style="color:var(--edu);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Informa documentação</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(31,227,160,.06);border:1px solid rgba(31,227,160,.12);border-radius:9px"><i class="fas fa-school" style="color:var(--edu);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Agenda visitas pedagógicas</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(31,227,160,.06);border:1px solid rgba(31,227,160,.12);border-radius:9px"><i class="fas fa-bullhorn" style="color:var(--edu);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Campanhas de matrícula</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(31,227,160,.06);border:1px solid rgba(31,227,160,.12);border-radius:9px"><i class="fas fa-sync-alt" style="color:var(--edu);font-size:10px;flex-shrink:0"></i><span style="font-size:.78rem;color:var(--t2)">Rematrícula automatizada</span></div>
           </div>
 
           <!-- Software partners list -->
@@ -1009,18 +1113,18 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             <strong style="color:var(--t1)">Integrações educacionais:</strong> Sponte · SophiA · TOTVS Educacional · Gennera · WPensar · Google Agenda
           </div>
           
-          <div style="padding:14px 18px;border-radius:11px;border:1px solid rgba(20,184,166,.22);background:linear-gradient(135deg,rgba(20,184,166,.08),rgba(20,184,166,.02))">
-            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--tq);margin-bottom:2px">↑ Mais matrículas e menos sobrecarga na secretaria</div>
+          <div style="padding:14px 18px;border-radius:11px;border:1px solid rgba(31,227,160,.22);background:linear-gradient(135deg,rgba(31,227,160,.08),rgba(31,227,160,.02))">
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--edu);margin-bottom:2px">↑ Mais matrículas e menos sobrecarga na secretaria</div>
             <div style="font-size:.78rem;color:var(--t2)">Mais pais visitando a escola, dúvidas de mensalidade resolvidas e rematrículas sem filas.</div>
           </div>
         </div>
         
         <div class="card" style="padding:0;overflow:hidden">
-          <div style="padding:14px 18px;background:rgba(20,184,166,.08);border-bottom:1px solid rgba(20,184,166,.12);display:flex;align-items:center;gap:10px">
-            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--tq),#0d9488);display:flex;align-items:center;justify-content:center"><i class="fas fa-graduation-cap" style="color:white;font-size:11px"></i></div>
+          <div style="padding:14px 18px;background:rgba(31,227,160,.08);border-bottom:1px solid rgba(31,227,160,.12);display:flex;align-items:center;gap:10px">
+            <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--edu),#0d9488);display:flex;align-items:center;justify-content:center"><i class="fas fa-graduation-cap" style="color:white;font-size:11px"></i></div>
             <div>
               <div style="font-size:.82rem;font-weight:600;color:var(--t1)">AutoGenius · Escolas</div>
-              <div style="font-size:.65rem;color:var(--tq);display:flex;align-items:center;gap:4px"><div style="width:5px;height:5px;border-radius:50%;background:var(--tq);animation:pulse 2s infinite"></div>online agora</div>
+              <div style="font-size:.65rem;color:var(--edu);display:flex;align-items:center;gap:4px"><div style="width:5px;height:5px;border-radius:50%;background:var(--edu);animation:pulse 2s infinite"></div>online agora</div>
             </div>
             <div style="margin-left:auto;font-size:.6rem;color:var(--t3);font-family:'Space Mono',monospace">03:20 AM</div>
           </div>
