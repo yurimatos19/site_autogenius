@@ -96,7 +96,6 @@
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap"></noscript>
-  <link rel="stylesheet" href="css/styles.css">
 
   <style>
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -162,29 +161,6 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
   min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
 /* ━━━━ Fixed cinematic background ━━━━━━━ */
-#bg-cinema{position:fixed;inset:0;z-index:-1;overflow:hidden}
-#bg-img{
-  position:absolute;inset:-8%;
-  background-image:url('https://images.pexels.com/photos/17298658/pexels-photo-17298658.jpeg?auto=compress&cs=tinysrgb&w=2560');
-  background-size:cover;background-position:center top;
-  animation:kb 55s ease-in-out infinite alternate;
-  will-change:transform;
-}
-@keyframes kb{
-  from{transform:scale(1) translate(0,0)}
-  to{transform:scale(1.09) translate(-2%,1.5%)}
-}
-#bg-cinema::after{
-  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:
-    linear-gradient(to bottom,
-      rgba(8,14,26,.83) 0%,
-      rgba(8,14,26,.70) 38%,
-      rgba(8,14,26,.88) 100%);
-}
-
-/* ━━━━ Bokeh city lights ━━━━━━━━━━━━━━━━ */
-#bokeh{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
 .bk{position:absolute;border-radius:50%;pointer-events:none;
   background:radial-gradient(circle at 38% 38%,var(--c,rgba(255,210,80,.9)) 0%,transparent 72%);
   animation:bkfloat var(--d,22s) ease-in-out infinite;
@@ -196,11 +172,6 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
   33%{transform:translate(var(--tx,20px),var(--ty,-25px))}
   66%{transform:translate(calc(var(--tx,20px)*-.7),calc(var(--ty,-25px)*.4))}
 }
-
-/* ━━━━ Noise layer ━━━━━━━━━━━━━━━━━━━━━━ */
-#noise{position:fixed;inset:0;z-index:3;pointer-events:none;opacity:.35;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat:repeat;background-size:160px 160px;mix-blend-mode:overlay}
 
 /* ━━━━ Aurora blobs ━━━━━━━━━━━━━━━━━━━━━ */
 #aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
@@ -341,33 +312,6 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
 
 /* ━━━━ Custom cursor (Desktop only, 100% non-blocking) ━━━━━━━━━━━ */
 * { cursor: auto; }
-#cur-dot {
-  position: fixed; top: 0; left: 0;
-  width: 6px; height: 6px;
-  background: var(--cy);
-  border-radius: 50%;
-  pointer-events: none !important;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: width .15s, height .15s, background .15s;
-}
-#cur-ring {
-  position: fixed; top: 0; left: 0;
-  width: 32px; height: 32px;
-  border: 1.5px solid rgba(6,182,212,.5);
-  border-radius: 50%;
-  pointer-events: none !important;
-  z-index: 99998;
-  transform: translate(-50%, -50%);
-  transition: transform .08s ease-out, width .2s, height .2s, border-color .2s;
-}
-body:has(a:hover) #cur-dot, body:has(button:hover) #cur-dot, body:has([onclick]:hover) #cur-dot {
-  width: 10px; height: 10px; background: var(--b3);
-}
-body:has(a:hover) #cur-ring, body:has(button:hover) #cur-ring, body:has([onclick]:hover) #cur-ring {
-  width: 44px; height: 44px; border-color: rgba(37,99,235,.65); box-shadow: 0 0 15px rgba(37,99,235,.3);
-}
-
 /* ━━━━ Marquee ━━━━━━━━━━━━━━━━━━━━━━━━ */
 .marquee-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,black 12%,black 88%,transparent)}
 .marquee-track{display:flex;gap:48px;animation:marquee 34s linear infinite;width:max-content}
@@ -394,26 +338,6 @@ body:has(a:hover) #cur-ring, body:has(button:hover) #cur-ring, body:has([onclick
 .fpanel{display:none;animation:fi .3s ease}
 .fpanel.active{display:grid}
 
-/* ━━━━ Audio button ━━━━━━━━━━━━━━━━━━━ */
-#audio-btn{position:fixed;bottom:28px;left:20px;z-index:200;
-  background:rgba(8,14,26,.88);border:1px solid rgba(59,130,246,.25);border-radius:9999px;
-  padding:9px 18px;display:flex;align-items:center;gap:9px;cursor:pointer;
-  color:var(--b3);font-size:10.5px;font-family:'Space Mono',monospace;
-  backdrop-filter:blur(16px);transition:border-color .2s,box-shadow .2s;
-  box-shadow:0 0 18px rgba(37,99,235,.15)}
-#audio-btn:hover{border-color:rgba(59,130,246,.5);box-shadow:0 0 28px rgba(37,99,235,.28)}
-@keyframes audioPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,0),0 0 18px rgba(37,99,235,.15)}55%{box-shadow:0 0 0 10px rgba(37,99,235,.2),0 0 28px rgba(37,99,235,.35)}}
-#audio-btn.audio-hint{animation:audioPulse 2s ease-in-out infinite;border-color:rgba(59,130,246,.5)}
-#audio-bars{display:flex;gap:2px;align-items:flex-end;height:12px}
-#audio-bars span{width:2px;background:var(--b3);border-radius:1px;transform:scaleY(.3)}
-#audio-bars.playing span{animation:bar 1s ease-in-out infinite}
-#audio-bars span:nth-child(1){height:6px;animation-delay:0s}
-#audio-bars span:nth-child(2){height:10px;animation-delay:.18s}
-#audio-bars span:nth-child(3){height:14px;animation-delay:.36s}
-#audio-bars span:nth-child(4){height:8px;animation-delay:.54s}
-#audio-bars span:nth-child(5){height:12px;animation-delay:.72s}
-@keyframes bar{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
-
 /* ━━━━ Language selector ━━━━━━━━━━━━━━━ */
 #lang-sel{position:relative}
 #lang-btn{background:none;border:1px solid var(--bord);color:var(--t2);font-size:.72rem;cursor:pointer;padding:7px 11px;border-radius:8px;display:flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;transition:border-color .2s,color .2s}
@@ -437,11 +361,9 @@ body:has(a:hover) #cur-ring, body:has(button:hover) #cur-ring, body:has([onclick
   }
 
   /* 2. Custom cursor — desativado no mobile */
-  * { cursor: auto!important; }
-  #cur-dot, #cur-ring { display: none!important; }
 
   /* 3. Efeitos visuais pesados — desativados no mobile */
-  #bokeh, #noise, #aurora, #spbar, #topbar { display: none!important; }
+  #aurora, #spbar, #topbar { display: none!important; }
   #nav { top: 0!important; }
 
   /* 4. GPU Performance — sem backdrop blur no mobile */
@@ -551,14 +473,14 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 <!-- ── Announcement bar ─────────────────────── -->
 <div id="wa-tooltip-badge" style="position:fixed;bottom:92px;right:24px;z-index:998;background:rgba(13,24,41,.92);border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:6px 14px;font-size:.72rem;color:var(--t1);font-family:'Space Grotesk',sans-serif;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 4px 20px rgba(0,0,0,.4)">
   <div style="width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite"></div>
-  <span><span data-i18n="wa_badge_txt">Resposta em &lt; 1 min</span></span>
+  <span><span>Resposta em &lt; 1 min</span></span>
 </div>
 <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AutoGenius%20e%20quero%20saber%20como%20funciona." target="_blank" rel="noopener" id="topbar">
   <div style="width:6px;height:6px;background:#10B981;border-radius:50%;animation:pulse 2s infinite;flex-shrink:0"></div>
-  <span data-i18n="topbar_ai" style="color:var(--t1)">Agentes de IA 24/7</span>
+  <span style="color:var(--t1)">Agentes de IA 24/7</span>
   <span style="color:var(--t3)">·</span>
-  <span data-i18n="topbar_impl" style="color:var(--cy)">Implementação em 7 dias</span>
-  <span class="bar-extra" data-i18n="topbar_cta" style="display:none;color:var(--b3)">— Fale agora no WhatsApp →</span>
+  <span style="color:var(--cy)">Implementação em 7 dias</span>
+  <span class="bar-extra" style="display:none;color:var(--b3)">— Fale agora no WhatsApp →</span>
 </a>
 
 <!-- ── Nav ─────────────────────────────────── -->
@@ -569,15 +491,15 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
         <span style="color:var(--t1)">Auto</span><span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Genius</span><span style="color:var(--t1)">AI</span>
       </span>
       <div id="navlinks" style="display:flex;gap:28px;align-items:center">
-        <span class="nav-link" tabindex="0" role="button" data-i18n="nav_home" onclick="go('home')">Início</span>
-        <span class="nav-link" tabindex="0" role="button" data-i18n="nav_sol" onclick="go('home');scrollTo2('s4')">Solução</span>
-        <span class="nav-link" tabindex="0" role="button" data-i18n="nav_cases" onclick="go('home');scrollTo2('s5')">Cases</span>
-        <span class="nav-link" tabindex="0" role="button" data-i18n="nav_plans" onclick="go('home');scrollTo2('s7')">Planos</span>
-        <span class="nav-link" tabindex="0" role="button" data-i18n="nav_about" onclick="go('sobre')">Sobre</span>
-        <span class="nav-link" tabindex="0" role="button" data-i18n="nav_talk" onclick="go('palestra')">Palestra</span>
-        <span class="nav-link" tabindex="0" role="button" data-i18n="nav_cons" onclick="go('consultoria')">Consultoria</span>
-        <span class="nav-link" tabindex="0" role="button" data-i18n="nav_faq" onclick="go('faq')">Dúvidas</span>
-        <span class="nav-link" tabindex="0" role="button" data-i18n="nav_contact" onclick="go('contato')">Contato</span>
+        <span class="nav-link" tabindex="0" role="button" onclick="go('home')">Início</span>
+        <span class="nav-link" tabindex="0" role="button" onclick="go('home');scrollTo2('s4')">Solução</span>
+        <span class="nav-link" tabindex="0" role="button" onclick="go('home');scrollTo2('s5')">Cases</span>
+        <span class="nav-link" tabindex="0" role="button" onclick="go('home');scrollTo2('s7')">Planos</span>
+        <span class="nav-link" tabindex="0" role="button" onclick="go('sobre')">Sobre</span>
+        <span class="nav-link" tabindex="0" role="button" onclick="go('palestra')">Palestra</span>
+        <span class="nav-link" tabindex="0" role="button" onclick="go('consultoria')">Consultoria</span>
+        <span class="nav-link" tabindex="0" role="button" onclick="go('faq')">Dúvidas</span>
+        <span class="nav-link" tabindex="0" role="button" onclick="go('contato')">Contato</span>
       </div>
       <div style="display:flex;gap:8px;align-items:center">
         <a id="nav-wa" href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AutoGenius%20e%20quero%20saber%20como%20funciona." target="_blank" rel="noopener noreferrer" class="btn-wa" style="padding:9px 18px;font-size:.8rem;display:none">
@@ -599,14 +521,14 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
     <button aria-label="Fechar menu" onclick="document.getElementById('mmenu').classList.remove('open')" style="background:none;border:none;color:var(--t1);font-size:1.3rem;cursor:pointer"><i class="fas fa-times"></i></button>
   </div>
   <nav style="display:flex;flex-direction:column;gap:24px;text-align:center;margin:auto 0">
-    <span data-i18n="nav_home" tabindex="0" role="button" onclick="go('home');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Início</span>
-    <span data-i18n="nav_about" tabindex="0" role="button" onclick="go('sobre');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Sobre</span>
-    <span data-i18n="nav_talk" tabindex="0" role="button" onclick="go('palestra');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Palestra</span>
-    <span data-i18n="nav_cons" tabindex="0" role="button" onclick="go('consultoria');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Consultoria</span>
-    <span data-i18n="nav_faq" tabindex="0" role="button" onclick="go('faq');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Dúvidas</span>
-    <span data-i18n="nav_contact" tabindex="0" role="button" onclick="go('contato');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Contato</span>
+    <span tabindex="0" role="button" onclick="go('home');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Início</span>
+    <span tabindex="0" role="button" onclick="go('sobre');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Sobre</span>
+    <span tabindex="0" role="button" onclick="go('palestra');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Palestra</span>
+    <span tabindex="0" role="button" onclick="go('consultoria');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Consultoria</span>
+    <span tabindex="0" role="button" onclick="go('faq');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Dúvidas</span>
+    <span tabindex="0" role="button" onclick="go('contato');document.getElementById('mmenu').classList.remove('open')" style="color:var(--t1);font-size:1.35rem;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif">Contato</span>
     <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AutoGenius%20e%20quero%20saber%20como%20funciona." target="_blank" rel="noopener noreferrer" class="btn-wa" style="justify-content:center;margin-top:16px">
-      <i class="fab fa-whatsapp" style="font-size:1.2rem"></i><span data-i18n="nav_wa">Falar no WhatsApp</span>
+      <i class="fab fa-whatsapp" style="font-size:1.2rem"></i><span>Falar no WhatsApp</span>
     </a>
     </nav>
 </div>
@@ -627,7 +549,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 
       <div class="reveal" style="display:inline-flex;align-items:center;gap:7px;padding:6px 14px;border-radius:9999px;border:1px solid rgba(37,99,235,.18);background:rgba(13,24,41,.7);backdrop-filter:blur(8px);margin-bottom:28px">
         <div style="width:5px;height:5px;background:#10B981;border-radius:50%;animation:pulse 2s infinite"></div>
-        <span data-i18n="hero_badge" style="color:var(--t2);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase">Referência em IA no Brasil</span>
+        <span style="color:var(--t2);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase">Referência em IA no Brasil</span>
       </div>
 
       <h1 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,6vw,4.6rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:22px">
@@ -641,10 +563,10 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       </p>
 
       <div class="hero-btns reveal" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:18px">
-        <a data-i18n="hero_cta" href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20um%20agente%20de%20IA%20no%20meu%20WhatsApp.%20Como%20come%C3%A7o%3F" target="_blank" rel="noopener noreferrer" class="btn-wa" style="font-size:1rem;padding:15px 32px">
+        <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Quero%20um%20agente%20de%20IA%20no%20meu%20WhatsApp.%20Como%20come%C3%A7o%3F" target="_blank" rel="noopener noreferrer" class="btn-wa" style="font-size:1rem;padding:15px 32px">
           <i class="fab fa-whatsapp" style="font-size:1.2rem"></i>Falar agora no WhatsApp
         </a>
-        <button data-i18n="hero_cta2" class="btn-ghost" onclick="scrollTo2('s4')">
+        <button class="btn-ghost" onclick="scrollTo2('s4')">
           Ver como funciona <i class="fas fa-arrow-right" style="font-size:.72rem;margin-left:2px"></i>
         </button>
       </div>
@@ -653,30 +575,30 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       <div class="reveal" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:44px">
         <div style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;border:1px solid rgba(16,185,129,.2);background:rgba(16,185,129,.05)">
           <div style="width:5px;height:5px;border-radius:50%;background:#10B981;animation:pulse 2s infinite;flex-shrink:0"></div>
-          <span data-i18n="badge_sla" style="font-family:'Space Mono',monospace;font-size:.6rem;color:#10B981;letter-spacing:.06em">RESPOSTA &lt; 3s · 99% UPTIME</span>
+          <span style="font-family:'Space Mono',monospace;font-size:.6rem;color:#10B981;letter-spacing:.06em">RESPOSTA &lt; 3s · 99% UPTIME</span>
         </div>
         <div style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;border:1px solid rgba(37,99,235,.2);background:rgba(37,99,235,.05)">
           <i class="fas fa-globe" style="font-size:.6rem;color:var(--b3)"></i>
-          <span data-i18n="badge_langs" style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--b3);letter-spacing:.06em">DISPONÍVEL EM 5 IDIOMAS</span>
+          <span style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--b3);letter-spacing:.06em">DISPONÍVEL EM 5 IDIOMAS</span>
         </div>
         <div style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)">
           <i class="fas fa-shield-alt" style="font-size:.6rem;color:var(--t3)"></i>
-          <span data-i18n="badge_lgpd" style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--t3);letter-spacing:.06em">LGPD COMPLIANT</span>
+          <span style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--t3);letter-spacing:.06em">LGPD COMPLIANT</span>
         </div>
       </div>
 
       <!-- Stats -->
       <div class="reveal" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
-        <div class="stat"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.6rem;color:var(--t1)">50<span style="color:var(--b3)">+</span></div><div data-i18n="stat_comp" style="font-size:.58rem;color:var(--t3);text-transform:uppercase;letter-spacing:.16em;margin-top:4px">Empresas</div></div>
-        <div class="stat"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.6rem;color:var(--t1)">300<span style="color:var(--cy)">%</span></div><div data-i18n="stat_roi" style="font-size:.58rem;color:var(--t3);text-transform:uppercase;letter-spacing:.16em;margin-top:4px">ROI Médio</div></div>
-        <div class="stat"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.6rem;color:var(--t1)">7<span style="color:var(--b3)">d</span></div><div data-i18n="stat_days" style="font-size:.58rem;color:var(--t3);text-transform:uppercase;letter-spacing:.16em;margin-top:4px">Para ativar</div></div>
+        <div class="stat"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.6rem;color:var(--t1)">50<span style="color:var(--b3)">+</span></div><div style="font-size:.58rem;color:var(--t3);text-transform:uppercase;letter-spacing:.16em;margin-top:4px">Empresas</div></div>
+        <div class="stat"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.6rem;color:var(--t1)">300<span style="color:var(--cy)">%</span></div><div style="font-size:.58rem;color:var(--t3);text-transform:uppercase;letter-spacing:.16em;margin-top:4px">ROI Médio</div></div>
+        <div class="stat"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:1.6rem;color:var(--t1)">7<span style="color:var(--b3)">d</span></div><div style="font-size:.58rem;color:var(--t3);text-transform:uppercase;letter-spacing:.16em;margin-top:4px">Para ativar</div></div>
       </div>
     </div>
   </section>
 
   <!-- MARQUEE · Clientes reais ──────────────── -->
   <div class="sec-light" style="padding:44px 0;position:relative;z-index:10">
-    <p data-i18n="marquee_label" style="text-align:center;color:var(--t2);font-size:10px;font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px">EMPRESAS QUE CONFIAM NA AUTOGENIUS</p>
+    <p style="text-align:center;color:var(--t2);font-size:10px;font-family:'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px">EMPRESAS QUE CONFIAM NA AUTOGENIUS</p>
     <div class="marquee-wrap">
       <div class="marquee-track">
         <img src="image/renor_no_bg.png" alt="Renor Coworking" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
@@ -802,7 +724,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       </p>
       
       <!-- Tabs -->
-      <div class="feature-tabs vgrid">
+      <div class="vgrid">
         <button class="ftab vcard active" onclick="switchTab(0)" style="--vc:var(--aut)">
           <b>Concessionárias</b>
           <i>Transformamos mensagens em test-drives.</i>
@@ -1039,10 +961,10 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
   <!-- S5 · PROVA SOCIAL ───────────────────── -->
   <section id="s5" style="padding:96px 24px">
     <div style="max-width:1100px;margin:0 auto">
-      <span data-i18n="s5_label" class="sec-label reveal">3.0 · Resultados reais</span>
+      <span class="sec-label reveal">3.0 · Resultados reais</span>
       <div style="text-align:center;margin-bottom:48px">
         <div class="reveal" style="display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:9999px;border:1px solid rgba(245,158,11,.18);background:rgba(245,158,11,.05);margin-bottom:16px">
-          <span data-i18n="s5_badge" style="color:#FBBF24;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em">Pessoas que pararam de perder vendas</span>
+          <span style="color:#FBBF24;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em">Pessoas que pararam de perder vendas</span>
         </div>
       </div>
               <div class="s5-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
@@ -1089,7 +1011,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
   <!-- S6 · COMO FUNCIONA ──────────────────── -->
   <section class="sec-light" style="padding:96px 24px">
     <div style="max-width:860px;margin:0 auto;text-align:center">
-      <span data-i18n="s6_label" class="sec-label reveal">4.0 · Como funciona</span>
+      <span class="sec-label reveal">4.0 · Como funciona</span>
       <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.45rem,3vw,2.1rem);font-weight:700;letter-spacing:-.025em;margin-bottom:8px">
         Da primeira conversa ao agente vendendo: <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">7 dias.</span>
       </h2>
@@ -1097,18 +1019,18 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px">
         <div class="card reveal" style="padding:28px;text-align:center">
           <div style="width:64px;height:64px;border-radius:50%;border:1px solid rgba(37,99,235,.25);background:rgba(37,99,235,.07);display:flex;align-items:center;justify-content:center;margin:0 auto 18px"><span style="font-family:'Space Mono',monospace;font-weight:700;color:var(--b4);font-size:1.5rem">01</span></div>
-          <h3 data-i18n="s6_s1h" style="font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:var(--t1);margin-bottom:8px;letter-spacing:-.015em">Diagnóstico</h3>
-          <p data-i18n="s6_s1p" style="color:var(--t2);font-size:.8rem;line-height:1.65">1 conversa de 30 minutos. Entendemos seu negócio.</p>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:var(--t1);margin-bottom:8px;letter-spacing:-.015em">Diagnóstico</h3>
+          <p style="color:var(--t2);font-size:.8rem;line-height:1.65">1 conversa de 30 minutos. Entendemos seu negócio.</p>
         </div>
         <div class="card reveal" style="padding:28px;text-align:center;transition-delay:.1s">
           <div style="width:64px;height:64px;border-radius:50%;border:1px solid rgba(6,182,212,.25);background:rgba(6,182,212,.07);display:flex;align-items:center;justify-content:center;margin:0 auto 18px"><span style="font-family:'Space Mono',monospace;font-weight:700;color:var(--cy);font-size:1.5rem">02</span></div>
-          <h3 data-i18n="s6_s2h" style="font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:var(--t1);margin-bottom:8px;letter-spacing:-.015em">Configuração</h3>
-          <p data-i18n="s6_s2p" style="color:var(--t2);font-size:.8rem;line-height:1.65">Montamos e treinamos seu Agente em 7 dias.</p>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:var(--t1);margin-bottom:8px;letter-spacing:-.015em">Configuração</h3>
+          <p style="color:var(--t2);font-size:.8rem;line-height:1.65">Montamos e treinamos seu Agente em 7 dias.</p>
         </div>
         <div class="card reveal" style="padding:28px;text-align:center;transition-delay:.2s">
           <div style="width:64px;height:64px;border-radius:50%;border:1px solid rgba(59,130,246,.25);background:rgba(59,130,246,.07);display:flex;align-items:center;justify-content:center;margin:0 auto 18px"><span style="font-family:'Space Mono',monospace;font-weight:700;color:var(--b3);font-size:1.5rem">03</span></div>
-          <h3 data-i18n="s6_s3h" style="font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:var(--t1);margin-bottom:8px;letter-spacing:-.015em">Resultado</h3>
-          <p data-i18n="s6_s3p" style="color:var(--t2);font-size:.8rem;line-height:1.65">Você ativa. Ele trabalha. Para sempre.</p>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:var(--t1);margin-bottom:8px;letter-spacing:-.015em">Resultado</h3>
+          <p style="color:var(--t2);font-size:.8rem;line-height:1.65">Você ativa. Ele trabalha. Para sempre.</p>
         </div>
       </div>
     </div>
@@ -1119,23 +1041,23 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
   <!-- S2 · DOR ─────────────────────────────── -->
   <section style="padding:96px 24px;text-align:center">
     <div style="max-width:600px;margin:0 auto">
-      <span data-i18n="s2_label" class="sec-label reveal">1.0 · Dor</span>
+      <span class="sec-label reveal">1.0 · Dor</span>
       <div class="reveal" style="display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:9999px;border:1px solid rgba(239,68,68,.18);background:rgba(239,68,68,.05);margin-bottom:36px">
         <div style="width:5px;height:5px;background:#ef4444;border-radius:50%"></div>
-        <span data-i18n="pain_badge" style="color:#f87171;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.15em">Você reconhece isso?</span>
+        <span style="color:#f87171;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.15em">Você reconhece isso?</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:20px;max-width:500px;margin:0 auto">
         <div class="reveal-l" style="display:flex;align-items:flex-start;gap:14px;text-align:left">
           <span style="color:#ef4444;font-size:1.3rem;font-weight:700;flex-shrink:0;line-height:1.6;margin-top:2px">×</span>
-          <p data-i18n="pain_1" style="color:var(--t2);font-size:1rem;line-height:1.72">Você responde clientes <strong style="color:var(--t1);font-weight:600">quando pode</strong>. Não quando eles precisam.</p>
+          <p style="color:var(--t2);font-size:1rem;line-height:1.72">Você responde clientes <strong style="color:var(--t1);font-weight:600">quando pode</strong>. Não quando eles precisam.</p>
         </div>
         <div class="reveal-l" style="display:flex;align-items:flex-start;gap:14px;text-align:left">
           <span style="color:#ef4444;font-size:1.3rem;font-weight:700;flex-shrink:0;line-height:1.6;margin-top:2px">×</span>
-          <p data-i18n="pain_2" style="color:var(--t2);font-size:1rem;line-height:1.72">Leads que você pagou para atrair <strong style="color:var(--t1);font-weight:600">esfriaram</strong> antes de você responder.</p>
+          <p style="color:var(--t2);font-size:1rem;line-height:1.72">Leads que você pagou para atrair <strong style="color:var(--t1);font-weight:600">esfriaram</strong> antes de você responder.</p>
         </div>
         <div class="reveal-l" style="display:flex;align-items:flex-start;gap:14px;text-align:left">
           <span style="color:#ef4444;font-size:1.3rem;font-weight:700;flex-shrink:0;line-height:1.6;margin-top:2px">×</span>
-          <p data-i18n="pain_3" style="color:var(--t2);font-size:1rem;line-height:1.72">Você sabe que perde vendas. <strong style="color:var(--t1);font-weight:600">Só não sabe quantas.</strong></p>
+          <p style="color:var(--t2);font-size:1rem;line-height:1.72">Você sabe que perde vendas. <strong style="color:var(--t1);font-weight:600">Só não sabe quantas.</strong></p>
         </div>
       </div>
     </div>
@@ -1144,7 +1066,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
   <!-- S3 · BREAK ──────────────────────────── -->
   <section style="min-height:42vh;display:flex;align-items:center;justify-content:center;padding:60px 24px;text-align:center;position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(37,99,235,.1) 0%,transparent 70%);pointer-events:none"></div>
-    <p data-i18n="break_q" class="reveal" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(1.55rem,4vw,3rem);line-height:1.22;position:relative;z-index:10;max-width:720px;letter-spacing:-.025em;background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">
+    <p class="reveal" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(1.55rem,4vw,3rem);line-height:1.22;position:relative;z-index:10;max-width:720px;letter-spacing:-.025em;background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">
       E se cada mensagem não respondida virasse uma venda fechada?
     </p>
   </section>
@@ -1879,9 +1801,9 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
         <i class="fas fa-shield-alt"></i>
       </div>
       <div style="flex:1;min-width:260px">
-        <div style="font-family:'Space Mono',monospace;font-size:10px;color:#22c55e;letter-spacing:.12em;font-weight:700;margin-bottom:4px"><span data-i18n="guar_badge">GARANTIA INCONDICIONAL DE 7 DIAS</span></div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.25rem;color:var(--t1);margin-bottom:6px"><span data-i18n="guar_h3">Risco Zero para a sua empresa</span></h3>
-        <p style="color:var(--t2);font-size:.85rem;line-height:1.6;margin:0"><span data-i18n="guar_p">Teste a AutoGenius na sua operação. Se você não observar respostas em segundos e agendamentos automáticos na sua empresa, devolvemos 100% do seu investimento imediatamente. Sem pegadinhas.</span></p>
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:#22c55e;letter-spacing:.12em;font-weight:700;margin-bottom:4px"><span>GARANTIA INCONDICIONAL DE 7 DIAS</span></div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.25rem;color:var(--t1);margin-bottom:6px"><span>Risco Zero para a sua empresa</span></h3>
+        <p style="color:var(--t2);font-size:.85rem;line-height:1.6;margin:0"><span>Teste a AutoGenius na sua operação. Se você não observar respostas em segundos e agendamentos automáticos na sua empresa, devolvemos 100% do seu investimento imediatamente. Sem pegadinhas.</span></p>
       </div>
     </div>
   </section>
@@ -1893,7 +1815,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(37,99,235,.12) 0%,transparent 68%);pointer-events:none;animation:bgp 5s ease-in-out infinite"></div>
     <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:1px;height:240px;background:linear-gradient(to bottom,transparent,rgba(37,99,235,.3),transparent);pointer-events:none"></div>
     <div style="position:relative;z-index:10;max-width:600px;margin:0 auto">
-      <span data-i18n="s8_label" class="sec-label reveal">6.0 · Agora é sua vez</span>
+      <span class="sec-label reveal">6.0 · Agora é sua vez</span>
       <h2 class="reveal" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.2rem);line-height:1.12;letter-spacing:-.03em;margin-bottom:16px">
         Seu próximo cliente<br><span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">manda mensagem hoje.</span>
       </h2>
@@ -1902,12 +1824,12 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       </p>
       <div class="reveal">
         <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Estou%20pronto%20para%20come%C3%A7ar%20com%20a%20AutoGenius.%20Como%20avanço%3F" target="_blank" rel="noopener noreferrer" class="btn-wa" style="font-size:1.05rem;padding:16px 42px;display:inline-flex;justify-content:center">
-          <i class="fab fa-whatsapp" style="font-size:1.25rem"></i><span data-i18n="s8_cta">Falar com a AutoGenius agora</span>
+          <i class="fab fa-whatsapp" style="font-size:1.25rem"></i><span>Falar com a AutoGenius agora</span>
         </a>
       </div>
       <div class="reveal" style="margin-top:18px;display:flex;align-items:center;justify-content:center;gap:12px;color:var(--t2);font-size:11px;flex-wrap:wrap">
-        <span style="display:flex;align-items:center;gap:5px"><i class="fas fa-lock" style="color:#22c55e;font-size:9px"></i><span data-i18n="s8_g1">Garantia de 7 dias</span></span>
-        <span>·</span><span data-i18n="s8_g2">Sem fidelidade</span><span>·</span><span data-i18n="s8_g3">Deploy em 7 dias</span>
+        <span style="display:flex;align-items:center;gap:5px"><i class="fas fa-lock" style="color:#22c55e;font-size:9px"></i><span>Garantia de 7 dias</span></span>
+        <span>·</span><span>Sem fidelidade</span><span>·</span><span>Deploy em 7 dias</span>
       </div>
     </div>
     <style>@keyframes bgp{0%,100%{opacity:.7}50%{opacity:1}}</style>
@@ -1918,9 +1840,9 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 <!-- ══ FAQ ══════════════════════════════════ -->
 <div class="page" id="page-faq">
   <section style="padding:64px 24px;max-width:700px;margin:0 auto">
-    <span class="sec-label" data-i18n="nav_faq">FAQ</span>
-    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;margin-bottom:6px;letter-spacing:-.025em"><span data-i18n="faq_h1">Dúvidas</span> <span data-i18n="faq_h1b" style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">frequentes</span></h1>
-    <p data-i18n="faq_sub" style="color:var(--t2);margin-bottom:32px;font-size:.9rem">Tudo que você precisa saber antes de começar.</p>
+    <span class="sec-label">FAQ</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;margin-bottom:6px;letter-spacing:-.025em"><span>Dúvidas</span> <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">frequentes</span></h1>
+    <p style="color:var(--t2);margin-bottom:32px;font-size:.9rem">Tudo que você precisa saber antes de começar.</p>
     <div style="display:flex;flex-direction:column;gap:8px" id="faqlist"></div>
   </section>
 </div>
@@ -1928,13 +1850,13 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 <!-- ══ CONTATO ══════════════════════════════ -->
 <div class="page" id="page-contato">
   <section style="padding:64px 24px;max-width:520px;margin:0 auto">
-    <span class="sec-label" data-i18n="nav_contact">Contato</span>
-    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;margin-bottom:6px;letter-spacing:-.025em"><span data-i18n="cont_h1">Entre em</span> <span data-i18n="cont_h1b" style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">contato</span></h1>
-    <p data-i18n="cont_sub" style="color:var(--t2);margin-bottom:24px;font-size:.9rem">Prefere uma resposta rápida? Fale direto no WhatsApp.</p>
+    <span class="sec-label">Contato</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;margin-bottom:6px;letter-spacing:-.025em"><span>Entre em</span> <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">contato</span></h1>
+    <p style="color:var(--t2);margin-bottom:24px;font-size:.9rem">Prefere uma resposta rápida? Fale direto no WhatsApp.</p>
     <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20AutoGenius%20e%20quero%20conversar%20com%20a%20equipe." target="_blank" rel="noopener noreferrer" class="btn-wa" style="width:100%;justify-content:center;margin-bottom:24px">
-      <i class="fab fa-whatsapp" style="font-size:1.1rem"></i><span data-i18n="cont_wa">Falar no WhatsApp agora</span>
+      <i class="fab fa-whatsapp" style="font-size:1.1rem"></i><span>Falar no WhatsApp agora</span>
     </a>
-    <div data-i18n="cont_or" style="text-align:center;color:var(--t3);font-size:10.5px;margin-bottom:20px;letter-spacing:.04em">— ou preencha o formulário —</div>
+    <div style="text-align:center;color:var(--t3);font-size:10.5px;margin-bottom:20px;letter-spacing:.04em">— ou preencha o formulário —</div>
         <div class="card" style="padding:24px;display:flex;flex-direction:column;gap:13px">
       <div><div style="color:var(--t2);font-size:11.5px;font-weight:500;margin-bottom:5px">Nome</div><input id="c_nome" class="ginput" placeholder="Seu nome completo"/></div>
       <div><div style="color:var(--t2);font-size:11.5px;font-weight:500;margin-bottom:5px">WhatsApp / Telefone</div><input id="c_whats" class="ginput" placeholder="+55 81 99999-9999"/></div>
@@ -1948,11 +1870,11 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 <!-- ══ SOBRE ══════════════════════════════════ -->
 <div class="page" id="page-sobre">
   <section style="padding:64px 24px 40px;max-width:820px;margin:0 auto">
-    <span class="sec-label" data-i18n="nav_about">Sobre</span>
+    <span class="sec-label">Sobre</span>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:12px">
-      <span data-i18n="sobre_h1">Somos a</span> <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">AutoGenius AI</span>
+      <span>Somos a</span> <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">AutoGenius AI</span>
     </h1>
-    <p data-i18n="sobre_desc" style="color:var(--t2);font-size:1rem;line-height:1.75;max-width:580px;margin-bottom:40px">
+    <p style="color:var(--t2);font-size:1rem;line-height:1.75;max-width:580px;margin-bottom:40px">
       Nascemos em Recife para provar que automação de alto nível não é exclusividade de grandes empresas. Entregamos agentes de IA que executam — vendem, agendam, qualificam e retêm clientes — 24 horas por dia, 7 dias por semana, diretamente no WhatsApp.
     </p>
 
@@ -1960,19 +1882,19 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:48px">
       <div class="card" style="padding:20px;text-align:center">
         <div style="font-family:'Space Mono',monospace;font-size:2rem;font-weight:700;color:var(--t1)">50<span style="color:var(--b3)">+</span></div>
-        <div data-i18n="m1_label" style="font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:.14em;margin-top:4px">Empresas atendidas</div>
+        <div style="font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:.14em;margin-top:4px">Empresas atendidas</div>
       </div>
       <div class="card" style="padding:20px;text-align:center">
         <div style="font-family:'Space Mono',monospace;font-size:2rem;font-weight:700;color:var(--t1)">1M<span style="color:var(--cy)">+</span></div>
-        <div data-i18n="m2_label" style="font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:.14em;margin-top:4px">Mensagens processadas</div>
+        <div style="font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:.14em;margin-top:4px">Mensagens processadas</div>
       </div>
       <div class="card" style="padding:20px;text-align:center">
         <div style="font-family:'Space Mono',monospace;font-size:2rem;font-weight:700;color:var(--t1)">99<span style="color:var(--gr)">%</span></div>
-        <div data-i18n="m3_label" style="font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:.14em;margin-top:4px">Uptime garantido</div>
+        <div style="font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:.14em;margin-top:4px">Uptime garantido</div>
       </div>
       <div class="card" style="padding:20px;text-align:center">
         <div style="font-family:'Space Mono',monospace;font-size:2rem;font-weight:700;color:var(--t1)">7<span style="color:var(--b3)">d</span></div>
-        <div data-i18n="m4_label" style="font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:.14em;margin-top:4px">Para você operar</div>
+        <div style="font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:.14em;margin-top:4px">Para você operar</div>
       </div>
     </div>
 
@@ -1997,7 +1919,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 
         <!-- Conteúdo -->
         <div style="flex:1;min-width:260px;padding:36px 36px 36px 28px;display:flex;flex-direction:column;justify-content:center">
-          <span data-i18n="sobre_founder" style="font-family:'Space Mono',monospace;font-size:.58rem;color:var(--b3);letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:18px;opacity:.7">Fundador</span>
+          <span style="font-family:'Space Mono',monospace;font-size:.58rem;color:var(--b3);letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:18px;opacity:.7">Fundador</span>
 
           <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3rem);color:var(--t1);line-height:.95;letter-spacing:-.045em;margin-bottom:6px">Yuri<br>Matos</div>
           <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--cy);letter-spacing:.1em;margin-bottom:24px">RECIFE, PE</div>
@@ -2059,8 +1981,8 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 
     <!-- Parceiros de tecnologia -->
     <div style="margin-bottom:48px">
-      <div data-i18n="tech_h" style="color:var(--t1);font-weight:700;font-size:1.1rem;font-family:'Space Grotesk',sans-serif;margin-bottom:8px;letter-spacing:-.02em">Tecnologias e parceiros</div>
-      <p data-i18n="tech_desc" style="color:var(--t2);font-size:.82rem;margin-bottom:20px">Construímos sobre as melhores infraestruturas do mundo para garantir escala, segurança e performance.</p>
+      <div style="color:var(--t1);font-weight:700;font-size:1.1rem;font-family:'Space Grotesk',sans-serif;margin-bottom:8px;letter-spacing:-.02em">Tecnologias e parceiros</div>
+      <p style="color:var(--t2);font-size:.82rem;margin-bottom:20px">Construímos sobre as melhores infraestruturas do mundo para garantir escala, segurança e performance.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px">
         <div class="card" style="padding:12px 20px;display:flex;align-items:center;gap:9px">
           <i class="fas fa-brain" style="color:var(--b3);font-size:.9rem"></i>
@@ -2099,15 +2021,15 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 
     <!-- Comprometimento / Valores reais -->
     <div style="margin-bottom:48px">
-      <div data-i18n="commit_h" style="color:var(--t1);font-weight:700;font-size:1.1rem;font-family:'Space Grotesk',sans-serif;margin-bottom:20px;letter-spacing:-.02em">Nosso compromisso</div>
+      <div style="color:var(--t1);font-weight:700;font-size:1.1rem;font-family:'Space Grotesk',sans-serif;margin-bottom:20px;letter-spacing:-.02em">Nosso compromisso</div>
       <div style="display:grid;gap:12px">
         <div class="card" style="padding:20px;display:flex;align-items:flex-start;gap:16px">
           <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,rgba(37,99,235,.2),rgba(6,182,212,.1));display:flex;align-items:center;justify-content:center;flex-shrink:0">
             <i class="fas fa-shield-halved" style="color:var(--cy);font-size:.95rem"></i>
           </div>
           <div>
-            <div data-i18n="c1_title" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;color:var(--t1);margin-bottom:3px">Resultados em 7 dias ou reembolso</div>
-            <div data-i18n="c1_desc" style="color:var(--t2);font-size:.78rem;line-height:1.6">Se o agente não estiver operando em 7 dias úteis, devolvemos 100% do valor de setup. Sem burocracia.</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;color:var(--t1);margin-bottom:3px">Resultados em 7 dias ou reembolso</div>
+            <div style="color:var(--t2);font-size:.78rem;line-height:1.6">Se o agente não estiver operando em 7 dias úteis, devolvemos 100% do valor de setup. Sem burocracia.</div>
           </div>
         </div>
         <div class="card" style="padding:20px;display:flex;align-items:flex-start;gap:16px">
@@ -2115,8 +2037,8 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             <i class="fas fa-lock" style="color:var(--b3);font-size:.95rem"></i>
           </div>
           <div>
-            <div data-i18n="c2_title" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;color:var(--t1);margin-bottom:3px">Dados protegidos · LGPD</div>
-            <div data-i18n="c2_desc" style="color:var(--t2);font-size:.78rem;line-height:1.6">Toda conversa é criptografada. Nunca revendemos ou compartilhamos dados dos seus clientes. Conformidade total com a LGPD.</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;color:var(--t1);margin-bottom:3px">Dados protegidos · LGPD</div>
+            <div style="color:var(--t2);font-size:.78rem;line-height:1.6">Toda conversa é criptografada. Nunca revendemos ou compartilhamos dados dos seus clientes. Conformidade total com a LGPD.</div>
           </div>
         </div>
         <div class="card" style="padding:20px;display:flex;align-items:flex-start;gap:16px">
@@ -2124,8 +2046,8 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             <i class="fas fa-headset" style="color:#f59e0b;font-size:.95rem"></i>
           </div>
           <div>
-            <div data-i18n="c3_title" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;color:var(--t1);margin-bottom:3px">Suporte humano · sempre</div>
-            <div data-i18n="c3_desc" style="color:var(--t2);font-size:.78rem;line-height:1.6">Atendimento de segunda a sábado. Equipe técnica disponível por WhatsApp, e-mail e reunião de vídeo quando precisar.</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;color:var(--t1);margin-bottom:3px">Suporte humano · sempre</div>
+            <div style="color:var(--t2);font-size:.78rem;line-height:1.6">Atendimento de segunda a sábado. Equipe técnica disponível por WhatsApp, e-mail e reunião de vídeo quando precisar.</div>
           </div>
         </div>
       </div>
@@ -2133,7 +2055,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 
     <!-- Na mídia -->
     <div style="margin-bottom:48px">
-      <div data-i18n="media_h" style="color:var(--t1);font-weight:700;font-size:1.1rem;font-family:'Space Grotesk',sans-serif;margin-bottom:20px;letter-spacing:-.02em">Na mídia</div>
+      <div style="color:var(--t1);font-weight:700;font-size:1.1rem;font-family:'Space Grotesk',sans-serif;margin-bottom:20px;letter-spacing:-.02em">Na mídia</div>
       <div style="display:grid;gap:10px">
         <a href="https://iabrasilnoticias.com.br/autogenius-ai-amplia-atuacao-e-leva-agentes-de-ia-para-novos-segmentos-alem-do-atendimento/" target="_blank" rel="noopener noreferrer" style="text-decoration:none">
           <div class="card" style="padding:18px 20px;display:flex;align-items:center;gap:14px;transition:border-color .2s">
@@ -2165,8 +2087,8 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
     <!-- Missão -->
     <div class="card" style="padding:28px;border-color:rgba(37,99,235,.2);margin-bottom:32px;position:relative;overflow:hidden">
       <div style="position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(37,99,235,.08),transparent 70%);pointer-events:none"></div>
-      <div data-i18n="mission_label" style="font-family:'Space Mono',monospace;font-size:9px;color:var(--b3);letter-spacing:.15em;margin-bottom:10px">NOSSA MISSÃO</div>
-      <p data-i18n="mission_text" style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;color:var(--t1);line-height:1.65;position:relative;z-index:1">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--b3);letter-spacing:.15em;margin-bottom:10px">NOSSA MISSÃO</div>
+      <p style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;color:var(--t1);line-height:1.65;position:relative;z-index:1">
         "Tornar inteligência artificial aplicada acessível para qualquer empresa que queira crescer — independente do tamanho, do setor ou da cidade."
       </p>
     </div>
@@ -2174,7 +2096,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
     <!-- CTA -->
     <div style="text-align:center">
       <a href="https://wa.me/5581991471765?text=Quero%20conhecer%20a%20AutoGenius%20AI" target="_blank" rel="noopener noreferrer" class="btn-wa" style="font-size:.95rem;padding:14px 36px;display:inline-flex">
-        <i class="fab fa-whatsapp" style="font-size:1.1rem"></i><span data-i18n="sobre_cta">Falar com a equipe agora</span>
+        <i class="fab fa-whatsapp" style="font-size:1.1rem"></i><span>Falar com a equipe agora</span>
       </a>
     </div>
   </section>
@@ -2183,37 +2105,37 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 <!-- ══ PALESTRA ══════════════════════════════ -->
 <div class="page" id="page-palestra">
   <section style="padding:64px 24px;max-width:820px;margin:0 auto">
-    <span class="sec-label" data-i18n="nav_talk">Palestra</span>
+    <span class="sec-label">Palestra</span>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:12px">
-      <span data-i18n="talk_h1">IA aplicada a</span> <span data-i18n="talk_h1b" style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">negócios reais</span>
+      <span>IA aplicada a</span> <span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">negócios reais</span>
     </h1>
-    <p data-i18n="talk_desc" style="color:var(--t2);font-size:1rem;line-height:1.75;max-width:580px;margin-bottom:40px">
+    <p style="color:var(--t2);font-size:1rem;line-height:1.75;max-width:580px;margin-bottom:40px">
       Yuri Matos leva para o seu evento uma visão prática, sem hype e com cases reais de como IA está transformando vendas, atendimento e operações no Brasil.
     </p>
 
     <!-- Temas -->
     <div style="margin-bottom:44px">
-      <div data-i18n="talk_themes_h" style="color:var(--t1);font-weight:700;font-size:1rem;font-family:'Space Grotesk',sans-serif;margin-bottom:16px;letter-spacing:-.02em">Temas disponíveis</div>
+      <div style="color:var(--t1);font-weight:700;font-size:1rem;font-family:'Space Grotesk',sans-serif;margin-bottom:16px;letter-spacing:-.02em">Temas disponíveis</div>
       <div style="display:grid;gap:10px">
         <div class="card" style="padding:20px;display:flex;gap:14px;align-items:flex-start">
           <div style="width:38px;height:38px;border-radius:9px;background:rgba(37,99,235,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Space Mono',monospace;font-weight:700;font-size:.8rem;color:var(--b3)">01</div>
           <div>
-            <div data-i18n="talk_t1h" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.92rem;color:var(--t1);margin-bottom:4px">Como agentes de IA vendem pelo WhatsApp 24/7</div>
-            <div data-i18n="talk_t1d" style="color:var(--t2);font-size:.8rem;line-height:1.6">Da teoria ao case real: como montar um agente que responde, qualifica e fecha vendas sem intervenção humana. Cases reais de PMEs brasileiras.</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.92rem;color:var(--t1);margin-bottom:4px">Como agentes de IA vendem pelo WhatsApp 24/7</div>
+            <div style="color:var(--t2);font-size:.8rem;line-height:1.6">Da teoria ao case real: como montar um agente que responde, qualifica e fecha vendas sem intervenção humana. Cases reais de PMEs brasileiras.</div>
           </div>
         </div>
         <div class="card" style="padding:20px;display:flex;gap:14px;align-items:flex-start">
           <div style="width:38px;height:38px;border-radius:9px;background:rgba(6,182,212,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Space Mono',monospace;font-weight:700;font-size:.8rem;color:var(--cy)">02</div>
           <div>
-            <div data-i18n="talk_t2h" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.92rem;color:var(--t1);margin-bottom:4px">O futuro do trabalho com IA: o que muda (e o que não muda)</div>
-            <div data-i18n="talk_t2d" style="color:var(--t2);font-size:.8rem;line-height:1.6">Uma visão realista sobre automação inteligente — quais funções serão transformadas, quais profissionais têm vantagem e como se preparar agora.</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.92rem;color:var(--t1);margin-bottom:4px">O futuro do trabalho com IA: o que muda (e o que não muda)</div>
+            <div style="color:var(--t2);font-size:.8rem;line-height:1.6">Uma visão realista sobre automação inteligente — quais funções serão transformadas, quais profissionais têm vantagem e como se preparar agora.</div>
           </div>
         </div>
         <div class="card" style="padding:20px;display:flex;gap:14px;align-items:flex-start">
           <div style="width:38px;height:38px;border-radius:9px;background:rgba(124,58,237,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Space Mono',monospace;font-weight:700;font-size:.8rem;color:var(--vt)">03</div>
           <div>
-            <div data-i18n="talk_t3h" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.92rem;color:var(--t1);margin-bottom:4px">Automação sem código: como qualquer empresa pode começar hoje</div>
-            <div data-i18n="talk_t3d" style="color:var(--t2);font-size:.8rem;line-height:1.6">Workshop prático sobre as principais ferramentas de automação (n8n, Make, WhatsApp API) e como conectá-las com IA sem precisar de programação.</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.92rem;color:var(--t1);margin-bottom:4px">Automação sem código: como qualquer empresa pode começar hoje</div>
+            <div style="color:var(--t2);font-size:.8rem;line-height:1.6">Workshop prático sobre as principais ferramentas de automação (n8n, Make, WhatsApp API) e como conectá-las com IA sem precisar de programação.</div>
           </div>
         </div>
       </div>
@@ -2221,37 +2143,37 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 
     <!-- Formatos -->
     <div style="margin-bottom:44px">
-      <div data-i18n="talk_formats_h" style="color:var(--t1);font-weight:700;font-size:1rem;font-family:'Space Grotesk',sans-serif;margin-bottom:16px;letter-spacing:-.02em">Formatos</div>
+      <div style="color:var(--t1);font-weight:700;font-size:1rem;font-family:'Space Grotesk',sans-serif;margin-bottom:16px;letter-spacing:-.02em">Formatos</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px">
         <div class="card" style="padding:18px;text-align:center">
           <i class="fas fa-microphone-alt" style="color:var(--b3);font-size:1.4rem;margin-bottom:10px;display:block"></i>
-          <div data-i18n="talk_f1_title" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;color:var(--t1);margin-bottom:4px">Keynote</div>
-          <div data-i18n="talk_f1_desc" style="color:var(--t2);font-size:.75rem">30 a 60 min · Conferências e eventos corporativos</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;color:var(--t1);margin-bottom:4px">Keynote</div>
+          <div style="color:var(--t2);font-size:.75rem">30 a 60 min · Conferências e eventos corporativos</div>
         </div>
         <div class="card" style="padding:18px;text-align:center">
           <i class="fas fa-chalkboard-teacher" style="color:var(--cy);font-size:1.4rem;margin-bottom:10px;display:block"></i>
-          <div data-i18n="talk_f2_title" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;color:var(--t1);margin-bottom:4px">Workshop</div>
-          <div data-i18n="talk_f2_desc" style="color:var(--t2);font-size:.75rem">2 a 4h · Conteúdo prático com hands-on</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;color:var(--t1);margin-bottom:4px">Workshop</div>
+          <div style="color:var(--t2);font-size:.75rem">2 a 4h · Conteúdo prático com hands-on</div>
         </div>
         <div class="card" style="padding:18px;text-align:center">
           <i class="fas fa-users" style="color:var(--vt);font-size:1.4rem;margin-bottom:10px;display:block"></i>
-          <div data-i18n="talk_f3_title" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;color:var(--t1);margin-bottom:4px">Painel / Mesa</div>
-          <div data-i18n="talk_f3_desc" style="color:var(--t2);font-size:.75rem">Debate com especialistas do mercado</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;color:var(--t1);margin-bottom:4px">Painel / Mesa</div>
+          <div style="color:var(--t2);font-size:.75rem">Debate com especialistas do mercado</div>
         </div>
         <div class="card" style="padding:18px;text-align:center">
           <i class="fas fa-laptop" style="color:var(--gr);font-size:1.4rem;margin-bottom:10px;display:block"></i>
-          <div data-i18n="talk_f4_title" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;color:var(--t1);margin-bottom:4px">Online ao vivo</div>
-          <div data-i18n="talk_f4_desc" style="color:var(--t2);font-size:.75rem">Webinar e masterclass para equipes remotas</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;color:var(--t1);margin-bottom:4px">Online ao vivo</div>
+          <div style="color:var(--t2);font-size:.75rem">Webinar e masterclass para equipes remotas</div>
         </div>
       </div>
     </div>
 
     <!-- CTA -->
     <div class="card" style="padding:28px;text-align:center;border-color:rgba(37,99,235,.2)">
-      <div data-i18n="talk_cta_h" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--t1);margin-bottom:8px">Interesse em contratar uma palestra?</div>
-      <p data-i18n="talk_cta_p" style="color:var(--t2);font-size:.85rem;margin-bottom:20px">Enviamos proposta completa com valores e formatos disponíveis para o seu evento.</p>
+      <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--t1);margin-bottom:8px">Interesse em contratar uma palestra?</div>
+      <p style="color:var(--t2);font-size:.85rem;margin-bottom:20px">Enviamos proposta completa com valores e formatos disponíveis para o seu evento.</p>
       <a href="https://wa.me/5581991471765?text=Quero%20contratar%20uma%20palestra%20da%20AutoGenius%20AI" target="_blank" rel="noopener noreferrer" class="btn-wa" style="display:inline-flex;font-size:.88rem;padding:12px 28px">
-        <i class="fab fa-whatsapp"></i><span data-i18n="talk_cta_btn">Contratar palestra</span>
+        <i class="fab fa-whatsapp"></i><span>Contratar palestra</span>
       </a>
     </div>
   </section>
@@ -2261,22 +2183,22 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 <div class="page" id="page-consultoria">
   <section style="padding:64px 24px 80px;max-width:860px;margin:0 auto">
 
-    <span data-i18n="cons_label" class="sec-label" style="color:var(--cy);border-color:rgba(6,182,212,.25);background:rgba(6,182,212,.06)">Consultoria de Tecnologia</span>
+    <span class="sec-label" style="color:var(--cy);border-color:rgba(6,182,212,.25);background:rgba(6,182,212,.06)">Consultoria de Tecnologia</span>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin:18px 0 24px">
-      <span data-i18n="cons_h1">A maioria das implantações falha.</span><br>
-      <span data-i18n="cons_h1b" style="background:linear-gradient(135deg,#06B6D4,#3B82F6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Não por tecnologia — por comportamento.</span>
+      <span>A maioria das implantações falha.</span><br>
+      <span style="background:linear-gradient(135deg,#06B6D4,#3B82F6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Não por tecnologia — por comportamento.</span>
     </h1>
-    <p data-i18n="cons_intro1" style="color:var(--t2);font-size:1.05rem;line-height:1.85;max-width:640px;margin-bottom:12px">
+    <p style="color:var(--t2);font-size:1.05rem;line-height:1.85;max-width:640px;margin-bottom:12px">
       O sistema foi entregue, a equipe não sabia usar, não confiava no processo e voltou para o WhatsApp e a planilha em duas semanas. Isso acontece em toda empresa que contrata tecnologia como se fosse produto.
     </p>
-    <p data-i18n="cons_intro2" style="color:var(--t1);font-size:1.05rem;line-height:1.85;max-width:640px;margin-bottom:40px;font-weight:500">
+    <p style="color:var(--t1);font-size:1.05rem;line-height:1.85;max-width:640px;margin-bottom:40px;font-weight:500">
       Nossa consultoria funciona diferente: a gente entra na operação, trabalha diretamente com cada equipe, analisa os problemas de dentro, documenta tudo — e implementa junto com quem vai usar, até funcionar.
     </p>
 
     <!-- O que acontece na prática -->
     <div style="margin-bottom:48px">
-      <div data-i18n="cons_steps_h" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--t1);margin-bottom:6px;letter-spacing:-.02em">O que acontece na prática</div>
-      <div data-i18n="cons_steps_sub" style="font-size:.83rem;color:var(--t3);margin-bottom:20px">Do primeiro contato até a equipe operar sozinha</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--t1);margin-bottom:6px;letter-spacing:-.02em">O que acontece na prática</div>
+      <div style="font-size:.83rem;color:var(--t3);margin-bottom:20px">Do primeiro contato até a equipe operar sozinha</div>
       <div style="display:grid;gap:2px">
 
         <div style="display:grid;grid-template-columns:80px 1fr;gap:0;border-radius:12px 12px 2px 2px;overflow:hidden;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.14)">
@@ -2285,8 +2207,8 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             <div style="width:1px;flex:1;background:rgba(6,182,212,.15);margin-top:8px"></div>
           </div>
           <div style="padding:24px">
-            <div data-i18n="cons_s1_h" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Entramos e vemos de perto</div>
-            <div data-i18n="cons_s1_t" style="font-size:.82rem;color:var(--t2);line-height:1.75">Visitamos a operação. Conversamos com quem trabalha no processo — não só com a liderança. Vemos o que realmente acontece: onde o papel ainda manda, onde alguém anota no caderno antes de lançar no sistema, onde uma pessoa só sabe fazer aquilo. Isso não aparece em reunião de apresentação.</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Entramos e vemos de perto</div>
+            <div style="font-size:.82rem;color:var(--t2);line-height:1.75">Visitamos a operação. Conversamos com quem trabalha no processo — não só com a liderança. Vemos o que realmente acontece: onde o papel ainda manda, onde alguém anota no caderno antes de lançar no sistema, onde uma pessoa só sabe fazer aquilo. Isso não aparece em reunião de apresentação.</div>
           </div>
         </div>
 
@@ -2296,8 +2218,8 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             <div style="width:1px;flex:1;background:rgba(37,99,235,.15);margin-top:8px"></div>
           </div>
           <div style="padding:24px">
-            <div data-i18n="cons_s2_h" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Analisamos e documentamos tudo</div>
-            <div data-i18n="cons_s2_t" style="font-size:.82rem;color:var(--t2);line-height:1.75">Mapeamos cada problema: o retrabalho que gera custo invisível, o risco de pessoa-chave que paralisa o processo quando alguém falta, os números que chegam sem rastreabilidade. Documentamos processos, falhas e oportunidades. Esse material fica com você — independente de qualquer coisa.</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Analisamos e documentamos tudo</div>
+            <div style="font-size:.82rem;color:var(--t2);line-height:1.75">Mapeamos cada problema: o retrabalho que gera custo invisível, o risco de pessoa-chave que paralisa o processo quando alguém falta, os números que chegam sem rastreabilidade. Documentamos processos, falhas e oportunidades. Esse material fica com você — independente de qualquer coisa.</div>
           </div>
         </div>
 
@@ -2307,8 +2229,8 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             <div style="width:1px;flex:1;background:rgba(37,99,235,.15);margin-top:8px"></div>
           </div>
           <div style="padding:24px">
-            <div data-i18n="cons_s3_h" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Construímos o plano com quem vai executar</div>
-            <div data-i18n="cons_s3_t" style="font-size:.82rem;color:var(--t2);line-height:1.75">Definimos as frentes de transformação em ordem de impacto real. Cada frente tem uma entrega concreta e uma pessoa que para de fazer algo que não deveria estar fazendo. Nada é imposto — cada mudança é validada com quem vai usar antes de ser finalizada.</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Construímos o plano com quem vai executar</div>
+            <div style="font-size:.82rem;color:var(--t2);line-height:1.75">Definimos as frentes de transformação em ordem de impacto real. Cada frente tem uma entrega concreta e uma pessoa que para de fazer algo que não deveria estar fazendo. Nada é imposto — cada mudança é validada com quem vai usar antes de ser finalizada.</div>
           </div>
         </div>
 
@@ -2318,8 +2240,8 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             <div style="width:1px;flex:1;background:rgba(124,58,237,.15);margin-top:8px"></div>
           </div>
           <div style="padding:24px">
-            <div data-i18n="cons_s4_h" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Implementamos ao lado da equipe</div>
-            <div data-i18n="cons_s4_t" style="font-size:.82rem;color:var(--t2);line-height:1.75">O treinamento acontece onde o trabalho acontece — no almoxarifado, na oficina, no escritório. A equipe aprende fazendo com o processo real rodando, não em apresentação de slide. Identificamos resistências antes que virem bloqueios. Estamos disponíveis direto com cada líder de área durante toda a implantação.</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Implementamos ao lado da equipe</div>
+            <div style="font-size:.82rem;color:var(--t2);line-height:1.75">O treinamento acontece onde o trabalho acontece — no almoxarifado, na oficina, no escritório. A equipe aprende fazendo com o processo real rodando, não em apresentação de slide. Identificamos resistências antes que virem bloqueios. Estamos disponíveis direto com cada líder de área durante toda a implantação.</div>
           </div>
         </div>
 
@@ -2328,8 +2250,8 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--gr);font-weight:700;letter-spacing:.1em;text-align:center">05</div>
           </div>
           <div style="padding:24px">
-            <div data-i18n="cons_s5_h" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Transferimos — e saímos quando funciona</div>
-            <div data-i18n="cons_s5_t" style="font-size:.82rem;color:var(--t2);line-height:1.75">O objetivo nunca foi criar dependência. Ao final, a sua equipe opera e evolui o que foi construído sem precisar de nós. Tudo que foi entregue — painéis, automações, documentação, bases — fica com você. Sempre.</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:8px">Transferimos — e saímos quando funciona</div>
+            <div style="font-size:.82rem;color:var(--t2);line-height:1.75">O objetivo nunca foi criar dependência. Ao final, a sua equipe opera e evolui o que foi construído sem precisar de nós. Tudo que foi entregue — painéis, automações, documentação, bases — fica com você. Sempre.</div>
           </div>
         </div>
 
@@ -2344,31 +2266,31 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
           <i class="fas fa-shield-alt" style="color:var(--gr);font-size:.9rem"></i>
         </div>
         <div>
-          <div data-i18n="cons_guar_h" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:6px">Não pedimos confiança às cegas</div>
-          <div data-i18n="cons_guar_t" style="font-size:.82rem;color:var(--t2);line-height:1.75">No final do mês 3, fazemos uma reunião de resultado com a diretoria. Se os entregáveis acordados nos pilotos não foram cumpridos por responsabilidade nossa, você encerra o contrato sem multa ou penalidade. O que já foi entregue — painéis, bases, documentação — permanece integralmente com você. Pedimos 3 meses para provar que a parceria funciona.</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;color:var(--t1);margin-bottom:6px">Não pedimos confiança às cegas</div>
+          <div style="font-size:.82rem;color:var(--t2);line-height:1.75">No final do mês 3, fazemos uma reunião de resultado com a diretoria. Se os entregáveis acordados nos pilotos não foram cumpridos por responsabilidade nossa, você encerra o contrato sem multa ou penalidade. O que já foi entregue — painéis, bases, documentação — permanece integralmente com você. Pedimos 3 meses para provar que a parceria funciona.</div>
         </div>
       </div>
     </div>
 
     <!-- Para quem é — mais específico -->
     <div style="margin-bottom:40px">
-      <div data-i18n="cons_who_h" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--t1);margin-bottom:16px;letter-spacing:-.02em">Faz sentido se você reconhecer algum desses cenários</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--t1);margin-bottom:16px;letter-spacing:-.02em">Faz sentido se você reconhecer algum desses cenários</div>
       <div style="display:grid;gap:8px">
         <div style="display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)">
           <i class="fas fa-circle-dot" style="color:var(--cy);font-size:.55rem;margin-top:6px;flex-shrink:0"></i>
-          <span data-i18n="cons_who_1" style="font-size:.83rem;color:var(--t2);line-height:1.65">Você tem SAP, ERP ou algum sistema implantado — mas a decisão ainda passa por alguém que compila manualmente antes de te avisar</span>
+          <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Você tem SAP, ERP ou algum sistema implantado — mas a decisão ainda passa por alguém que compila manualmente antes de te avisar</span>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)">
           <i class="fas fa-circle-dot" style="color:var(--b3);font-size:.55rem;margin-top:6px;flex-shrink:0"></i>
-          <span data-i18n="cons_who_2" style="font-size:.83rem;color:var(--t2);line-height:1.65">Existe uma pessoa-chave no seu time que, se sair ou faltar, o processo volta ao modo manual em 24 horas</span>
+          <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Existe uma pessoa-chave no seu time que, se sair ou faltar, o processo volta ao modo manual em 24 horas</span>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)">
           <i class="fas fa-circle-dot" style="color:var(--vt);font-size:.55rem;margin-top:6px;flex-shrink:0"></i>
-          <span data-i18n="cons_who_3" style="font-size:.83rem;color:var(--t2);line-height:1.65">Você já tentou implantar tecnologia antes — mas a equipe não usou, o processo não mudou e você ficou pagando por algo que ninguém adotou</span>
+          <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Você já tentou implantar tecnologia antes — mas a equipe não usou, o processo não mudou e você ficou pagando por algo que ninguém adotou</span>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)">
           <i class="fas fa-circle-dot" style="color:var(--gr);font-size:.55rem;margin-top:6px;flex-shrink:0"></i>
-          <span data-i18n="cons_who_4" style="font-size:.83rem;color:var(--t2);line-height:1.65">Sua operação tem múltiplas áreas, e cada uma vive num silo — sem visibilidade cruzada para a gestão tomar decisão em tempo real</span>
+          <span style="font-size:.83rem;color:var(--t2);line-height:1.65">Sua operação tem múltiplas áreas, e cada uma vive num silo — sem visibilidade cruzada para a gestão tomar decisão em tempo real</span>
         </div>
       </div>
     </div>
@@ -2379,13 +2301,13 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
       <div style="position:absolute;inset:0;border:1px solid rgba(6,182,212,.18);border-radius:14px;pointer-events:none"></div>
       <div style="position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--cy),var(--b3),transparent)"></div>
       <div style="position:relative;padding:36px;text-align:center">
-        <div data-i18n="cons_chat_eye" style="font-family:'Space Mono',monospace;font-size:9px;color:var(--cy);letter-spacing:.15em;font-weight:600;margin-bottom:14px">COMEÇA COM UMA CONVERSA</div>
-        <div data-i18n="cons_chat_h" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;color:var(--t1);margin-bottom:10px;letter-spacing:-.03em">Primeiro a gente entende.<br>Depois, se fizer sentido, a gente propõe.</div>
-        <p data-i18n="cons_chat_p" style="color:var(--t2);font-size:.85rem;margin-bottom:26px;line-height:1.75;max-width:460px;margin-left:auto;margin-right:auto">Sem proposta antecipada. Sem pitch de vendas. A primeira conversa é só para entender o que está acontecendo na sua operação — e ver se faz sentido trabalhar juntos.</p>
+        <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--cy);letter-spacing:.15em;font-weight:600;margin-bottom:14px">COMEÇA COM UMA CONVERSA</div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.3rem;color:var(--t1);margin-bottom:10px;letter-spacing:-.03em">Primeiro a gente entende.<br>Depois, se fizer sentido, a gente propõe.</div>
+        <p style="color:var(--t2);font-size:.85rem;margin-bottom:26px;line-height:1.75;max-width:460px;margin-left:auto;margin-right:auto">Sem proposta antecipada. Sem pitch de vendas. A primeira conversa é só para entender o que está acontecendo na sua operação — e ver se faz sentido trabalhar juntos.</p>
         <a href="https://wa.me/5581991471765?text=Quero%20entender%20como%20funciona%20a%20consultoria%20da%20AutoGenius" target="_blank" rel="noopener noreferrer" class="btn-wa" style="display:inline-flex;font-size:.9rem;padding:14px 32px">
-          <i class="fab fa-whatsapp"></i><span data-i18n="cons_cta">Quero entender minha operação</span>
+          <i class="fab fa-whatsapp"></i><span>Quero entender minha operação</span>
         </a>
-        <div data-i18n="cons_cta_note" style="margin-top:14px;font-size:.75rem;color:var(--t3)">Primeira conversa gratuita · Sem compromisso</div>
+        <div style="margin-top:14px;font-size:.75rem;color:var(--t3)">Primeira conversa gratuita · Sem compromisso</div>
       </div>
     </div>
 
@@ -2399,21 +2321,21 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
   <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:28px;margin-bottom:32px">
     <div>
       <div style="font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:10px;letter-spacing:-.02em"><span style="color:var(--t1)">Auto</span><span style="background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Genius</span><span style="color:var(--t1)">AI</span></div>
-      <p data-i18n="footer_tagline" style="color:var(--t2);font-size:11.5px;line-height:1.65">IA que executa para o crescimento do seu negócio.</p>
+      <p style="color:var(--t2);font-size:11.5px;line-height:1.65">IA que executa para o crescimento do seu negócio.</p>
     </div>
     <div>
-      <div data-i18n="footer_prod" style="color:var(--t1);font-weight:600;font-size:11.5px;margin-bottom:12px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Produto</div>
+      <div style="color:var(--t1);font-weight:600;font-size:11.5px;margin-bottom:12px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Produto</div>
       <div style="display:flex;flex-direction:column;gap:8px">
-        <span data-i18n="nav_home" onclick="go('home')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Início</span>
-        <span data-i18n="nav_about" onclick="go('sobre')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Sobre</span>
-        <span data-i18n="nav_talk" onclick="go('palestra')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Palestra</span>
-        <span data-i18n="nav_cons" onclick="go('consultoria')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Consultoria</span>
-        <span data-i18n="footer_faq" onclick="go('faq')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Dúvidas</span>
-        <span data-i18n="footer_contact" onclick="go('contato')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Contato</span>
+        <span onclick="go('home')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Início</span>
+        <span onclick="go('sobre')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Sobre</span>
+        <span onclick="go('palestra')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Palestra</span>
+        <span onclick="go('consultoria')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Consultoria</span>
+        <span onclick="go('faq')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Dúvidas</span>
+        <span onclick="go('contato')" style="color:var(--t2);font-size:11.5px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#F1F5F9'" onmouseout="this.style.color='#94A3B8'">Contato</span>
       </div>
     </div>
     <div>
-      <div data-i18n="footer_social" style="color:var(--t1);font-weight:600;font-size:11.5px;margin-bottom:12px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Social</div>
+      <div style="color:var(--t1);font-weight:600;font-size:11.5px;margin-bottom:12px;font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em">Social</div>
       <div style="display:flex;gap:14px;margin-bottom:12px">
         <a href="https://www.instagram.com/useautogenius/" target="_blank" aria-label="Instagram" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#ec4899'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/yuri-matos2002/" target="_blank" aria-label="LinkedIn" style="color:var(--t2);font-size:1.15rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94A3B8'"><i class="fab fa-linkedin"></i></a>
@@ -2423,35 +2345,20 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
     </div>
   </div>
   <div style="border-top:1px solid var(--bord);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
-    <span data-i18n="footer_copy" style="color:var(--t3);font-size:10.5px">© 2026 AutoGenius AI. Feito com ❤️ em Recife, Brasil.</span>
+    <span style="color:var(--t3);font-size:10.5px">© 2026 AutoGenius AI. Feito com ❤️ em Recife, Brasil.</span>
     <span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--t4)">v3.0 · blue-navy</span>
   </div>
 </footer>
 
 <!-- WA Float -->
 <div class="wa-float">
-  <div data-i18n="wa_tooltip" class="wa-tt">Fale agora — resposta em minutos</div>
+  <div class="wa-tt">Fale agora — resposta em minutos</div>
   <a href="https://wa.me/5581991471765?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AutoGenius.%20Tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener noreferrer" class="wa-fb" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 </div>
 
 <script>
-/* ── Custom cursor ── */
-const dot = document.getElementById('cur-dot'), ring = document.getElementById('cur-ring');
-if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
-  let mx = -100, my = -100, rx = -100, ry = -100;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  (function loop(){
-    rx += (mx - rx) * 0.18;
-    ry += (my - ry) * 0.18;
-    dot.style.left = mx + 'px';
-    dot.style.top = my + 'px';
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(loop);
-  })();
-}
 /* ── Navigation Router & Scroll ── */
 function go(page) {
   const el = document.getElementById('page-' + page);
@@ -2474,25 +2381,6 @@ function scrollTo2(id) {
       window.scrollTo({ top: elementPosition - navHeight, behavior: 'smooth' });
     }
   }, 80);
-}
-
-function toggleAudio() {
-  const audio = document.getElementById('bg-audio');
-  const label = document.getElementById('audio-label');
-  const bars = document.getElementById('audio-bars');
-  const btn = document.getElementById('audio-btn');
-  if (!audio) return;
-  if (audio.paused) {
-    audio.play().then(() => {
-      if (bars) bars.classList.add('playing');
-      if (label) label.textContent = 'Pausar';
-      if (btn) btn.classList.remove('audio-hint');
-    }).catch(err => console.log('Audio error:', err));
-  } else {
-    audio.pause();
-    if (bars) bars.classList.remove('playing');
-    if (label) label.textContent = 'Som';
-  }
 }
 
 function toggleComparisonTable() {
