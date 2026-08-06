@@ -106,6 +106,7 @@
   --bg-s:    #0d1829;
   --bg-e:    #111e35;
   --card:    rgba(13,24,41,.82);
+  --card-solid: rgba(13,24,41,.98);
   --b:       #1d4ed8;
   --b5:      #2563EB;
   --b4:      #3B82F6;
@@ -139,15 +140,16 @@
   color:#0F172A;
   --t1:#0F172A;
   --t2:#4A5A70;
-  --t3:#8494AA;
-  --t4:#B6C2D2;
+  --t3:#64748B;
+  --t4:#64748B;
   --bord:rgba(15,23,42,.10);
   --bord-a:rgba(37,99,235,.28);
   --card:rgba(255,255,255,.92);
+  --card-solid:rgba(255,255,255,.96);
   --b3:#1D4ED8;
-  --cy:#0891B2;
+  --cy:#0E7490;
 }
-.sec-light .sec-label{color:#64748B}
+.sec-light .sec-label{color:#475569}
 .sec-light .btn-ghost{border-color:rgba(15,23,42,.16);color:#0F172A}
 .sec-light .card{box-shadow:0 6px 22px rgba(15,23,42,.07),inset 0 1px 0 rgba(255,255,255,.9)}
 .sec-light .ftab.active,.sec-light .ftab:hover{background:rgba(37,99,235,.08)}
@@ -263,7 +265,7 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
 
 /* ━━━━ Gradient border card ━━━━━━━━━━━━ */
 .card-grad-border{
-  background: linear-gradient(135deg, rgba(13,24,41,.96), rgba(15,26,46,.98)) padding-box,
+  background: var(--card-solid) padding-box,
               linear-gradient(135deg, #2563EB, #06b6d4, #2563EB) border-box;
   border: 2px solid transparent;
   border-radius: 16px;
@@ -397,7 +399,7 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
   .card, .card-grad-border, .nav-inner, #mmenu {
     backdrop-filter: none!important;
     -webkit-backdrop-filter: none!important;
-    background: rgba(13,24,41,.98)!important;
+    background: var(--card-solid)!important;
   }
 
   /* 5. Ajustes de Padding de Seções */
@@ -1227,7 +1229,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
               <p style="font-size:.78rem;color:var(--t2);margin:0">Recursos fundamentais que vêm prontos em 100% dos pacotes</p>
             </div>
           </div>
-          <div style="font-size:.75rem;font-family:'Space Mono',monospace;color:#10B981;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);padding:4px 12px;border-radius:9999px;font-weight:600">
+          <div style="font-size:.75rem;font-family:'Space Mono',monospace;color:#047857;background:rgba(4,120,87,.09);border:1px solid rgba(4,120,87,.22);padding:4px 12px;border-radius:9999px;font-weight:600">
             ✓ Base da Plataforma AutoGenius
           </div>
         </div>

@@ -11,10 +11,11 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400&display=swap">
 <link rel="stylesheet" href="css/lp.css">
 <style>
-  :root{ --v:#F97316; --v-deep:#7C2D12; --v-lite:#FDBA74; }
+  /* Autos — laranja. on-light no papel, core nas faixas escuras. */
+  :root{ --v:#C2410C; --v-core:#F97316; --v-soft:#FBEAE1; }
 </style>
 </head>
 <body>
@@ -32,44 +33,67 @@
 <!-- ═══ HERO ═══ -->
 <div class="hero">
   <div class="wrap">
-    <div>
-      <span class="label">IA para lojas de carro e concessionárias</span>
-      <h1>O lead das 3h da manhã <em>compra de quem responde.</em></h1>
-      <p class="lead">Um agente de IA no WhatsApp da loja que responde cada lead em segundos, <strong>qualifica troca e financiamento</strong>, agenda o test-drive e não deixa proposta morrer sem retomada.</p>
-      <div class="hero-cta">
-        <a class="btn" href="https://wa.me/5581991471765?text=Oi%21%20Quero%20ver%20a%20Auto%20Genius%20funcionando%20na%20minha%20loja.">
-          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          Ver funcionando em 15 min
-        </a>
-        <a class="btn ghost sm" href="#como">Como funciona</a>
+    <span class="label">IA para lojas de carro e concessionárias</span>
+    <h1>O lead das 3h da manhã compra de <em>quem responde.</em></h1>
+
+    <div class="hero-foot">
+      <div>
+        <p class="lead">Um agente de IA no WhatsApp da loja que responde cada lead em segundos, <strong>qualifica troca e financiamento</strong>, agenda o test-drive e não deixa proposta morrer sem retomada.</p>
+        <div class="hero-cta">
+          <a class="btn" href="https://wa.me/5581991471765?text=Oi%21%20Quero%20ver%20a%20Auto%20Genius%20funcionando%20na%20minha%20loja.">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Ver funcionando em 15 min
+          </a>
+          <a class="btn line" href="#como">Como funciona</a>
+        </div>
       </div>
-      <div class="trust">
-        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> No ar em <b>7 dias</b></span>
-        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Responde em <b>&lt;3s</b></span>
-        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> <b>Sem</b> fidelidade</span>
-      </div>
+
+      <table class="spec">
+        <tr><th>Tempo de resposta</th><td>menos de 3s</td></tr>
+        <tr><th>Plantão</th><td>24 h, todo dia</td></tr>
+        <tr><th>Implantação</th><td>7 dias</td></tr>
+        <tr><th>Fidelidade</th><td>nenhuma</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FAIXA ESCURA — A CONVERSA ═══ -->
+<div class="night">
+  <div class="wrap">
+    <div class="clockline">
+      <span class="hh">03:14</span>
+      <span class="cap">Domingo de madrugada. Sua loja fechou no sábado às 13h — o agente não fechou.</span>
     </div>
 
-    <div class="chat">
-      <div class="chat-top">
-        <div class="chat-av"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8a1 1 0 001 1h1a1 1 0 001-1v-1h12v1a1 1 0 001 1h1a1 1 0 001-1v-8l-2.08-5.99zM6.5 16a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm11 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
-        <div>
-          <div class="chat-id">Auto Genius · Concessionárias</div>
-          <div class="chat-on">online agora</div>
-        </div>
-        <div class="chat-clock">domingo<b>03:14</b></div>
+    <div class="night-grid">
+      <div>
+        <span class="label">Conversa real, encenada</span>
+        <h2 style="margin-top:16px">Enquanto ninguém da equipe estava online.</h2>
+        <p class="lead">O cliente não avisa que vai comprar. Ele manda mensagem no horário em que consegue — e decide com quem responde. Esta conversa termina com um test-drive na agenda de segunda-feira.</p>
       </div>
-      <div class="chat-body">
-        <div class="msg note">o plantão acabou no sábado às 13h</div>
-        <div class="msg them">O Corolla 2022 prata do anúncio ainda tá disponível?<span class="t">03:14</span></div>
-        <div class="msg us">Está sim! Corolla XEi 2022, prata, 41 mil km, único dono. Você pretende dar um carro na troca ou seria entrada + financiamento?<span class="t">03:14 ✓✓</span></div>
-        <div class="msg them">Tenho um Onix 2019 pra dar na troca<span class="t">03:16</span></div>
-        <div class="msg us">Ótimo. Me passa a versão e a quilometragem do Onix que já adianto uma <b>faixa de avaliação</b> pra você antes de vir na loja.<span class="t">03:16 ✓✓</span></div>
-        <div class="msg them">LT 1.0, 68 mil km<span class="t">03:19</span></div>
-        <div class="msg us">Na faixa de R$ 58 a 63 mil, confirmando na avaliação presencial. Consigo te encaixar num <b>test-drive segunda 10h</b> ou <b>terça 18h</b> — qual prefere?<span class="t">03:19 ✓✓</span></div>
-        <div class="msg them">Segunda 10h<span class="t">03:21</span></div>
-        <div class="msg us">Fechado ✅ Segunda, 10h, test-drive do Corolla. Já avisei o Rodrigo, ele te recebe com a simulação pronta.<span class="t">03:21 ✓✓</span></div>
-        <div class="msg note">test-drive agendado — a loja estava fechada</div>
+
+      <div class="chat">
+        <div class="chat-top">
+          <div class="chat-av"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8a1 1 0 001 1h1a1 1 0 001-1v-1h12v1a1 1 0 001 1h1a1 1 0 001-1v-8l-2.08-5.99zM6.5 16a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm11 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
+          <div>
+            <div class="chat-id">Auto Genius · Concessionárias</div>
+            <div class="chat-on">online agora</div>
+          </div>
+          <div class="chat-clock">domingo</div>
+        </div>
+        <div class="chat-body">
+          <div class="msg note">o plantão acabou no sábado às 13h</div>
+          <div class="msg them">O Corolla 2022 prata do anúncio ainda tá disponível?<span class="t">03:14</span></div>
+          <div class="msg us">Está sim! Corolla XEi 2022, prata, 41 mil km, único dono. Você pretende dar um carro na troca ou seria entrada + financiamento?<span class="t">03:14 ✓✓</span></div>
+          <div class="msg them">Tenho um Onix 2019 pra dar na troca<span class="t">03:16</span></div>
+          <div class="msg us">Ótimo. Me passa a versão e a quilometragem do Onix que já adianto uma <b>faixa de avaliação</b> pra você antes de vir na loja.<span class="t">03:16 ✓✓</span></div>
+          <div class="msg them">LT 1.0, 68 mil km<span class="t">03:19</span></div>
+          <div class="msg us">Na faixa de R$ 58 a 63 mil, confirmando na avaliação presencial. Consigo te encaixar num <b>test-drive segunda 10h</b> ou <b>terça 18h</b> — qual prefere?<span class="t">03:19 ✓✓</span></div>
+          <div class="msg them">Segunda 10h<span class="t">03:21</span></div>
+          <div class="msg us">Fechado ✅ Segunda, 10h, test-drive do Corolla. Já avisei o Rodrigo, ele te recebe com a simulação pronta.<span class="t">03:21 ✓✓</span></div>
+          <div class="msg note">test-drive agendado — a loja estava fechada</div>
+        </div>
       </div>
     </div>
   </div>
@@ -81,29 +105,37 @@
     <div class="sec-head rv">
       <span class="label">O que acontece hoje</span>
       <h2>Você não perde a venda no fechamento. Perde na demora.</h2>
-      <p class="lead">Ninguém pesquisa carro no horário comercial: pesquisa de madrugada, no domingo, no intervalo do almoço. Esta é a linha do tempo de um lead que morreu na sua caixa de entrada.</p>
+      <p class="lead">Ninguém pesquisa carro no horário comercial. Esta é a linha do tempo de um lead que morreu na sua caixa de entrada.</p>
     </div>
 
     <div class="tl rv">
       <div class="tl-item">
-        <div class="tl-time">03:14 · DOMINGO</div>
-        <h3>O lead entra pelo portal</h3>
-        <p>Webmotors, OLX, Instagram. Ele está com o celular na mão, comparando anúncio — é o pico da intenção de compra e o vale do seu plantão.</p>
+        <div class="tl-time">03:14 DOM</div>
+        <div>
+          <h3>O lead entra pelo portal</h3>
+          <p>Webmotors, OLX, Instagram. Ele está com o celular na mão, comparando anúncio — é o pico da intenção de compra e o vale do seu plantão.</p>
+        </div>
       </div>
       <div class="tl-item">
         <div class="tl-time">03:15</div>
-        <h3>Ele dispara para outras cinco lojas</h3>
-        <p>O mesmo carro está anunciado em todo lugar. A diferença entre você e o concorrente não é o preço: é quem responde primeiro.</p>
+        <div>
+          <h3>Ele dispara para outras cinco lojas</h3>
+          <p>O mesmo carro está anunciado em todo lugar. A diferença entre você e o concorrente não é o preço: é quem responde primeiro.</p>
+        </div>
       </div>
       <div class="tl-item bad">
         <div class="tl-time">03:40</div>
-        <h3>Uma loja responde</h3>
-        <p>Pode ser um robô simples, pode ser o dono sem sono. Não importa: a conversa começou lá, e a partir daí é ela que está negociando.</p>
+        <div>
+          <h3>Uma loja responde</h3>
+          <p>Pode ser um robô simples, pode ser o dono sem sono. Não importa: a conversa começou lá, e a partir daí é ela que está negociando.</p>
+        </div>
       </div>
       <div class="tl-item bad">
-        <div class="tl-time">09:20 · SEGUNDA</div>
-        <h3>Seu vendedor abre o WhatsApp</h3>
-        <p>Manda "Bom dia, o carro está disponível!" para alguém que já viu o carro de outra loja ontem à tarde. Duas mensagens depois, o lead para de responder.</p>
+        <div class="tl-time">09:20 SEG</div>
+        <div>
+          <h3>Seu vendedor abre o WhatsApp</h3>
+          <p>Manda "Bom dia, o carro está disponível!" para alguém que já viu o carro de outra loja ontem à tarde. Duas mensagens depois, o lead para de responder.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -114,7 +146,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="label">O que o agente faz sozinho</span>
-      <h2>Não é um menu de opções. É alguém que entende e resolve.</h2>
+      <h2>Não é um menu de opções.</h2>
       <p class="lead">Nada de "digite 1 para falar com um vendedor". O agente conhece o seu estoque, negocia o que dá para negociar e entrega o cliente pronto para a equipe fechar.</p>
     </div>
 
@@ -127,8 +159,8 @@
       <div class="cap"><span class="cap-n">06</span><div><h3>Entrega quente e registra</h3><p>Passa o cliente qualificado para o vendedor com o histórico inteiro e grava tudo no CRM. Nenhum lead fica só no celular de alguém.</p></div></div>
     </div>
 
-    <div style="margin-top:32px" class="rv">
-      <span class="label" style="margin-bottom:14px">Integrações prontas</span>
+    <div style="margin-top:34px" class="rv">
+      <span class="label">Integrações prontas</span>
       <ul class="integra">
         <li>Syonet</li><li>AutoCerto</li><li>Linx Oficina</li><li>Webmotors</li>
         <li>OLX Autos</li><li>Google Agenda</li><li>WhatsApp API</li>
@@ -156,7 +188,7 @@
 </section>
 
 <!-- ═══ COMO FUNCIONA ═══ -->
-<section id="como">
+<section id="como" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="label">Como funciona</span>
@@ -183,11 +215,13 @@
 </section>
 
 <!-- ═══ DEPOIMENTO ═══ -->
+<!-- Espaço reservado para a faixa de logos de clientes, quando a
+     autorização de uso de marca estiver confirmada. -->
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="rule" style="margin-bottom:48px"></div>
+    <hr class="hr-thick" style="margin-bottom:clamp(36px,5vw,64px)">
     <div class="quote rv">
-      <p>Segunda-feira a gente acorda com os test-drives já agendados. Parou de morrer lead de fim de semana.</p>
+      <p>Segunda-feira a gente acorda com os test-drives já agendados.</p>
       <cite>— reservado para o depoimento do primeiro cliente do setor automotivo</cite>
     </div>
   </div>
@@ -210,8 +244,8 @@
   </div>
 </section>
 
-<!-- ═══ CTA FINAL ═══ -->
-<div class="final">
+<!-- ═══ FECHAMENTO ═══ -->
+<div class="night final">
   <div class="wrap">
     <span class="label">Comece hoje</span>
     <h2>Pare de perder venda por demora na resposta.</h2>
