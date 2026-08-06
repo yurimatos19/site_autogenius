@@ -337,6 +337,9 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
 /* ━━━━ Custom cursor (Desktop only, 100% non-blocking) ━━━━━━━━━━━ */
 * { cursor: auto; }
 /* ━━━━ Marquee ━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* Logos de cliente que são brancos: sobre a faixa clara viram
+   silhueta escura, para terem o mesmo peso visual dos coloridos. */
+.marquee-track img.logo-claro{filter:brightness(0);opacity:.68!important}
 .marquee-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,black 12%,black 88%,transparent)}
 .marquee-track{display:flex;gap:48px;animation:marquee 34s linear infinite;width:max-content}
 .marquee-track:hover{animation-play-state:paused}
@@ -629,10 +632,10 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
     <div class="marquee-wrap">
       <div class="marquee-track">
         <img src="image/renor_no_bg.png" alt="Renor Coworking" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
-        <img src="image/argus_no_bg.png" alt="Argus" style="height:28px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/argus_no_bg.png" alt="Argus" class="logo-claro" style="height:28px;opacity:1;object-fit:contain;flex-shrink:0">
         <img src="image/ativus_logo.png" alt="Ativus" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
         <img src="image/logo%20neto.png" alt="Neto" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
-        <img src="image/bm5_logo.png" alt="BM5 Comex" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/bm5_logo.png" alt="BM5 Comex" class="logo-claro" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
         <img src="image/laserdream_logo.png" alt="Laser Dream" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
         <img src="image/zurich_pharma_logo.png" alt="Zurich Pharma" style="height:46px;opacity:1;object-fit:contain;flex-shrink:0">
         <img src="image/olore_logo.png" alt="Olore Parfum" style="height:40px;opacity:1;object-fit:contain;flex-shrink:0">
@@ -643,10 +646,10 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
         <img src="image/stvictor_logo.png" alt="St. Victor" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
         <!-- duplicate for seamless loop -->
         <img src="image/renor_no_bg.png" alt="Renor Coworking" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
-        <img src="image/argus_no_bg.png" alt="Argus" style="height:28px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/argus_no_bg.png" alt="Argus" class="logo-claro" style="height:28px;opacity:1;object-fit:contain;flex-shrink:0">
         <img src="image/ativus_logo.png" alt="Ativus" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
         <img src="image/logo%20neto.png" alt="Neto" style="height:44px;opacity:1;object-fit:contain;flex-shrink:0">
-        <img src="image/bm5_logo.png" alt="BM5 Comex" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
+        <img src="image/bm5_logo.png" alt="BM5 Comex" class="logo-claro" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
         <img src="image/laserdream_logo.png" alt="Laser Dream" style="height:42px;opacity:1;object-fit:contain;flex-shrink:0">
         <img src="image/zurich_pharma_logo.png" alt="Zurich Pharma" style="height:46px;opacity:1;object-fit:contain;flex-shrink:0">
         <img src="image/olore_logo.png" alt="Olore Parfum" style="height:40px;opacity:1;object-fit:contain;flex-shrink:0">
