@@ -171,6 +171,32 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
   66%{transform:translate(calc(var(--tx,20px)*-.7),calc(var(--ty,-25px)*.4))}
 }
 
+/* ━━━━ Foto de fundo ━━━━━━━━━━━━━━━━━━━━ */
+#bg-cinema{position:fixed;inset:0;z-index:-1;overflow:hidden}
+#bg-img{
+  position:absolute;inset:-8%;
+  background-image:url('https://images.pexels.com/photos/17298658/pexels-photo-17298658.jpeg?auto=compress&cs=tinysrgb&w=2560');
+  background-size:cover;background-position:center top;
+  animation:kb 55s ease-in-out infinite alternate;
+  will-change:transform;
+}
+@keyframes kb{
+  from{transform:scale(1) translate(0,0)}
+  to{transform:scale(1.09) translate(-2%,1.5%)}
+}
+/* Overlay reforçado: a foto aparece, o texto continua legível.
+   O trecho central é o mais escuro porque é onde cai o h1. */
+#bg-cinema::after{
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(ellipse 90% 65% at 50% 42%, rgba(8,14,26,.90) 0%, rgba(8,14,26,.55) 60%, transparent 100%),
+    linear-gradient(to bottom,
+      rgba(8,14,26,.88) 0%,
+      rgba(8,14,26,.74) 38%,
+      rgba(8,14,26,.92) 100%);
+}
+@media (prefers-reduced-motion: reduce){ #bg-img{animation:none} }
+
 /* ━━━━ Aurora blobs ━━━━━━━━━━━━━━━━━━━━━ */
 #aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .blob{position:absolute;border-radius:50%;filter:blur(120px);opacity:.18;animation:bfloat 14s ease-in-out infinite}
@@ -459,6 +485,9 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 
 <!-- Background layers -->
 
+
+<!-- Foto de fundo -->
+<div id="bg-cinema"><div id="bg-img"></div></div>
 
 <div id="aurora">
   <div class="blob" style="width:900px;height:900px;background:#1d4ed8;top:-350px;left:-250px;animation-delay:0s"></div>
