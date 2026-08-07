@@ -1,2 +1,10 @@
 .claude/
 .worktrees/
+
+# Capturas de tela e artefatos de sessão
+*.png
+*.jpeg
+*.jpg
+!image/**
+.playwright-mcp/
+.DS_Store
