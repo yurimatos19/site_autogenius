@@ -265,7 +265,7 @@ body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;
 
 /* ━━━━ Gradient border card ━━━━━━━━━━━━ */
 .card-grad-border{
-  background: var(--card-solid) padding-box,
+  background: linear-gradient(var(--card-solid), var(--card-solid)) padding-box,
               linear-gradient(135deg, #2563EB, #06b6d4, #2563EB) border-box;
   border: 2px solid transparent;
   border-radius: 16px;
@@ -1322,7 +1322,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
 
         <!-- CARD GROW (MAIS ESCOLHIDO) -->
         <div class="card-grad-border reveal" style="padding:34px 26px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:2;overflow:visible">
-          <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#2563EB,#06b6d4);color:white;font-size:10px;font-weight:800;padding:6px 20px;border-radius:9999px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 4px 18px rgba(37,99,235,.5);white-space:nowrap;z-index:10">
+          <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#2563EB,#06b6d4);color:var(--t1);font-size:10px;font-weight:800;padding:6px 20px;border-radius:9999px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 4px 18px rgba(37,99,235,.5);white-space:nowrap;z-index:10">
             ★ MAIS ESCOLHIDO
           </div>
           <div>
@@ -1333,7 +1333,7 @@ src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"
             </p>
 
             <div style="margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--bord)">
-              <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:2.4rem;color:white;line-height:1">
+              <div style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:2.4rem;color:var(--t1);line-height:1">
                 R$ 1.290<span style="font-size:.85rem;font-weight:500;color:var(--t2)">/mês</span>
               </div>
               <div style="color:var(--cy);font-size:11px;margin-top:6px;font-family:'Space Mono',monospace;font-weight:600">
