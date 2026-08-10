@@ -7,14 +7,17 @@
 <meta name="description" content="Agente de IA no WhatsApp da escola: responde as famílias na hora, qualifica, agenda a visita e cuida da rematrícula. No ar em 7 dias, antes do pico.">
 <link rel="canonical" href="https://www.useautogenius.com/escolas.html">
 <meta property="og:title" content="Auto Genius para Escolas — a secretaria que atende na hora da decisão">
-<meta property="og:description" content="A matrícula se decide às 22h. Sua secretaria fechou às 17h. O agente não.">
+<meta property="og:description" content="A matrícula se decide às 22h. Sua secretaria fechou às 17h.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400&display=swap">
 <link rel="stylesheet" href="css/lp.css">
 <style>
-  :root{ --v:#1FE3A0; --v-deep:#053D2C; --v-lite:#7CFFD1; }
+  /* Educação — verde-menta. on-light no papel, core nas faixas escuras.
+     Regra 4 do spec: conferir lado a lado com o verde do WhatsApp
+     antes de publicar — o core não pode escorregar para #25D366. */
+  :root{ --v:#047857; --v-core:#1FE3A0; --v-soft:#DEF5EC; }
 </style>
 </head>
 <body>
@@ -32,43 +35,66 @@
 <!-- ═══ HERO ═══ -->
 <div class="hero">
   <div class="wrap">
-    <div>
-      <span class="label">IA para escolas e instituições de ensino</span>
-      <h1>A matrícula se decide às 22h. <em>Sua secretaria fechou às 17h.</em></h1>
-      <p class="lead">Um agente de IA no WhatsApp da escola que responde a família no momento em que ela está decidindo, <strong>qualifica, agenda a visita</strong> e não deixa ninguém sumir no meio do funil.</p>
-      <div class="hero-cta">
-        <a class="btn" href="https://wa.me/5581991471765?text=Oi%21%20Quero%20ver%20a%20Auto%20Genius%20funcionando%20na%20minha%20escola.">
-          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          Ver funcionando em 15 min
-        </a>
-        <a class="btn ghost sm" href="#como">Como funciona</a>
+    <span class="label">IA para escolas e instituições de ensino</span>
+    <h1>A matrícula se decide às 22h. <em>Sua secretaria fechou às 17h.</em></h1>
+
+    <div class="hero-foot">
+      <div>
+        <p class="lead">Um agente de IA no WhatsApp da escola que responde a família no momento em que ela está decidindo, <strong>qualifica, agenda a visita</strong> e não deixa ninguém sumir no meio do funil.</p>
+        <div class="hero-cta">
+          <a class="btn" href="https://wa.me/5581991471765?text=Oi%21%20Quero%20ver%20a%20Auto%20Genius%20funcionando%20na%20minha%20escola.">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Ver funcionando em 15 min
+          </a>
+          <a class="btn line" href="#como">Como funciona</a>
+        </div>
       </div>
-      <div class="trust">
-        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> No ar em <b>7 dias</b></span>
-        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Responde em <b>&lt;3s</b></span>
-        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> <b>Sem</b> fidelidade</span>
-      </div>
+
+      <table class="spec">
+        <tr><th>Tempo de resposta</th><td>menos de 3s</td></tr>
+        <tr><th>Plantão</th><td>24 h, todo dia</td></tr>
+        <tr><th>Implantação</th><td>7 dias</td></tr>
+        <tr><th>Fidelidade</th><td>nenhuma</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FAIXA ESCURA — A CONVERSA ═══ -->
+<div class="night">
+  <div class="wrap">
+    <div class="clockline">
+      <span class="hh">22:14</span>
+      <span class="cap">Terça à noite, depois que as crianças dormiram. A secretaria fechou às 17h — o agente não fechou.</span>
     </div>
 
-    <div class="chat">
-      <div class="chat-top">
-        <div class="chat-av"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>
-        <div>
-          <div class="chat-id">Auto Genius · Escolas</div>
-          <div class="chat-on">online agora</div>
-        </div>
-        <div class="chat-clock">terça<b>22:14</b></div>
+    <div class="night-grid">
+      <div>
+        <span class="label">Conversa real, encenada</span>
+        <h2 style="margin-top:16px">Enquanto ninguém da equipe estava online.</h2>
+        <p class="lead">Escolher escola é conversa de casal, à noite, com o celular na mão. A família manda para quatro escolas no mesmo minuto — e visita a que respondeu. Esta conversa termina com uma visita marcada para sábado.</p>
       </div>
-      <div class="chat-body">
-        <div class="msg note">a secretaria fechou às 17h</div>
-        <div class="msg them">Oi, boa noite! Ainda tem vaga para o 3º ano do fundamental em 2027?<span class="t">22:14</span></div>
-        <div class="msg us">Boa noite! Temos vaga sim para o 3º ano 🙂 Você procura <b>meio período</b> ou <b>integral</b>?<span class="t">22:14 ✓✓</span></div>
-        <div class="msg them">Integral. E qual o valor com material?<span class="t">22:16</span></div>
-        <div class="msg us">No integral a mensalidade fica em R$ 1.480, e o material já está incluso. Tem desconto para irmãos e para pagamento anual.<span class="t">22:16 ✓✓</span></div>
-        <div class="msg us">Quer conhecer a escola antes de decidir? Consigo <b>sábado 9h</b> ou <b>quarta 15h</b> com a coordenação.<span class="t">22:16 ✓✓</span></div>
-        <div class="msg them">Sábado 9h seria ótimo<span class="t">22:19</span></div>
-        <div class="msg us">Marcado ✅ Sábado, 9h, visita guiada. Vou confirmar com você na sexta.<span class="t">22:19 ✓✓</span></div>
-        <div class="msg note">visita agendada — a escola estava fechada</div>
+
+      <div class="chat">
+        <div class="chat-top">
+          <div class="chat-av"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>
+          <div>
+            <div class="chat-id">Auto Genius · Escolas</div>
+            <div class="chat-on">online agora</div>
+          </div>
+          <div class="chat-clock">terça</div>
+        </div>
+        <div class="chat-body">
+          <div class="msg note">a secretaria fechou às 17h</div>
+          <div class="msg them">Oi, boa noite! Ainda tem vaga para o 3º ano do fundamental em 2027?<span class="t">22:14</span></div>
+          <div class="msg us">Boa noite! Temos vaga sim para o 3º ano 🙂 Você procura <b>meio período</b> ou <b>integral</b>?<span class="t">22:14 ✓✓</span></div>
+          <div class="msg them">Integral. E qual o valor com material?<span class="t">22:16</span></div>
+          <div class="msg us">No integral a mensalidade fica em R$ 1.480, e o material já está incluso. Tem desconto para irmãos e para pagamento anual.<span class="t">22:16 ✓✓</span></div>
+          <div class="msg us">Quer conhecer a escola antes de decidir? Consigo <b>sábado 9h</b> ou <b>quarta 15h</b> com a coordenação.<span class="t">22:16 ✓✓</span></div>
+          <div class="msg them">Sábado 9h seria ótimo<span class="t">22:19</span></div>
+          <div class="msg us">Marcado ✅ Sábado, 9h, visita guiada. Vou confirmar com você na sexta.<span class="t">22:19 ✓✓</span></div>
+          <div class="msg note">visita agendada — a escola estava fechada</div>
+        </div>
       </div>
     </div>
   </div>
@@ -80,29 +106,37 @@
     <div class="sec-head rv">
       <span class="label">O que acontece na temporada</span>
       <h2>A escola não perde a família na visita. Perde antes dela.</h2>
-      <p class="lead">Matrícula não é uma decisão de horário comercial: é uma conversa de casal, à noite, com o celular na mão. Esta é a linha do tempo de uma família que você não soube que perdeu.</p>
+      <p class="lead">Matrícula não é decisão de horário comercial. Esta é a linha do tempo de uma família que você não soube que perdeu.</p>
     </div>
 
     <div class="tl rv">
       <div class="tl-item">
-        <div class="tl-time">22:14 · TERÇA</div>
-        <h3>A mãe pesquisa depois que as crianças dormem</h3>
-        <p>É o único horário em que ela consegue parar para pensar em escola. E é exatamente quando a sua secretaria não está.</p>
+        <div class="tl-time">22:14 TER</div>
+        <div>
+          <h3>A mãe pesquisa depois que as crianças dormem</h3>
+          <p>É o único horário em que ela consegue parar para pensar em escola. E é exatamente quando a sua secretaria não está.</p>
+        </div>
       </div>
       <div class="tl-item">
         <div class="tl-time">22:20</div>
-        <h3>Ela manda para quatro escolas de uma vez</h3>
-        <p>Mesma mensagem, mesmo minuto. A partir daí é uma corrida — e a primeira resposta define quem vai receber a visita.</p>
+        <div>
+          <h3>Ela manda para quatro escolas de uma vez</h3>
+          <p>Mesma mensagem, mesmo minuto. A partir daí é uma corrida — e a primeira resposta define quem vai receber a visita.</p>
+        </div>
       </div>
       <div class="tl-item bad">
-        <div class="tl-time">08:40 · QUARTA</div>
-        <h3>Sua secretaria responde no meio do pico</h3>
-        <p>Junto com outras 60 mensagens iguais, a fila do balcão e o telefone tocando. A resposta sai — tarde, curta e sem nenhuma pergunta de volta.</p>
+        <div class="tl-time">08:40 QUA</div>
+        <div>
+          <h3>Sua secretaria responde no meio do pico</h3>
+          <p>Junto com outras 60 mensagens iguais, a fila do balcão e o telefone tocando. A resposta sai — tarde, curta e sem nenhuma pergunta de volta.</p>
+        </div>
       </div>
       <div class="tl-item bad">
         <div class="tl-time">SEXTA</div>
-        <h3>A família já visitou a outra escola</h3>
-        <p>Não porque ela era melhor. Porque marcou primeiro, enquanto a decisão ainda estava aberta.</p>
+        <div>
+          <h3>A família já visitou a outra escola</h3>
+          <p>Não porque ela era melhor. Porque marcou primeiro, enquanto a decisão ainda estava aberta.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -113,7 +147,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="label">O que o agente faz sozinho</span>
-      <h2>Não é um menu de opções. É alguém que entende e resolve.</h2>
+      <h2>Não é um menu de opções.</h2>
       <p class="lead">Nada de "digite 1 para matrículas". O agente lê a mensagem como ela foi escrita, responde com a informação certa da sua escola e leva a família até a visita.</p>
     </div>
 
@@ -126,8 +160,8 @@
       <div class="cap"><span class="cap-n">06</span><div><h3>Passa o bastão na hora certa</h3><p>Negociação de bolsa, caso pedagógico, reclamação: o agente para e chama a coordenação. Ele sabe o que não é dele.</p></div></div>
     </div>
 
-    <div style="margin-top:32px" class="rv">
-      <span class="label" style="margin-bottom:14px">Integrações prontas</span>
+    <div style="margin-top:34px" class="rv">
+      <span class="label">Integrações prontas</span>
       <ul class="integra">
         <li>Sponte</li><li>SophiA</li><li>TOTVS Educacional</li>
         <li>Gennera</li><li>WPensar</li><li>Google Agenda</li>
@@ -155,7 +189,7 @@
 </section>
 
 <!-- ═══ COMO FUNCIONA ═══ -->
-<section id="como">
+<section id="como" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="label">Como funciona</span>
@@ -182,11 +216,13 @@
 </section>
 
 <!-- ═══ DEPOIMENTO ═══ -->
+<!-- Espaço reservado para a faixa de logos de clientes, quando a
+     autorização de uso de marca estiver confirmada. -->
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="rule" style="margin-bottom:48px"></div>
+    <hr class="hr-thick" style="margin-bottom:clamp(36px,5vw,64px)">
     <div class="quote rv">
-      <p>Na temporada, nenhuma família ficou sem resposta. A secretaria parou de correr atrás e a agenda de visitas encheu.</p>
+      <p>Na temporada, nenhuma família ficou sem resposta e a agenda de visitas encheu.</p>
       <cite>— reservado para o depoimento do primeiro cliente da educação</cite>
     </div>
   </div>
@@ -209,8 +245,8 @@
   </div>
 </section>
 
-<!-- ═══ CTA FINAL ═══ -->
-<div class="final">
+<!-- ═══ FECHAMENTO ═══ -->
+<div class="night final">
   <div class="wrap">
     <span class="label">Comece hoje</span>
     <h2>Prepare a captação antes que o pico chegue.</h2>
