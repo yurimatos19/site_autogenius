@@ -34,9 +34,58 @@
 <div class="hero">
   <div class="wrap">
     <span class="label">IA para lojas de carro e concessionárias</span>
-    <h1>O lead das 3h da manhã compra de <em>quem responde.</em></h1>
 
-    <div class="hero-foot">
+    <div class="hero-topo">
+      <h1>O lead das 3h da manhã compra de <em>quem responde.</em></h1>
+
+      <!-- A revenda de madrugada: portão fechado, showroom no escuro,
+           e a sala do plantão acesa. -->
+      <svg class="fachada" viewBox="0 0 560 400" role="img" aria-label="Ilustração de uma revenda de carros fechada de madrugada, com uma única sala acesa">
+        <!-- céu -->
+        <circle class="noite" cx="492" cy="52" r="18"/>
+        <path class="noite" d="M478 42a18 18 0 0 0 22 22 18 18 0 0 1-22-22Z"/>
+        <path class="noite" d="M92 44h12M98 38v12M418 88h10M423 83v10"/>
+
+        <!-- chão -->
+        <path class="traco" d="M14 332h532" stroke-width="3"/>
+
+        <!-- volume, com cantos arredondados como o resto da página -->
+        <path class="massa" d="M84 332V166a18 18 0 0 1 18-18h356a18 18 0 0 1 18 18v166z"/>
+        <path class="traco" d="M84 332V166a18 18 0 0 1 18-18h356a18 18 0 0 1 18 18v166"/>
+
+        <!-- letreiro -->
+        <rect class="traco" x="112" y="168" width="336" height="34" rx="17"/>
+        <path class="fino" d="M140 185h46M200 185h34M246 185h58M316 185h30" stroke-width="5"/>
+
+        <!-- vitrine à esquerda: showroom no escuro, com um carro dentro -->
+        <rect class="vidro" x="112" y="220" width="150" height="94" rx="14"/>
+        <rect class="traco" x="112" y="220" width="150" height="94" rx="14"/>
+        <path class="fino" d="M132 292h108M140 292v-18l14-16h44l16 16v18"/>
+        <circle class="fino" cx="152" cy="294" r="9"/>
+        <circle class="fino" cx="216" cy="294" r="9"/>
+
+        <!-- portão de enrolar, fechado -->
+        <rect class="vidro" x="278" y="220" width="86" height="94" rx="14"/>
+        <rect class="traco" x="278" y="220" width="86" height="94" rx="14"/>
+        <path class="fino" d="M286 240h70M286 258h70M286 276h70M286 294h70"/>
+
+        <!-- A JANELA ACESA -->
+        <rect class="brilho" x="360" y="200" width="106" height="134" rx="22"/>
+        <rect class="acesa" x="380" y="220" width="66" height="94" rx="14"/>
+        <rect class="traco" x="380" y="220" width="66" height="94" rx="14"/>
+
+        <!-- luz derramando no chão -->
+        <path class="brilho" d="M380 314h66l34 18H346z"/>
+
+        <!-- o balão saindo da janela acesa: o agente respondendo -->
+        <path class="luz" stroke-width="2.4" d="M404 74h92a20 20 0 0 1 20 20v44a20 20 0 0 1-20 20h-52l-22 18v-18h-18a20 20 0 0 1-20-20V94a20 20 0 0 1 20-20Z"/>
+        <path class="luz" stroke-width="6" d="M428 102h50M428 122h32"/>
+        <circle class="acesa" cx="500" cy="176" r="5"/>
+        <circle class="acesa" cx="486" cy="192" r="3.5"/>
+      </svg>
+    </div>
+
+    <div class="hero-foot" style="margin-top:clamp(32px,5vw,60px)">
       <div>
         <p class="lead">Um agente de IA no WhatsApp da loja que responde cada lead em segundos, <strong>qualifica troca e financiamento</strong>, agenda o test-drive e não deixa proposta morrer sem retomada.</p>
         <div class="hero-cta">
@@ -62,39 +111,29 @@
 <div class="night">
   <div class="wrap">
     <div class="clockline">
-      <span class="hh">03:14</span>
-      <span class="cap">Domingo de madrugada. Sua loja fechou no sábado às 13h — o agente não fechou.</span>
+      <!-- Expediente típico de revenda: seg–sex 8h–18h, sábado até 13h,
+           domingo fechado. O JS usa isso para dizer se está aberto agora. -->
+      <span class="hh" data-vivo data-abre="8" data-fecha="18" data-sabado="13">03:14</span>
+      <span class="clock-cap">
+        Esta é a hora aí onde você está.
+        <span class="estado">verificando o horário…</span>
+      </span>
     </div>
 
     <div class="night-grid">
       <div>
-        <span class="label">Conversa real, encenada</span>
+        <span class="label">Dentro do sistema</span>
         <h2 style="margin-top:16px">Enquanto ninguém da equipe estava online.</h2>
-        <p class="lead">O cliente não avisa que vai comprar. Ele manda mensagem no horário em que consegue — e decide com quem responde. Esta conversa termina com um test-drive na agenda de segunda-feira.</p>
+        <p class="lead">O cliente não avisa que vai comprar. Ele manda mensagem no horário em que consegue — e decide com quem responde. Esta é a tela do sistema atendendo sozinho, fora do expediente.</p>
       </div>
 
-      <div class="chat">
-        <div class="chat-top">
-          <div class="chat-av"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8a1 1 0 001 1h1a1 1 0 001-1v-1h12v1a1 1 0 001 1h1a1 1 0 001-1v-8l-2.08-5.99zM6.5 16a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm11 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
-          <div>
-            <div class="chat-id">Auto Genius · Concessionárias</div>
-            <div class="chat-on">online agora</div>
-          </div>
-          <div class="chat-clock">domingo</div>
+      <figure class="produto-bloco">
+        <div class="produto">
+          <img src="/image/produto-autos.jpg" width="1280" height="853" loading="lazy" decoding="async"
+               alt="Tela do Auto Genius para lojas de carro: a caixa de conversas e um atendimento de troca e test-drive pelo WhatsApp">
         </div>
-        <div class="chat-body">
-          <div class="msg note">o plantão acabou no sábado às 13h</div>
-          <div class="msg them">O Corolla 2022 prata do anúncio ainda tá disponível?<span class="t">03:14</span></div>
-          <div class="msg us">Está sim! Corolla XEi 2022, prata, 41 mil km, único dono. Você pretende dar um carro na troca ou seria entrada + financiamento?<span class="t">03:14 ✓✓</span></div>
-          <div class="msg them">Tenho um Onix 2019 pra dar na troca<span class="t">03:16</span></div>
-          <div class="msg us">Ótimo. Me passa a versão e a quilometragem do Onix que já adianto uma <b>faixa de avaliação</b> pra você antes de vir na loja.<span class="t">03:16 ✓✓</span></div>
-          <div class="msg them">LT 1.0, 68 mil km<span class="t">03:19</span></div>
-          <div class="msg us">Na faixa de R$ 58 a 63 mil, confirmando na avaliação presencial. Consigo te encaixar num <b>test-drive segunda 10h</b> ou <b>terça 18h</b> — qual prefere?<span class="t">03:19 ✓✓</span></div>
-          <div class="msg them">Segunda 10h<span class="t">03:21</span></div>
-          <div class="msg us">Fechado ✅ Segunda, 10h, test-drive do Corolla. Já avisei o Rodrigo, ele te recebe com a simulação pronta.<span class="t">03:21 ✓✓</span></div>
-          <div class="msg note">test-drive agendado — a loja estava fechada</div>
-        </div>
-      </div>
+        <figcaption>O vendedor digital atendendo — disponibilidade, avaliação da troca e test-drive, sem ninguém da equipe online.</figcaption>
+      </figure>
     </div>
   </div>
 </div>
@@ -248,11 +287,11 @@
 <div class="night final">
   <div class="wrap">
     <span class="label">Comece hoje</span>
-    <h2>Pare de perder venda por demora na resposta.</h2>
-    <p class="lead">Mande uma mensagem agora. Em 15 minutos você vê o agente atendendo com o cenário da sua loja — sem compromisso e sem apresentação de slides.</p>
+    <h2>Todo mundo tem IA. A pergunta é: essa IA entende de revenda?</h2>
+    <p class="lead">Solução genérica não sabe o que é carro na troca, não simula financiamento e não distribui o lead pro vendedor certo. Em 15 minutos você vê o agente atendendo com o seu estoque — e julga por conta própria.</p>
     <a class="btn" href="https://wa.me/5581991471765?text=Oi%21%20Quero%20ver%20a%20Auto%20Genius%20funcionando%20na%20minha%20loja.">
       <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-      Falar no WhatsApp
+      Falar com quem entende de revenda
     </a>
   </div>
 </div>

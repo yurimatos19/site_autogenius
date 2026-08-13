@@ -34,9 +34,61 @@
 <div class="hero">
   <div class="wrap">
     <span class="label">IA para clínicas e consultórios</span>
-    <h1>Sua recepção fecha às 18h. <em>O paciente, não.</em></h1>
+    <div class="hero-topo">
+      <h1>Sua recepção fecha às 18h. <em>O paciente, não.</em></h1>
 
-    <div class="hero-foot">
+      <!-- A clínica à noite: portas fechadas, sala de espera no escuro,
+           e a recepção acesa. -->
+      <svg class="fachada" viewBox="0 0 560 400" role="img" aria-label="Ilustração de uma clínica fechada à noite, com uma única sala acesa">
+        <circle class="noite" cx="492" cy="52" r="18"/>
+        <path class="noite" d="M478 42a18 18 0 0 0 22 22 18 18 0 0 1-22-22Z"/>
+        <path class="noite" d="M92 44h12M98 38v12"/>
+
+        <path class="traco" d="M14 332h532" stroke-width="3"/>
+
+        <!-- volume -->
+        <path class="massa" d="M74 332V182a18 18 0 0 1 18-18h376a18 18 0 0 1 18 18v150z"/>
+        <path class="traco" d="M74 332V182a18 18 0 0 1 18-18h376a18 18 0 0 1 18 18v150"/>
+
+        <!-- marquise da entrada -->
+        <rect class="traco" x="216" y="140" width="128" height="26" rx="13"/>
+        <path class="fino" d="M240 166v14M320 166v14"/>
+
+        <!-- cruz no letreiro -->
+        <path class="traco" d="M268 92h24v20h20v24h-20v20h-24v-20h-20v-24h20z"/>
+
+        <!-- janelas da sala de espera, apagadas -->
+        <rect class="vidro" x="100" y="208" width="80" height="76" rx="12"/>
+        <rect class="traco" x="100" y="208" width="80" height="76" rx="12"/>
+        <path class="fino" d="M140 208v76M100 246h80"/>
+
+        <rect class="vidro" x="196" y="208" width="80" height="76" rx="12"/>
+        <rect class="traco" x="196" y="208" width="80" height="76" rx="12"/>
+        <path class="fino" d="M236 208v76M196 246h80"/>
+
+        <!-- porta dupla de vidro, fechada -->
+        <rect class="vidro" x="292" y="208" width="76" height="124" rx="12"/>
+        <rect class="traco" x="292" y="208" width="76" height="124" rx="12"/>
+        <path class="fino" d="M330 208v124"/>
+        <path class="fino" d="M318 268h-8M342 268h8"/>
+
+        <!-- A RECEPÇÃO ACESA -->
+        <rect class="brilho" x="368" y="188" width="118" height="146" rx="22"/>
+        <rect class="acesa" x="388" y="208" width="76" height="76" rx="12"/>
+        <rect class="traco" x="388" y="208" width="76" height="76" rx="12"/>
+        <path class="fino" d="M388 246h76" opacity=".5"/>
+
+        <path class="brilho" d="M388 284h76l30 48H358z"/>
+
+        <!-- o balão saindo da recepção -->
+        <path class="luz" stroke-width="2.4" d="M404 60h92a20 20 0 0 1 20 20v44a20 20 0 0 1-20 20h-52l-22 18v-18h-18a20 20 0 0 1-20-20V80a20 20 0 0 1 20-20Z"/>
+        <path class="luz" stroke-width="6" d="M428 88h50M428 108h32"/>
+        <circle class="acesa" cx="500" cy="164" r="5"/>
+        <circle class="acesa" cx="486" cy="180" r="3.5"/>
+      </svg>
+    </div>
+
+    <div class="hero-foot" style="margin-top:clamp(32px,5vw,60px)">
       <div>
         <p class="lead">Um agente de IA que atende no WhatsApp da clínica, tira as dúvidas de sempre, <strong>agenda direto na sua agenda</strong> e confirma a consulta antes do dia — de madrugada, no domingo, no feriado. Para clínicas <strong>médicas, odontológicas, de estética e veterinárias</strong>.</p>
         <div class="hero-cta">
@@ -62,37 +114,27 @@
 <div class="night">
   <div class="wrap">
     <div class="clockline">
-      <span class="hh">21:47</span>
-      <span class="cap">Sábado à noite. A recepção fechou há três horas — o agente não fechou.</span>
+      <span class="hh" data-vivo data-abre="8" data-fecha="18" data-sabado="12">00:00</span>
+      <span class="clock-cap">
+        Esta é a hora aí onde você está.
+        <span class="estado">verificando o horário…</span>
+      </span>
     </div>
 
     <div class="night-grid">
       <div>
-        <span class="label">Conversa real, encenada</span>
+        <span class="label">Dentro do sistema</span>
         <h2 style="margin-top:16px">Enquanto ninguém da equipe estava online.</h2>
-        <p class="lead">O paciente não escolhe a hora em que o problema aparece. Ele manda mensagem quando consegue — e marca com quem responde. Esta conversa termina com uma consulta na agenda de terça.</p>
+        <p class="lead">O paciente não escolhe a hora em que o problema aparece. Ele manda mensagem quando consegue — e marca com quem responde. Esta é a tela do sistema atendendo sozinho, fora do expediente.</p>
       </div>
 
-      <div class="chat">
-        <div class="chat-top">
-          <div class="chat-av"><svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2v1h3a3 3 0 013 3v9a3 3 0 01-3 3H7a3 3 0 01-3-3V8a3 3 0 013-3h3V4a2 2 0 012-2zM9 11a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg></div>
-          <div>
-            <div class="chat-id">Auto Genius · Clínicas</div>
-            <div class="chat-on">online agora</div>
-          </div>
-          <div class="chat-clock">sábado</div>
+      <figure class="produto-bloco">
+        <div class="produto">
+          <img src="/image/produto-clinicas.jpg" width="1280" height="853" loading="lazy" decoding="async"
+               alt="Tela do Auto Genius para clínicas: a caixa de conversas e um atendimento agendando consulta pelo WhatsApp">
         </div>
-        <div class="chat-body">
-          <div class="msg note">a recepção fechou há 3 horas</div>
-          <div class="msg them">Boa noite! Vocês atendem por convênio? Queria marcar uma consulta<span class="t">21:47</span></div>
-          <div class="msg us">Boa noite! Atendemos sim 🙂 Me diz qual é o seu convênio que eu confirmo a cobertura. Você já é paciente aqui ou é a primeira vez?<span class="t">21:47 ✓✓</span></div>
-          <div class="msg them">Primeira vez, e é pelo plano mesmo<span class="t">21:49</span></div>
-          <div class="msg us">Coberto ✅ Para primeira consulta tenho <b>terça 14h</b> ou <b>quinta 16h30</b>. Qual fica melhor?<span class="t">21:49 ✓✓</span></div>
-          <div class="msg them">Terça 14h<span class="t">21:50</span></div>
-          <div class="msg us">Agendado. Terça, 14h. Vou te lembrar na segunda e mando o endereço e o que levar — carteirinha e documento com foto.<span class="t">21:50 ✓✓</span></div>
-          <div class="msg note">consulta marcada — a clínica estava fechada</div>
-        </div>
-      </div>
+        <figcaption>A recepção digital atendendo — triagem de convênio, horário e confirmação, sem ninguém da equipe online.</figcaption>
+      </figure>
     </div>
   </div>
 </div>

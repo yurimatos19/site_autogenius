@@ -36,9 +36,61 @@
 <div class="hero">
   <div class="wrap">
     <span class="label">IA para escolas e instituições de ensino</span>
-    <h1>A matrícula se decide às 22h. <em>Sua secretaria fechou às 17h.</em></h1>
+    <div class="hero-topo">
+      <h1>A matrícula se decide às 22h. <em>Sua secretaria fechou às 17h.</em></h1>
 
-    <div class="hero-foot">
+      <!-- A escola à noite: portão fechado, salas no escuro,
+           e a secretaria acesa. -->
+      <svg class="fachada" viewBox="0 0 560 400" role="img" aria-label="Ilustração de uma escola fechada à noite, com uma única sala acesa">
+        <circle class="noite" cx="492" cy="52" r="18"/>
+        <path class="noite" d="M478 42a18 18 0 0 0 22 22 18 18 0 0 1-22-22Z"/>
+        <path class="noite" d="M96 40h12M102 34v12"/>
+
+        <path class="traco" d="M14 332h532" stroke-width="3"/>
+
+        <!-- volume com telhado -->
+        <path class="massa" d="M84 332V186l196-58 196 58v146z"/>
+        <path class="traco" d="M84 332V186l196-58 196 58v146"/>
+        <path class="traco" d="M84 186h392"/>
+
+        <!-- relógio da fachada -->
+        <circle class="traco" cx="280" cy="152" r="16"/>
+        <path class="fino" d="M280 144v8l6 4"/>
+
+        <!-- salas de aula, apagadas -->
+        <rect class="vidro" x="110" y="212" width="70" height="72" rx="12"/>
+        <rect class="traco" x="110" y="212" width="70" height="72" rx="12"/>
+        <path class="fino" d="M145 212v72M110 248h70"/>
+
+        <rect class="vidro" x="196" y="212" width="70" height="72" rx="12"/>
+        <rect class="traco" x="196" y="212" width="70" height="72" rx="12"/>
+        <path class="fino" d="M231 212v72M196 248h70"/>
+
+        <rect class="vidro" x="282" y="212" width="70" height="72" rx="12"/>
+        <rect class="traco" x="282" y="212" width="70" height="72" rx="12"/>
+        <path class="fino" d="M317 212v72M282 248h70"/>
+
+        <!-- A SECRETARIA ACESA -->
+        <rect class="brilho" x="348" y="192" width="130" height="142" rx="22"/>
+        <rect class="acesa" x="368" y="212" width="70" height="72" rx="12"/>
+        <rect class="traco" x="368" y="212" width="70" height="72" rx="12"/>
+        <path class="fino" d="M368 248h70" opacity=".5"/>
+        <path class="brilho" d="M368 284h70l28 48H340z"/>
+
+        <!-- portão de grade, fechado -->
+        <path class="traco" d="M170 332v-58h220v58"/>
+        <path class="fino" d="M198 274v58M226 274v58M254 274v58M282 274v58M310 274v58M338 274v58M362 274v58"/>
+        <path class="traco" d="M280 274v58"/>
+
+        <!-- o balão saindo da secretaria -->
+        <path class="luz" stroke-width="2.4" d="M404 58h92a20 20 0 0 1 20 20v44a20 20 0 0 1-20 20h-52l-22 18v-18h-18a20 20 0 0 1-20-20V78a20 20 0 0 1 20-20Z"/>
+        <path class="luz" stroke-width="6" d="M428 86h50M428 106h32"/>
+        <circle class="acesa" cx="500" cy="162" r="5"/>
+        <circle class="acesa" cx="486" cy="178" r="3.5"/>
+      </svg>
+    </div>
+
+    <div class="hero-foot" style="margin-top:clamp(32px,5vw,60px)">
       <div>
         <p class="lead">Um agente de IA no WhatsApp da escola que responde a família no momento em que ela está decidindo, <strong>qualifica, agenda a visita</strong> e não deixa ninguém sumir no meio do funil.</p>
         <div class="hero-cta">
@@ -64,38 +116,27 @@
 <div class="night">
   <div class="wrap">
     <div class="clockline">
-      <span class="hh">22:14</span>
-      <span class="cap">Terça à noite, depois que as crianças dormiram. A secretaria fechou às 17h — o agente não fechou.</span>
+      <span class="hh" data-vivo data-abre="7" data-fecha="17" data-sabado="0">00:00</span>
+      <span class="clock-cap">
+        Esta é a hora aí onde você está.
+        <span class="estado">verificando o horário…</span>
+      </span>
     </div>
 
     <div class="night-grid">
       <div>
-        <span class="label">Conversa real, encenada</span>
+        <span class="label">Dentro do sistema</span>
         <h2 style="margin-top:16px">Enquanto ninguém da equipe estava online.</h2>
-        <p class="lead">Escolher escola é conversa de casal, à noite, com o celular na mão. A família manda para quatro escolas no mesmo minuto — e visita a que respondeu. Esta conversa termina com uma visita marcada para sábado.</p>
+        <p class="lead">Escolher escola é conversa de casal, à noite, com o celular na mão. A família manda para quatro escolas no mesmo minuto — e visita a que respondeu. Esta é a tela do sistema atendendo sozinho, fora do expediente.</p>
       </div>
 
-      <div class="chat">
-        <div class="chat-top">
-          <div class="chat-av"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>
-          <div>
-            <div class="chat-id">Auto Genius · Escolas</div>
-            <div class="chat-on">online agora</div>
-          </div>
-          <div class="chat-clock">terça</div>
+      <figure class="produto-bloco">
+        <div class="produto">
+          <img src="/image/produto-escolas.jpg" width="1280" height="853" loading="lazy" decoding="async"
+               alt="Tela do Auto Genius para escolas: a caixa de conversas e um atendimento de matrícula pelo WhatsApp">
         </div>
-        <div class="chat-body">
-          <div class="msg note">a secretaria fechou às 17h</div>
-          <div class="msg them">Oi, boa noite! Ainda tem vaga para o 3º ano do fundamental em 2027?<span class="t">22:14</span></div>
-          <div class="msg us">Boa noite! Temos vaga sim para o 3º ano 🙂 Você procura <b>meio período</b> ou <b>integral</b>?<span class="t">22:14 ✓✓</span></div>
-          <div class="msg them">Integral. E qual o valor com material?<span class="t">22:16</span></div>
-          <div class="msg us">No integral a mensalidade fica em R$ 1.480, e o material já está incluso. Tem desconto para irmãos e para pagamento anual.<span class="t">22:16 ✓✓</span></div>
-          <div class="msg us">Quer conhecer a escola antes de decidir? Consigo <b>sábado 9h</b> ou <b>quarta 15h</b> com a coordenação.<span class="t">22:16 ✓✓</span></div>
-          <div class="msg them">Sábado 9h seria ótimo<span class="t">22:19</span></div>
-          <div class="msg us">Marcado ✅ Sábado, 9h, visita guiada. Vou confirmar com você na sexta.<span class="t">22:19 ✓✓</span></div>
-          <div class="msg note">visita agendada — a escola estava fechada</div>
-        </div>
-      </div>
+        <figcaption>A secretaria digital atendendo — vaga, valor, desconto e visita agendada, sem ninguém da equipe online.</figcaption>
+      </figure>
     </div>
   </div>
 </div>
