@@ -1,0 +1,141 @@
+/* AutoGenius — páginas de conteúdo (Dúvidas, Sobre e as páginas de
+   pergunta e resposta). Mesma identidade da home: navy, Space Grotesk
+   no título, DM Sans no texto, CTA verde WhatsApp.
+
+   Estas páginas existem em HTML de verdade, sem depender de JavaScript:
+   é assim que os robôs de busca e os assistentes de IA leem o conteúdo. */
+
+:root{
+  --bg:#080e1a; --bg-s:#0d1829; --bg-e:#111e35;
+  --card:rgba(13,24,41,.82); --card-solid:rgba(13,24,41,.98);
+  --b:#1d4ed8; --b5:#2563EB; --b4:#3B82F6; --b3:#60A5FA; --cy:#06b6d4; --gr:#25D366;
+  --t1:#F1F5F9; --t2:#94A3B8; --t3:#64748B; --t4:#2d3f57;
+  --bord:rgba(255,255,255,.065);
+  --grad-t:linear-gradient(90deg,#3B82F6,#06b6d4);
+  --head:'Space Grotesk',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,sans-serif;
+  --mono:'Space Mono',ui-monospace,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:dark;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--t1);font-family:var(--body);line-height:1.68;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+::selection{background:rgba(37,99,235,.45)}
+.grad{background:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px;position:relative}
+.wrap.larga{max-width:1100px}
+
+/* atmosfera: um halo azul no topo, sem peso de animação */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(37,99,235,.18),transparent 70%);
+}
+header,main,footer{position:relative;z-index:1}
+
+/* ── Cabeçalho ── */
+header{position:sticky;top:0;z-index:50;background:rgba(8,14,26,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bord)}
+header .wrap{max-width:1100px;display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
+.logo{font-family:var(--head);font-size:1.16rem;font-weight:700;letter-spacing:-.025em}
+.nav{display:flex;gap:24px;align-items:center}
+.nav a{color:var(--t2);font-size:.83rem;font-weight:500;transition:color .2s}
+.nav a:hover,.nav a[aria-current]{color:var(--t1)}
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--gr);color:#052912;
+  font-family:var(--head);font-weight:700;padding:14px 26px;border-radius:12px;border:0;font-size:.95rem;cursor:pointer;
+  box-shadow:0 8px 26px rgba(37,211,102,.26);transition:background .2s,transform .15s}
+.btn-wa:hover{background:#1fbf5b;transform:translateY(-2px)}
+header .btn-wa{padding:10px 18px;font-size:.8rem;border-radius:10px;box-shadow:none}
+.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:transparent;color:var(--t2);
+  font-family:var(--head);font-weight:500;padding:13px 22px;border-radius:12px;border:1px solid var(--bord);font-size:.9rem;transition:border-color .2s,color .2s}
+.btn-ghost:hover{border-color:rgba(59,130,246,.4);color:var(--t1)}
+.btn-wa:focus-visible,.btn-ghost:focus-visible,.nav a:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+
+/* ── Miolo ── */
+main{padding:52px 0 96px}
+.trilha{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--t3);margin-bottom:26px}
+.trilha a:hover{color:var(--t2)}
+.trilha span{color:var(--t4)}
+
+h1{font-family:var(--head);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:800;letter-spacing:-.035em;line-height:1.06;text-wrap:balance}
+h2{font-family:var(--head);font-size:clamp(1.4rem,2.6vw,1.95rem);font-weight:700;letter-spacing:-.03em;line-height:1.16;margin:56px 0 18px;text-wrap:balance}
+h3{font-family:var(--head);font-size:1.06rem;font-weight:700;letter-spacing:-.02em;margin:28px 0 8px}
+p{color:var(--t2);margin-bottom:16px}
+p strong,li strong{color:var(--t1);font-weight:600}
+main ul,main ol{color:var(--t2);margin:0 0 18px 20px}
+main li{margin-bottom:9px}
+a.link,main p a,main li a{color:var(--b3);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+main p a:hover,main li a:hover{color:var(--t1)}
+.sec-label{font-family:var(--mono);font-size:.66rem;color:var(--t3);letter-spacing:.09em;text-transform:uppercase;display:block;margin-bottom:14px}
+
+/* resposta direta: o primeiro parágrafo é o que a IA costuma citar */
+.resposta{
+  margin:28px 0 8px;padding:24px 26px;border-radius:16px;
+  background:linear-gradient(160deg,rgba(37,99,235,.14),rgba(13,24,41,.9));
+  border:1px solid rgba(59,130,246,.26);
+}
+.resposta p{color:var(--t1);font-size:1.06rem;line-height:1.66;margin:0}
+.resposta p + p{margin-top:12px}
+.resposta .sec-label{color:var(--b3)}
+
+.card{background:var(--card);border:1px solid var(--bord);border-radius:16px;padding:26px 28px;margin-bottom:12px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card h3{margin:0 0 8px}
+.card p:last-child{margin-bottom:0}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:32px 0}
+.stat{background:var(--bg-s);border:1px solid rgba(59,130,246,.12);border-radius:12px;padding:18px 20px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--grad-t)}
+.stat b{display:block;font-family:var(--mono);font-size:1.5rem;font-weight:700;color:var(--t1)}
+.stat span{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3)}
+
+/* tabela de comparação */
+.tabela{width:100%;border-collapse:separate;border-spacing:0;margin:26px 0;font-size:.92rem;border:1px solid var(--bord);border-radius:14px;overflow:hidden}
+.tabela th,.tabela td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--bord);vertical-align:top}
+.tabela tr:last-child th,.tabela tr:last-child td{border-bottom:0}
+.tabela thead th{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);background:rgba(255,255,255,.02)}
+.tabela tbody th{font-weight:600;color:var(--t1);width:32%}
+.tabela td{color:var(--t2)}
+.tabela .sim{color:#86EFAC}
+.tabela .nao{color:#FCA5A5}
+.tabela-rolagem{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* perguntas */
+.faq{display:grid;gap:10px;margin-top:26px}
+.faq details{background:var(--card);border:1px solid var(--bord);border-radius:14px;padding:0 24px}
+.faq summary{cursor:pointer;list-style:none;padding:21px 36px 21px 0;position:relative;font-family:var(--head);font-weight:600;font-size:1.01rem;letter-spacing:-.015em;color:var(--t1)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:1.2rem;color:var(--b3);transition:transform .25s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details p{padding:0 0 22px;margin:0}
+.faq details p + p{padding-top:0;margin-bottom:16px}
+
+/* chamada final */
+.cta{margin-top:64px;padding:40px 36px;border-radius:20px;text-align:center;
+  background:radial-gradient(ellipse 80% 120% at 50% 0%,rgba(37,99,235,.2),rgba(13,24,41,.9));
+  border:1px solid rgba(59,130,246,.22)}
+.cta h2{margin:0 0 12px}
+.cta p{max-width:52ch;margin:0 auto 24px}
+
+/* leitura relacionada */
+.relacionados{margin-top:56px;padding-top:28px;border-top:1px solid var(--bord)}
+.relacionados ul{list-style:none;margin:0;display:grid;gap:8px}
+.relacionados a{color:var(--t2);font-size:.95rem;display:inline-flex;gap:8px;align-items:baseline}
+.relacionados a:hover{color:var(--t1)}
+.relacionados a::before{content:"→";color:var(--b3)}
+
+footer{border-top:1px solid var(--bord);background:rgba(13,24,41,.45);padding:26px 0;font-size:.8rem;color:var(--t2)}
+footer .wrap{max-width:1100px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+footer a:hover{color:var(--t1)}
+
+@media(max-width:820px){
+  .grid-3,.grid-2{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .nav{display:none}
+  header .btn-wa span{display:none}
+  main{padding:36px 0 72px}
+  h2{margin-top:44px}
+  .cta{padding:32px 22px}
+  .resposta{padding:20px 20px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}

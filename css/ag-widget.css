@@ -1,0 +1,138 @@
+/* AutoGenius — widget de WhatsApp com formulário.
+   Identidade da home: navy, vidro, Space Grotesk no título, DM Sans no texto.
+   O CTA continua verde WhatsApp. Tudo escopado em .agw. */
+
+.agw{
+  --agw-bg:#0d1829; --agw-bg-2:#111e35; --agw-ink:#F1F5F9; --agw-ink-2:#94A3B8; --agw-ink-3:#64748B;
+  --agw-bord:rgba(255,255,255,.08); --agw-blue:#3B82F6; --agw-cy:#06b6d4; --agw-wa:#25D366;
+  font-family:'DM Sans',system-ui,sans-serif;font-size:14px;line-height:1.45;color:var(--agw-ink);
+}
+.agw *,.agw *::before,.agw *::after{box-sizing:border-box}
+
+/* ── Botão flutuante ── */
+.agw-fab{
+  position:fixed;right:20px;bottom:22px;z-index:1200;
+  display:flex;align-items:center;gap:10px;height:56px;padding:0 22px 0 16px;
+  border:0;border-radius:999px;background:var(--agw-wa);color:#052912;cursor:pointer;
+  font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;font-size:15px;letter-spacing:-.01em;
+  box-shadow:0 10px 30px rgba(37,211,102,.32),0 2px 8px rgba(0,0,0,.4);
+  opacity:0;transform:translateY(14px) scale(.96);
+  transition:opacity .45s cubic-bezier(.2,.8,.3,1),transform .45s cubic-bezier(.2,.8,.3,1),background .2s;
+}
+.agw--pronto .agw-fab{opacity:1;transform:none}
+.agw-fab:hover{background:#1fbf5b}
+.agw-fab:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.agw-fab svg{width:26px;height:26px;fill:#052912;flex-shrink:0}
+/* anel de pulso: chama atenção sem mexer no layout */
+.agw-fab::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  box-shadow:0 0 0 0 rgba(37,211,102,.55);animation:agw-ping 2.6s ease-out infinite;
+}
+@keyframes agw-ping{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%,100%{box-shadow:0 0 0 16px rgba(37,211,102,0)}}
+.agw--open .agw-fab::before{animation:none}
+
+/* ── Painel ── */
+.agw-panel{
+  position:fixed;right:20px;bottom:92px;z-index:1201;
+  width:min(390px,calc(100vw - 40px));max-height:min(700px,calc(100vh - 116px));
+  display:flex;flex-direction:column;overflow:hidden;
+  background:linear-gradient(180deg,rgba(17,30,53,.98),rgba(8,14,26,.98));
+  border:1px solid rgba(59,130,246,.22);border-radius:20px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.02) inset,0 0 60px rgba(37,99,235,.12);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  animation:agw-in .32s cubic-bezier(.2,.8,.3,1);transform-origin:bottom right;
+}
+.agw-panel[hidden]{display:none}
+/* Sem botão flutuante (páginas por segmento), o painel desce: não há
+   botão embaixo dele para deixar espaço. No celular ele vira folha
+   colada no rodapé, então a regra vale só a partir de 640px. */
+@media (min-width:640px){
+  body[data-ag-fab="nao"] .agw-panel{bottom:24px}
+}
+@keyframes agw-in{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+
+.agw-head{
+  display:flex;align-items:center;gap:12px;padding:14px 14px 14px 16px;flex-shrink:0;
+  border-bottom:1px solid var(--agw-bord);
+  background:radial-gradient(120% 140% at 0% 0%,rgba(37,99,235,.22),transparent 60%);
+}
+.agw-av{
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#1d4ed8,#2563EB,#06b6d4);color:#fff;
+  font-family:'Space Grotesk',system-ui,sans-serif;font-weight:800;font-size:13px;
+}
+.agw-head-txt{flex:1;min-width:0}
+.agw-nome{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;font-size:15px;letter-spacing:-.015em}
+.agw-status{font-size:12px;color:var(--agw-ink-2);display:flex;align-items:center;gap:6px;margin-top:1px}
+.agw-status::before{content:"";width:7px;height:7px;border-radius:50%;background:#10B981;box-shadow:0 0 8px #10B981}
+.agw-close{width:34px;height:34px;border:0;border-radius:10px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.agw-close:hover{background:rgba(255,255,255,.06)}
+.agw-close svg{width:18px;height:18px;fill:none;stroke:var(--agw-ink-2);stroke-width:2;stroke-linecap:round}
+
+.agw-tabs-wrap{padding:14px 16px 0;flex-shrink:0}
+.agw-tabs-title{font-family:'Space Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--agw-ink-3);margin-bottom:8px}
+.agw-tabs{display:flex;gap:4px;padding:4px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--agw-bord)}
+.agw-tab{
+  flex:1 1 0;min-width:0;height:36px;padding:0 6px;border:0;border-radius:9px;cursor:pointer;
+  background:transparent;color:var(--agw-ink-2);font-family:inherit;font-size:clamp(11.5px,3.3vw,12.8px);font-weight:600;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:background .2s,color .2s;
+}
+.agw-tab:hover{color:var(--agw-ink)}
+.agw-tab[aria-selected="true"]{background:linear-gradient(135deg,#2563EB,#1d4ed8);color:#fff;box-shadow:0 4px 14px rgba(37,99,235,.35)}
+.agw-tab:focus-visible{outline:2px solid var(--agw-cy);outline-offset:1px}
+
+.agw-scroll{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.12) transparent}
+.agw-intro{
+  margin:14px 16px 0;max-width:92%;padding:11px 13px;border-radius:4px 14px 14px 14px;
+  background:rgba(15,26,46,.9);border:1px solid rgba(59,130,246,.14);font-size:13.8px;color:var(--agw-ink);
+  animation:agw-in .35s cubic-bezier(.2,.8,.3,1);
+}
+.agw-form{padding:14px 16px 16px;display:flex;flex-direction:column;gap:12px}
+.agw-field{display:flex;flex-direction:column;gap:6px}
+.agw-label{font-size:12.4px;font-weight:600;color:var(--agw-ink-2)}
+
+.agw-input{
+  width:100%;height:44px;padding:0 12px;border-radius:10px;
+  background:rgba(8,14,26,.7);border:1px solid rgba(255,255,255,.1);color:var(--agw-ink);
+  font-family:inherit;font-size:15px;outline:none;transition:border-color .2s,box-shadow .2s;
+}
+.agw-input::placeholder{color:rgba(148,163,184,.45)}
+.agw-input:focus{border-color:rgba(59,130,246,.55);box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+.agw-input[hidden]{display:none}
+.agw-select{
+  -webkit-appearance:none;appearance:none;padding-right:34px;cursor:pointer;
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394A3B8' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;background-size:12px 8px;
+}
+.agw-select option{background:#0d1829;color:#F1F5F9}
+.agw-outro{margin-top:6px}
+.agw-phone{display:flex;height:44px;border-radius:10px;overflow:hidden;background:rgba(8,14,26,.7);border:1px solid rgba(255,255,255,.1);transition:border-color .2s,box-shadow .2s}
+.agw-phone:focus-within{border-color:rgba(59,130,246,.55);box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+.agw-ddi{display:flex;align-items:center;padding:0 12px;border-right:1px solid rgba(255,255,255,.08);color:var(--agw-ink-2);font-family:'Space Mono',ui-monospace,monospace;font-size:13px}
+.agw-phone .agw-input{border:0;height:100%;border-radius:0;background:transparent;box-shadow:none}
+
+.agw-submit{
+  margin-top:4px;height:48px;border:0;border-radius:12px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  background:var(--agw-wa);color:#052912;font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;font-size:15px;
+  box-shadow:0 6px 20px rgba(37,211,102,.28);transition:background .2s,transform .15s;
+}
+.agw-submit:hover{background:#1fbf5b;transform:translateY(-1px)}
+.agw-submit svg{width:20px;height:20px;fill:#052912}
+.agw-nota{font-size:11.5px;color:var(--agw-ink-3);text-align:center}
+.agw-ok{font-size:13px;color:#86EFAC;text-align:center;line-height:1.5;padding:10px;border-radius:10px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2)}
+.agw-ok a{color:inherit;text-decoration:underline}
+.agw-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* ── Celular: painel vira folha de baixo, FAB só com ícone ── */
+@media (max-width:639px){
+  .agw-fab{width:58px;height:58px;padding:0;justify-content:center;right:16px;bottom:16px}
+  .agw-fab-txt{display:none}
+  .agw-panel{left:0;right:0;bottom:0;width:100%;max-height:min(92vh,calc(100dvh - 12px));border-radius:22px 22px 0 0;padding-bottom:env(safe-area-inset-bottom);transform-origin:bottom center}
+  .agw--open .agw-fab{display:none}
+  html.agw-lock,html.agw-lock body{overflow:hidden}
+}
+@media (prefers-reduced-motion:reduce){
+  .agw-fab,.agw-panel,.agw-intro{animation:none;transition:none}
+  .agw-fab::before{animation:none}
+}
