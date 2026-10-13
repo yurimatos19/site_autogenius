@@ -1,0 +1,209 @@
+/* ══════════════════════════════════════════════════════════════
+   AutoGenius — sistema visual V2 (out/2026)
+
+   Direção: escuro e tecnológico. Empresa que constrói e implanta IA,
+   não editora nem SaaS barato.
+
+   · Títulos em Sora (geométrica pesada, da mesma família de desenho
+     da logo). Texto em Geist, rótulos em Geist Mono.
+   · O gradiente azul→ciano da logo é a ASSINATURA: aparece forte,
+     mas em poucos lugares — palavra-chave do título, linhas neurais,
+     números, o botão principal.
+   · Linhas neurais: o traço contínuo e arredondado do cérebro da logo
+     vira a linguagem gráfica do site (fios que ligam áreas e acendem).
+   · Uma seção clara para respirar (a escada de ofertas).
+   ══════════════════════════════════════════════════════════════ */
+
+:root{
+  --bg:#06080D;
+  --bg-2:#0B0E16;
+  --bg-3:#111522;
+  --linha:rgba(255,255,255,.08);
+  --linha-2:rgba(255,255,255,.14);
+  --tx:#F3F5F9;
+  --tx-2:#A2A8B8;
+  --tx-3:#687088;
+
+  --azul:#1F5BFF;
+  --ciano:#19D3F5;
+  --marca:linear-gradient(100deg,#1F5BFF 0%,#2F86FF 48%,#19D3F5 100%);
+  --acc:#5EA6FF;
+
+  --claro:#F3F5FA;
+  --claro-tx:#0B0F1C;
+  --claro-tx-2:#4B5568;
+  --claro-linha:rgba(11,15,28,.10);
+
+  --disp:'Sora',system-ui,sans-serif;
+  --sans:'Geist',system-ui,-apple-system,sans-serif;
+  --mono:'Geist Mono',ui-monospace,monospace;
+
+  --gut:clamp(20px,5vw,64px);
+  --maxw:1280px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --raio:20px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:dark;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--tx);font-family:var(--sans);
+  font-size:16.5px;line-height:1.6;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit}
+::selection{background:var(--azul);color:#fff}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);position:relative}
+
+/* ── Tipografia ─────────────────────────────────────────────── */
+h1,h2,.disp{font-family:var(--disp);font-weight:700;letter-spacing:-.045em;line-height:1.02;text-wrap:balance}
+h1{font-size:clamp(42px,6.6vw,96px);font-weight:800}
+h2{font-size:clamp(32px,4.4vw,60px)}
+h3{font-family:var(--disp);font-weight:600;font-size:1.25rem;letter-spacing:-.025em;line-height:1.25}
+.g{background:var(--marca);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+   -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.rotulo{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3);
+  display:inline-flex;align-items:center;gap:10px}
+.rotulo::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--marca);box-shadow:0 0 12px rgba(25,211,245,.6)}
+.lead{font-size:clamp(17px,1.45vw,20px);line-height:1.6;color:var(--tx-2);max-width:58ch}
+.lead strong,p strong{color:var(--tx);font-weight:500}
+p{color:var(--tx-2)}
+
+/* ── Botões ─────────────────────────────────────────────────── */
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  font-family:var(--sans);font-weight:600;font-size:15.5px;letter-spacing:-.01em;color:#fff;
+  padding:16px 26px;border-radius:14px;border:0;cursor:pointer;isolation:isolate;
+  background:var(--marca);box-shadow:0 10px 34px -8px rgba(31,91,255,.7),inset 0 1px 0 rgba(255,255,255,.25);
+  transition:transform .3s var(--ease),box-shadow .3s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 44px -8px rgba(31,91,255,.85),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn .seta{transition:transform .3s var(--ease)}
+.btn:hover .seta{transform:translateX(4px)}
+.btn-2{
+  display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:15px;color:var(--tx);
+  padding:15px 22px;border-radius:14px;border:1px solid var(--linha-2);background:rgba(255,255,255,.02);
+  transition:border-color .3s,background .3s;
+}
+.btn-2:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.05)}
+.btn.sm{padding:11px 18px;font-size:14px;border-radius:12px}
+
+/* ── Cabeçalho ──────────────────────────────────────────────── */
+.topo{position:fixed;top:0;left:0;right:0;z-index:60;border-bottom:1px solid transparent;transition:background .4s,border-color .4s}
+.topo.rolou{background:rgba(6,8,13,.92);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);border-color:var(--linha)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;height:74px}
+.logo{display:inline-flex;align-items:center;font-family:'Poppins',var(--disp);font-weight:600;font-size:1.25rem;letter-spacing:-.02em;line-height:1}
+.logo img{width:30px;height:30px;margin-right:10px}
+.logo b{font-weight:600;background:var(--marca);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.menu{display:flex;align-items:center;gap:30px}
+.menu a{font-size:14.5px;color:var(--tx-2);transition:color .25s}
+.menu a:hover,.menu a[aria-current]{color:var(--tx)}
+.burger{display:none;background:none;border:1px solid var(--linha-2);border-radius:12px;width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span::before{display:block;width:16px;height:1.5px;background:var(--tx);position:relative;border-radius:2px}
+.burger span::before{content:"";position:absolute;top:5px}
+.gaveta{display:none}
+
+/* ── Seções ─────────────────────────────────────────────────── */
+section{padding:clamp(88px,11vw,152px) 0;position:relative}
+.cab{max-width:760px;margin-bottom:clamp(44px,6vw,80px)}
+.cab h2{margin:20px 0 18px}
+.cab.centro{margin-left:auto;margin-right:auto;text-align:center}
+.cab.centro .lead{margin:0 auto}
+
+.claro{background:var(--claro);color:var(--claro-tx);--linha:var(--claro-linha);--tx-2:var(--claro-tx-2);--tx-3:#7A8397}
+.claro p{color:var(--claro-tx-2)}
+.claro .lead strong,.claro p strong{color:var(--claro-tx)}
+
+/* Linhas neurais (SVG): traço da logo, desenhado ao entrar na tela */
+.neural path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.js .neural .desenha{stroke-dasharray:var(--comp,1200);stroke-dashoffset:var(--comp,1200);transition:stroke-dashoffset 2.4s var(--ease)}
+.js .neural.in .desenha,.js .in .neural .desenha{stroke-dashoffset:0}
+@keyframes pulsa{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* ── Revelação ──────────────────────────────────────────────── */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}
+
+/* ── Rodapé ─────────────────────────────────────────────────── */
+.rodape{border-top:1px solid var(--linha);padding:clamp(64px,8vw,96px) 0 32px;overflow:hidden}
+.rodape-grid{display:grid;grid-template-columns:1.5fr repeat(5,1fr);gap:40px 32px}
+.rodape h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3);margin-bottom:18px}
+.rodape ul{list-style:none;display:grid;gap:11px}
+.rodape li a{font-size:14.5px;color:var(--tx-2);transition:color .25s}
+.rodape li a:hover{color:var(--tx)}
+.rodape .assina{font-family:var(--disp);font-weight:600;font-size:clamp(17px,1.45vw,20px);letter-spacing:-.025em;line-height:1.3;max-width:20ch;margin-top:18px}
+.rodape address{font-style:normal;font-size:13.5px;line-height:1.65;color:var(--tx-3);margin-top:22px}
+.rodape .btn.sm{margin-top:24px}
+.rodape-frase{margin-top:clamp(56px,7vw,88px);font-family:var(--disp);font-weight:700;font-size:clamp(40px,7.4vw,112px);letter-spacing:-.05em;line-height:.98;
+  background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.03));-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
+.rodape-base{display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px solid var(--linha);font-size:13px;color:var(--tx-3)}
+@media(max-width:1100px){.rodape-grid{grid-template-columns:repeat(3,1fr)}.rodape-grid > :first-child{grid-column:1/-1}}
+
+/* ── Painel "Agendar" ───────────────────────────────────────── */
+.ag-veu{position:fixed;inset:0;z-index:200;background:rgba(3,4,8,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .45s var(--ease)}
+.ag-painel{position:fixed;top:0;right:0;bottom:0;z-index:201;width:min(540px,100vw);background:var(--bg-2);border-left:1px solid var(--linha);
+  display:flex;flex-direction:column;transform:translateX(100%);transition:transform .6s var(--ease)}
+.ag-aberto .ag-veu{opacity:1;pointer-events:auto}
+.ag-aberto .ag-painel{transform:none}
+.ag-aberto{overflow:hidden}
+.ag-cab{display:flex;justify-content:space-between;align-items:center;padding:24px 32px;border-bottom:1px solid var(--linha)}
+.ag-fechar{background:none;border:1px solid var(--linha-2);width:40px;height:40px;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ag-fechar svg{width:14px;height:14px;stroke:var(--tx);stroke-width:1.6;fill:none}
+.ag-corpo{flex:1;overflow-y:auto;padding:34px 32px 40px}
+.ag-corpo h2{font-size:clamp(30px,3.4vw,40px);margin:14px 0 12px}
+.ag-corpo > p{margin-bottom:24px;max-width:42ch}
+.ag-yuri{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding:14px 16px;border:1px solid var(--linha);border-radius:16px;background:rgba(255,255,255,.02)}
+.ag-yuri img{width:64px;height:80px;border-radius:12px;object-fit:cover;flex-shrink:0}
+.ag-yuri b{display:block;font-size:14.5px;font-weight:600}
+.ag-yuri span{font-size:13px;color:var(--tx-3)}
+.ag-form{display:grid;gap:22px}
+.ag-campo{display:grid;gap:8px;border:0}
+.ag-campo label,.ag-campo legend{font-size:13px;color:var(--tx-2)}
+.ag-campo legend{margin-bottom:10px}
+.ag-in{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--linha-2);color:var(--tx);font:inherit;font-size:16px;
+  padding:13px 15px;outline:none;border-radius:12px;transition:border-color .25s,background .25s}
+.ag-in::placeholder{color:var(--tx-3)}
+.ag-in:focus{border-color:var(--acc);background:rgba(94,166,255,.05)}
+.ag-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ag-chips label{cursor:pointer;position:relative}
+.ag-chips input{position:absolute;opacity:0;pointer-events:none}
+.ag-chips span{display:inline-block;font-size:14px;color:var(--tx-2);padding:9px 14px;border-radius:12px;border:1px solid var(--linha-2);transition:all .25s}
+.ag-chips label:hover span{border-color:rgba(255,255,255,.3);color:var(--tx)}
+.ag-chips input:checked + span{color:#fff;background:var(--marca);border-color:transparent}
+.ag-chips input:focus-visible + span{outline:2px solid var(--acc);outline-offset:3px}
+.ag-tel{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.03);border:1px solid var(--linha-2);border-radius:12px;padding-left:15px;transition:border-color .25s}
+.ag-tel:focus-within{border-color:var(--acc)}
+.ag-tel span{font-family:var(--mono);font-size:14px;color:var(--tx-3)}
+.ag-tel .ag-in{border:0;background:transparent;padding-left:0}
+.ag-hp{position:absolute;left:-9999px;opacity:0}
+.ag-enviar{width:100%;margin-top:6px}
+.ag-nota{font-size:12.5px;color:var(--tx-3)}
+.ag-ok{font-size:14px;color:var(--tx);padding:14px 16px;border:1px solid var(--linha-2);border-radius:12px}
+.ag-ok a{text-decoration:underline;text-underline-offset:3px}
+
+/* ── Responsivo ─────────────────────────────────────────────── */
+@media(max-width:960px){
+  .menu{display:none}
+  .burger{display:inline-flex}
+  .topo .btn.sm{display:none}
+  .gaveta{display:flex;position:fixed;inset:0;z-index:59;background:var(--bg);flex-direction:column;justify-content:center;padding:100px var(--gut) 40px;gap:4px;
+    opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}
+  .menu-aberto .gaveta{opacity:1;pointer-events:auto}
+  .gaveta a{font-family:var(--disp);font-weight:700;font-size:38px;letter-spacing:-.04em;line-height:1.25}
+  .gaveta .btn{margin-top:28px;align-self:flex-start;font-family:var(--sans);font-size:15px;letter-spacing:0}
+}
+@media(max-width:560px){
+  .rodape-grid{grid-template-columns:1fr 1fr}
+  .ag-cab,.ag-corpo{padding-left:20px;padding-right:20px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .js .rv{opacity:1;transform:none}
+  .js .neural .desenha{stroke-dashoffset:0}
+}
