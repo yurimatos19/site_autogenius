@@ -3,17 +3,26 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://useautogenius.com/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://useautogenius.com/"/>
-    <xhtml:link rel="alternate" hreflang="en"    href="https://useautogenius.com/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es"    href="https://useautogenius.com/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://useautogenius.com/"/>
   </url>
   <!-- Landing pages por vertical. Só em pt-BR: o conteúdo é específico
        do mercado brasileiro (convênio, FGTS, rematrícula), então não
        recebem as alternates de idioma da home. -->
+  <!-- Página de produto: IA para gestão de tráfego pago. -->
+  <url>
+    <loc>https://useautogenius.com/ia-trafego-pago/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://useautogenius.com/agentes-de-atendimento/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://useautogenius.com/clinicas/</loc>
     <lastmod>2026-08-10</lastmod>
@@ -38,9 +47,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!-- Páginas de conteúdo: respondem uma pergunta cada, em HTML estático. -->
+  <url>
+    <loc>https://useautogenius.com/ia-para-meta-ads/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://useautogenius.com/alternativa-a-gestor-de-trafego/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://useautogenius.com/chatbot-vs-agente-de-ia/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://useautogenius.com/duvidas/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://useautogenius.com/sobre/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://useautogenius.com/llms.txt</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>

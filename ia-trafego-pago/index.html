@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2BXGG04RL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P2BXGG04RL');
+</script>
+
+<title>AutoGenius Ads AI — IA para gestão de tráfego pago e Meta Ads</title>
+<meta name="description" content="Seu tráfego pago não precisa depender de um gestor. Uma IA que acompanha suas campanhas de Meta Ads todos os dias, identifica desperdícios, alerta e otimiza dentro das regras da sua empresa.">
+<meta name="theme-color" content="#06080D">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://useautogenius.com/ia-trafego-pago/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="AutoGenius">
+<meta property="og:url" content="https://useautogenius.com/ia-trafego-pago/">
+<meta property="og:title" content="AutoGenius Ads AI — Seu tráfego pago não precisa depender de um gestor">
+<meta property="og:description" content="Seu tráfego pago não precisa depender de um gestor. Uma IA que acompanha suas campanhas de Meta Ads todos os dias, identifica desperdícios, alerta e otimiza dentro das regras da sua empresa.">
+<meta property="og:image" content="https://useautogenius.com/image/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/image/nova_logo.png">
+<link rel="alternate" type="text/plain" title="AutoGenius — contexto para assistentes de IA" href="/llms.txt">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "AutoGenius Ads AI", "description": "Seu tráfego pago não precisa depender de um gestor. Uma IA que acompanha suas campanhas de Meta Ads todos os dias, identifica desperdícios, alerta e otimiza dentro das regras da sua empresa.", "url": "https://useautogenius.com/ia-trafego-pago/", "areaServed": "BR", "provider": {"@type": "Organization", "name": "AutoGenius", "legalName": "Auto Genius Soluções Inteligentes Ltda", "url": "https://useautogenius.com/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://useautogenius.com/"}, {"@type": "ListItem", "position": 2, "name": "AutoGenius Ads AI", "item": "https://useautogenius.com/ia-trafego-pago/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A IA substitui o meu gestor de tráfego?", "acceptedAnswer": {"@type": "Answer", "text": "Ela assume grande parte do trabalho operacional — acompanhar, analisar, alertar, reportar e fazer os ajustes de rotina. Se você tem gestor, ele continua na estratégia e nos criativos, com muito mais informação na mão."}}, {"@type": "Question", "name": "Ela vai mexer na minha conta sem eu saber?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Você define as regras: quanto o orçamento pode variar, quais ações ela executa sozinha e o que precisa da sua aprovação. Se preferir, ela funciona só alertando e recomendando. Toda alteração fica registrada com o motivo."}}, {"@type": "Question", "name": "Quais plataformas ela acompanha?", "acceptedAnswer": {"@type": "Answer", "text": "Campanhas de Meta Ads (Facebook e Instagram). Se você investe em outras plataformas, avaliamos o seu cenário na conversa de diagnóstico."}}, {"@type": "Question", "name": "Preciso entender de tráfego pago para usar?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Os relatórios e alertas explicam o que aconteceu, por que aconteceu e o que foi feito, em linguagem de empresário."}}, {"@type": "Question", "name": "Quanto custa?", "acceptedAnswer": {"@type": "Answer", "text": "Depende do volume de investimento e do número de contas. Na conversa de diagnóstico olhamos a sua conta e apresentamos o valor junto do que já dá para enxergar de desperdício."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500..800&family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&family=Poppins:wght@600&display=swap">
+<link rel="stylesheet" href="/css/ag.css">
+<link rel="stylesheet" href="/css/plataforma.css">
+<style>
+.console{position:relative;border-radius:22px;background:linear-gradient(180deg,rgba(15,19,31,.9),rgba(7,9,15,.95));
+  border:1px solid rgba(94,166,255,.2);box-shadow:0 50px 120px -30px rgba(0,0,0,.85),0 0 90px -20px rgba(31,91,255,.4);overflow:hidden}
+.console::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(140deg,rgba(31,91,255,.75),transparent 32%,transparent 66%,rgba(25,211,245,.6));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.c-top{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--linha)}
+.c-titulo{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--tx-2);text-transform:uppercase}
+.c-vivo{margin-left:auto;display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:#5EEAD4}
+.c-vivo::before{content:"";width:7px;height:7px;border-radius:50%;background:#2DD4BF;box-shadow:0 0 10px #2DD4BF;animation:pulsa 1.6s infinite}
+.c-kpis{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--linha)}
+.c-kpi{padding:15px 18px}
+.c-kpi + .c-kpi{border-left:1px solid var(--linha)}
+.c-kpi small{display:block;font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3)}
+.c-kpi b{display:block;font-family:var(--disp);font-weight:700;font-size:1.45rem;letter-spacing:-.04em;margin-top:4px}
+.c-kpi em{font-style:normal;font-family:var(--mono);font-size:.7rem;color:#F87171;margin-left:6px}
+.c-chart{padding:14px 16px 4px}
+.c-chart svg{width:100%;height:auto;overflow:visible}
+.linha-res{fill:none;stroke:url(#gfio);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:600;stroke-dashoffset:600;animation:desenhaL 2.4s .6s var(--ease) forwards}
+@keyframes desenhaL{to{stroke-dashoffset:0}}
+.alvo{opacity:0;animation:aparece .5s 2.8s forwards}
+@keyframes aparece{to{opacity:1}}
+.alvo-anel{transform-box:fill-box;transform-origin:center;animation:anel 1.8s ease-out infinite}
+@keyframes anel{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+.c-feed{list-style:none;padding:4px 18px 14px;min-height:200px}
+.c-feed li{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--linha);animation:entraF .5s var(--ease)}
+.c-feed li:first-child{border-top:0}
+@keyframes entraF{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.c-feed .tag{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:3px 7px;align-self:start;margin-top:2px;white-space:nowrap}
+.tag.an{color:#9CC4FF;border:1px solid rgba(94,166,255,.35)}
+.tag.al{color:#FCA5A5;border:1px solid rgba(248,113,113,.35)}
+.tag.ac{color:#FDE68A;border:1px solid rgba(251,191,36,.35)}
+.tag.op{color:#86EFAC;border:1px solid rgba(134,239,172,.35)}
+.c-feed p{font-size:13.6px;line-height:1.45;color:var(--tx)}
+.c-feed small{display:block;font-size:12.2px;color:var(--tx-3);margin-top:2px}
+.c-nota{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;color:var(--tx-3);text-align:right;padding:0 18px 12px;text-transform:uppercase}
+.aut{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,96px);align-items:center}
+.fontes{display:grid;gap:12px}
+.fonte{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:20px 22px;border:1px solid var(--linha);border-radius:18px}
+.fonte .n{font-family:var(--mono);font-size:.7rem;color:var(--acc);border:1px solid rgba(94,166,255,.35);border-radius:8px;padding:5px 8px}
+.fonte h3{font-size:1.02rem}
+.fonte p{font-size:14.5px;margin-top:3px}
+.decisao{text-align:center;padding:20px;border-radius:18px;background:var(--marca);color:#fff}
+.decisao b{font-family:var(--disp);font-size:1.15rem;letter-spacing:-.02em}
+.decisao small{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;opacity:.85;margin-top:4px}
+.citacao{margin-top:30px;padding:24px 26px;border-left:2px solid var(--acc);background:rgba(255,255,255,.02);border-radius:0 16px 16px 0}
+.citacao p{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2vw,26px);letter-spacing:-.03em;line-height:1.3;color:var(--tx)}
+.combo{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch}
+.combo-card{padding:30px 28px;border:1px solid var(--linha);border-radius:22px;display:flex;flex-direction:column}
+.combo-card h3{font-size:1.4rem;margin:14px 0 8px}
+.combo-card p{font-size:15px;margin-bottom:20px}
+.combo-card a{margin-top:auto;font-weight:600;color:var(--acc)}
+.combo-seta{display:grid;place-items:center;font-size:1.6rem;color:var(--acc)}
+.regras{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.regras span{font-family:var(--mono);font-size:.68rem;color:var(--tx-2);padding:8px 12px;border-radius:10px;border:1px solid var(--linha-2)}
+.regras b{color:var(--ciano);font-weight:500}
+@media(max-width:1020px){.aut{grid-template-columns:1fr}.combo{grid-template-columns:1fr}.combo-seta{transform:rotate(90deg)}}
+@media(max-width:700px){.c-kpis{grid-template-columns:1fr 1fr}.c-kpi:nth-child(3){display:none}}
+@media(prefers-reduced-motion:reduce){.linha-res{stroke-dashoffset:0;animation:none}.alvo{opacity:1;animation:none}}
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2464162037434399');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=2464162037434399&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body style="--v:#5EA6FF" data-assunto="trafego">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gfio" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#1F5BFF"/><stop offset="1" stop-color="#19D3F5"/></linearGradient>
+  </defs>
+</svg>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="AutoGenius, página inicial">Auto<b>Genius</b></a>
+    <nav class="menu" aria-label="Principal">
+      <a href="/#como">Como trabalhamos</a>
+      <a href="/agentes-de-atendimento/">Atendimento com IA</a>
+      <a href="/ia-trafego-pago/" aria-current="page">Ads AI</a>
+      <a href="/#quem">Quem somos</a>
+    </nav>
+    <a class="btn sm" href="#agendar">Ver na minha conta <span class="seta" aria-hidden="true">→</span></a>
+    <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<nav class="gaveta" aria-label="Menu">
+  <a href="/">Início</a>
+  <a href="/#como">Como trabalhamos</a>
+  <a href="/agentes-de-atendimento/">Atendimento com IA</a>
+  <a href="/ia-trafego-pago/">Ads AI</a>
+  <a href="/#quem">Quem somos</a>
+  <a class="btn" href="#agendar">Ver na minha conta <span class="seta" aria-hidden="true">→</span></a>
+</nav>
+
+<main>
+
+<section class="hp">
+  <div class="wrap hp-grid">
+    <div>
+      <span class="migalha entra"><a href="/">Início</a> · Plataformas</span>
+      <span class="rotulo entra" style="animation-delay:.05s">AutoGenius Ads AI · IA para tráfego pago</span>
+      <h1 class="entra" style="animation-delay:.15s"><span class="l">Seu tráfego pago não precisa depender</span> <span class="l g">de um gestor.</span></h1>
+      <p class="lead entra" style="animation-delay:.3s">Uma IA acompanhando suas campanhas de Meta Ads <strong>todos os dias</strong>, analisando performance, identificando desperdícios e otimizando dentro das regras da sua empresa.</p>
+      <div class="hp-cta entra" style="animation-delay:.42s">
+        <a class="btn" href="#agendar">Quero ver na minha conta <span class="seta" aria-hidden="true">→</span></a>
+        <a class="btn-2" href="#como">Como funciona</a>
+      </div>
+      <div class="specs entra" style="animation-delay:.52s"><span><b>Diário</b> · monitoramento</span><span><b>Imediato</b> · alerta</span><span><b>Suas regras</b> · otimização</span></div>
+      
+    </div>
+    <div class="console entra" style="animation-delay:.35s" aria-label="Exemplo ilustrativo do painel da AutoGenius Ads AI analisando uma conta de anúncios">
+      <div class="c-top"><span class="c-titulo">Ads AI · conta Meta Ads</span><span class="c-vivo">analisando</span></div>
+      <div class="c-kpis">
+        <div class="c-kpi"><small>Investido · 7 dias</small><b>R$ 8.960</b></div>
+        <div class="c-kpi"><small>Custo por lead</small><b>R$ 31<em>▲ 47%</em></b></div>
+        <div class="c-kpi"><small>Campanhas</small><b>14</b></div>
+      </div>
+      <div class="c-chart" aria-hidden="true">
+        <svg viewBox="0 0 400 130">
+          <g stroke="rgba(255,255,255,.05)"><path d="M0 30h400M0 70h400M0 110h400"/></g>
+          <g fill="rgba(148,163,184,.16)">
+            <rect x="14" y="78" width="34" height="42" rx="4"/><rect x="70" y="76" width="34" height="44" rx="4"/><rect x="126" y="79" width="34" height="41" rx="4"/>
+            <rect x="182" y="77" width="34" height="43" rx="4"/><rect x="238" y="78" width="34" height="42" rx="4"/><rect x="294" y="76" width="34" height="44" rx="4"/><rect x="350" y="78" width="34" height="42" rx="4"/>
+          </g>
+          <path class="linha-res" d="M31 34L87 28L143 32L199 24L255 52L311 82L367 96"/>
+          <g class="alvo">
+            <circle class="alvo-anel" cx="255" cy="52" r="7" fill="none" stroke="#FBBF24" stroke-width="2"/>
+            <circle cx="255" cy="52" r="5" fill="#FBBF24"/>
+            <rect x="192" y="4" width="126" height="22" rx="11" fill="rgba(245,158,11,.14)" stroke="rgba(251,191,36,.45)"/>
+            <text x="255" y="19" text-anchor="middle" fill="#FDE68A" font-family="Geist Mono, monospace" font-size="9" letter-spacing=".6">IA DETECTOU AQUI</text>
+          </g>
+        </svg>
+      </div>
+      <ul class="c-feed"></ul>
+      <div class="c-nota">Exemplo ilustrativo</div>
+    </div>
+  </div>
+</section>
+
+<section class="claro">
+  <div class="wrap">
+    <div class="cab "><span class="rotulo rv">Seja sincero</span><h2 class="rv">Quem está olhando para <span class="g">o seu dinheiro hoje?</span></h2></div>
+    <ol class="perguntas">
+      <li class="rv"><span>Seu gestor realmente está olhando suas campanhas todos os dias?</span></li>
+      <li class="rv"><span>Ele percebe na hora quando uma campanha começa a desperdiçar dinheiro?</span></li>
+      <li class="rv"><span>Você sabe exatamente por que uma campanha está indo bem ou mal?</span></li>
+      <li class="rv"><span>Ou você só descobre tudo quando recebe o relatório?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cab "><span class="rotulo rv">O que acontece hoje</span><h2 class="rv">O dinheiro sai todo dia. <span class="g">A análise, não.</span></h2><p class="lead rv d1">A plataforma cobra por dia; a maioria das análises acontece por semana. Veja a mesma semana de uma campanha que começou a cansar na quarta.</p></div>
+    <div class="semana rv">
+      <div class="sem-head"><span></span><span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span><span>SÁB</span><span>DOM</span></div>
+      <div class="sem-row"><b>Gestão periódica<small>análise quando dá tempo</small></b>
+        <div class="cel gasto">gastou</div><div class="cel gasto">gastou</div><div class="cel gasto">cansou</div><div class="cel gasto">gastou</div><div class="cel gasto">gastou</div><div class="cel gasto">gastou</div><div class="cel tarde">relatório</div></div>
+      <div class="sem-row"><b>AutoGenius Ads AI<small>análise todo dia</small></b>
+        <div class="cel olhou">analisou</div><div class="cel olhou">analisou</div><div class="cel alerta">alertou</div><div class="cel olhou">ajustou</div><div class="cel olhou">analisou</div><div class="cel olhou">analisou</div><div class="cel olhou">resumo</div></div>
+      <div class="sem-conc">
+        <div class="ruim"><b>4 dias pagando por uma campanha cansada</b> até alguém abrir o painel. O diagnóstico chega certo — só que atrasado.</div>
+        <div class="bom"><b>Percebido no mesmo dia.</b> Alerta na quarta, ajuste dentro das suas regras na quinta e o motivo registrado no histórico.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="como" style="padding-top:0"><div class="wrap"><div class="cab "><span class="rotulo rv">O que a Ads AI faz</span><h2 class="rv">Uma camada de inteligência <span class="g">permanente sobre a sua mídia.</span></h2><p class="lead rv d1">Ela não substitui a sua estratégia. Ela garante que alguém esteja olhando para cada real investido — todos os dias, em todas as campanhas.</p></div><div class="caps"><article class="cap rv"><span class="n">01</span><h3>Monitoramento contínuo</h3><p>Campanhas, conjuntos e anúncios analisados todos os dias. Nenhuma campanha passa dias sem análise.</p></article><article class="cap rv d1"><span class="n">02</span><h3>Identifica desperdício</h3><p>Público saturado, custo subindo, anúncio que gasta e não converte. Ela aponta onde o dinheiro está escapando.</p></article><article class="cap rv d2"><span class="n">03</span><h3>Encontra oportunidades</h3><p>O anúncio acima da média, o público que responde mais barato, o orçamento que merece crescer.</p></article><article class="cap rv"><span class="n">04</span><h3>Alerta quando sai do padrão</h3><p>Você fica sabendo quando acontece — não quando o mês fecha.</p></article><article class="cap rv d1"><span class="n">05</span><h3>Relatórios que você entende</h3><p>O que aconteceu, por que aconteceu e o que foi feito. Sem sigla e sem print de painel.</p></article><article class="cap rv d2"><span class="n">06</span><h3>Otimiza dentro das suas regras</h3><p>Você define até onde ela vai sozinha; o resto vira recomendação esperando aprovação — com histórico de cada alteração.</p></article></div><div class="integra rv"><small>Integrações prontas</small><span>Meta Ads</span><span>Facebook</span><span>Instagram</span><span>Relatório no WhatsApp</span></div></div></section>
+
+<section style="padding-top:0">
+  <!-- Confirmar antes de publicar: a base de conhecimento da IA usa de fato a documentação oficial da Meta. -->
+  <div class="wrap aut">
+    <div>
+      <div class="cab "><span class="rotulo rv">Não é achismo</span><h2 class="rv">Dados da sua conta + <span class="g">documentação oficial.</span></h2><p class="lead rv d1">Enquanto muitos profissionais trabalham apenas com experiência acumulada, a IA cruza os dados da sua conta com conhecimento técnico e documentação oficial das plataformas.</p></div>
+      <div class="citacao rv"><p>“Ela não esquece uma regra, não deixa uma campanha passar dias sem análise e não decide porque acha que algo vai funcionar. Ela analisa dados.”</p></div>
+      <div class="regras rv"><span>orçamento <b>±20%/dia</b></span><span>pausar anúncio <b>automático</b></span><span>escalar campanha <b>com aprovação</b></span></div>
+    </div>
+    <div class="fontes">
+      <div class="fonte rv"><span class="n">01</span><div><h3>Os números reais da sua conta</h3><p>Investimento, custo por resultado, frequência, alcance e conversões.</p></div></div>
+      <div class="fonte rv d1"><span class="n">02</span><div><h3>O histórico das suas campanhas</h3><p>O que já funcionou e o que já falhou no seu negócio.</p></div></div>
+      <div class="fonte rv d2"><span class="n">03</span><div><h3>Documentação oficial e boas práticas</h3><p>Materiais técnicos das próprias plataformas, incluindo a documentação da Meta.</p></div></div>
+      <div class="decisao rv d3"><b>Decisão baseada em dados</b><small>ALERTA · RECOMENDAÇÃO · AJUSTE REGISTRADO</small></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cab "><span class="rotulo rv">Lado a lado</span><h2 class="rv">O limite nunca foi a competência. <span class="g">É o tempo.</span></h2></div>
+    <div class="vs-wrap rv">
+      <div class="vs velho"><span class="rotulo">Como costuma ser</span><h3>Gestão tradicional</h3><ul>
+        <li><i>·</i>Uma pessoa</li><li><i>·</i>Horário limitado</li><li><i>·</i>Análise periódica</li><li><i>·</i>Depende da experiência individual</li><li><i>·</i>Relatórios manuais</li><li><i>·</i>Atenção dividida entre várias contas</li></ul></div>
+      <div class="vs novo"><span class="rotulo">Com a IA</span><h3>AutoGenius Ads AI</h3><ul>
+        <li><i>✓</i>Monitoramento contínuo</li><li><i>✓</i>Análise automática</li><li><i>✓</i>Alertas imediatos</li><li><i>✓</i>Conhecimento técnico estruturado</li><li><i>✓</i>Relatórios automáticos</li><li><i>✓</i>Analisa grandes volumes de dados ao mesmo tempo</li></ul></div>
+    </div>
+    <p class="lead rv" style="margin-top:26px;max-width:80ch"><strong>Isso não é contra gestor de tráfego.</strong> A IA elimina grande parte do trabalho operacional e reduz a dependência exclusiva de uma pessoa. Se você tem gestor, ele passa a trabalhar com mais dado e menos planilha.</p>
+  </div>
+</section>
+
+<section class="claro">
+  <div class="wrap">
+    <div class="cab "><span class="rotulo rv">Por que um empresário usaria isso?</span><h2 class="rv">Porque o dinheiro investido <span class="g">é seu.</span></h2></div>
+    <div class="chips9">
+      <div class="rv"><i>✓</i>Menos dependência de gestor de tráfego</div><div class="rv d1"><i>✓</i>Monitoramento contínuo</div><div class="rv d2"><i>✓</i>Menos dinheiro desperdiçado sem perceber</div>
+      <div class="rv"><i>✓</i>Relatórios fáceis de entender</div><div class="rv d1"><i>✓</i>Decisões baseadas em dados</div><div class="rv d2"><i>✓</i>Alertas quando algo sai do padrão</div>
+      <div class="rv"><i>✓</i>Otimizações muito mais rápidas</div><div class="rv d1"><i>✓</i>Controle sobre orçamento e ações</div><div class="rv d2"><i>✓</i>Histórico do que mudou e por quê</div>
+    </div>
+    <p class="impacto rv">Não é mais contratar alguém e <span class="g">torcer para ele ser bom.</span></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cab "><span class="rotulo rv">Tráfego + atendimento</span><h2 class="rv">Da campanha até a conversa <span class="g">com o cliente.</span></h2></div>
+    <div class="combo">
+      <div class="combo-card rv"><span class="rotulo">AutoGenius Ads AI</span><h3>Cuida da inteligência sobre os anúncios</h3><p>Acompanha, analisa e otimiza as campanhas para trazer mais lead pelo mesmo investimento.</p><a href="#como">Como funciona →</a></div>
+      <div class="combo-seta" aria-hidden="true">→</div>
+      <div class="combo-card rv d1"><span class="rotulo">Agentes de atendimento</span><h3>Atende, qualifica e acompanha os leads</h3><p>Responde em segundos, 24 horas por dia, faz follow-up e agenda — nenhum lead pago esfria sem resposta.</p><a href="/agentes-de-atendimento/">Conhecer os agentes →</a></div>
+    </div>
+  </div>
+</section>
+<section id="duvidas"><div class="wrap"><div class="cab "><span class="rotulo rv">Dúvidas</span><h2 class="rv">O que perguntam <span class="g">antes de começar.</span></h2></div><div class="faq"><details class="rv"><summary>A IA substitui o meu gestor de tráfego?</summary><p>Ela assume grande parte do trabalho operacional — acompanhar, analisar, alertar, reportar e fazer os ajustes de rotina. Se você tem gestor, ele continua na estratégia e nos criativos, com muito mais informação na mão.</p></details><details class="rv"><summary>Ela vai mexer na minha conta sem eu saber?</summary><p>Não. Você define as regras: quanto o orçamento pode variar, quais ações ela executa sozinha e o que precisa da sua aprovação. Se preferir, ela funciona só alertando e recomendando. Toda alteração fica registrada com o motivo.</p></details><details class="rv"><summary>Quais plataformas ela acompanha?</summary><p>Campanhas de Meta Ads (Facebook e Instagram). Se você investe em outras plataformas, avaliamos o seu cenário na conversa de diagnóstico.</p></details><details class="rv"><summary>Preciso entender de tráfego pago para usar?</summary><p>Não. Os relatórios e alertas explicam o que aconteceu, por que aconteceu e o que foi feito, em linguagem de empresário.</p></details><details class="rv"><summary>Quanto custa?</summary><p>Depende do volume de investimento e do número de contas. Na conversa de diagnóstico olhamos a sua conta e apresentamos o valor junto do que já dá para enxergar de desperdício.</p></details></div></div></section>
+
+<section class="final">
+  <div class="final-fundo" aria-hidden="true"><img src="/image/v2/recife-capibaribe.jpg" width="2400" height="1600" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <span class="rotulo rv">Comece hoje</span>
+    <h2 class="rv">Seu dinheiro trabalha todos os dias. <span class="g">Sua análise também deveria.</span></h2>
+    <p class="lead rv d1">Mande uma mensagem e veja o que a IA enxerga na sua conta de anúncios.</p>
+    <div class="cta rv d2">
+      <a class="btn" href="#agendar">Quero ver na minha conta <span class="seta" aria-hidden="true">→</span></a>
+      <a class="btn-2" href="#agendar">Falar com o Yuri</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-grid">
+      <div>
+        <a class="logo" href="/">Auto<b>Genius</b></a>
+        <p class="assina">Implantação de inteligência artificial, do diagnóstico ao sistema rodando.</p>
+        <address>Empresarial Rio Capibaribe, sala 203<br>Rua Capitão José da Luz, 58 · Ilha do Leite<br>Recife · PE · 50070-540</address>
+        <a class="btn sm" href="#agendar" data-agendar="raiox">Agendar conversa <span class="seta" aria-hidden="true">→</span></a>
+      </div>
+      <div>
+        <h4>Soluções</h4>
+        <ul>
+          <li><a href="/#como">Raio-X de IA</a></li>
+          <li><a href="/#como">Implantação</a></li>
+          <li><a href="/#como">Operação contínua</a></li>
+          <li><a href="#agendar" data-agendar="palestra">Palestras e formação</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Plataformas</h4>
+        <ul>
+          <li><a href="/agentes-de-atendimento/">Agentes de atendimento</a></li>
+          <li><a href="/ia-trafego-pago/">AutoGenius Ads AI</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Setores</h4>
+        <ul>
+          <li><a href="/clinicas/">Clínicas</a></li>
+          <li><a href="/escolas/">Escolas</a></li>
+          <li><a href="/imoveis/">Imobiliárias</a></li>
+          <li><a href="/autos/">Concessionárias</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Conteúdo</h4>
+        <ul>
+          <li><a href="/duvidas/">Dúvidas frequentes</a></li>
+          <li><a href="/chatbot-vs-agente-de-ia/">Chatbot ou agente de IA?</a></li>
+          <li><a href="/ia-para-meta-ads/">IA para Meta Ads</a></li>
+          <li><a href="/alternativa-a-gestor-de-trafego/">Alternativa a gestor de tráfego</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/sobre/">Sobre</a></li>
+          <li><a href="/#quem">Quem somos</a></li>
+          <li><a href="#agendar">Fale conosco</a></li>
+          <li><a href="https://www.instagram.com/useautogenius/">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/yuri-matos2002/">LinkedIn</a></li>
+          <li><a href="mailto:contato@useautogenius.com">E-mail</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="rodape-frase" aria-hidden="true">IA que trabalha dentro da sua empresa.</p>
+    <div class="rodape-base">
+      <span>© 2026 Auto Genius Soluções Inteligentes Ltda · CNPJ 61.383.608/0001-37</span>
+      <span>Feito em Recife, Pernambuco</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var feed = document.querySelector('.c-feed'); if (!feed) return;
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var EV = [['an','Análise','14 campanhas, 41 conjuntos e 126 anúncios revisados.',''],
+            ['al','Alerta','“Remarketing · Carrossel”: custo por lead subiu 47% em 3 dias.','Frequência em 4,8 — o público está saturado.'],
+            ['ac','Ação','Orçamento do conjunto reduzido em 20%.','Dentro da regra: até 20% por dia sem aprovação.'],
+            ['op','Oportunidade','“Vídeo 15s · Semelhante” com lead 32% mais barato.','Sugestão: +15% de orçamento. Aguardando aprovação.'],
+            ['an','Relatório','Resumo do dia enviado no seu WhatsApp.','']];
+  function item(e){var li=document.createElement('li');var t=document.createElement('span');t.className='tag '+e[0];t.textContent=e[1];
+    var d=document.createElement('div');var p=document.createElement('p');p.textContent=e[2];d.appendChild(p);
+    if(e[3]){var s=document.createElement('small');s.textContent=e[3];d.appendChild(s);} li.appendChild(t);li.appendChild(d);return li;}
+  if (calm) { EV.slice(0,3).forEach(function(e){feed.appendChild(item(e));}); return; }
+  var i=0; function prox(){ if(i===0) feed.replaceChildren(); feed.insertBefore(item(EV[i]),feed.firstChild);
+    while(feed.children.length>3) feed.removeChild(feed.lastChild); i=(i+1)%EV.length; setTimeout(prox, i===0?4200:2300); }
+  setTimeout(prox, 1600);
+})();
+</script>
+<script src="/js/plataforma.js" defer></script>
+<script src="/js/ag.js" defer></script>
+</body>
+</html>
