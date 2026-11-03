@@ -186,6 +186,21 @@ section{padding:clamp(88px,11vw,152px) 0;position:relative}
 .ag-ok{font-size:14px;color:var(--tx);padding:14px 16px;border:1px solid var(--linha-2);border-radius:12px}
 .ag-ok a{text-decoration:underline;text-underline-offset:3px}
 
+/* ── Vídeo "Entender em 1 minuto" ───────────────────────────── */
+.btn-2.play{display:inline-flex;align-items:center;gap:10px}
+.play-ic{width:22px;height:22px;border-radius:50%;background:var(--marca);position:relative;flex-shrink:0;box-shadow:0 0 14px rgba(47,134,255,.55)}
+.play-ic::after{content:"";position:absolute;left:8.5px;top:6.5px;border-style:solid;border-width:4.5px 0 4.5px 7px;border-color:transparent transparent transparent #fff}
+.ag-video{position:fixed;inset:0;z-index:210;display:grid;place-items:center;padding:clamp(16px,4vw,56px);background:rgba(3,4,8,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+.ag-video.on{opacity:1;pointer-events:auto}
+.ag-video figure{margin:0;width:min(1280px,100%);position:relative;transform:scale(.96);transition:transform .45s var(--ease)}
+.ag-video.on figure{transform:none}
+.ag-video video{display:block;width:100%;aspect-ratio:16/9;border-radius:16px;background:#000;border:1px solid var(--linha-2);box-shadow:0 40px 120px -30px rgba(0,0,0,.9),0 0 90px -30px rgba(31,91,255,.6)}
+.ag-video .fechar{position:absolute;top:-48px;right:0;width:40px;height:40px;border-radius:50%;border:1px solid var(--linha-2);background:rgba(255,255,255,.04);color:var(--tx);font-size:22px;line-height:1;cursor:pointer}
+.ag-video .fechar:hover{background:rgba(255,255,255,.1)}
+.ag-video figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;margin-top:16px;font-size:14px;color:var(--tx-3)}
+.ag-video figcaption .btn{padding:11px 18px;font-size:14px}
+.video-aberto{overflow:hidden}
+
 /* ── Responsivo ─────────────────────────────────────────────── */
 @media(max-width:960px){
   .menu{display:none}

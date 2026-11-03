@@ -8,3 +8,14 @@
 !image/**
 .playwright-mcp/
 .DS_Store
+
+# projeto do vídeo: só o código-fonte entra no git
+video-autogenius/out/
+video-autogenius/*.mp4
+video-autogenius/music/score.wav
+video-autogenius/music/stems/
+video-autogenius/stills/
+video-autogenius/voice/.cache/
+!video/*.jpg
+!video-autogenius/assets/*
+!video-autogenius/poster.jpg

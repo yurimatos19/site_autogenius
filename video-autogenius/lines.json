@@ -1,0 +1,56 @@
+[
+ {
+  "id": "l01",
+  "text": "Sua empresa já paga por inteligência artificial."
+ },
+ {
+  "id": "l02",
+  "text": "Mas o trabalho do dia a dia continua o mesmo."
+ },
+ {
+  "id": "l03",
+  "text": "A AutoGenius coloca essa IA para trabalhar dentro da sua empresa.",
+  "say": "A Auto Gênius coloca essa IA para trabalhar dentro da sua empresa.",
+  "asr": "A auto-gênios coloca essa inteligência artificial para trabalhar dentro da sua empresa."
+ },
+ {
+  "id": "l04",
+  "text": "Tudo começa com um Raio-X.",
+  "say": "Tudo começa com um raio X.",
+  "asr": "Tudo começa com um raio x."
+ },
+ {
+  "id": "l05",
+  "text": "Em 14 dias, você sabe onde ela paga a conta.",
+  "say": "Em catorze dias, você sabe onde ela paga a conta.",
+  "asr": "Em 14 dias, você sabe onde ela paga conta."
+ },
+ {
+  "id": "l06",
+  "text": "Depois, a gente implanta: no atendimento, no comercial, na operação e no financeiro."
+ },
+ {
+  "id": "l07",
+  "text": "Agentes que respondem seu cliente em segundos."
+ },
+ {
+  "id": "l08",
+  "text": "Uma IA que acompanha suas campanhas todos os dias.",
+  "asr": "Uma inteligência artificial que acompanha as suas campanhas todos os dias."
+ },
+ {
+  "id": "l09",
+  "text": "Tudo com regra e com seus dados protegidos."
+ },
+ {
+  "id": "l10",
+  "text": "Mais de 50 empresas já têm a nossa IA em produção.",
+  "say": "Mais de cinquenta empresas já têm a nossa I.A. em produção."
+ },
+ {
+  "id": "l11",
+  "text": "AutoGenius. IA que trabalha dentro da sua empresa.",
+  "say": "Auto Gênius. Inteligência artificial que trabalha dentro da sua empresa.",
+  "asr": "Autogênios. Inteligência artificial que trabalha dentro da sua empresa."
+ }
+]
