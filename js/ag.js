@@ -202,6 +202,47 @@
     alternar(true, a.getAttribute('data-agendar') || document.body.getAttribute('data-assunto') || '');
   });
 
+  /* ── Vídeo "Entender em 1 minuto": abre um player por cima da página ── */
+  var vid = null;
+  function montarVideo(src) {
+    var box = document.createElement('div'); box.className = 'ag-video'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', 'Vídeo: AutoGenius em 1 minuto');
+    var fig = document.createElement('figure');
+    var fechar = document.createElement('button'); fechar.className = 'fechar'; fechar.type = 'button'; fechar.setAttribute('aria-label', 'Fechar vídeo'); fechar.textContent = '×';
+    var v = document.createElement('video'); v.controls = true; v.playsInline = true; v.preload = 'none';
+    v.poster = '/video/autogenius-1-minuto.jpg';
+    v.src = window.innerWidth < 900 ? '/video/autogenius-1-minuto-720.mp4' : src;
+    var tr = document.createElement('track'); tr.kind = 'captions'; tr.srclang = 'pt-BR'; tr.label = 'Português'; tr.src = '/video/autogenius-1-minuto.vtt';
+    v.appendChild(tr);
+    var cap = document.createElement('figcaption');
+    var txt = document.createElement('span'); txt.textContent = 'AutoGenius em 1 minuto';
+    var cta = document.createElement('a'); cta.className = 'btn'; cta.href = '#agendar'; cta.setAttribute('data-agendar', 'raiox'); cta.textContent = 'Quero um Raio-X de IA →';
+    cap.appendChild(txt); cap.appendChild(cta);
+    fig.appendChild(fechar); fig.appendChild(v); fig.appendChild(cap); box.appendChild(fig);
+    box.addEventListener('click', function (e) { if (e.target === box || e.target === fechar) fecharVideo(); });
+    cta.addEventListener('click', function () { fecharVideo(); });
+    v.addEventListener('play', function () { if (window.gtag) gtag('event', 'video_play', { video_title: 'AutoGenius em 1 minuto' }); }, { once: true });
+    v.addEventListener('ended', function () { if (window.gtag) gtag('event', 'video_complete', { video_title: 'AutoGenius em 1 minuto' }); });
+    document.body.appendChild(box);
+    return { box: box, v: v, fechar: fechar };
+  }
+  function abrirVideo(src) {
+    if (!vid) vid = montarVideo(src);
+    document.documentElement.classList.add('video-aberto');
+    requestAnimationFrame(function () { vid.box.classList.add('on'); });
+    vid.fechar.focus({ preventScroll: true });
+    var p = vid.v.play(); if (p && p.catch) p.catch(function () {});
+  }
+  function fecharVideo() {
+    if (!vid) return;
+    vid.v.pause(); vid.box.classList.remove('on'); document.documentElement.classList.remove('video-aberto');
+  }
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest) return;
+    var a = e.target.closest('[data-video]'); if (!a) return;
+    e.preventDefault(); abrirVideo(a.getAttribute('href'));
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fecharVideo(); });
+
   function iniciar() {
     iniciarTopo(); iniciarRevelacao();
     if (location.hash === '#agendar') alternar(true);

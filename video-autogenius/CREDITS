@@ -1,0 +1,11 @@
+AutoGenius em 1 minuto — créditos de terceiros
+
+Voz: Microsoft Azure Neural TTS, voz pt-BR-AntonioNeural, via edge-tts (github.com/rany2/edge-tts, licença GPL-3.0 da ferramenta).
+  Antes de uso comercial, confira os termos de serviço da Microsoft para as vozes neurais.
+Trilha: original, feita para este filme. Amostras: Versilian Community Sample Library (VCSL), CC0 1.0 — github.com/sgossner/VCSL
+  (marimba, vibrafone, vibrafone com arco, glockenspiel).
+Efeitos sonoros: sintetizados em código para este filme.
+Fontes (SIL Open Font License 1.1, Google Fonts): Inter, Inter Tight, JetBrains Mono, Poppins. Licenças em fonts/OFL-*.txt.
+Material da AutoGenius (de propriedade da empresa): símbolo do logo (assets/marca.png) e telas reais das
+  plataformas (assets/produto-*.jpg).
+Ferramentas: biblioteca Lemo-Opuscar (renderização, mix e master).
