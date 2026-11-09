@@ -39,43 +39,68 @@
     if (!calm) { crescer(); window.addEventListener('scroll', crescer, { passive: true }); window.addEventListener('resize', crescer); }
   }
 
-  /* ── O sistema ── */
+  /* ── O sistema: prévia na página; o CRM abre numa camada por cima, com saída sempre à vista ── */
   var palco = $('#vt-palco'), usar = $('#vt-usar'), foto = $('#vt-foto'), cheia = $('#vt-cheia');
   if (!palco) return;
   var NOMES = { carros: 'concessionárias', imoveis: 'imobiliárias', clinicas: 'clínicas', escolas: 'escolas', alimentacao: 'restaurantes e delivery' };
-  var atual = 'carros', frames = {}, desktop = function () { return window.matchMedia('(min-width: 900px)').matches; };
+  var ROTULO = { carros: 'Concessionárias', imoveis: 'Imobiliárias', clinicas: 'Clínicas', escolas: 'Escolas', alimentacao: 'Alimentação' };
+  var atual = 'carros', modal = null, frames = {}, ultimoFoco = null;
 
-  function escala() {
-    var s = palco.clientWidth / 1440;
-    Object.keys(frames).forEach(function (k) { frames[k].style.transform = 'scale(' + s + ')'; });
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+  function montar() {
+    modal = el('div', 'vt-modal'); modal.setAttribute('role', 'dialog'); modal.setAttribute('aria-modal', 'true'); modal.setAttribute('aria-label', 'Demonstração do CRM AutoGenius');
+    var barra = el('div', 'vt-m-barra');
+    var voltar = el('button', 'vt-m-voltar', '← Voltar ao site'); voltar.type = 'button'; voltar.addEventListener('click', fechar);
+    var abas = el('div', 'vt-m-abas'); abas.setAttribute('role', 'tablist');
+    Object.keys(ROTULO).forEach(function (k) {
+      var b = el('button', '', ROTULO[k]); b.type = 'button'; b.setAttribute('role', 'tab'); b.setAttribute('data-k', k);
+      b.addEventListener('click', function () { selecionar(k); carregarDemo(k); }); abas.appendChild(b);
+    });
+    var cta = el('a', 'btn vt-m-cta', 'Quero isso na minha empresa'); cta.href = '#agendar'; cta.setAttribute('data-agendar', 'atendimento');
+    cta.addEventListener('click', fechar);
+    barra.appendChild(voltar); barra.appendChild(abas); barra.appendChild(cta);
+    var corpo = el('div', 'vt-m-corpo');
+    var aviso = el('p', 'vt-m-aviso', 'Demonstração com dados fictícios · clique, abra conversas, arraste os cards do funil');
+    modal.appendChild(barra); modal.appendChild(aviso); modal.appendChild(corpo);
+    modal.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechar(); });
+    document.body.appendChild(modal);
   }
-  function mostrar(k) {
+  function carregarDemo(k) {
+    var corpo = modal.querySelector('.vt-m-corpo');
+    if (!frames[k]) {
+      var f = el('iframe'); f.src = '/demo/' + k + '.html'; f.title = 'CRM AutoGenius para ' + NOMES[k];
+      corpo.appendChild(f); frames[k] = f;
+    }
+    Object.keys(frames).forEach(function (n) { frames[n].hidden = n !== k; });
+    modal.querySelectorAll('.vt-m-abas button').forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k); });
+  }
+  function abrir() {
+    if (!modal) montar();
+    ultimoFoco = document.activeElement;
+    carregarDemo(atual);
+    document.documentElement.classList.add('vt-modal-aberto');
+    requestAnimationFrame(function () { modal.classList.add('on'); });
+    modal.querySelector('.vt-m-voltar').focus({ preventScroll: true });
+    if (window.gtag) gtag('event', 'demo_aberta', { segmento: atual });
+  }
+  function fechar() {
+    if (!modal) return;
+    modal.classList.remove('on');
+    document.documentElement.classList.remove('vt-modal-aberto');
+    if (ultimoFoco && ultimoFoco.focus) ultimoFoco.focus({ preventScroll: true });
+  }
+  function selecionar(k) {
     atual = k;
     cheia.href = '/demo/' + k + '.html';
     foto.src = '/image/v3/demo-' + k + '.jpg';
     foto.alt = 'Tela do CRM AutoGenius para ' + NOMES[k] + ': conversas no WhatsApp com a IA respondendo';
-    Object.keys(frames).forEach(function (n) { frames[n].hidden = n !== k; });
-    if (palco.classList.contains('ativo')) abrir();
-  }
-  function abrir() {
-    if (!desktop()) { window.open('/demo/' + atual + '.html', '_blank', 'noopener'); return; }
-    if (!frames[atual]) {
-      var f = document.createElement('iframe');
-      f.src = '/demo/' + atual + '.html';
-      f.title = 'Demonstração do CRM AutoGenius para ' + NOMES[atual];
-      f.setAttribute('loading', 'lazy');
-      palco.appendChild(f); frames[atual] = f; escala();
-    }
-    Object.keys(frames).forEach(function (n) { frames[n].hidden = n !== atual; });
-    palco.classList.add('ativo');
-    if (window.gtag) gtag('event', 'demo_aberta', { segmento: atual });
+    document.querySelectorAll('.vt-abas button').forEach(function (x) { x.setAttribute('aria-selected', x.getAttribute('data-demo') === k); });
   }
   usar.addEventListener('click', abrir);
+  document.querySelectorAll('[data-abrir-demo]').forEach(function (b) { b.addEventListener('click', abrir); });
   document.querySelectorAll('.vt-abas button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      document.querySelectorAll('.vt-abas button').forEach(function (x) { x.setAttribute('aria-selected', x === b); });
-      mostrar(b.getAttribute('data-demo'));
-    });
+    b.addEventListener('click', function () { selecionar(b.getAttribute('data-demo')); });
   });
-  window.addEventListener('resize', escala);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal && modal.classList.contains('on')) fechar(); });
 })();
