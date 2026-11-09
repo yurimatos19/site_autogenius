@@ -1,0 +1,63 @@
+/* Vitrine da home: o vídeo em destaque e o CRM real rodando na página. Tokens de /css/ag.css. */
+
+/* ── Vídeo ── */
+.vt-video{padding:clamp(80px,10vw,140px) 0 clamp(40px,6vw,80px);overflow:hidden}
+.vt-video-cab{text-align:center;max-width:860px}
+.vt-video-cab h2{margin:0 auto 16px}
+.vt-video-cab .lead{margin:0 auto}
+.vt-video-palco{margin-top:clamp(36px,5vw,64px);padding:0 var(--gut)}
+.vt-tela{position:relative;max-width:1400px;margin:0 auto;aspect-ratio:16/9;border-radius:22px;overflow:hidden;background:#000;
+  border:1px solid var(--linha-2);box-shadow:0 60px 120px -50px rgba(0,0,0,.95);transform-origin:50% 0;will-change:transform}
+.vt-tela video{width:100%;height:100%;object-fit:cover;display:block}
+.vt-som{position:absolute;right:clamp(14px,2.4vw,28px);top:clamp(14px,2.4vw,28px);display:inline-flex;align-items:center;gap:12px;
+  min-height:52px;padding:0 22px 0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:rgba(6,8,13,.62);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff;font:600 15px var(--sans);cursor:pointer;transition:background .2s,transform .15s}
+.vt-som:hover{background:rgba(6,8,13,.8)}
+.vt-som:active{transform:scale(.97)}
+.vt-play{width:30px;height:30px;border-radius:50%;background:var(--azul);display:grid;place-items:center}
+.vt-play::after{content:"";margin-left:3px;border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent #fff}
+.vt-tela.com-som .vt-som{display:none}
+
+/* ── Sistema ── */
+.vt-demo{padding-top:clamp(56px,7vw,96px)}
+.vt-janela{border-radius:18px;overflow:hidden;border:1px solid var(--linha-2);background:#0C1019;box-shadow:0 60px 120px -60px rgba(0,0,0,.95)}
+.vt-barra{display:flex;align-items:center;gap:18px;padding:10px 14px;border-bottom:1px solid var(--linha);background:#0E131E}
+.vt-bolas{display:flex;gap:7px}
+.vt-bolas i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.14)}
+.vt-abas{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+.vt-abas button{flex:none;min-height:38px;padding:0 14px;border-radius:9px;border:0;background:transparent;color:var(--tx-2);font:500 14px var(--sans);cursor:pointer;transition:background .2s,color .2s}
+.vt-abas button:hover{color:var(--tx);background:rgba(255,255,255,.05)}
+.vt-abas button[aria-selected="true"]{color:#fff;background:rgba(255,255,255,.1)}
+.vt-cheia{flex:none;font-size:14px;font-weight:500;color:var(--acc)}
+.vt-cheia:hover{text-decoration:underline;text-underline-offset:4px}
+.vt-palco{position:relative;aspect-ratio:1440/900;background:#fff;overflow:hidden}
+.vt-palco iframe{position:absolute;left:0;top:0;width:1440px;height:900px;border:0;transform-origin:0 0;background:#fff}
+.vt-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vt-usar{position:absolute;inset:0;width:100%;border:0;cursor:pointer;display:grid;place-items:center;
+  background:linear-gradient(180deg,rgba(6,8,13,0) 40%,rgba(6,8,13,.55) 100%);transition:opacity .3s}
+.vt-usar-in{display:grid;gap:4px;text-align:center;padding:16px 26px;border-radius:16px;background:rgba(6,8,13,.78);border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;transition:transform .2s}
+.vt-usar:hover .vt-usar-in{transform:translateY(-2px)}
+.vt-usar-in b{font:600 18px var(--disp);letter-spacing:-.01em}
+.vt-usar-in small{font-size:13.5px;color:#C3CAD8}
+.vt-palco.ativo .vt-usar{opacity:0;pointer-events:none}
+.vt-recursos{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:28px}
+.vt-recursos li{border-top:1px solid var(--linha-2);padding-top:16px}
+.vt-recursos b{display:block;font:600 16px var(--disp);color:var(--tx);margin-bottom:6px}
+.vt-recursos span{font-size:14.5px;color:var(--tx-2);line-height:1.5}
+
+@media(max-width:1020px){
+  .vt-recursos{grid-template-columns:1fr 1fr}
+}
+@media(max-width:767px){
+  .vt-tela{border-radius:14px}
+  .vt-som{min-height:46px;font-size:14px}
+  .vt-barra{flex-wrap:wrap;gap:10px}
+  .vt-bolas{display:none}
+  .vt-abas{order:2;flex-basis:100%}
+  .vt-cheia{margin-left:auto}
+  .vt-recursos{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .vt-tela{transform:none!important}
+}

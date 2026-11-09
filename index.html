@@ -39,6 +39,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500..800&family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&family=Poppins:wght@600&display=swap">
 <link rel="stylesheet" href="/css/ag.css">
+<link rel="stylesheet" href="/css/vitrine.css">
 
 <style>
 /* ═══════════════ HERO: Recife ganhando inteligência ═══════════════ */
@@ -487,7 +488,7 @@ fbq('track', 'PageView');
         </ol>
         <div class="hero-cta entra" style="animation-delay:.46s">
           <a class="btn" href="#agendar" data-agendar="raiox">Quero um Raio-X de IA <span class="seta" aria-hidden="true">→</span></a>
-          <a class="btn-2 play" href="/video/autogenius-1-minuto.mp4" data-video><span class="play-ic" aria-hidden="true"></span>Entender em 1 minuto</a>
+          <a class="btn-2 play" href="#video"><span class="play-ic" aria-hidden="true"></span>Entender em 1 minuto</a>
         </div>
         <p class="yuri-linha entra" style="animation-delay:.55s"><b>Yuri Matos</b>, fundador, conduz cada Raio-X · +50 empresas atendidas</p>
       </div>
@@ -530,6 +531,57 @@ fbq('track', 'PageView');
       <span class="local">Recife · às margens do Capibaribe</span>
       <span class="desce"><i></i>Role para ver</span>
     </div>
+  </div>
+</section>
+
+<!-- ═══ VÍDEO: a AutoGenius em 1 minuto, crescendo no scroll ═══ -->
+<section class="vt-video" id="video" aria-labelledby="vt-video-t">
+  <div class="wrap vt-video-cab">
+    <h2 id="vt-video-t" class="rv">A AutoGenius em 1 minuto.</h2>
+    <p class="lead rv d1">Do diagnóstico ao sistema rodando — o que a gente faz, em um minuto de vídeo.</p>
+  </div>
+  <div class="vt-video-palco">
+    <div class="vt-tela" id="vt-tela">
+      <video id="vt-v" muted playsinline loop preload="none" poster="/video/autogenius-1-minuto.jpg" aria-label="Vídeo: AutoGenius em 1 minuto">
+        <track kind="captions" srclang="pt-BR" label="Português" src="/video/autogenius-1-minuto.vtt">
+      </video>
+      <button class="vt-som" id="vt-som" type="button"><span class="vt-play" aria-hidden="true"></span>Assistir com som</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ O SISTEMA DE VERDADE, RODANDO NA PÁGINA ═══ -->
+<section class="vt-demo" id="sistema" aria-labelledby="vt-demo-t">
+  <div class="wrap">
+    <div class="cab">
+      <h2 id="vt-demo-t" class="rv">Não é apresentação. É o sistema.</h2>
+      <p class="lead rv d1">Abaixo está o CRM com IA que entregamos aos clientes, rodando de verdade nesta página, com dados fictícios. Abra as conversas, veja a IA respondendo, arraste os cards do funil, abra a agenda.</p>
+    </div>
+    <div class="vt-janela rv">
+      <div class="vt-barra">
+        <span class="vt-bolas" aria-hidden="true"><i></i><i></i><i></i></span>
+        <div class="vt-abas" role="tablist" aria-label="Escolha o segmento">
+          <button role="tab" aria-selected="true" data-demo="carros">Concessionárias</button>
+          <button role="tab" aria-selected="false" data-demo="imoveis">Imobiliárias</button>
+          <button role="tab" aria-selected="false" data-demo="clinicas">Clínicas</button>
+          <button role="tab" aria-selected="false" data-demo="escolas">Escolas</button>
+          <button role="tab" aria-selected="false" data-demo="alimentacao">Alimentação</button>
+        </div>
+        <a class="vt-cheia" id="vt-cheia" href="/demo/carros.html" target="_blank" rel="noopener">Abrir em tela cheia ↗</a>
+      </div>
+      <div class="vt-palco" id="vt-palco">
+        <img class="vt-foto" id="vt-foto" src="/image/v3/demo-carros.jpg" width="1200" height="750" loading="lazy" alt="Tela do CRM AutoGenius para concessionárias: conversas no WhatsApp com a IA respondendo">
+        <button class="vt-usar" id="vt-usar" type="button">
+          <span class="vt-usar-in"><b>Usar o sistema</b><small>Clique para interagir com a demonstração</small></span>
+        </button>
+      </div>
+    </div>
+    <ul class="vt-recursos rv">
+      <li><b>WhatsApp com IA</b><span>A IA responde, qualifica e passa para a equipe com o histórico.</span></li>
+      <li><b>Funil de vendas</b><span>Arraste os cards entre as etapas.</span></li>
+      <li><b>Agenda real</b><span>Visitas, consultas e test-drives marcados pela IA.</span></li>
+      <li><b>Painéis e relatórios</b><span>O que entrou, o que fechou e onde travou.</span></li>
+    </ul>
   </div>
 </section>
 
@@ -1028,5 +1080,6 @@ fbq('track', 'PageView');
 })();
 </script>
 <script src="/js/ag.js" defer></script>
+<script src="/js/vitrine.js" defer></script>
 </body>
 </html>
