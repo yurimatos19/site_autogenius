@@ -118,8 +118,6 @@
 @media(prefers-reduced-motion:reduce){.h-ev{animation:none}}
 
 /* ── Clientes logo depois do topo e resultados ── */
-.vt-logos{padding:28px 0 0}
-.vt-logos .logos-wrap{margin-top:0;border-top:0;padding-top:0}
 .vt-res-produtos{margin-top:clamp(40px,5vw,64px)}
 .vt-res-produtos .produtos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 @media(max-width:767px){.vt-res-produtos .produtos{grid-template-columns:1fr}}
