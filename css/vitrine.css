@@ -123,3 +123,22 @@
 .vt-res-produtos{margin-top:clamp(40px,5vw,64px)}
 .vt-res-produtos .produtos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 @media(max-width:767px){.vt-res-produtos .produtos{grid-template-columns:1fr}}
+
+/* ── O sistema por segmento: a cena real + o que a IA faz ali ── */
+.vt-demo .vt-abas{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px}
+.vt-demo .vt-abas button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--linha-2);background:transparent;color:var(--tx-2);font:500 15px var(--sans);cursor:pointer;transition:all .2s}
+.vt-demo .vt-abas button:hover{color:var(--tx);border-color:rgba(255,255,255,.3)}
+.vt-demo .vt-abas button[aria-selected="true"]{background:#fff;color:#0B0F1C;border-color:#fff}
+.vt-seg{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(28px,4vw,56px);align-items:center}
+.vt-cena{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--linha-2);aspect-ratio:16/10;background:var(--bg-3)}
+.vt-cena img{width:100%;height:100%;object-fit:cover;display:block}
+.vt-seg.troca .vt-cena img,.vt-seg.troca .vt-seg-txt{animation:vt-troca .5s var(--ease)}
+@keyframes vt-troca{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.vt-seg-txt h3{font-size:clamp(26px,2.4vw,34px);font-weight:700;letter-spacing:-.03em;margin-bottom:12px}
+.vt-seg-txt p{font-size:16.5px;line-height:1.6;max-width:44ch}
+.vt-seg-txt ul{list-style:none;display:grid;gap:10px;margin:22px 0 28px}
+.vt-seg-txt li{position:relative;padding-left:26px;font-size:15.5px;color:var(--tx)}
+.vt-seg-txt li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:8px;border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg)}
+.vt-seg-txt .vt-cheia{display:block;margin-top:14px;font-size:14px}
+@media(max-width:1020px){.vt-seg{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.vt-seg.troca .vt-cena img,.vt-seg.troca .vt-seg-txt{animation:none}}

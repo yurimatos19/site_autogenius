@@ -41,6 +41,13 @@
 
   /* ── O sistema: prévia na página; o CRM abre numa camada por cima, com saída sempre à vista ── */
   var palco = $('#vt-palco'), usar = $('#vt-usar'), foto = $('#vt-foto'), cheia = $('#vt-cheia');
+  var SEG = {
+    carros: ['Concessionárias', 'A IA responde o lead do anúncio em segundos, avalia o carro na troca, simula o financiamento e agenda o test-drive.', ['Estoque com fotos', 'Funil de vendas com arrastar e soltar', 'Simulação de financiamento', 'Test-drive direto na agenda'], 'Vendedor de concessionária usando o CRM AutoGenius com o cliente: a IA já qualificou o lead e simulou o financiamento'],
+    imoveis: ['Imobiliárias', 'Responde os portais na hora, qualifica orçamento e bairro, envia as opções certas com foto e preço e agenda a visita.', ['Carteira de imóveis', 'Visitas na agenda', 'Propostas', 'Acompanhamento de cada lead'], 'Corretora mostrando no tablet o CRM AutoGenius com as opções de imóveis enviadas pela IA'],
+    clinicas: ['Clínicas', 'Agenda direto no sistema, confirma as consultas, faz a triagem de convênio e chama o paciente para o retorno.', ['Agenda real', 'Ficha de pacientes', 'Confirmação de consultas', 'Retornos e convênios'], 'Recepcionista de clínica atendendo uma paciente com o CRM AutoGenius aberto no monitor'],
+    escolas: ['Escolas', 'Atende as famílias na hora da decisão, informa valores, marca a visita e cuida da rematrícula e da cobrança.', ['Famílias e alunos', 'Matrículas e rematrículas', 'Controle de inadimplência', 'Venda de atividades extras'], 'Secretária de escola atendendo mãe e filho com o CRM AutoGenius aberto no monitor'],
+    alimentacao: ['Restaurantes e delivery', 'Fecha o pedido no WhatsApp sem atendente, cuida das reservas e chama de volta o cliente que sumiu.', ['Pedido no WhatsApp', 'Reservas e mesas', 'Margem por prato', 'Reativação de clientes sumidos'], 'Dono de restaurante conferindo no tablet os pedidos fechados pela IA no WhatsApp']
+  };
   if (!palco) return;
   var NOMES = { carros: 'concessionárias', imoveis: 'imobiliárias', clinicas: 'clínicas', escolas: 'escolas', alimentacao: 'restaurantes e delivery' };
   var ROTULO = { carros: 'Concessionárias', imoveis: 'Imobiliárias', clinicas: 'Clínicas', escolas: 'Escolas', alimentacao: 'Alimentação' };
@@ -93,8 +100,11 @@
   function selecionar(k) {
     atual = k;
     cheia.href = '/demo/' + k + '.html';
-    foto.src = '/image/v3/demo-' + k + '.jpg';
-    foto.alt = 'Tela do CRM AutoGenius para ' + NOMES[k] + ': conversas no WhatsApp com a IA respondendo';
+    var d = SEG[k];
+    foto.src = '/image/v3/cena-' + k + '.jpg'; foto.alt = d[3];
+    $('#vt-seg-t').textContent = d[0]; $('#vt-seg-p').textContent = d[1];
+    var ul = $('#vt-seg-l'); ul.replaceChildren(); d[2].forEach(function (x) { var li = document.createElement('li'); li.textContent = x; ul.appendChild(li); });
+    palco.classList.remove('troca'); void palco.offsetWidth; palco.classList.add('troca');
     document.querySelectorAll('.vt-abas button').forEach(function (x) { x.setAttribute('aria-selected', x.getAttribute('data-demo') === k); });
   }
   usar.addEventListener('click', abrir);

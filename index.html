@@ -571,38 +571,32 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- ═══ O SISTEMA DE VERDADE, RODANDO NA PÁGINA ═══ -->
+<!-- ═══ O SISTEMA DE VERDADE, POR SEGMENTO ═══ -->
 <section class="vt-demo" id="sistema" aria-labelledby="vt-demo-t">
   <div class="wrap">
     <div class="cab">
       <h2 id="vt-demo-t" class="rv">Não é apresentação. É o sistema.</h2>
-      <p class="lead rv d1">Abaixo está o CRM com IA que entregamos aos clientes, rodando de verdade nesta página, com dados fictícios. Abra as conversas, veja a IA respondendo, arraste os cards do funil, abra a agenda.</p>
+      <p class="lead rv d1">Um CRM com IA no WhatsApp para cada segmento, já rodando em empresas. Escolha o seu e teste agora, com dados fictícios.</p>
     </div>
-    <div class="vt-janela rv">
-      <div class="vt-barra">
-        <span class="vt-bolas" aria-hidden="true"><i></i><i></i><i></i></span>
-        <div class="vt-abas" role="tablist" aria-label="Escolha o segmento">
-          <button role="tab" aria-selected="true" data-demo="carros">Concessionárias</button>
-          <button role="tab" aria-selected="false" data-demo="imoveis">Imobiliárias</button>
-          <button role="tab" aria-selected="false" data-demo="clinicas">Clínicas</button>
-          <button role="tab" aria-selected="false" data-demo="escolas">Escolas</button>
-          <button role="tab" aria-selected="false" data-demo="alimentacao">Alimentação</button>
-        </div>
-        <a class="vt-cheia" id="vt-cheia" href="/demo/carros.html" target="_blank" rel="noopener">Abrir em tela cheia ↗</a>
-      </div>
-      <div class="vt-palco" id="vt-palco">
-        <img class="vt-foto" id="vt-foto" src="/image/v3/demo-carros.jpg" width="1200" height="750" loading="lazy" alt="Tela do CRM AutoGenius para concessionárias: conversas no WhatsApp com a IA respondendo">
-        <button class="vt-usar" id="vt-usar" type="button">
-          <span class="vt-usar-in"><b>Usar o sistema</b><small>Clique para interagir com a demonstração</small></span>
-        </button>
+    <div class="vt-abas rv" role="tablist" aria-label="Escolha o segmento">
+      <button role="tab" aria-selected="true" data-demo="carros">Concessionárias</button>
+      <button role="tab" aria-selected="false" data-demo="imoveis">Imobiliárias</button>
+      <button role="tab" aria-selected="false" data-demo="clinicas">Clínicas</button>
+      <button role="tab" aria-selected="false" data-demo="escolas">Escolas</button>
+      <button role="tab" aria-selected="false" data-demo="alimentacao">Restaurantes</button>
+    </div>
+    <div class="vt-seg rv" id="vt-palco">
+      <figure class="vt-cena">
+        <img id="vt-foto" src="/image/v3/cena-carros.jpg" width="1600" height="1000" loading="lazy" alt="Vendedor de concessionária usando o CRM AutoGenius com o cliente: a IA já qualificou o lead e simulou o financiamento">
+      </figure>
+      <div class="vt-seg-txt">
+        <h3 id="vt-seg-t">Concessionárias</h3>
+        <p id="vt-seg-p">A IA responde o lead do anúncio em segundos, avalia o carro na troca, simula o financiamento e agenda o test-drive.</p>
+        <ul id="vt-seg-l"><li>Estoque com fotos</li><li>Funil de vendas com arrastar e soltar</li><li>Simulação de financiamento</li><li>Test-drive direto na agenda</li></ul>
+        <button class="btn" id="vt-usar" type="button">Testar o sistema <span class="seta" aria-hidden="true">→</span></button>
+        <a class="vt-cheia" id="vt-cheia" href="/demo/carros.html" target="_blank" rel="noopener">ou abrir em tela cheia ↗</a>
       </div>
     </div>
-    <ul class="vt-recursos rv">
-      <li><b>WhatsApp com IA</b><span>A IA responde, qualifica e passa para a equipe com o histórico.</span></li>
-      <li><b>Funil de vendas</b><span>Arraste os cards entre as etapas.</span></li>
-      <li><b>Agenda real</b><span>Visitas, consultas e test-drives marcados pela IA.</span></li>
-      <li><b>Painéis e relatórios</b><span>O que entrou, o que fechou e onde travou.</span></li>
-    </ul>
   </div>
 </section>
 
@@ -647,7 +641,7 @@ fbq('track', 'PageView');
     </div>
     <div class="mosaico">
       <article class="peca foto alta rv">
-        <img src="/image/v2/gerado/atendimento.jpg" width="900" height="1117" loading="lazy" alt="">
+        <img src="/image/v3/mos-atendimento.jpg" width="900" height="1124" loading="lazy" alt="Atendente sorrindo com o celular na mão: as conversas de rotina já foram respondidas pela IA">
         <div class="peca-txt">
           <span class="rotulo">Atendimento</span>
           <h3>Ninguém mais espera na fila.</h3>
@@ -664,7 +658,7 @@ fbq('track', 'PageView');
         </div>
       </article>
       <article class="peca foto alta rv d2">
-        <img src="/image/v2/gerado/logistica.jpg" width="900" height="1117" loading="lazy" alt="">
+        <img src="/image/v3/mos-operacao.jpg" width="900" height="1124" loading="lazy" alt="Supervisora de operações conferindo o estoque no tablet dentro do galpão">
         <div class="peca-txt">
           <span class="rotulo">Operações</span>
           <h3>O processo não para quando alguém falta.</h3>
@@ -681,7 +675,7 @@ fbq('track', 'PageView');
         </div>
       </article>
       <article class="peca foto larga rv">
-        <img src="/image/v2/gerado/lideranca.jpg" width="1600" height="893" loading="lazy" alt="">
+        <img src="/image/v3/mos-lideranca.jpg" width="1600" height="900" loading="lazy" alt="Diretoria analisando os indicadores do dia num painel durante a reunião">
         <div class="peca-txt">
           <span class="rotulo">Liderança</span>
           <h3>Decisão com o dado de hoje, não do mês passado.</h3>
@@ -689,7 +683,7 @@ fbq('track', 'PageView');
         </div>
       </article>
       <article class="peca foto rv d1">
-        <img src="/image/v2/gerado/tecnico.jpg" width="900" height="1117" loading="lazy" alt="" style="object-position:50% 30%">
+        <img src="/image/v3/mos-campo.jpg" width="900" height="1124" loading="lazy" alt="Técnico de manutenção fotografando uma peça com o celular para receber o procedimento" style="object-position:50% 30%">
         <div class="peca-txt">
           <span class="rotulo">Campo e manutenção</span>
           <h3>O saber do técnico mais experiente, no bolso de todos.</h3>
