@@ -1,0 +1,147 @@
+/* Vitrine da home: o vídeo em destaque e o CRM real rodando na página. Tokens de /css/ag.css. */
+
+/* ── Vídeo ── */
+.vt-video{padding:clamp(80px,10vw,140px) 0 clamp(40px,6vw,80px);overflow:hidden}
+.vt-video-cab{text-align:center;max-width:860px}
+.vt-video-cab h2{margin:0 auto 16px}
+.vt-video-cab .lead{margin:0 auto}
+.vt-video-palco{margin-top:clamp(36px,5vw,64px);padding:0 var(--gut)}
+.vt-tela{position:relative;max-width:1400px;margin:0 auto;aspect-ratio:16/9;border-radius:22px;overflow:hidden;background:#000;
+  border:1px solid var(--linha-2);box-shadow:0 60px 120px -50px rgba(0,0,0,.95);transform-origin:50% 0;will-change:transform}
+.vt-tela video{width:100%;height:100%;object-fit:cover;display:block}
+.vt-som{position:absolute;right:clamp(14px,2.4vw,28px);top:clamp(14px,2.4vw,28px);display:inline-flex;align-items:center;gap:12px;
+  min-height:52px;padding:0 22px 0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:rgba(6,8,13,.62);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff;font:600 15px var(--sans);cursor:pointer;transition:background .2s,transform .15s}
+.vt-som:hover{background:rgba(6,8,13,.8)}
+.vt-som:active{transform:scale(.97)}
+.vt-play{width:30px;height:30px;border-radius:50%;background:var(--azul);display:grid;place-items:center}
+.vt-play::after{content:"";margin-left:3px;border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent #fff}
+.vt-tela.com-som .vt-som{display:none}
+
+/* ── Sistema ── */
+.vt-demo{padding-top:clamp(56px,7vw,96px)}
+.vt-janela{border-radius:18px;overflow:hidden;border:1px solid var(--linha-2);background:#0C1019;box-shadow:0 60px 120px -60px rgba(0,0,0,.95)}
+.vt-barra{display:flex;align-items:center;gap:18px;padding:10px 14px;border-bottom:1px solid var(--linha);background:#0E131E}
+.vt-bolas{display:flex;gap:7px}
+.vt-bolas i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.14)}
+.vt-abas{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+.vt-abas button{flex:none;min-height:38px;padding:0 14px;border-radius:9px;border:0;background:transparent;color:var(--tx-2);font:500 14px var(--sans);cursor:pointer;transition:background .2s,color .2s}
+.vt-abas button:hover{color:var(--tx);background:rgba(255,255,255,.05)}
+.vt-abas button[aria-selected="true"]{color:#fff;background:rgba(255,255,255,.1)}
+.vt-cheia{flex:none;font-size:14px;font-weight:500;color:var(--acc)}
+.vt-cheia:hover{text-decoration:underline;text-underline-offset:4px}
+.vt-palco{position:relative;aspect-ratio:1440/900;background:#fff;overflow:hidden}
+.vt-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vt-usar{position:absolute;inset:0;width:100%;border:0;cursor:pointer;display:grid;place-items:center;
+  background:linear-gradient(180deg,rgba(6,8,13,0) 40%,rgba(6,8,13,.55) 100%);transition:opacity .3s}
+.vt-usar-in{display:grid;gap:4px;text-align:center;padding:16px 26px;border-radius:16px;background:rgba(6,8,13,.78);border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;transition:transform .2s}
+.vt-usar:hover .vt-usar-in{transform:translateY(-2px)}
+.vt-usar-in b{font:600 18px var(--disp);letter-spacing:-.01em}
+.vt-usar-in small{font-size:13.5px;color:#C3CAD8}
+.vt-recursos{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:28px}
+.vt-recursos li{border-top:1px solid var(--linha-2);padding-top:16px}
+.vt-recursos b{display:block;font:600 16px var(--disp);color:var(--tx);margin-bottom:6px}
+.vt-recursos span{font-size:14.5px;color:var(--tx-2);line-height:1.5}
+
+@media(max-width:1020px){
+  .vt-recursos{grid-template-columns:1fr 1fr}
+}
+@media(max-width:767px){
+  .vt-tela{border-radius:14px}
+  .vt-som{min-height:46px;font-size:14px}
+  .vt-barra{flex-wrap:wrap;gap:10px}
+  .vt-bolas{display:none}
+  .vt-abas{order:2;flex-basis:100%}
+  .vt-cheia{margin-left:auto}
+  .vt-recursos{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .vt-tela{transform:none!important}
+}
+
+/* ── A demonstração em camada por cima do site ── */
+.vt-modal{position:fixed;inset:0;z-index:220;display:flex;flex-direction:column;background:rgba(3,4,8,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  padding:clamp(8px,1.6vw,22px);opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.vt-modal.on{opacity:1;pointer-events:auto}
+.vt-m-barra{display:flex;align-items:center;gap:14px;padding:10px 12px;background:#0E131E;border:1px solid var(--linha-2);border-bottom:0;border-radius:14px 14px 0 0}
+.vt-m-voltar{flex:none;min-height:40px;padding:0 16px;border-radius:10px;border:1px solid var(--linha-2);background:rgba(255,255,255,.06);color:#fff;font:600 14.5px var(--sans);cursor:pointer}
+.vt-m-voltar:hover{background:rgba(255,255,255,.12)}
+.vt-m-abas{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+.vt-m-abas button{flex:none;min-height:38px;padding:0 13px;border-radius:9px;border:0;background:transparent;color:var(--tx-2);font:500 14px var(--sans);cursor:pointer}
+.vt-m-abas button[aria-selected="true"]{background:rgba(255,255,255,.1);color:#fff}
+.vt-m-cta{flex:none;padding:10px 16px!important;font-size:14px!important}
+.vt-m-aviso{margin:0;padding:7px 14px;background:#0B0F18;border:1px solid var(--linha-2);border-top:0;border-bottom:0;font-size:13px;color:var(--tx-2)}
+.vt-m-corpo{position:relative;flex:1;background:#fff;border:1px solid var(--linha-2);border-top:0;border-radius:0 0 14px 14px;overflow:hidden;transform:translateY(10px) scale(.99);transition:transform .35s var(--ease)}
+.vt-modal.on .vt-m-corpo{transform:none}
+.vt-m-corpo iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vt-modal-aberto{overflow:hidden}
+@media(max-width:767px){
+  .vt-m-barra{flex-wrap:wrap}
+  .vt-m-abas{order:3;flex-basis:100%}
+  .vt-m-cta{margin-left:auto}
+  .vt-m-aviso{display:none}
+}
+
+/* ── Topo: o produto real com o que a IA acabou de fazer ── */
+.h-prod{position:relative;padding:28px 0 40px}
+.h-janela{margin:0;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.16);background:#fff;
+  box-shadow:0 50px 100px -40px rgba(0,0,0,.95),0 20px 40px -20px rgba(0,0,0,.7);transform:perspective(1600px) rotateY(-7deg) rotateX(2deg);transform-origin:60% 50%}
+.h-janela-barra{display:flex;align-items:center;gap:7px;height:30px;padding:0 12px;background:#F1F3F7;border-bottom:1px solid #E1E5EC}
+.h-janela-barra i{width:9px;height:9px;border-radius:50%;background:#D4D9E2}
+.h-janela-barra span{margin-left:8px;font-size:12px;color:#5B6476}
+.h-janela img{display:block;width:100%;height:auto}
+.h-ev{position:absolute;display:flex;align-items:center;gap:11px;padding:11px 15px 11px 11px;border-radius:14px;background:rgba(10,13,21,.92);
+  border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 20px 40px -14px rgba(0,0,0,.8);
+  font-size:14px;color:#fff;white-space:nowrap;animation:h-ev-in .7s var(--ease) both}
+.h-ev b{display:block;font-weight:600}
+.h-ev small{display:block;font-size:12.5px;color:#AEB5C4;margin-top:1px}
+.h-ev-ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:14px;font-weight:700;background:rgba(255,255,255,.1);color:#fff;flex:none}
+.h-ev-ic.ok{background:var(--azul)}
+.h-ev-ic.al{background:#C2410C}
+.h-ev1{left:-34px;top:16%;animation-delay:1s}
+.h-ev2{right:-22px;top:46%;animation-delay:1.6s}
+.h-ev3{left:6%;bottom:6px;animation-delay:2.2s}
+@keyframes h-ev-in{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.h-testar{position:absolute;right:0;top:-6px;min-height:40px;padding:0 15px;border-radius:999px;border:1px solid rgba(255,255,255,.25);
+  background:rgba(6,8,13,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;font:600 14px var(--sans);cursor:pointer}
+.h-testar:hover{background:rgba(6,8,13,.85)}
+@media(max-width:1020px){
+  .h-janela{transform:none}
+  .h-ev1{left:8px}.h-ev2{right:8px}
+}
+@media(max-width:767px){
+  .h-ev{font-size:13px;padding:9px 12px 9px 9px}
+  .h-ev small{display:none}
+  .h-ev1{top:12%}.h-ev2{top:52%}.h-ev3{left:8px}
+}
+@media(prefers-reduced-motion:reduce){.h-ev{animation:none}}
+
+/* ── Clientes logo depois do topo e resultados ── */
+.vt-res-produtos{margin-top:clamp(40px,5vw,64px)}
+.vt-res-produtos .produtos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media(max-width:767px){.vt-res-produtos .produtos{grid-template-columns:1fr}}
+
+/* ── O sistema por segmento: a cena real + o que a IA faz ali ── */
+.vt-demo .vt-abas{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px}
+.vt-demo .vt-abas button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--linha-2);background:transparent;color:var(--tx-2);font:500 15px var(--sans);cursor:pointer;transition:all .2s}
+.vt-demo .vt-abas button:hover{color:var(--tx);border-color:rgba(255,255,255,.3)}
+.vt-demo .vt-abas button[aria-selected="true"]{background:#fff;color:#0B0F1C;border-color:#fff}
+.vt-seg{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(28px,4vw,56px);align-items:center}
+.vt-cena{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--linha-2);aspect-ratio:16/10;background:var(--bg-3)}
+.vt-cena img{width:100%;height:100%;object-fit:cover;display:block}
+.vt-seg.troca .vt-cena img,.vt-seg.troca .vt-seg-txt{animation:vt-troca .5s var(--ease)}
+@keyframes vt-troca{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.vt-seg-txt h3{font-size:clamp(26px,2.4vw,34px);font-weight:700;letter-spacing:-.03em;margin-bottom:12px}
+.vt-seg-txt p{font-size:16.5px;line-height:1.6;max-width:44ch}
+.vt-seg-txt ul{list-style:none;display:grid;gap:10px;margin:22px 0 28px}
+.vt-seg-txt li{position:relative;padding-left:26px;font-size:15.5px;color:var(--tx)}
+.vt-seg-txt li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:8px;border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg)}
+.vt-seg-txt .vt-cheia{display:block;margin-top:14px;font-size:14px}
+@media(max-width:1020px){.vt-seg{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.vt-seg.troca .vt-cena img,.vt-seg.troca .vt-seg-txt{animation:none}}
+
+/* mosaico com fotos claras: degradê mais forte só na metade de baixo, onde fica o texto */
+.peca.foto::after{background:linear-gradient(180deg,rgba(6,8,13,0) 28%,rgba(6,8,13,.55) 52%,rgba(6,8,13,.94) 78%,rgba(6,8,13,.97) 100%)!important}
+.peca.foto h3{text-shadow:0 2px 18px rgba(0,0,0,.55)}
+.peca .antes{color:#A9B0BF!important}

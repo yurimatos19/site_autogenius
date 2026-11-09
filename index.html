@@ -39,6 +39,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500..800&family=Geist:wght@300..600&family=Geist+Mono:wght@400;500&family=Poppins:wght@600&display=swap">
 <link rel="stylesheet" href="/css/ag.css">
+<link rel="stylesheet" href="/css/vitrine.css">
 
 <style>
 /* ═══════════════ HERO: Recife ganhando inteligência ═══════════════ */
@@ -453,31 +454,11 @@ fbq('track', 'PageView');
       <source media="(max-width:700px)" srcset="/image/v2/recife-capibaribe-m.jpg">
       <img src="/image/v2/recife-capibaribe.jpg" width="2400" height="1600" alt="" fetchpriority="high">
     </picture>
-    <!-- as linhas da logo ligando os prédios do Recife Antigo -->
-    <svg class="cidade" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
-      <g transform="translate(0,46)">
-      <path style="--c:1500;animation-delay:.6s" d="M120 812 C 360 812, 420 780, 640 780 S 920 812, 1120 800 S 1380 760, 1460 700 S 1540 560, 1600 540"/>
-      <path style="--c:600;animation-delay:1.2s" d="M1460 700 C 1430 640, 1420 560, 1470 500 S 1560 420, 1600 400"/>
-      <path style="--c:500;animation-delay:1.6s" d="M640 780 C 700 760, 720 720, 780 712"/>
-      <path style="--c:400;animation-delay:2s" d="M1120 800 C 1160 840, 1240 850, 1320 840"/>
-      <g>
-        <circle class="no" r="4" cx="640" cy="780" style="animation-delay:2.2s"/>
-        <circle class="no" r="4" cx="1120" cy="800" style="animation-delay:2.5s"/>
-        <circle class="no" r="4" cx="1460" cy="700" style="animation-delay:2.8s"/>
-        <circle class="no" r="3.5" cx="1470" cy="500" style="animation-delay:3.1s"/>
-        <circle class="no" r="3" cx="780" cy="712" style="animation-delay:3.3s"/>
-        <circle class="no" r="3" cx="1320" cy="840" style="animation-delay:3.5s"/>
-      </g>
-      <circle r="3.4" fill="#fff" opacity=".95"><animateMotion dur="7s" begin="3.4s" repeatCount="indefinite" path="M120 812 C 360 812, 420 780, 640 780 S 920 812, 1120 800 S 1380 760, 1460 700 S 1540 560, 1600 540"/></circle>
-      <circle r="2.6" fill="#fff" opacity=".85"><animateMotion dur="4s" begin="4.4s" repeatCount="indefinite" path="M1460 700 C 1430 640, 1420 560, 1470 500 S 1560 420, 1600 400"/></circle>
-      </g>
-    </svg>
   </div>
 
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="rotulo entra" style="animation-delay:.05s">Empresa de inteligência artificial · Recife</span>
         <h1 class="entra" style="animation-delay:.15s"><span class="l">IA que trabalha</span> <span class="l g">dentro da sua empresa.</span></h1>
         <p class="lead entra" style="animation-delay:.3s">A AutoGenius coloca a inteligência artificial para funcionar no dia a dia da sua empresa — do diagnóstico ao sistema rodando. De três formas:</p>
         <ol class="ofertas-hero entra" style="animation-delay:.38s">
@@ -487,40 +468,21 @@ fbq('track', 'PageView');
         </ol>
         <div class="hero-cta entra" style="animation-delay:.46s">
           <a class="btn" href="#agendar" data-agendar="raiox">Quero um Raio-X de IA <span class="seta" aria-hidden="true">→</span></a>
-          <a class="btn-2 play" href="/video/autogenius-1-minuto.mp4" data-video><span class="play-ic" aria-hidden="true"></span>Entender em 1 minuto</a>
+          <a class="btn-2 play" href="#video"><span class="play-ic" aria-hidden="true"></span>Entender em 1 minuto</a>
         </div>
-        <p class="yuri-linha entra" style="animation-delay:.55s"><b>Yuri Matos</b>, fundador, conduz cada Raio-X · +50 empresas atendidas</p>
+        <p class="yuri-linha entra" style="animation-delay:.55s"><b>+50 empresas</b> com IA da AutoGenius em produção · Recife, para o Brasil</p>
       </div>
 
-      <!-- O console encena a promessa: a IA atuando em várias áreas ao mesmo
-           tempo. Números e eventos são ilustrativos e estão marcados como tal. -->
-      <div class="console entra" style="animation-delay:.35s" aria-label="Exemplo ilustrativo de uma central de IA atuando em várias áreas de uma empresa">
-        <div class="c-top">
-          <span class="c-titulo">Exemplo · a IA trabalhando numa empresa</span>
-          <span class="c-vivo">ao vivo</span>
-        </div>
-        <div class="c-kpis">
-          <div class="c-kpi"><small>Horas devolvidas ao time · semana</small><b data-conta="126">0 h</b></div>
-          <div class="c-kpi"><small>Adoção da equipe</small><b data-conta="78" data-sufixo="%">0%</b></div>
-        </div>
-        <div class="mapa" aria-hidden="true">
-          <svg viewBox="0 0 520 200">
-            <path class="fio" data-i="0" d="M260 100 C 200 100, 200 34, 128 34"/>
-            <path class="fio" data-i="1" d="M260 100 C 200 100, 200 166, 128 166"/>
-            <path class="fio" data-i="2" d="M260 100 C 320 100, 320 34, 392 34"/>
-            <path class="fio" data-i="3" d="M260 100 C 320 100, 320 166, 392 166"/>
-            <g class="area" data-i="0"><rect x="16" y="18" width="112" height="32" rx="10"/><text x="72" y="39" text-anchor="middle">Comercial</text></g>
-            <g class="area" data-i="1"><rect x="16" y="150" width="112" height="32" rx="10"/><text x="72" y="171" text-anchor="middle">Atendimento</text></g>
-            <g class="area" data-i="2"><rect x="392" y="18" width="112" height="32" rx="10"/><text x="448" y="39" text-anchor="middle">Operações</text></g>
-            <g class="area" data-i="3"><rect x="392" y="150" width="112" height="32" rx="10"/><text x="448" y="171" text-anchor="middle">Financeiro</text></g>
-            <circle cx="260" cy="100" r="34" fill="rgba(31,91,255,.14)" stroke="url(#gfio)" stroke-width="2"/>
-            <circle cx="260" cy="100" r="46" fill="none" stroke="rgba(94,166,255,.18)" stroke-width="1" stroke-dasharray="3 6"/>
-            <text x="260" y="105" text-anchor="middle" fill="#fff" font-family="Sora, sans-serif" font-weight="700" font-size="16">IA</text>
-            <circle class="pulso" r="4" cx="-20" cy="-20"/>
-          </svg>
-        </div>
-        <ul class="c-feed"></ul>
-        <div class="c-nota">Exemplo ilustrativo</div>
+      <!-- O produto de verdade: a tela real do CRM, com o que a IA acabou de fazer -->
+      <div class="h-prod entra" style="animation-delay:.3s">
+        <figure class="h-janela">
+          <div class="h-janela-barra" aria-hidden="true"><i></i><i></i><i></i><span>CRM AutoGenius · Concessionária</span></div>
+          <img src="/image/v3/demo-carros.jpg" width="1200" height="750" alt="Tela real do CRM AutoGenius: a IA conversa com um cliente no WhatsApp, avalia o carro na troca e simula o financiamento">
+        </figure>
+        <div class="h-ev h-ev1"><span class="h-ev-ic ok" aria-hidden="true">✓</span><div><b>Lead qualificado</b><small>Rafael · Jeep Compass · enviado ao CRM</small></div></div>
+        <div class="h-ev h-ev2"><span class="h-ev-ic" aria-hidden="true">◷</span><div><b>Test-drive agendado</b><small>Amanhã, 10h · confirmado no WhatsApp</small></div></div>
+        <div class="h-ev h-ev3"><span class="h-ev-ic al" aria-hidden="true">!</span><div><b>Ads AI: custo por lead +41%</b><small>Sugestão pronta · aguardando sua aprovação</small></div></div>
+        <button class="h-testar" type="button" data-abrir-demo>Testar o sistema <span aria-hidden="true">→</span></button>
       </div>
     </div>
   </div>
@@ -529,6 +491,22 @@ fbq('track', 'PageView');
     <div class="hero-pe entra" style="animation-delay:.8s">
       <span class="local">Recife · às margens do Capibaribe</span>
       <span class="desce"><i></i>Role para ver</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VÍDEO: a AutoGenius em 1 minuto, crescendo no scroll ═══ -->
+<section class="vt-video" id="video" aria-labelledby="vt-video-t">
+  <div class="wrap vt-video-cab">
+    <h2 id="vt-video-t" class="rv">A AutoGenius em 1 minuto.</h2>
+    <p class="lead rv d1">Do diagnóstico ao sistema rodando — o que a gente faz, em um minuto de vídeo.</p>
+  </div>
+  <div class="vt-video-palco">
+    <div class="vt-tela" id="vt-tela">
+      <video id="vt-v" muted playsinline loop preload="none" poster="/video/autogenius-1-minuto.jpg" aria-label="Vídeo: AutoGenius em 1 minuto">
+        <track kind="captions" srclang="pt-BR" label="Português" src="/video/autogenius-1-minuto.vtt">
+      </video>
+      <button class="vt-som" id="vt-som" type="button"><span class="vt-play" aria-hidden="true"></span>Assistir com som</button>
     </div>
   </div>
 </section>
@@ -574,23 +552,34 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- ═══ FAIXA ═══ -->
-<div class="faixa" aria-hidden="true">
-  <div class="trilho">
-    <span>Comercial</span><em></em><span>Atendimento</span><em></em><span>Operações</span><em></em><span>Financeiro</span><em></em><span>Campo</span><em></em><span>Liderança</span><em></em>
-    <span>Comercial</span><em></em><span>Atendimento</span><em></em><span>Operações</span><em></em><span>Financeiro</span><em></em><span>Campo</span><em></em><span>Liderança</span><em></em>
+<!-- ═══ O SISTEMA DE VERDADE, POR SEGMENTO ═══ -->
+<section class="vt-demo" id="sistema" aria-labelledby="vt-demo-t">
+  <div class="wrap">
+    <div class="cab">
+      <h2 id="vt-demo-t" class="rv">Não é apresentação. É o sistema.</h2>
+      <p class="lead rv d1">Um CRM com IA no WhatsApp para cada segmento, já rodando em empresas. Escolha o seu e teste agora, com dados fictícios.</p>
+    </div>
+    <div class="vt-abas rv" role="tablist" aria-label="Escolha o segmento">
+      <button role="tab" aria-selected="true" data-demo="carros">Concessionárias</button>
+      <button role="tab" aria-selected="false" data-demo="imoveis">Imobiliárias</button>
+      <button role="tab" aria-selected="false" data-demo="clinicas">Clínicas</button>
+      <button role="tab" aria-selected="false" data-demo="escolas">Escolas</button>
+      <button role="tab" aria-selected="false" data-demo="alimentacao">Restaurantes</button>
+    </div>
+    <div class="vt-seg rv" id="vt-palco">
+      <figure class="vt-cena">
+        <img id="vt-foto" src="/image/v3/cena-carros.jpg" width="1600" height="1000" loading="lazy" alt="Vendedor de concessionária usando o CRM AutoGenius com o cliente: a IA já qualificou o lead e simulou o financiamento">
+      </figure>
+      <div class="vt-seg-txt">
+        <h3 id="vt-seg-t">Concessionárias</h3>
+        <p id="vt-seg-p">A IA responde o lead do anúncio em segundos, avalia o carro na troca, simula o financiamento e agenda o test-drive.</p>
+        <ul id="vt-seg-l"><li>Estoque com fotos</li><li>Funil de vendas com arrastar e soltar</li><li>Simulação de financiamento</li><li>Test-drive direto na agenda</li></ul>
+        <button class="btn" id="vt-usar" type="button">Testar o sistema <span class="seta" aria-hidden="true">→</span></button>
+        <a class="vt-cheia" id="vt-cheia" href="/demo/carros.html" target="_blank" rel="noopener">ou abrir em tela cheia ↗</a>
+      </div>
+    </div>
   </div>
-</div>
-
-<!-- ═══ NÚMEROS ═══ -->
-<div class="wrap">
-  <div class="num-grid">
-    <div class="num rv"><b class="g" data-conta-num="50" data-prefixo="+">+50</b><span>empresas atendidas com IA em produção</span></div>
-    <div class="num rv d1"><b class="g">1M+</b><span>mensagens processadas pelos nossos agentes</span></div>
-    <div class="num rv d2"><b class="g">2</b><span>plataformas próprias de IA rodando hoje</span></div>
-    <div class="num rv d3"><b class="g">14 dias</b><span>para você saber onde a IA paga a conta</span></div>
-  </div>
-</div>
+</section>
 
 <!-- ═══ PROBLEMA ═══ -->
 <section>
@@ -633,7 +622,7 @@ fbq('track', 'PageView');
     </div>
     <div class="mosaico">
       <article class="peca foto alta rv">
-        <img src="/image/v2/gerado/atendimento.jpg" width="900" height="1117" loading="lazy" alt="">
+        <img src="/image/v3/mos-atendimento.jpg" width="900" height="1124" loading="lazy" alt="Atendente sorrindo com o celular na mão: as conversas de rotina já foram respondidas pela IA">
         <div class="peca-txt">
           <span class="rotulo">Atendimento</span>
           <h3>Ninguém mais espera na fila.</h3>
@@ -650,7 +639,7 @@ fbq('track', 'PageView');
         </div>
       </article>
       <article class="peca foto alta rv d2">
-        <img src="/image/v2/gerado/logistica.jpg" width="900" height="1117" loading="lazy" alt="">
+        <img src="/image/v3/mos-operacao.jpg" width="900" height="1124" loading="lazy" alt="Supervisora de operações conferindo o estoque no tablet dentro do galpão">
         <div class="peca-txt">
           <span class="rotulo">Operações</span>
           <h3>O processo não para quando alguém falta.</h3>
@@ -667,7 +656,7 @@ fbq('track', 'PageView');
         </div>
       </article>
       <article class="peca foto larga rv">
-        <img src="/image/v2/gerado/lideranca.jpg" width="1600" height="893" loading="lazy" alt="">
+        <img src="/image/v3/mos-lideranca.jpg" width="1600" height="900" loading="lazy" alt="Diretoria analisando os indicadores do dia num painel durante a reunião">
         <div class="peca-txt">
           <span class="rotulo">Liderança</span>
           <h3>Decisão com o dado de hoje, não do mês passado.</h3>
@@ -675,7 +664,7 @@ fbq('track', 'PageView');
         </div>
       </article>
       <article class="peca foto rv d1">
-        <img src="/image/v2/gerado/tecnico.jpg" width="900" height="1117" loading="lazy" alt="" style="object-position:50% 30%">
+        <img src="/image/v3/mos-campo.jpg" width="900" height="1124" loading="lazy" alt="Técnico de manutenção fotografando uma peça com o celular para receber o procedimento" style="object-position:50% 30%">
         <div class="peca-txt">
           <span class="rotulo">Campo e manutenção</span>
           <h3>O saber do técnico mais experiente, no bolso de todos.</h3>
@@ -727,24 +716,20 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- ═══ CONSTRUÍMOS ═══ -->
-<section id="construimos">
+<!-- ═══ RESULTADOS ═══ -->
+<section id="resultados">
   <div class="wrap">
     <div class="cab">
-      <span class="rotulo rv">Engenharia própria</span>
-      <h2 class="rv">A gente constrói <span class="g">o que recomenda.</span></h2>
-      <p class="lead rv d1">Não somos consultoria de slide. Temos plataformas próprias de IA rodando em produção — e é com essa engenharia que implantamos na sua empresa.</p>
+      <h2 class="rv">Resultados que dá para conferir.</h2>
+      <p class="lead rv d1">Plataformas próprias rodando em produção — e é com essa engenharia que implantamos na sua empresa.</p>
     </div>
-    <div class="constroi">
-      <div class="palco rv">
-        <figure class="tela">
-          <div class="tela-barra" aria-hidden="true"><i></i><i></i><i></i></div>
-          <img src="/image/produto-clinicas.jpg" width="1280" height="853" loading="lazy" alt="Tela real da plataforma AutoGenius: caixa de conversas com a IA atendendo, qualificando e agendando clientes">
-        </figure>
-        <div class="flut f1" aria-hidden="true"><span class="ic">✓</span><div><b>Consulta agendada</b><small>22:47 · sem ninguém de plantão</small></div></div>
-        <div class="flut f2" aria-hidden="true"><span class="ic">↗</span><div><b>Lead qualificado</b><small>enviado ao CRM com o histórico</small></div></div>
-        <div class="flut f3" aria-hidden="true"><span class="ic">3s</span><div><b>Tempo de resposta</b><small>a qualquer hora do dia</small></div></div>
-      </div>
+    <div class="num-grid">
+    <div class="num rv"><b class="g" data-conta-num="50" data-prefixo="+">+50</b><span>empresas atendidas com IA em produção</span></div>
+    <div class="num rv d1"><b class="g">1M+</b><span>mensagens processadas pelos nossos agentes</span></div>
+    <div class="num rv d2"><b class="g">2</b><span>plataformas próprias de IA rodando hoje</span></div>
+    <div class="num rv d3"><b class="g">14 dias</b><span>para você saber onde a IA paga a conta</span></div>
+  </div>
+    <div class="vt-res-produtos">
       <div class="produtos">
         <a class="produto rv d1" href="/agentes-de-atendimento/">
           <span class="rotulo">Plataforma de atendimento</span>
@@ -762,56 +747,6 @@ fbq('track', 'PageView');
           <p>Identifica desperdício, alerta quando algo sai do padrão e otimiza dentro das regras da empresa.</p>
           <span class="ir">Conhecer a Ads AI →</span>
         </a>
-      </div>
-    </div>
-
-    <div class="dentro">
-      <div class="dentro-cab rv">
-        <span class="rotulo">Por dentro das plataformas</span>
-        <p>Telas das nossas plataformas, com dados de demonstração.</p>
-      </div>
-      <div class="bento">
-        <article class="bc bc-4 rv">
-          <div class="bc-txt"><span class="bc-tag">Imobiliária</span><h3>Atende e vende. <span>A IA entende o pedido e envia as opções certas, com foto e preço.</span></h3></div>
-          <div class="bc-tela"><img src="/image/v2/telas/imoveis-conversa.jpg" width="692" height="630" loading="lazy" alt="Conversa na plataforma AutoGenius em que a IA envia três apartamentos ao cliente e agenda a visita"></div>
-        </article>
-        <article class="bc bc-2 rv d1">
-          <div class="bc-txt"><span class="bc-tag">Ads AI</span><h3>Alerta antes do prejuízo. <span>A IA aponta o problema e sugere a correção. Você aprova.</span></h3></div>
-          <div class="mini-ads" aria-label="Exemplo de alerta da AutoGenius Ads AI">
-            <div class="ma-topo"><i></i>Ads AI · hoje, 08:12</div>
-            <div class="ma-alerta"><b>Custo por lead subiu 41%</b><small>Conjunto “Moema · 2 dorms” · últimos 3 dias</small></div>
-            <div class="ma-sug"><small>Sugestão</small>Pausar o anúncio 3, que já saturou, e levar a verba para o conjunto que mais converte.</div>
-            <div class="ma-acoes"><span class="ok">Aprovar</span><span>Ver detalhes</span></div>
-          </div>
-        </article>
-        <article class="bc bc-2 rv">
-          <div class="bc-txt"><span class="bc-tag">Escola</span><h3>Matrícula sem fila. <span>Tira dúvidas, informa valores e marca a visita.</span></h3></div>
-          <div class="bc-tela"><img src="/image/v2/telas/escolas-matricula.jpg" width="722" height="700" loading="lazy" alt="Conversa na plataforma AutoGenius em que a IA informa valores da mensalidade e agenda uma visita à escola"></div>
-        </article>
-        <article class="bc bc-2 rv d1">
-          <div class="bc-txt"><span class="bc-tag">Concessionária</span><h3>Negocia com contexto. <span>Avalia a troca, simula e agenda o test-drive.</span></h3></div>
-          <div class="bc-tela"><img src="/image/v2/telas/autos-troca.jpg" width="692" height="685" loading="lazy" alt="Conversa na plataforma AutoGenius em que a IA avalia um carro na troca e oferece horários de test-drive"></div>
-        </article>
-        <article class="bc bc-2 rv d2">
-          <div class="bc-txt"><span class="bc-tag">Integração</span><h3>Dentro dos seus sistemas. <span>A IA trabalha onde o time já trabalha.</span></h3></div>
-          <div class="integra-nuvem" aria-label="Sistemas que conectamos">
-            <span>WhatsApp</span><span>Instagram</span><span>CRM</span><span>Agenda</span><span class="nucleo"><img src="/image/icon.png" alt="" width="40" height="40"></span><span>ERP</span><span>Planilhas</span><span>Meta Ads</span><span>E-mail</span>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <div class="logos-wrap rv">
-      <p>Plataformas rodando em produção em mais de 50 empresas</p>
-      <div class="logos">
-        <img src="/image/v2/olore_logo.png" alt="Olore Parfum" loading="lazy">
-        <img src="/image/v2/laserdream_logo.png" alt="Laser Dream" loading="lazy">
-        <img src="/image/v2/zurich_pharma_logo.png" alt="Zurich Pharma" loading="lazy">
-        <img src="/image/v2/monteverde_logo.png" alt="Monteverde Arquitetura" loading="lazy">
-        <img src="/image/v2/bm5_logo.png" alt="BM5 Comex" loading="lazy">
-        <img src="/image/v2/ativus_logo.png" alt="Ativus" loading="lazy">
-        <img src="/image/v2/primavera_logo.png" alt="Clínica Primavera" loading="lazy">
-        <img src="/image/v2/renor_no_bg.png" alt="Renor Coworking" loading="lazy">
       </div>
     </div>
   </div>
@@ -1028,5 +963,6 @@ fbq('track', 'PageView');
 })();
 </script>
 <script src="/js/ag.js" defer></script>
+<script src="/js/vitrine.js" defer></script>
 </body>
 </html>
