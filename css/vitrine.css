@@ -142,3 +142,8 @@
 .vt-seg-txt .vt-cheia{display:block;margin-top:14px;font-size:14px}
 @media(max-width:1020px){.vt-seg{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.vt-seg.troca .vt-cena img,.vt-seg.troca .vt-seg-txt{animation:none}}
+
+/* mosaico com fotos claras: degradê mais forte só na metade de baixo, onde fica o texto */
+.peca.foto::after{background:linear-gradient(180deg,rgba(6,8,13,0) 28%,rgba(6,8,13,.55) 52%,rgba(6,8,13,.94) 78%,rgba(6,8,13,.97) 100%)!important}
+.peca.foto h3{text-shadow:0 2px 18px rgba(0,0,0,.55)}
+.peca .antes{color:#A9B0BF!important}
