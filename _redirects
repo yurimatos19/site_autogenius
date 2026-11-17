@@ -1,0 +1,4 @@
+# video-autogenius/: material-fonte do vídeo (roteiro, assets brutos), não é usado pelo
+# site no ar (nenhuma página referencia esse caminho). A Vercel já escondia essa pasta
+# via .vercelignore; aqui bloqueamos o acesso direto com 404.
+/video-autogenius/*  /  404
