@@ -95,11 +95,12 @@ p{color:var(--tx-2)}
 /* ── Cabeçalho ──────────────────────────────────────────────── */
 .topo{position:fixed;top:0;left:0;right:0;z-index:60;border-bottom:1px solid transparent;transition:background .4s,border-color .4s}
 .topo.rolou{background:rgba(6,8,13,.92);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);border-color:var(--linha)}
-.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;height:74px}
+.topo .wrap{display:flex;align-items:center;justify-content:flex-start;gap:28px;height:74px}
 .logo{display:inline-flex;align-items:center;font-family:'Poppins',var(--disp);font-weight:600;font-size:1.25rem;letter-spacing:-.02em;line-height:1}
 .logo img{width:30px;height:30px;margin-right:10px}
 .logo b{font-weight:600;background:var(--marca);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.menu{display:flex;align-items:center;gap:30px}
+.menu{display:flex;align-items:center;gap:30px;margin-inline:auto}
+.btn-2.entrar{padding:10px 18px;font-size:14px;border-radius:12px;margin-right:-12px}
 .menu a{font-size:14.5px;color:var(--tx-2);transition:color .25s}
 .menu a:hover,.menu a[aria-current]{color:var(--tx)}
 .burger{display:none;background:none;border:1px solid var(--linha-2);border-radius:12px;width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center}
@@ -204,6 +205,8 @@ section{padding:clamp(88px,11vw,152px) 0;position:relative}
 /* ── Responsivo ─────────────────────────────────────────────── */
 @media(max-width:960px){
   .menu{display:none}
+  .btn-2.entrar{margin-left:auto;margin-right:0}
+  .topo .wrap{gap:14px}
   .burger{display:inline-flex}
   .topo .btn.sm{display:none}
   .gaveta{display:flex;position:fixed;inset:0;z-index:59;background:var(--bg);flex-direction:column;justify-content:center;padding:100px var(--gut) 40px;gap:4px;
