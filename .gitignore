@@ -19,3 +19,6 @@ video-autogenius/voice/.cache/
 !video/*.jpg
 !video-autogenius/assets/*
 !video-autogenius/poster.jpg
+
+# originais das imagens geradas (pesados; as versões web ficam em image/v3)
+image/v3/orig/
