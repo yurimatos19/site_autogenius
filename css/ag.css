@@ -100,7 +100,7 @@ p{color:var(--tx-2)}
 .logo img{width:30px;height:30px;margin-right:10px}
 .logo b{font-weight:600;background:var(--marca);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .menu{display:flex;align-items:center;gap:30px;margin-inline:auto}
-.btn-2.entrar{padding:10px 18px;font-size:14px;border-radius:12px;margin-right:-18px}
+.btn-2.entrar{padding:10px 18px;font-size:14px;border-radius:12px;margin-right:-22px}
 .menu a{font-size:14.5px;color:var(--tx-2);transition:color .25s}
 .menu a:hover,.menu a[aria-current]{color:var(--tx)}
 .burger{display:none;background:none;border:1px solid var(--linha-2);border-radius:12px;width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center}
