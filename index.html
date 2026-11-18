@@ -15,7 +15,7 @@
 </script>
 
 <title>AutoGenius — Implantação de inteligência artificial para empresas</title>
-<meta name="description" content="A AutoGenius implanta inteligência artificial na operação de empresas médias e grandes: Raio-X de IA em 14 dias, implantação com engenharia própria e operação contínua, com resultado medido. Feita em Recife.">
+<meta name="description" content="Software house de inteligência artificial: a AutoGenius desenvolve e implanta IA na operação de empresas médias e grandes: Raio-X de IA em 14 dias, implantação com engenharia própria e operação contínua, com resultado medido. Feita em Recife.">
 <meta name="theme-color" content="#06080D">
 <meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://useautogenius.com/">
@@ -500,6 +500,22 @@
   .motivo h3{margin-top:48px}
   .peca-txt,.peca.texto .peca-txt{padding:24px}
 }
+
+/* software house: se tem IA, é com a gente */
+.ia-grade{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.ia-grade li{position:relative;padding:30px 26px 30px;border:1px solid var(--linha);border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent);transition:border-color .4s,transform .4s var(--ease)}
+.ia-grade li:hover{border-color:rgba(94,166,255,.35);transform:translateY(-3px)}
+.ia-grade svg{width:28px;height:28px;margin-bottom:22px;stroke:url(#gfio2);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ia-grade h3{font-size:1.15rem;margin-bottom:8px}
+.ia-grade p{font-size:15px;line-height:1.58;color:var(--tx-2)}
+.ia-grade a{color:var(--acc);font-weight:600;white-space:nowrap}
+.ia-grade a:hover{text-decoration:underline;text-underline-offset:3px}
+.ia-pe{display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap;margin-top:20px;padding:26px 30px;border-radius:20px;border:1px solid rgba(94,166,255,.28);background:linear-gradient(100deg,rgba(31,91,255,.12),rgba(25,211,245,.04))}
+.ia-pe p{font-size:16.5px;color:var(--tx-2);max-width:62ch}
+.ia-pe strong{color:var(--tx)}
+.ia-pe .btn{padding:14px 22px;font-size:15px}
+@media(max-width:1100px){.ia-grade{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.ia-grade{grid-template-columns:1fr}.ia-grade li{padding:24px 22px}.ia-pe{padding:22px}.ia-pe .btn{width:100%;justify-content:center}}
 </style>
 
 <!-- Meta Pixel Code -->
@@ -567,7 +583,7 @@ fbq('track', 'PageView');
     <div class="hero-grid">
       <div>
         <h1 class="entra" style="animation-delay:.15s"><span class="l">IA que trabalha</span> <span class="l g">dentro da sua empresa.</span></h1>
-        <p class="lead entra" style="animation-delay:.3s">A AutoGenius coloca a inteligência artificial para funcionar no dia a dia da sua empresa — do diagnóstico ao sistema rodando. De três formas:</p>
+        <p class="lead entra" style="animation-delay:.3s">A AutoGenius é uma software house de inteligência artificial: se a sua empresa precisa de algo com IA, a gente desenvolve, do diagnóstico ao sistema rodando. Nossas frentes principais:</p>
         <ol class="ofertas-hero entra" style="animation-delay:.38s">
           <li><a href="#o-que-fazemos"><span class="n">01</span><span class="t"><b>Implantação de IA</b> nas áreas da empresa</span><i aria-hidden="true">→</i></a></li>
           <li><a href="/agentes-de-atendimento/"><span class="n">02</span><span class="t"><b>Agentes de IA</b> que atendem seus clientes no WhatsApp</span><i aria-hidden="true">→</i></a></li>
@@ -655,6 +671,33 @@ fbq('track', 'PageView');
     <div class="ofertas-pe rv">
       <span><b>Também:</b> palestras e formação de lideranças sobre IA aplicada a negócios.</span>
       <a href="#agendar" data-agendar="palestra">Levar para a sua empresa →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOB MEDIDA: se tem IA, é com a gente ═══ -->
+<section class="ia-tudo" id="sob-medida" style="padding-top:0">
+  <div class="wrap">
+    <div class="ia-cab">
+      <div class="cab">
+        <span class="rotulo rv">Software house de IA</span>
+        <h2 class="rv">Se tem IA, <span class="g">é com a gente.</span></h2>
+        <p class="lead rv d1">Além das nossas plataformas, desenvolvemos sob medida qualquer solução que use inteligência artificial: do agente que pesquisa no LinkedIn ao controle de todos os seus marketplaces.</p>
+      </div>
+    </div>
+    <ul class="ia-grade">
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h11M4 12h7M4 17h11"/><path d="M16 9l4 3-4 3"/></svg><h3>Automações de processos</h3><p>Rotinas que hoje são manuais rodando sozinhas, integradas aos seus sistemas.</p></li>
+      <li class="rv d1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/><path d="M8 10.5h5M10.5 8v5"/></svg><h3>Prospecção no LinkedIn</h3><p>IA que pesquisa empresas e decisores, qualifica e entrega a lista pronta para o comercial.</p></li>
+      <li class="rv d2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9l1.5-4h13L20 9"/><path d="M4 9h16v10H4z"/><path d="M9 19v-5h6v5"/></svg><h3>Gestão de marketplaces</h3><p>Pedidos, estoque, preços e perguntas de todos os marketplaces num lugar só, com a IA cuidando.</p></li>
+      <li class="rv d3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><h3>Atendimento no WhatsApp</h3><p>Agentes que respondem em segundos, qualificam, agendam e fazem follow-up. <a href="/agentes-de-atendimento/">Ver os agentes</a></p></li>
+      <li class="rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="M7 15l4-4 3 3 5-6"/></svg><h3>Tráfego pago</h3><p>IA que acompanha a mídia todos os dias e corta o desperdício dentro das suas regras. <a href="/ia-trafego-pago/">Ver a Ads AI</a></p></li>
+      <li class="rv d1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg><h3>Assistentes internos</h3><p>IA que responde o time com os documentos, procedimentos e dados da própria empresa.</p></li>
+      <li class="rv d2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h5M15 12h5M9 12a3 3 0 006 0 3 3 0 00-6 0"/><path d="M12 4v5M12 15v5"/></svg><h3>Integrações com ERP e CRM</h3><p>A IA trabalhando dentro dos sistemas que a empresa já usa, não numa aba separada.</p></li>
+      <li class="rv d3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M20 20H3"/></svg><h3>Painéis e análise de dados</h3><p>Indicadores consolidados e perguntas sobre os dados da empresa respondidas na hora.</p></li>
+    </ul>
+    <div class="ia-pe rv">
+      <p><strong>Tem outra ideia com IA?</strong> Conta pra gente o que você precisa. Se envolve inteligência artificial, a gente desenvolve.</p>
+      <a class="btn" href="#agendar" data-agendar="sobmedida">Falar sobre um projeto <span class="seta" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -935,7 +978,7 @@ fbq('track', 'PageView');
     <div class="rodape-grid">
       <div>
         <a class="logo" href="/">Auto<b>Genius</b></a>
-        <p class="assina">Implantação de inteligência artificial, do diagnóstico ao sistema rodando.</p>
+        <p class="assina">Software house de inteligência artificial, do diagnóstico ao sistema rodando.</p>
         <address>Empresarial Rio Capibaribe, sala 203<br>Rua Capitão José da Luz, 58 · Ilha do Leite<br>Recife · PE · 50070-540</address>
         <a class="btn sm" href="#agendar" data-agendar="raiox">Agendar conversa <span class="seta" aria-hidden="true">→</span></a>
       </div>
