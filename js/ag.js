@@ -75,6 +75,7 @@
   var INTERESSES = [
     ['raiox', 'Raio-X de IA'],
     ['implantacao', 'Implantação de IA'],
+    ['sobmedida', 'Projeto de IA sob medida'],
     ['atendimento', 'Agente de atendimento'],
     ['trafego', 'IA para tráfego pago'],
     ['palestra', 'Palestra ou formação']
