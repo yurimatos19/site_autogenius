@@ -78,6 +78,7 @@
     ['sobmedida', 'Projeto de IA sob medida'],
     ['atendimento', 'Agente de atendimento'],
     ['trafego', 'IA para tráfego pago'],
+    ['motogenius', 'MotoGenius (lojas de motos)'],
     ['palestra', 'Palestra ou formação']
   ];
   var painel, form, okEl, ultimoFoco;
