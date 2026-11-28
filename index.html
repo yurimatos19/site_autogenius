@@ -516,6 +516,30 @@
 .ia-pe .btn{padding:14px 22px;font-size:15px}
 @media(max-width:1100px){.ia-grade{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.ia-grade{grid-template-columns:1fr}.ia-grade li{padding:24px 22px}.ia-pe{padding:22px}.ia-pe .btn{width:100%;justify-content:center}}
+/* ── MotoGenius: produto novo em destaque ── */
+.mg-dest{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);border:1px solid rgba(94,166,255,.3);border-radius:28px;overflow:hidden;
+  background:radial-gradient(120% 120% at 100% 0%,rgba(25,211,245,.14),transparent 55%),linear-gradient(160deg,rgba(31,91,255,.16),rgba(6,8,13,.95) 65%)}
+.mg-dest-img{position:relative;display:flex;align-items:center;justify-content:center;padding:48px 32px;border-right:1px solid var(--linha);overflow:hidden;isolation:isolate;
+  background:radial-gradient(60% 70% at 50% 50%,rgba(25,211,245,.18),transparent 70%)}
+.mg-dest-img::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:24px 24px;-webkit-mask-image:radial-gradient(ellipse at center,#000 20%,transparent 70%);mask-image:radial-gradient(ellipse at center,#000 20%,transparent 70%)}
+.mg-chat{display:flex;flex-direction:column;gap:10px;width:min(340px,100%)}
+.mg-chat .b{max-width:86%;padding:10px 13px;border-radius:12px;font-size:14px;line-height:1.45;color:#E9EDEF}
+.mg-chat .b small{display:block;font-size:10.5px;opacity:.55;text-align:right;margin-top:3px}
+.mg-chat .cli{align-self:flex-start;background:#1F2C33;border-top-left-radius:3px}
+.mg-chat .ia{align-self:flex-end;background:#005C4B;border-top-right-radius:3px}
+.mg-chat .ia b{display:block;color:#86EFAC;font-weight:600}
+.mg-chat .crm{align-self:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:#9BEAFB;background:rgba(25,211,245,.1);border:1px solid rgba(25,211,245,.3);padding:7px 14px;border-radius:999px}
+.mg-dest-txt{padding:clamp(28px,4vw,52px)}
+.mg-dest .tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-2)}
+.mg-dest .tag b{color:#071019;background:var(--marca);padding:4px 9px;border-radius:999px;font-weight:500}
+.mg-dest h2{font-size:clamp(28px,3.4vw,46px);margin:16px 0 14px}
+.mg-dest p{font-size:16px;max-width:52ch}
+.mg-dest-nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:26px 0 28px;padding-top:22px;border-top:1px solid var(--linha)}
+.mg-dest-nums b{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(26px,2.6vw,38px);letter-spacing:-.05em;line-height:1}
+.mg-dest-nums span{display:block;margin-top:8px;font-size:13.5px;color:var(--tx-2)}
+.mg-dest .cta{display:flex;flex-wrap:wrap;gap:12px}
+@media(max-width:1020px){.mg-dest{grid-template-columns:1fr}.mg-dest-img{border-right:0;border-bottom:1px solid var(--linha)}}
+@media(max-width:560px){.mg-dest-nums{grid-template-columns:1fr}.mg-dest .cta .btn,.mg-dest .cta .btn-2{width:100%;justify-content:center}}
 </style>
 
 <!-- Meta Pixel Code -->
@@ -551,7 +575,7 @@ fbq('track', 'PageView');
     <nav class="menu" aria-label="Principal">
       <a href="#o-que-fazemos">O que fazemos</a>
       <a href="#areas">Onde a IA entra</a>
-      <a href="#como">Como funciona</a>
+      <a href="/motogenius/">MotoGenius</a>
       <a href="#quem">Quem somos</a>
     </nav>
     <a class="btn-2 entrar" href="https://portal.useautogenius.com/login">Entrar</a>
@@ -562,7 +586,7 @@ fbq('track', 'PageView');
 <nav class="gaveta" aria-label="Menu">
   <a href="#o-que-fazemos">O que fazemos</a>
   <a href="#areas">Onde a IA entra</a>
-  <a href="#como">Como funciona</a>
+  <a href="/motogenius/">MotoGenius</a>
   <a href="#quem">Quem somos</a>
   <a href="https://portal.useautogenius.com/login">Entrar</a>
   <a class="btn" href="#agendar" data-agendar="raiox">Quero um Raio-X de IA <span class="seta" aria-hidden="true">→</span></a>
@@ -672,6 +696,29 @@ fbq('track', 'PageView');
       <span><b>Também:</b> palestras e formação de lideranças sobre IA aplicada a negócios.</span>
       <a href="#agendar" data-agendar="palestra">Levar para a sua empresa →</a>
     </div>
+  </div>
+</section>
+
+<!-- ═══ NOVO PRODUTO: MotoGenius ═══ -->
+<section id="motogenius" style="padding-top:0">
+  <div class="wrap">
+    <article class="mg-dest rv">
+      <a class="mg-dest-img" href="/motogenius/" tabindex="-1" aria-hidden="true"><span class="mg-chat"><span class="b cli">Boa noite! Dá pra financiar a SHI 175?<small>sábado, 23:47</small></span><span class="b ia"><b>Crédito pré-aprovado ✅</b>Amanhã cedo o vendedor te liga pra fechar.<small>23:54</small></span><span class="crm">Card enviado ao vendedor · CRM</span></span></a>
+      <div class="mg-dest-txt">
+        <span class="tag"><b>Novo</b> MotoGenius · IA para lojas de motos</span>
+        <h2>A loja de motos que vende <span class="g">até de madrugada.</span></h2>
+        <p>O lead chega do anúncio, a IA responde em segundos, coleta os dados, dispara a simulação em vários bancos e manda para o vendedor só quem já pode comprar. 24 horas por dia.</p>
+        <div class="mg-dest-nums">
+          <div><b class="g">16 s</b><span>na primeira resposta ao cliente (antes, 4h35)</span></div>
+          <div><b class="g">7 min</b><span>do lead ao resultado da simulação</span></div>
+          <div><b class="g">2 em 3</b><span>vendas da loja vindas do digital</span></div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="/motogenius/">Conhecer o MotoGenius <span class="seta" aria-hidden="true">→</span></a>
+          <a class="btn-2" href="#agendar" data-agendar="motogenius">Quero na minha loja</a>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -876,7 +923,7 @@ fbq('track', 'PageView');
     <div class="num-grid">
     <div class="num rv"><b class="g" data-conta-num="50" data-prefixo="+">+50</b><span>empresas atendidas com IA em produção</span></div>
     <div class="num rv d1"><b class="g">1M+</b><span>mensagens processadas pelos nossos agentes</span></div>
-    <div class="num rv d2"><b class="g">2</b><span>plataformas próprias de IA rodando hoje</span></div>
+    <div class="num rv d2"><b class="g">3</b><span>plataformas próprias de IA rodando hoje</span></div>
     <div class="num rv d3"><b class="g">14 dias</b><span>para você saber onde a IA paga a conta</span></div>
   </div>
     <div class="vt-res-produtos">
@@ -896,6 +943,16 @@ fbq('track', 'PageView');
           <h3>IA que acompanha a mídia paga todos os dias</h3>
           <p>Identifica desperdício, alerta quando algo sai do padrão e otimiza dentro das regras da empresa.</p>
           <span class="ir">Conhecer a Ads AI →</span>
+        </a>
+        <a class="produto rv d3" href="/motogenius/" style="grid-column:1/-1">
+          <span class="rotulo">MotoGenius · novo</span>
+          <h3>IA que simula o crédito e entrega o cliente aprovado</h3>
+          <p>Para lojas de motos: atende o lead do anúncio, simula em vários bancos e passa ao vendedor quem já pode comprar.</p>
+          <div class="prova">
+            <div><b class="g">16 s</b><span>primeira resposta, antes 4h35</span></div>
+            <div><b class="g">7 min</b><span>do lead à simulação, antes 7h12</span></div>
+          </div>
+          <span class="ir" style="display:block;margin-top:16px">Conhecer o MotoGenius →</span>
         </a>
       </div>
     </div>
@@ -996,6 +1053,7 @@ fbq('track', 'PageView');
         <ul>
           <li><a href="/agentes-de-atendimento/">Agentes de atendimento</a></li>
           <li><a href="/ia-trafego-pago/">AutoGenius Ads AI</a></li>
+          <li><a href="/motogenius/">MotoGenius</a></li>
         </ul>
       </div>
       <div>
@@ -1005,6 +1063,7 @@ fbq('track', 'PageView');
           <li><a href="/escolas/">Escolas</a></li>
           <li><a href="/imoveis/">Imobiliárias</a></li>
           <li><a href="/autos/">Concessionárias</a></li>
+          <li><a href="/motogenius/">Lojas de motos</a></li>
         </ul>
       </div>
       <div>
